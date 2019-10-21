@@ -1,0 +1,140 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{3CD19226-5FB8-410F-80D4-B3AA6DFAE525}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>Vacation</RootNamespace>
+    <AssemblyName>Vacation</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="customScripts\DatabaseConnection.cs" />
+    <Compile Include="frmEdit\frmGeneratorNeradnihDana.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmEdit\frmGeneratorNeradnihDana.Designer.cs">
+      <DependentUpon>frmGeneratorNeradnihDana.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmEdit\frmTemplateEditor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmEdit\frmTemplateEditor.Designer.cs">
+      <DependentUpon>frmTemplateEditor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GlavniMeni.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GlavniMeni.Designer.cs">
+      <DependentUpon>GlavniMeni.cs</DependentUpon>
+    </Compile>
+    <Compile Include="modelScripts\NeradaniDanTemplate.cs" />
+    <Compile Include="frmBrowse\frmNeradniDani.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmBrowse\frmNeradniDani.Designer.cs">
+      <DependentUpon>frmNeradniDani.cs</DependentUpon>
+    </Compile>
+    <Compile Include="modelScripts\NeradniDan.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="frmBrowse\frmNeradniDaniTemplate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmBrowse\frmNeradniDaniTemplate.Designer.cs">
+      <DependentUpon>frmNeradniDaniTemplate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmEdit\frmTipEditor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmEdit\frmTipEditor.Designer.cs">
+      <DependentUpon>frmTipEditor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="modelScripts\TipNeradnihDana.cs" />
+    <Compile Include="frmBrowse\frmTipoviNeradnihDana.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmBrowse\frmTipoviNeradnihDana.Designer.cs">
+      <DependentUpon>frmTipoviNeradnihDana.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="frmBrowse\frmNeradniDaniTemplate.resx">
+      <DependentUpon>frmNeradniDaniTemplate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmEdit\frmGeneratorNeradnihDana.resx">
+      <DependentUpon>frmGeneratorNeradnihDana.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmEdit\frmTemplateEditor.resx">
+      <DependentUpon>frmTemplateEditor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GlavniMeni.resx">
+      <DependentUpon>GlavniMeni.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmBrowse\frmNeradniDani.resx">
+      <DependentUpon>frmNeradniDani.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="frmEdit\frmTipEditor.resx">
+      <DependentUpon>frmTipEditor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmBrowse\frmTipoviNeradnihDana.resx">
+      <DependentUpon>frmTipoviNeradnihDana.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
