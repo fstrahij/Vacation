@@ -29,19 +29,19 @@
         private void InitializeComponent()
         {
             this.groupBoxAll = new System.Windows.Forms.GroupBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.btnGeneriraj = new System.Windows.Forms.Button();
-            this.btnDodajTemplate = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
-            this.txtGodina = new System.Windows.Forms.TextBox();
             this.checkBoxAll = new System.Windows.Forms.CheckBox();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.Odabir = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TipId = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Naziv = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Datum = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Tip = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.btnGeneriraj = new System.Windows.Forms.Button();
+            this.btnDodajTemplate = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.txtGodina = new System.Windows.Forms.TextBox();
             this.groupBoxAll.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox2.SuspendLayout();
@@ -58,8 +58,20 @@
             this.groupBoxAll.TabStop = false;
             this.groupBoxAll.Text = "Odabir neradnih dana";
             // 
+            // checkBoxAll
+            // 
+            this.checkBoxAll.AutoSize = true;
+            this.checkBoxAll.Location = new System.Drawing.Point(86, 36);
+            this.checkBoxAll.Name = "checkBoxAll";
+            this.checkBoxAll.Size = new System.Drawing.Size(15, 14);
+            this.checkBoxAll.TabIndex = 1;
+            this.checkBoxAll.UseVisualStyleBackColor = true;
+            this.checkBoxAll.Click += new System.EventHandler(this.CheckBoxAllClick);
+            // 
             // dataGridView1
             // 
+            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AllowUserToDeleteRows = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Odabir,
@@ -72,6 +84,45 @@
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(647, 263);
             this.dataGridView1.TabIndex = 0;
+            // 
+            // Odabir
+            // 
+            this.Odabir.FalseValue = "";
+            this.Odabir.HeaderText = "";
+            this.Odabir.Name = "Odabir";
+            this.Odabir.TrueValue = "";
+            this.Odabir.Width = 50;
+            // 
+            // Id
+            // 
+            this.Id.HeaderText = "Id";
+            this.Id.Name = "Id";
+            this.Id.Visible = false;
+            // 
+            // TipId
+            // 
+            this.TipId.HeaderText = "TipId";
+            this.TipId.Name = "TipId";
+            this.TipId.Visible = false;
+            // 
+            // Naziv
+            // 
+            this.Naziv.HeaderText = "Naziv";
+            this.Naziv.Name = "Naziv";
+            this.Naziv.ReadOnly = true;
+            this.Naziv.Width = 340;
+            // 
+            // Datum
+            // 
+            this.Datum.HeaderText = "Datum";
+            this.Datum.Name = "Datum";
+            this.Datum.ReadOnly = true;
+            // 
+            // Tip
+            // 
+            this.Tip.HeaderText = "Tip";
+            this.Tip.Name = "Tip";
+            this.Tip.ReadOnly = true;
             // 
             // groupBox2
             // 
@@ -121,55 +172,6 @@
             this.txtGodina.Name = "txtGodina";
             this.txtGodina.Size = new System.Drawing.Size(124, 20);
             this.txtGodina.TabIndex = 0;
-            // 
-            // checkBoxAll
-            // 
-            this.checkBoxAll.AutoSize = true;
-            this.checkBoxAll.Location = new System.Drawing.Point(86, 36);
-            this.checkBoxAll.Name = "checkBoxAll";
-            this.checkBoxAll.Size = new System.Drawing.Size(15, 14);
-            this.checkBoxAll.TabIndex = 1;
-            this.checkBoxAll.UseVisualStyleBackColor = true;
-            this.checkBoxAll.Click += new System.EventHandler(this.CheckBoxAllClick);
-            // 
-            // Odabir
-            // 
-            this.Odabir.FalseValue = "";
-            this.Odabir.HeaderText = "";
-            this.Odabir.Name = "Odabir";
-            this.Odabir.TrueValue = "";
-            this.Odabir.Width = 50;
-            // 
-            // Id
-            // 
-            this.Id.HeaderText = "Id";
-            this.Id.Name = "Id";
-            this.Id.Visible = false;
-            // 
-            // TipId
-            // 
-            this.TipId.HeaderText = "TipId";
-            this.TipId.Name = "TipId";
-            this.TipId.Visible = false;
-            // 
-            // Naziv
-            // 
-            this.Naziv.HeaderText = "Naziv";
-            this.Naziv.Name = "Naziv";
-            this.Naziv.ReadOnly = true;
-            this.Naziv.Width = 340;
-            // 
-            // Datum
-            // 
-            this.Datum.HeaderText = "Datum";
-            this.Datum.Name = "Datum";
-            this.Datum.ReadOnly = true;
-            // 
-            // Tip
-            // 
-            this.Tip.HeaderText = "Tip";
-            this.Tip.Name = "Tip";
-            this.Tip.ReadOnly = true;
             // 
             // GeneratorNeradnihDanaForm
             // 

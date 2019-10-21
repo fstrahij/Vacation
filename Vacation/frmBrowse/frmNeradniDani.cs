@@ -13,6 +13,10 @@ namespace Vacation
 {
     public partial class NeradniDaniForm : Form
     {
+        private int _godina;
+
+        public int Godina { get => _godina; set => _godina = value; }
+
         public NeradniDaniForm()
         {
             InitializeComponent();
@@ -23,13 +27,13 @@ namespace Vacation
             dataGridView1.Rows.Clear();
             NeradniDan dan = new NeradniDan();
             TipNeradnihDana tip = new TipNeradnihDana();
-            foreach (var lista in dan.DajListu())
+            foreach (var lista in dan.DajListu(Godina))
             {
                 dataGridView1.Rows.Add(lista.Id,
-                                        TemplateId,
+                                        lista.TipId,
                                         lista.Naziv,
                                         lista.Datum,
-                                        tip.DajNazivTipa(dan.TipId)
+                                        tip.DajNazivTipa(lista.TipId)
                                         );
             }
             HasRows();
@@ -49,12 +53,17 @@ namespace Vacation
 
         private void NeradniDaniForm_Load(object sender, EventArgs e)
         {
-            UcitajPodatke();
             NeradniDan dan = new NeradniDan();
             foreach (var item in dan.DajGodine())
             {
                 comboBoxGodine.Items.Add(item);
             }
+        }
+
+        private void OdabirGodineSelected(object sender, EventArgs e)
+        {
+            Godina = int.Parse(comboBoxGodine.SelectedItem.ToString());
+            UcitajPodatke();
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)

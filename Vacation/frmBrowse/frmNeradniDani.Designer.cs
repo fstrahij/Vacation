@@ -34,13 +34,13 @@
             this.btnNovi = new System.Windows.Forms.Button();
             this.btnDeaktivirajSve = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.comboBoxGodine = new System.Windows.Forms.ComboBox();
             this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TemplateId = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TipId = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Naziv = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Datum = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Tip = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.comboBoxGodine = new System.Windows.Forms.ComboBox();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -103,7 +103,7 @@
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Id,
-            this.TemplateId,
+            this.TipId,
             this.Naziv,
             this.Datum,
             this.Tip});
@@ -115,6 +115,25 @@
             this.dataGridView1.TabIndex = 8;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.comboBoxGodine);
+            this.groupBox1.Location = new System.Drawing.Point(12, 12);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(179, 79);
+            this.groupBox1.TabIndex = 13;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Odabir godine";
+            // 
+            // comboBoxGodine
+            // 
+            this.comboBoxGodine.FormattingEnabled = true;
+            this.comboBoxGodine.Location = new System.Drawing.Point(29, 31);
+            this.comboBoxGodine.Name = "comboBoxGodine";
+            this.comboBoxGodine.Size = new System.Drawing.Size(121, 21);
+            this.comboBoxGodine.TabIndex = 0;
+            this.comboBoxGodine.SelectedIndexChanged += new System.EventHandler(this.OdabirGodineSelected);
+            // 
             // Id
             // 
             this.Id.HeaderText = "Id";
@@ -122,12 +141,12 @@
             this.Id.ReadOnly = true;
             this.Id.Visible = false;
             // 
-            // TemplateId
+            // TipId
             // 
-            this.TemplateId.HeaderText = "TemplateId";
-            this.TemplateId.Name = "TemplateId";
-            this.TemplateId.ReadOnly = true;
-            this.TemplateId.Visible = false;
+            this.TipId.HeaderText = "TemplateId";
+            this.TipId.Name = "TipId";
+            this.TipId.ReadOnly = true;
+            this.TipId.Visible = false;
             // 
             // Naziv
             // 
@@ -147,24 +166,6 @@
             this.Tip.HeaderText = "Tip";
             this.Tip.Name = "Tip";
             this.Tip.ReadOnly = true;
-            // 
-            // groupBox1
-            // 
-            this.groupBox1.Controls.Add(this.comboBoxGodine);
-            this.groupBox1.Location = new System.Drawing.Point(12, 12);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(179, 79);
-            this.groupBox1.TabIndex = 13;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Odabir godine";
-            // 
-            // comboBoxGodine
-            // 
-            this.comboBoxGodine.FormattingEnabled = true;
-            this.comboBoxGodine.Location = new System.Drawing.Point(29, 31);
-            this.comboBoxGodine.Name = "comboBoxGodine";
-            this.comboBoxGodine.Size = new System.Drawing.Size(121, 21);
-            this.comboBoxGodine.TabIndex = 0;
             // 
             // NeradniDaniForm
             // 
@@ -190,12 +191,12 @@
         private System.Windows.Forms.Button btnNovi;
         private System.Windows.Forms.Button btnDeaktivirajSve;
         private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.ComboBox comboBoxGodine;
         private System.Windows.Forms.DataGridViewTextBoxColumn Id;
-        private System.Windows.Forms.DataGridViewTextBoxColumn TemplateId;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TipId;
         private System.Windows.Forms.DataGridViewTextBoxColumn Naziv;
         private System.Windows.Forms.DataGridViewTextBoxColumn Datum;
         private System.Windows.Forms.DataGridViewTextBoxColumn Tip;
-        private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.ComboBox comboBoxGodine;
     }
 }

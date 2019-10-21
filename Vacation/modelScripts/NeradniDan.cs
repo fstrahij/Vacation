@@ -26,7 +26,7 @@ namespace Vacation.modelScripts
             Id = int.Parse(pRow["Id"].ToString());
             Naziv = pRow["Naziv"].ToString();
             Datum = pRow["Datum"].ToString();
-            TipId = pRow["TemplateId"].ToString();
+            TipId = pRow["TipId"].ToString();
         }
 
         public NeradniDan(int pId, string pNaziv, string pDatum, string pTemplateId)
@@ -43,13 +43,13 @@ namespace Vacation.modelScripts
             if (Id == 0)
             {
                 sqlUpit = "INSERT INTO NeradniDani(Naziv, Datum, TipId) " +
-                            "VALUES('" + Naziv + "', " + Datum + ", " + TipId + ")";
+                            "VALUES('" + Naziv + "', '" + Datum + "', " + TipId + ")";
             }
             else
             {
                 sqlUpit = "UPDATE NeradniDani SET Naziv = '" + Naziv
-                            + "', Datum = " + Datum
-                            + ", TipId = " + TipId
+                            + "', Datum = '" + Datum
+                            + "', TipId = " + TipId
                             + " WHERE Id = " + Id;
             }
             DatabaseConnection.Instance.IzvrsiUpit(sqlUpit);
@@ -61,9 +61,9 @@ namespace Vacation.modelScripts
             DatabaseConnection.Instance.IzvrsiUpit(sqlUpit);
         }
 
-        public DataTable DohvatiPodatke()
+        public DataTable DohvatiPodatke(int pGodina)
         {
-            string sqlUpit = "SELECT * FROM NeradniDani WHERE Aktivan = 1";
+            string sqlUpit = "SELECT * FROM NeradniDani WHERE Aktivan = 1 AND YEAR(DATUM) = " + pGodina;
             return DatabaseConnection.Instance.DohvatiPodatke(sqlUpit);
         }
 
@@ -73,10 +73,10 @@ namespace Vacation.modelScripts
             return DatabaseConnection.Instance.DohvatiPodatke(sqlUpit);
         }
 
-        public List<NeradniDan> DajListu()
+        public List<NeradniDan> DajListu(int pGodina)
         {
             List<NeradniDan> lista = new List<NeradniDan>();
-            foreach (DataRow row in DohvatiPodatke().Rows)
+            foreach (DataRow row in DohvatiPodatke(pGodina).Rows)
             {
                 lista.Add(new NeradniDan(row));
             }
@@ -89,7 +89,7 @@ namespace Vacation.modelScripts
             string godina = "";
             foreach (DataRow row in DohvatiGodine().Rows)
             {
-                godina= row.ToString();
+                godina= row["godina"].ToString();
                 lista.Add(godina);
             }
             return lista;

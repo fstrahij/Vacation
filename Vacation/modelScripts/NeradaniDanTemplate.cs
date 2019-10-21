@@ -25,8 +25,11 @@ namespace Vacation
         private NeradaniDanTemplate(DataRow pRow)
         {        
             Id = int.Parse(pRow["Id"].ToString());
-            Dan = pRow["Dan"].ToString();
-            Mjesec = pRow["Mjesec"].ToString();
+            
+            Dan = ( !string.IsNullOrWhiteSpace(pRow["Dan"].ToString()) &&
+                        int.Parse(pRow["Dan"].ToString()) < 10) ? "0" + pRow["Dan"].ToString() : pRow["Dan"].ToString();
+            Mjesec = (!string.IsNullOrWhiteSpace(pRow["Mjesec"].ToString()) && 
+                        int.Parse(pRow["Mjesec"].ToString()) < 10) ? "0" + pRow["Mjesec"].ToString() : pRow["Mjesec"].ToString();
             TipId = pRow["TipId"].ToString();
             Naziv = pRow["Naziv"].ToString();
         }
@@ -34,8 +37,8 @@ namespace Vacation
         public NeradaniDanTemplate(int pId, string pDan, string pMjesec, string pTipId, string pNaziv)
         {
             Id = pId;
-            Dan = pDan;
-            Mjesec = pMjesec;
+            Dan = (!string.IsNullOrWhiteSpace(pDan) && int.Parse(pDan) < 10) ? "0" + pDan : pDan;
+            Mjesec = (!string.IsNullOrWhiteSpace(pMjesec) && int.Parse(pMjesec) < 10) ? "0" + pMjesec : pMjesec;
             TipId = pTipId;
             Naziv = pNaziv;
         }
