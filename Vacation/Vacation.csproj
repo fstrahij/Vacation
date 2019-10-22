@@ -46,6 +46,24 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="customScripts\DatabaseConnection.cs" />
+    <Compile Include="frmBrowse\frmGodisnji.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmBrowse\frmGodisnji.Designer.cs">
+      <DependentUpon>frmGodisnji.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmBrowse\frmTipoviGodisnjih.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmBrowse\frmTipoviGodisnjih.Designer.cs">
+      <DependentUpon>frmTipoviGodisnjih.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmBrowse\frmZaposlenici.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmBrowse\frmZaposlenici.Designer.cs">
+      <DependentUpon>frmZaposlenici.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmEdit\frmGeneratorNeradnihDana.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -58,12 +76,19 @@
     <Compile Include="frmEdit\frmTemplateEditor.Designer.cs">
       <DependentUpon>frmTemplateEditor.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmEdit\frmZaposlenikEditor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmEdit\frmZaposlenikEditor.Designer.cs">
+      <DependentUpon>frmZaposlenikEditor.cs</DependentUpon>
+    </Compile>
     <Compile Include="GlavniMeni.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="GlavniMeni.Designer.cs">
       <DependentUpon>GlavniMeni.cs</DependentUpon>
     </Compile>
+    <Compile Include="modelScripts\Godisnji.cs" />
     <Compile Include="modelScripts\NeradaniDanTemplate.cs" />
     <Compile Include="frmBrowse\frmNeradniDani.cs">
       <SubType>Form</SubType>
@@ -72,6 +97,8 @@
       <DependentUpon>frmNeradniDani.cs</DependentUpon>
     </Compile>
     <Compile Include="modelScripts\NeradniDan.cs" />
+    <Compile Include="modelScripts\Spol.cs" />
+    <Compile Include="modelScripts\Zaposlenik.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="frmBrowse\frmNeradniDaniTemplate.cs">
@@ -93,14 +120,26 @@
     <Compile Include="frmBrowse\frmTipoviNeradnihDana.Designer.cs">
       <DependentUpon>frmTipoviNeradnihDana.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="frmBrowse\frmGodisnji.resx">
+      <DependentUpon>frmGodisnji.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmBrowse\frmNeradniDaniTemplate.resx">
       <DependentUpon>frmNeradniDaniTemplate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmBrowse\frmTipoviGodisnjih.resx">
+      <DependentUpon>frmTipoviGodisnjih.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmBrowse\frmZaposlenici.resx">
+      <DependentUpon>frmZaposlenici.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmEdit\frmGeneratorNeradnihDana.resx">
       <DependentUpon>frmGeneratorNeradnihDana.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmEdit\frmTemplateEditor.resx">
       <DependentUpon>frmTemplateEditor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmEdit\frmZaposlenikEditor.resx">
+      <DependentUpon>frmZaposlenikEditor.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GlavniMeni.resx">
       <DependentUpon>GlavniMeni.cs</DependentUpon>

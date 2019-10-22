@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Vacation.frmBrowse;
 
 namespace Vacation
 {
@@ -47,6 +48,37 @@ namespace Vacation
             forma.MdiParent = this;
             forma.WindowState = FormWindowState.Maximized;
             forma.Show();
+        }
+
+        private void pregledToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            frmZaposlenici forma = new frmZaposlenici();
+            forma.MdiParent = this;
+            forma.WindowState = FormWindowState.Maximized;
+            forma.Show();
+        }
+
+        private void firmeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void noviToolStripMenuItem1_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pregledToolStripMenuItem2_Click(object sender, EventArgs e)
+        {
+            frmGodisnji forma = new frmGodisnji();
+            forma.MdiParent = this;
+            forma.WindowState = FormWindowState.Maximized;
+            forma.Show();
+        }
+
+        private void tipoviToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

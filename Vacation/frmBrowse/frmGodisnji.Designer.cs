@@ -1,6 +1,6 @@
-﻿namespace Vacation
+﻿namespace Vacation.frmBrowse
 {
-    partial class NeradniDaniForm
+    partial class frmGodisnji
     {
         /// <summary>
         /// Required designer variable.
@@ -37,10 +37,17 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.comboBoxGodine = new System.Windows.Forms.ComboBox();
             this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TipId = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Naziv = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Datum = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Tip = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ZaposlenikId = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ZaposlenikGodisnjiId = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Ime = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Prezime = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Adresa = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Oib = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DatumOd = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DatumDo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.UkupnoDana = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.OstaloDana = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Godina = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -53,16 +60,16 @@
             this.groupBox2.Controls.Add(this.btnNovi);
             this.groupBox2.Controls.Add(this.btnDeaktivirajSve);
             this.groupBox2.Controls.Add(this.dataGridView1);
-            this.groupBox2.Location = new System.Drawing.Point(211, 12);
+            this.groupBox2.Location = new System.Drawing.Point(304, 25);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(555, 416);
-            this.groupBox2.TabIndex = 1;
+            this.groupBox2.Size = new System.Drawing.Size(754, 416);
+            this.groupBox2.TabIndex = 14;
             this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Neradni dani";
+            this.groupBox2.Text = "Godišnji";
             // 
             // btnDeaktiviraj
             // 
-            this.btnDeaktiviraj.Location = new System.Drawing.Point(360, 29);
+            this.btnDeaktiviraj.Location = new System.Drawing.Point(558, 29);
             this.btnDeaktiviraj.Name = "btnDeaktiviraj";
             this.btnDeaktiviraj.Size = new System.Drawing.Size(77, 23);
             this.btnDeaktiviraj.TabIndex = 12;
@@ -89,7 +96,7 @@
             // 
             // btnDeaktivirajSve
             // 
-            this.btnDeaktivirajSve.Location = new System.Drawing.Point(443, 29);
+            this.btnDeaktivirajSve.Location = new System.Drawing.Point(641, 29);
             this.btnDeaktivirajSve.Name = "btnDeaktivirajSve";
             this.btnDeaktivirajSve.Size = new System.Drawing.Size(88, 23);
             this.btnDeaktivirajSve.TabIndex = 9;
@@ -103,36 +110,41 @@
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Id,
-            this.TipId,
-            this.Naziv,
-            this.Datum,
-            this.Tip});
+            this.ZaposlenikId,
+            this.ZaposlenikGodisnjiId,
+            this.Ime,
+            this.Prezime,
+            this.Adresa,
+            this.Oib,
+            this.DatumOd,
+            this.DatumDo,
+            this.UkupnoDana,
+            this.OstaloDana,
+            this.Godina});
             this.dataGridView1.Location = new System.Drawing.Point(25, 76);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(506, 310);
+            this.dataGridView1.Size = new System.Drawing.Size(704, 310);
             this.dataGridView1.TabIndex = 8;
-            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.comboBoxGodine);
-            this.groupBox1.Location = new System.Drawing.Point(12, 12);
+            this.groupBox1.Location = new System.Drawing.Point(35, 25);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(179, 79);
-            this.groupBox1.TabIndex = 13;
+            this.groupBox1.Size = new System.Drawing.Size(229, 79);
+            this.groupBox1.TabIndex = 15;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Odabir godine";
+            this.groupBox1.Text = "Odabir zaposlenika";
             // 
             // comboBoxGodine
             // 
             this.comboBoxGodine.FormattingEnabled = true;
             this.comboBoxGodine.Location = new System.Drawing.Point(29, 31);
             this.comboBoxGodine.Name = "comboBoxGodine";
-            this.comboBoxGodine.Size = new System.Drawing.Size(121, 21);
+            this.comboBoxGodine.Size = new System.Drawing.Size(175, 21);
             this.comboBoxGodine.TabIndex = 0;
-            this.comboBoxGodine.SelectedIndexChanged += new System.EventHandler(this.OdabirGodineSelected);
             // 
             // Id
             // 
@@ -141,42 +153,91 @@
             this.Id.ReadOnly = true;
             this.Id.Visible = false;
             // 
-            // TipId
+            // ZaposlenikId
             // 
-            this.TipId.HeaderText = "TipId";
-            this.TipId.Name = "TipId";
-            this.TipId.ReadOnly = true;
-            this.TipId.Visible = false;
+            this.ZaposlenikId.HeaderText = "ZaposlenikId";
+            this.ZaposlenikId.Name = "ZaposlenikId";
+            this.ZaposlenikId.ReadOnly = true;
+            this.ZaposlenikId.Visible = false;
             // 
-            // Naziv
+            // ZaposlenikGodisnjiId
             // 
-            this.Naziv.HeaderText = "Naziv";
-            this.Naziv.Name = "Naziv";
-            this.Naziv.ReadOnly = true;
-            this.Naziv.Width = 260;
+            this.ZaposlenikGodisnjiId.HeaderText = "ZaposlenikGodisnjiId";
+            this.ZaposlenikGodisnjiId.Name = "ZaposlenikGodisnjiId";
+            this.ZaposlenikGodisnjiId.ReadOnly = true;
+            this.ZaposlenikGodisnjiId.Visible = false;
             // 
-            // Datum
+            // Ime
             // 
-            this.Datum.HeaderText = "Datum";
-            this.Datum.Name = "Datum";
-            this.Datum.ReadOnly = true;
+            this.Ime.HeaderText = "Ime";
+            this.Ime.Name = "Ime";
+            this.Ime.ReadOnly = true;
+            this.Ime.Width = 60;
             // 
-            // Tip
+            // Prezime
             // 
-            this.Tip.HeaderText = "Tip";
-            this.Tip.Name = "Tip";
-            this.Tip.ReadOnly = true;
+            this.Prezime.HeaderText = "Prezime";
+            this.Prezime.Name = "Prezime";
+            this.Prezime.ReadOnly = true;
+            this.Prezime.Width = 70;
             // 
-            // NeradniDaniForm
+            // Adresa
+            // 
+            this.Adresa.HeaderText = "Adresa";
+            this.Adresa.Name = "Adresa";
+            this.Adresa.ReadOnly = true;
+            // 
+            // Oib
+            // 
+            this.Oib.HeaderText = "Oib";
+            this.Oib.Name = "Oib";
+            this.Oib.ReadOnly = true;
+            this.Oib.Width = 90;
+            // 
+            // DatumOd
+            // 
+            this.DatumOd.HeaderText = "DatumOd";
+            this.DatumOd.Name = "DatumOd";
+            this.DatumOd.ReadOnly = true;
+            this.DatumOd.Width = 90;
+            // 
+            // DatumDo
+            // 
+            this.DatumDo.HeaderText = "DatumDo";
+            this.DatumDo.Name = "DatumDo";
+            this.DatumDo.ReadOnly = true;
+            this.DatumDo.Width = 90;
+            // 
+            // UkupnoDana
+            // 
+            this.UkupnoDana.HeaderText = "Ukupno Dana";
+            this.UkupnoDana.Name = "UkupnoDana";
+            this.UkupnoDana.ReadOnly = true;
+            this.UkupnoDana.Width = 50;
+            // 
+            // OstaloDana
+            // 
+            this.OstaloDana.HeaderText = "Ostalo Dana";
+            this.OstaloDana.Name = "OstaloDana";
+            this.OstaloDana.ReadOnly = true;
+            this.OstaloDana.Width = 50;
+            // 
+            // Godina
+            // 
+            this.Godina.HeaderText = "Godina";
+            this.Godina.Name = "Godina";
+            this.Godina.ReadOnly = true;
+            this.Godina.Width = 50;
+            // 
+            // frmGodisnji
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.groupBox1);
+            this.ClientSize = new System.Drawing.Size(1094, 550);
             this.Controls.Add(this.groupBox2);
-            this.Name = "NeradniDaniForm";
-            this.Text = "NeradniDaniForm";
-            this.Load += new System.EventHandler(this.NeradniDaniForm_Load);
+            this.Controls.Add(this.groupBox1);
+            this.Name = "frmGodisnji";
+            this.Text = "frmGodisnji";
             this.groupBox2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.groupBox1.ResumeLayout(false);
@@ -185,6 +246,7 @@
         }
 
         #endregion
+
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Button btnDeaktiviraj;
         private System.Windows.Forms.Button btnUredi;
@@ -194,9 +256,16 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.ComboBox comboBoxGodine;
         private System.Windows.Forms.DataGridViewTextBoxColumn Id;
-        private System.Windows.Forms.DataGridViewTextBoxColumn TipId;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Naziv;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Datum;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Tip;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ZaposlenikId;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ZaposlenikGodisnjiId;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Ime;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Prezime;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Adresa;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Oib;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DatumOd;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DatumDo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn UkupnoDana;
+        private System.Windows.Forms.DataGridViewTextBoxColumn OstaloDana;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Godina;
     }
 }
