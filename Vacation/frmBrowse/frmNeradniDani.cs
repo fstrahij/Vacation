@@ -15,7 +15,7 @@ namespace Vacation
     {
         private int _godina;
 
-        public int Godina { get => _godina; set => _godina = value; }
+        private int Godina { get => _godina; set => _godina = value; }
 
         public NeradniDaniForm()
         {

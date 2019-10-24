@@ -76,9 +76,12 @@ namespace Vacation
             forma.Show();
         }
 
-        private void tipoviToolStripMenuItem1_Click(object sender, EventArgs e)
+        private void zaposleniciGodisnjiToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-
+            frmZaposlenikGodisnji forma = new frmZaposlenikGodisnji();
+            forma.MdiParent = this;
+            forma.WindowState = FormWindowState.Maximized;
+            forma.Show();
         }
     }
 }

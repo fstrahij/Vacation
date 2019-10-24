@@ -91,6 +91,7 @@ namespace Vacation.modelScripts
 
         public String DajNazivSpola(int pSpolId)
         {
+            DohvatiSpolove();
             foreach (var row in Spolovi)
             {
                 if (row.Id == pSpolId)

@@ -35,14 +35,14 @@
             this.btnDeaktivirajSve = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.comboBoxGodine = new System.Windows.Forms.ComboBox();
+            this.comboBoxZaposlenici = new System.Windows.Forms.ComboBox();
+            this.comboBoxZaposleniciId = new System.Windows.Forms.ComboBox();
             this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ZaposlenikId = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ZaposlenikGodisnjiId = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Ime = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Prezime = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Adresa = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Oib = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Spol = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DatumOd = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DatumDo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.UkupnoDana = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -112,10 +112,9 @@
             this.Id,
             this.ZaposlenikId,
             this.ZaposlenikGodisnjiId,
-            this.Ime,
-            this.Prezime,
             this.Adresa,
             this.Oib,
+            this.Spol,
             this.DatumOd,
             this.DatumDo,
             this.UkupnoDana,
@@ -130,7 +129,8 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.comboBoxGodine);
+            this.groupBox1.Controls.Add(this.comboBoxZaposleniciId);
+            this.groupBox1.Controls.Add(this.comboBoxZaposlenici);
             this.groupBox1.Location = new System.Drawing.Point(35, 25);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(229, 79);
@@ -138,13 +138,23 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Odabir zaposlenika";
             // 
-            // comboBoxGodine
+            // comboBoxZaposlenici
             // 
-            this.comboBoxGodine.FormattingEnabled = true;
-            this.comboBoxGodine.Location = new System.Drawing.Point(29, 31);
-            this.comboBoxGodine.Name = "comboBoxGodine";
-            this.comboBoxGodine.Size = new System.Drawing.Size(175, 21);
-            this.comboBoxGodine.TabIndex = 0;
+            this.comboBoxZaposlenici.FormattingEnabled = true;
+            this.comboBoxZaposlenici.Location = new System.Drawing.Point(29, 31);
+            this.comboBoxZaposlenici.Name = "comboBoxZaposlenici";
+            this.comboBoxZaposlenici.Size = new System.Drawing.Size(175, 21);
+            this.comboBoxZaposlenici.TabIndex = 0;
+            this.comboBoxZaposlenici.SelectedIndexChanged += new System.EventHandler(this.ZaposlenikSelected);
+            // 
+            // comboBoxZaposleniciId
+            // 
+            this.comboBoxZaposleniciId.FormattingEnabled = true;
+            this.comboBoxZaposleniciId.Location = new System.Drawing.Point(29, 58);
+            this.comboBoxZaposleniciId.Name = "comboBoxZaposleniciId";
+            this.comboBoxZaposleniciId.Size = new System.Drawing.Size(175, 21);
+            this.comboBoxZaposleniciId.TabIndex = 1;
+            this.comboBoxZaposleniciId.Visible = false;
             // 
             // Id
             // 
@@ -167,20 +177,6 @@
             this.ZaposlenikGodisnjiId.ReadOnly = true;
             this.ZaposlenikGodisnjiId.Visible = false;
             // 
-            // Ime
-            // 
-            this.Ime.HeaderText = "Ime";
-            this.Ime.Name = "Ime";
-            this.Ime.ReadOnly = true;
-            this.Ime.Width = 60;
-            // 
-            // Prezime
-            // 
-            this.Prezime.HeaderText = "Prezime";
-            this.Prezime.Name = "Prezime";
-            this.Prezime.ReadOnly = true;
-            this.Prezime.Width = 70;
-            // 
             // Adresa
             // 
             this.Adresa.HeaderText = "Adresa";
@@ -192,35 +188,39 @@
             this.Oib.HeaderText = "Oib";
             this.Oib.Name = "Oib";
             this.Oib.ReadOnly = true;
-            this.Oib.Width = 90;
+            // 
+            // Spol
+            // 
+            this.Spol.HeaderText = "Spol";
+            this.Spol.Name = "Spol";
+            this.Spol.ReadOnly = true;
+            this.Spol.Width = 50;
             // 
             // DatumOd
             // 
             this.DatumOd.HeaderText = "DatumOd";
             this.DatumOd.Name = "DatumOd";
             this.DatumOd.ReadOnly = true;
-            this.DatumOd.Width = 90;
             // 
             // DatumDo
             // 
             this.DatumDo.HeaderText = "DatumDo";
             this.DatumDo.Name = "DatumDo";
             this.DatumDo.ReadOnly = true;
-            this.DatumDo.Width = 90;
             // 
             // UkupnoDana
             // 
             this.UkupnoDana.HeaderText = "Ukupno Dana";
             this.UkupnoDana.Name = "UkupnoDana";
             this.UkupnoDana.ReadOnly = true;
-            this.UkupnoDana.Width = 50;
+            this.UkupnoDana.Width = 60;
             // 
             // OstaloDana
             // 
             this.OstaloDana.HeaderText = "Ostalo Dana";
             this.OstaloDana.Name = "OstaloDana";
             this.OstaloDana.ReadOnly = true;
-            this.OstaloDana.Width = 50;
+            this.OstaloDana.Width = 60;
             // 
             // Godina
             // 
@@ -238,6 +238,7 @@
             this.Controls.Add(this.groupBox1);
             this.Name = "frmGodisnji";
             this.Text = "frmGodisnji";
+            this.Load += new System.EventHandler(this.frmGodisnji_Load);
             this.groupBox2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.groupBox1.ResumeLayout(false);
@@ -254,14 +255,14 @@
         private System.Windows.Forms.Button btnDeaktivirajSve;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.ComboBox comboBoxGodine;
+        private System.Windows.Forms.ComboBox comboBoxZaposlenici;
+        private System.Windows.Forms.ComboBox comboBoxZaposleniciId;
         private System.Windows.Forms.DataGridViewTextBoxColumn Id;
         private System.Windows.Forms.DataGridViewTextBoxColumn ZaposlenikId;
         private System.Windows.Forms.DataGridViewTextBoxColumn ZaposlenikGodisnjiId;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Ime;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Prezime;
         private System.Windows.Forms.DataGridViewTextBoxColumn Adresa;
         private System.Windows.Forms.DataGridViewTextBoxColumn Oib;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Spol;
         private System.Windows.Forms.DataGridViewTextBoxColumn DatumOd;
         private System.Windows.Forms.DataGridViewTextBoxColumn DatumDo;
         private System.Windows.Forms.DataGridViewTextBoxColumn UkupnoDana;

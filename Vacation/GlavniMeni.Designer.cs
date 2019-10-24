@@ -33,14 +33,14 @@
             this.pregledToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.firmeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.godišnjiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.noviToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.pregledToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
+            this.tipoviToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.neradniDaniToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.noviToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pregledToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.templejtiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tipoviToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.noviToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.pregledToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
-            this.tipoviToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -68,14 +68,14 @@
             // pregledToolStripMenuItem1
             // 
             this.pregledToolStripMenuItem1.Name = "pregledToolStripMenuItem1";
-            this.pregledToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.pregledToolStripMenuItem1.Size = new System.Drawing.Size(114, 22);
             this.pregledToolStripMenuItem1.Text = "Pregled";
             this.pregledToolStripMenuItem1.Click += new System.EventHandler(this.pregledToolStripMenuItem1_Click);
             // 
             // firmeToolStripMenuItem
             // 
             this.firmeToolStripMenuItem.Name = "firmeToolStripMenuItem";
-            this.firmeToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.firmeToolStripMenuItem.Size = new System.Drawing.Size(114, 22);
             this.firmeToolStripMenuItem.Text = "Firme";
             this.firmeToolStripMenuItem.Click += new System.EventHandler(this.firmeToolStripMenuItem_Click);
             // 
@@ -88,6 +88,27 @@
             this.godišnjiToolStripMenuItem.Name = "godišnjiToolStripMenuItem";
             this.godišnjiToolStripMenuItem.Size = new System.Drawing.Size(62, 20);
             this.godišnjiToolStripMenuItem.Text = "Godišnji";
+            // 
+            // noviToolStripMenuItem1
+            // 
+            this.noviToolStripMenuItem1.Name = "noviToolStripMenuItem1";
+            this.noviToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.noviToolStripMenuItem1.Text = "Novi";
+            this.noviToolStripMenuItem1.Click += new System.EventHandler(this.noviToolStripMenuItem1_Click_1);
+            // 
+            // pregledToolStripMenuItem2
+            // 
+            this.pregledToolStripMenuItem2.Name = "pregledToolStripMenuItem2";
+            this.pregledToolStripMenuItem2.Size = new System.Drawing.Size(180, 22);
+            this.pregledToolStripMenuItem2.Text = "Pregled";
+            this.pregledToolStripMenuItem2.Click += new System.EventHandler(this.pregledToolStripMenuItem2_Click);
+            // 
+            // tipoviToolStripMenuItem1
+            // 
+            this.tipoviToolStripMenuItem1.Name = "tipoviToolStripMenuItem1";
+            this.tipoviToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.tipoviToolStripMenuItem1.Text = "Zaposlenik Godisnji";
+            this.tipoviToolStripMenuItem1.Click += new System.EventHandler(this.zaposleniciGodisnjiToolStripMenuItem1_Click);
             // 
             // neradniDaniToolStripMenuItem
             // 
@@ -127,27 +148,6 @@
             this.tipoviToolStripMenuItem.Size = new System.Drawing.Size(123, 22);
             this.tipoviToolStripMenuItem.Text = "Tipovi";
             this.tipoviToolStripMenuItem.Click += new System.EventHandler(this.tipoviToolStripMenuItem_Click);
-            // 
-            // noviToolStripMenuItem1
-            // 
-            this.noviToolStripMenuItem1.Name = "noviToolStripMenuItem1";
-            this.noviToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
-            this.noviToolStripMenuItem1.Text = "Novi";
-            this.noviToolStripMenuItem1.Click += new System.EventHandler(this.noviToolStripMenuItem1_Click_1);
-            // 
-            // pregledToolStripMenuItem2
-            // 
-            this.pregledToolStripMenuItem2.Name = "pregledToolStripMenuItem2";
-            this.pregledToolStripMenuItem2.Size = new System.Drawing.Size(180, 22);
-            this.pregledToolStripMenuItem2.Text = "Pregled";
-            this.pregledToolStripMenuItem2.Click += new System.EventHandler(this.pregledToolStripMenuItem2_Click);
-            // 
-            // tipoviToolStripMenuItem1
-            // 
-            this.tipoviToolStripMenuItem1.Name = "tipoviToolStripMenuItem1";
-            this.tipoviToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
-            this.tipoviToolStripMenuItem1.Text = "Tipovi";
-            this.tipoviToolStripMenuItem1.Click += new System.EventHandler(this.tipoviToolStripMenuItem1_Click);
             // 
             // GlavniMeni
             // 
