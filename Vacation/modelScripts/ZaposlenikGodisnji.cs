@@ -94,5 +94,37 @@ namespace Vacation.modelScripts
             }
             return null;
         }
+
+        public string DajSljedecuGodinu(int pId)
+        {
+            string sqlUpit = "SELECT MAX(GODINA) + 1 as Godina FROM ZaposlenikGodisnji WHERE Aktivan = 1 AND ZaposlenikId = " + pId;
+            DataTable dt = DatabaseConnection.Instance.DohvatiPodatke(sqlUpit);
+
+            string godina = "";
+            foreach (DataRow row in dt.Rows)
+            {
+                godina = row["Godina"].ToString();
+                if (!string.IsNullOrEmpty(godina))
+                {
+                    return godina;
+                }
+            }
+            return DateTime.Now.Year.ToString();
+        }
+
+        public string IzracunajBrojaDana(int pId)
+        {
+            string sqlUpit = "SELECT dbo.IzracunajBrojDana(" + pId + ") as BrojDana";
+            DataTable dt = DatabaseConnection.Instance.DohvatiPodatke(sqlUpit);
+
+            string godina = "";
+            foreach (DataRow row in dt.Rows)
+            {
+                godina = row["BrojDana"].ToString();
+                return godina;
+            }
+            return null;
+        }
+
     }
 }

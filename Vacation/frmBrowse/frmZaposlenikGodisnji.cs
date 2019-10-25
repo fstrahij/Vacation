@@ -39,7 +39,7 @@ namespace Vacation.frmBrowse
                                         lista.BrojDana
                                         );
             }
-            HasRows();
+            HasRows();  
         }
 
         private void HasRows()

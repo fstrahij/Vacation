@@ -34,9 +34,6 @@
             this.btnNovi = new System.Windows.Forms.Button();
             this.btnDeaktivirajSve = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.comboBoxZaposlenici = new System.Windows.Forms.ComboBox();
-            this.comboBoxZaposleniciId = new System.Windows.Forms.ComboBox();
             this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ZaposlenikId = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ZaposlenikGodisnjiId = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -48,6 +45,9 @@
             this.UkupnoDana = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.OstaloDana = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Godina = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.comboBoxZaposleniciId = new System.Windows.Forms.ComboBox();
+            this.comboBoxZaposlenici = new System.Windows.Forms.ComboBox();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -93,6 +93,7 @@
             this.btnNovi.TabIndex = 10;
             this.btnNovi.Text = "Novi";
             this.btnNovi.UseVisualStyleBackColor = true;
+            this.btnNovi.Click += new System.EventHandler(this.NoviClick);
             // 
             // btnDeaktivirajSve
             // 
@@ -126,35 +127,6 @@
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView1.Size = new System.Drawing.Size(704, 310);
             this.dataGridView1.TabIndex = 8;
-            // 
-            // groupBox1
-            // 
-            this.groupBox1.Controls.Add(this.comboBoxZaposleniciId);
-            this.groupBox1.Controls.Add(this.comboBoxZaposlenici);
-            this.groupBox1.Location = new System.Drawing.Point(35, 25);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(229, 79);
-            this.groupBox1.TabIndex = 15;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Odabir zaposlenika";
-            // 
-            // comboBoxZaposlenici
-            // 
-            this.comboBoxZaposlenici.FormattingEnabled = true;
-            this.comboBoxZaposlenici.Location = new System.Drawing.Point(29, 31);
-            this.comboBoxZaposlenici.Name = "comboBoxZaposlenici";
-            this.comboBoxZaposlenici.Size = new System.Drawing.Size(175, 21);
-            this.comboBoxZaposlenici.TabIndex = 0;
-            this.comboBoxZaposlenici.SelectedIndexChanged += new System.EventHandler(this.ZaposlenikSelected);
-            // 
-            // comboBoxZaposleniciId
-            // 
-            this.comboBoxZaposleniciId.FormattingEnabled = true;
-            this.comboBoxZaposleniciId.Location = new System.Drawing.Point(29, 58);
-            this.comboBoxZaposleniciId.Name = "comboBoxZaposleniciId";
-            this.comboBoxZaposleniciId.Size = new System.Drawing.Size(175, 21);
-            this.comboBoxZaposleniciId.TabIndex = 1;
-            this.comboBoxZaposleniciId.Visible = false;
             // 
             // Id
             // 
@@ -228,6 +200,35 @@
             this.Godina.Name = "Godina";
             this.Godina.ReadOnly = true;
             this.Godina.Width = 50;
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.comboBoxZaposleniciId);
+            this.groupBox1.Controls.Add(this.comboBoxZaposlenici);
+            this.groupBox1.Location = new System.Drawing.Point(35, 25);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(229, 79);
+            this.groupBox1.TabIndex = 15;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Odabir zaposlenika";
+            // 
+            // comboBoxZaposleniciId
+            // 
+            this.comboBoxZaposleniciId.FormattingEnabled = true;
+            this.comboBoxZaposleniciId.Location = new System.Drawing.Point(29, 58);
+            this.comboBoxZaposleniciId.Name = "comboBoxZaposleniciId";
+            this.comboBoxZaposleniciId.Size = new System.Drawing.Size(175, 21);
+            this.comboBoxZaposleniciId.TabIndex = 1;
+            this.comboBoxZaposleniciId.Visible = false;
+            // 
+            // comboBoxZaposlenici
+            // 
+            this.comboBoxZaposlenici.FormattingEnabled = true;
+            this.comboBoxZaposlenici.Location = new System.Drawing.Point(29, 31);
+            this.comboBoxZaposlenici.Name = "comboBoxZaposlenici";
+            this.comboBoxZaposlenici.Size = new System.Drawing.Size(175, 21);
+            this.comboBoxZaposlenici.TabIndex = 0;
+            this.comboBoxZaposlenici.SelectedIndexChanged += new System.EventHandler(this.ZaposlenikSelected);
             // 
             // frmGodisnji
             // 

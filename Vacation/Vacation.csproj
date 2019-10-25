@@ -76,6 +76,12 @@
     <Compile Include="frmEdit\frmGeneratorNeradnihDana.Designer.cs">
       <DependentUpon>frmGeneratorNeradnihDana.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmEdit\frmGodisnjiEditor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmEdit\frmGodisnjiEditor.Designer.cs">
+      <DependentUpon>frmGodisnjiEditor.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmEdit\frmTemplateEditor.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -150,6 +156,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmEdit\frmGeneratorNeradnihDana.resx">
       <DependentUpon>frmGeneratorNeradnihDana.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmEdit\frmGodisnjiEditor.resx">
+      <DependentUpon>frmGodisnjiEditor.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmEdit\frmTemplateEditor.resx">
       <DependentUpon>frmTemplateEditor.cs</DependentUpon>

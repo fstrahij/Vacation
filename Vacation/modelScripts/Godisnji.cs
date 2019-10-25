@@ -89,5 +89,33 @@ namespace Vacation.modelScripts
             }
             return lista;
         }
+
+        public string DajRaspoloziviBrojDana(int pId)
+        {
+            string sqlUpit = "SELECT dbo.RaspoloziviBrojDanaUGodini(" + pId + ") as BrojDana";
+            DataTable dt = DatabaseConnection.Instance.DohvatiPodatke(sqlUpit);
+
+            string godina = "";
+            foreach (DataRow row in dt.Rows)
+            {
+                godina = row["BrojDana"].ToString();
+                return godina;
+            }
+            return null;
+        }
+
+        public string DajIskoristeniBrojDana(int pId)
+        {
+            string sqlUpit = "SELECT dbo.RaspoloziviBrojDanaUGodini(" + pId + ") as BrojDana";
+            DataTable dt = DatabaseConnection.Instance.DohvatiPodatke(sqlUpit);
+
+            string godina = "";
+            foreach (DataRow row in dt.Rows)
+            {
+                godina = row["BrojDana"].ToString();
+                return godina;
+            }
+            return null;
+        }
     }
 }

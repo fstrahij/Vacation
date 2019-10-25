@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Vacation.frmEdit;
 using Vacation.modelScripts;
 
 namespace Vacation.frmBrowse
@@ -61,12 +62,16 @@ namespace Vacation.frmBrowse
         private void frmGodisnji_Load(object sender, EventArgs e)
         {
             Zaposlenik zaposlenici = new Zaposlenik();
+            ZaposlenikGodisnji zaposleniciGodisnji = new ZaposlenikGodisnji();
             string naziv = "";
             foreach (var item in zaposlenici.DajListu())
             {
-                naziv = item.Ime + " " + item.Prezime;
-                comboBoxZaposlenici.Items.Add(naziv);
-                comboBoxZaposleniciId.Items.Add(item.Id);
+                if (zaposleniciGodisnji.DajListu().FindIndex(x => x.ZaposlenikId == item.Id.ToString()) >= 0)
+                {
+                    naziv = item.Ime + " " + item.Prezime;
+                    comboBoxZaposlenici.Items.Add(naziv);
+                    comboBoxZaposleniciId.Items.Add(item.Id);
+                }
             }
         }
 
@@ -74,6 +79,14 @@ namespace Vacation.frmBrowse
         {
             int zaposlenikId = int.Parse(comboBoxZaposleniciId.Items[comboBoxZaposlenici.SelectedIndex].ToString());
             UcitajPodatke(zaposlenikId);
+        }
+
+        private void NoviClick(object sender, EventArgs e)
+        {
+            using (var forma = new frmGodisnjiEditor(this, btnNovi.Text))
+            {
+                forma.ShowDialog();
+            }
         }
     }
 }
