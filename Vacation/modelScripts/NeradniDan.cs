@@ -63,7 +63,7 @@ namespace Vacation.modelScripts
 
         public DataTable DohvatiPodatke(int pGodina)
         {
-            string sqlUpit = "SELECT * FROM NeradniDani WHERE Aktivan = 1 AND YEAR(DATUM) = " + pGodina;
+            string sqlUpit = "SELECT * FROM NeradniDani WHERE Aktivan = 1 AND YEAR(Datum) = " + pGodina;
             return DatabaseConnection.Instance.DohvatiPodatke(sqlUpit);
         }
 
