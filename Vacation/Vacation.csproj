@@ -82,6 +82,12 @@
     <Compile Include="frmEdit\frmGodisnjiEditor.Designer.cs">
       <DependentUpon>frmGodisnjiEditor.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmEdit\frmNeradniDaniEditor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmEdit\frmNeradniDaniEditor.Designer.cs">
+      <DependentUpon>frmNeradniDaniEditor.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmEdit\frmTemplateEditor.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -159,6 +165,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmEdit\frmGodisnjiEditor.resx">
       <DependentUpon>frmGodisnjiEditor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmEdit\frmNeradniDaniEditor.resx">
+      <DependentUpon>frmNeradniDaniEditor.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmEdit\frmTemplateEditor.resx">
       <DependentUpon>frmTemplateEditor.cs</DependentUpon>
