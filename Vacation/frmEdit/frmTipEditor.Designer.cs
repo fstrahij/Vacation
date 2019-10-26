@@ -30,17 +30,18 @@
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.txtBoja = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.txtNaziv = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.btnOdabirBoje = new System.Windows.Forms.Button();
+            this.colorDialog1 = new System.Windows.Forms.ColorDialog();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.btnOdabirBoje);
             this.groupBox1.Controls.Add(this.txtBoja);
-            this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.button1);
             this.groupBox1.Controls.Add(this.txtNaziv);
             this.groupBox1.Controls.Add(this.label1);
@@ -53,23 +54,15 @@
             // 
             // txtBoja
             // 
-            this.txtBoja.Location = new System.Drawing.Point(126, 112);
+            this.txtBoja.Location = new System.Drawing.Point(126, 19);
             this.txtBoja.Name = "txtBoja";
             this.txtBoja.Size = new System.Drawing.Size(100, 20);
             this.txtBoja.TabIndex = 4;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(70, 115);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(28, 13);
-            this.label2.TabIndex = 3;
-            this.label2.Text = "Boja";
+            this.txtBoja.Visible = false;
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(102, 199);
+            this.button1.Location = new System.Drawing.Point(126, 161);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 2;
@@ -93,6 +86,16 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Naziv";
             // 
+            // btnOdabirBoje
+            // 
+            this.btnOdabirBoje.Location = new System.Drawing.Point(126, 116);
+            this.btnOdabirBoje.Name = "btnOdabirBoje";
+            this.btnOdabirBoje.Size = new System.Drawing.Size(75, 23);
+            this.btnOdabirBoje.TabIndex = 5;
+            this.btnOdabirBoje.Text = "Odaberi boju";
+            this.btnOdabirBoje.UseVisualStyleBackColor = true;
+            this.btnOdabirBoje.Click += new System.EventHandler(this.btnOdabirBoje_Click);
+            // 
             // TipEditor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -112,9 +115,10 @@
 
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.TextBox txtBoja;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.TextBox txtNaziv;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button btnOdabirBoje;
+        private System.Windows.Forms.ColorDialog colorDialog1;
     }
 }

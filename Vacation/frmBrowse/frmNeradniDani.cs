@@ -38,6 +38,22 @@ namespace Vacation.frmBrowse
                                         );
             }
             HasRows();
+            PostaviBoju(tip);
+        }
+
+        private void PostaviBoju(TipNeradnihDana tip)
+        {
+            string boja = "";
+            string id = "";
+            foreach (DataGridViewRow row in dataGridView1.Rows)
+            {
+                id = row.Cells["TipId"].Value.ToString();
+                boja = tip.DajBojuTipa(id);
+                if (!string.IsNullOrWhiteSpace(boja))
+                {
+                    row.DefaultCellStyle.BackColor = ColorTranslator.FromHtml(boja);
+                }
+            }
         }
 
         public void UcitajGodine()

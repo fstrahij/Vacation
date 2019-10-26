@@ -53,14 +53,14 @@
             this.groupBox1.Controls.Add(this.dataGridView1);
             this.groupBox1.Location = new System.Drawing.Point(29, 19);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(743, 412);
+            this.groupBox1.Size = new System.Drawing.Size(840, 475);
             this.groupBox1.TabIndex = 2;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Neradni dani template";
             // 
             // btnDeaktiviraj
             // 
-            this.btnDeaktiviraj.Location = new System.Drawing.Point(508, 25);
+            this.btnDeaktiviraj.Location = new System.Drawing.Point(609, 25);
             this.btnDeaktiviraj.Name = "btnDeaktiviraj";
             this.btnDeaktiviraj.Size = new System.Drawing.Size(77, 23);
             this.btnDeaktiviraj.TabIndex = 7;
@@ -90,7 +90,7 @@
             // 
             // btnDeaktivirajSve
             // 
-            this.btnDeaktivirajSve.Location = new System.Drawing.Point(606, 25);
+            this.btnDeaktivirajSve.Location = new System.Drawing.Point(707, 25);
             this.btnDeaktivirajSve.Name = "btnDeaktivirajSve";
             this.btnDeaktivirajSve.Size = new System.Drawing.Size(88, 23);
             this.btnDeaktivirajSve.TabIndex = 4;
@@ -114,7 +114,7 @@
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(649, 310);
+            this.dataGridView1.Size = new System.Drawing.Size(750, 310);
             this.dataGridView1.TabIndex = 0;
             // 
             // Id
@@ -143,14 +143,12 @@
             this.Dan.HeaderText = "Dan";
             this.Dan.Name = "Dan";
             this.Dan.ReadOnly = true;
-            this.Dan.Width = 60;
             // 
             // Mjesec
             // 
             this.Mjesec.HeaderText = "Mjesec";
             this.Mjesec.Name = "Mjesec";
             this.Mjesec.ReadOnly = true;
-            this.Mjesec.Width = 60;
             // 
             // Tip
             // 
@@ -163,7 +161,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(881, 537);
             this.Controls.Add(this.groupBox1);
             this.Name = "TemplateEditorForm";
             this.Text = "TemplateEditorForm";

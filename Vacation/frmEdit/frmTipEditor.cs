@@ -20,6 +20,8 @@ namespace Vacation
             InitializeComponent();
             Forma = pForma;
             groupBox1.Text = pGbText;
+            Id = 0;
+            Naziv = Boja = "";
         }
 
         public int Id { get => _id; set => _id = value; }
@@ -32,6 +34,15 @@ namespace Vacation
         {
             txtNaziv.Text = Naziv;
             txtBoja.Text = Boja;                     
+        }
+
+        private void btnOdabirBoje_Click(object sender, EventArgs e)
+        {
+            colorDialog1.ShowDialog();
+            string boja = colorDialog1.Color.ToArgb().ToString("x");
+            boja = boja.Substring(2, 6);
+            boja = "#" + boja;
+            txtBoja.Text = boja;
         }
 
         private void SpremiClick(object sender, EventArgs e)

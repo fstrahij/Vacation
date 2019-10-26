@@ -25,6 +25,20 @@ namespace Vacation
             dataGridView1.DataSource = binding;
             dataGridView1.Columns[0].Visible = dataGridView1.Columns[3].Visible = false;
             HasRows();
+            PostaviBoju();
+        }
+
+        private void PostaviBoju()
+        {
+            string boja = "";
+            foreach (DataGridViewRow row in dataGridView1.Rows)
+            {
+                boja = row.Cells["Boja"].Value.ToString();
+                if (!string.IsNullOrWhiteSpace(boja))
+                {
+                    row.DefaultCellStyle.BackColor = ColorTranslator.FromHtml(boja);
+                }
+            }
         }
 
         private void HasRows()
@@ -47,9 +61,7 @@ namespace Vacation
         private void NoviClick(object sender, EventArgs e)
         {
             using (var forma = new TipEditor(this, btnNovi.Text))
-            {
-                forma.Id = 0;
-                forma.Naziv = forma.Boja = "";
+            {               
                 forma.ShowDialog();
             }
         }

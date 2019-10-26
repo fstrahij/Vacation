@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Drawing;
 using System.Windows.Forms;
 using Vacation.frmEdit;
 
@@ -26,7 +27,23 @@ namespace Vacation
                                         tip.DajNazivTipa(lista.TipId)
                                         );               
             }
-            HasRows();
+            HasRows();            
+        }
+
+        private void PostaviBoju()
+        {
+            TipNeradnihDana tip = new TipNeradnihDana();
+            string boja = "";
+            string id = "";
+            foreach (DataGridViewRow row in dataGridView1.Rows)
+            {
+                id = row.Cells["TipId"].Value.ToString();
+                boja = tip.DajBojuTipa(id);
+                if (!string.IsNullOrWhiteSpace(boja))
+                {
+                    row.DefaultCellStyle.BackColor = ColorTranslator.FromHtml(boja);
+                }
+            }
         }
 
         private void HasRows()
@@ -44,6 +61,7 @@ namespace Vacation
         private void TemplateEditorForm_Load(object sender, EventArgs e)
         {
             UcitajPodatke();
+            PostaviBoju();
         }
 
         private void NoviClick(object sender, EventArgs e)
