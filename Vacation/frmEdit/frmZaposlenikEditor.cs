@@ -41,14 +41,10 @@ namespace Vacation.frmEdit
             txtAdresa.Text = Adresa;
             txtOib.Text = Oib;
             Zaposlenik zaposlenik = new Zaposlenik();
-            foreach (var item in zaposlenik.Spolovi)
-            {
-                comboBoxSpol.Items.Add(item.Naziv);
-                if (!string.IsNullOrWhiteSpace(SpolId) && item.Id == int.Parse(SpolId))
-                {
-                    comboBoxSpol.SelectedText = item.Naziv;
-                }
-            }
+            comboBoxSpol.DataSource = zaposlenik.Spolovi;
+            comboBoxSpol.DisplayMember = "Naziv";
+            comboBoxSpol.ValueMember = "Id";
+            comboBoxSpol.SelectedValue = !string.IsNullOrWhiteSpace(SpolId) ? int.Parse(SpolId.ToString()) : 0;            
         }
 
         private frmZaposlenici Forma { get; set; }

@@ -61,23 +61,25 @@ namespace Vacation.frmBrowse
 
         private void frmGodisnji_Load(object sender, EventArgs e)
         {
-            Zaposlenik zaposlenici = new Zaposlenik();
+            Zaposlenik zaposlenik = new Zaposlenik();
             ZaposlenikGodisnji zaposleniciGodisnji = new ZaposlenikGodisnji();
-            string naziv = "";
-            foreach (var item in zaposlenici.DajListu())
+            List<Zaposlenik> zaposlenici = new List<Zaposlenik>();            
+            foreach (var item in zaposlenik.DajListu())
             {
                 if (zaposleniciGodisnji.DajListu().FindIndex(x => x.ZaposlenikId == item.Id.ToString()) >= 0)
                 {
-                    naziv = item.Ime + " " + item.Prezime;
-                    comboBoxZaposlenici.Items.Add(naziv);
-                    comboBoxZaposleniciId.Items.Add(item.Id);
+                    zaposlenici.Add(item);
                 }
             }
+            comboBoxZaposlenici.DataSource = zaposlenici;
+            comboBoxZaposlenici.DisplayMember = "ImePrezime";
+            comboBoxZaposlenici.ValueMember = "Id";
         }
 
         private void ZaposlenikSelected(object sender, EventArgs e)
         {
-            int zaposlenikId = int.Parse(comboBoxZaposleniciId.Items[comboBoxZaposlenici.SelectedIndex].ToString());
+            int zaposlenikId = 0;
+            int.TryParse(comboBoxZaposlenici.SelectedValue.ToString(), out zaposlenikId);
             UcitajPodatke(zaposlenikId);
         }
 

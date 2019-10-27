@@ -35,13 +35,9 @@ namespace Vacation.frmEdit
         private void frmZaposlenikGodisnjiEditor_Load(object sender, EventArgs e)
         {
             Zaposlenik zaposlenici = new Zaposlenik();
-            string naziv = "";
-            foreach (var item in zaposlenici.DajListu())
-            {
-                naziv = item.Ime + " " + item.Prezime;
-                comboBoxZaposlenici.Items.Add(naziv);
-                comboBoxZaposleniciId.Items.Add(item.Id);
-            }
+            comboBoxZaposlenici.DataSource = zaposlenici.DajListu();
+            comboBoxZaposlenici.DisplayMember = "ImePrezime";
+            comboBoxZaposlenici.ValueMember = "Id";
         }
 
         private void SpremiClick(object sender, EventArgs e)
@@ -66,10 +62,13 @@ namespace Vacation.frmEdit
         private void ZaposlenikSelected(object sender, EventArgs e)
         {
             ZaposlenikGodisnji zapGod = new ZaposlenikGodisnji();
-            ZaposlenikId = comboBoxZaposleniciId.Items[comboBoxZaposlenici.SelectedIndex].ToString();
-            int id = int.Parse(ZaposlenikId);
-            txtGodina.Text = zapGod.DajSljedecuGodinu(id);
-            txtBrojDana.Text = zapGod.IzracunajBrojaDana(id);
+            ZaposlenikId = comboBoxZaposlenici.SelectedValue.ToString();
+            int id = 0;
+            if (int.TryParse(ZaposlenikId, out id))
+            {
+                txtGodina.Text = zapGod.DajSljedecuGodinu(id);
+                txtBrojDana.Text = zapGod.IzracunajBrojaDana(id);
+            }
         }
     }
 }

@@ -27,7 +27,8 @@ namespace Vacation
                                         tip.DajNazivTipa(lista.TipId)
                                         );               
             }
-            HasRows();            
+            HasRows();
+            PostaviBoju();
         }
 
         private void PostaviBoju()
@@ -60,8 +61,7 @@ namespace Vacation
 
         private void TemplateEditorForm_Load(object sender, EventArgs e)
         {
-            UcitajPodatke();
-            PostaviBoju();
+            UcitajPodatke();            
         }
 
         private void NoviClick(object sender, EventArgs e)

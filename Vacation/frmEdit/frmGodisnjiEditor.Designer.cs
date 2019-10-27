@@ -29,23 +29,21 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.comboBoxZaposleniciId = new System.Windows.Forms.ComboBox();
             this.comboBoxZaposlenici = new System.Windows.Forms.ComboBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.dtpDatum = new System.Windows.Forms.DateTimePicker();
+            this.txtRaspoloziviBrojDana = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
             this.txtBrojDana = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.btnSpremi = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.txtRaspoloziviBrojDana = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.dtpDatum = new System.Windows.Forms.DateTimePicker();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.comboBoxZaposleniciId);
             this.groupBox1.Controls.Add(this.comboBoxZaposlenici);
             this.groupBox1.Location = new System.Drawing.Point(57, 50);
             this.groupBox1.Name = "groupBox1";
@@ -53,15 +51,6 @@
             this.groupBox1.TabIndex = 18;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Odabir zaposlenika";
-            // 
-            // comboBoxZaposleniciId
-            // 
-            this.comboBoxZaposleniciId.FormattingEnabled = true;
-            this.comboBoxZaposleniciId.Location = new System.Drawing.Point(29, 58);
-            this.comboBoxZaposleniciId.Name = "comboBoxZaposleniciId";
-            this.comboBoxZaposleniciId.Size = new System.Drawing.Size(175, 21);
-            this.comboBoxZaposleniciId.TabIndex = 1;
-            this.comboBoxZaposleniciId.Visible = false;
             // 
             // comboBoxZaposlenici
             // 
@@ -87,6 +76,30 @@
             this.groupBox2.TabIndex = 17;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Odabir godišnjeg";
+            // 
+            // dtpDatum
+            // 
+            this.dtpDatum.Location = new System.Drawing.Point(157, 95);
+            this.dtpDatum.Name = "dtpDatum";
+            this.dtpDatum.Size = new System.Drawing.Size(121, 20);
+            this.dtpDatum.TabIndex = 7;
+            // 
+            // txtRaspoloziviBrojDana
+            // 
+            this.txtRaspoloziviBrojDana.Enabled = false;
+            this.txtRaspoloziviBrojDana.Location = new System.Drawing.Point(157, 55);
+            this.txtRaspoloziviBrojDana.Name = "txtRaspoloziviBrojDana";
+            this.txtRaspoloziviBrojDana.Size = new System.Drawing.Size(121, 20);
+            this.txtRaspoloziviBrojDana.TabIndex = 6;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(45, 58);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(108, 13);
+            this.label3.TabIndex = 5;
+            this.label3.Text = "Raspoloživi broj dana";
             // 
             // txtBrojDana
             // 
@@ -123,30 +136,6 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Datum";
             // 
-            // txtRaspoloziviBrojDana
-            // 
-            this.txtRaspoloziviBrojDana.Enabled = false;
-            this.txtRaspoloziviBrojDana.Location = new System.Drawing.Point(157, 55);
-            this.txtRaspoloziviBrojDana.Name = "txtRaspoloziviBrojDana";
-            this.txtRaspoloziviBrojDana.Size = new System.Drawing.Size(121, 20);
-            this.txtRaspoloziviBrojDana.TabIndex = 6;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(45, 58);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(108, 13);
-            this.label3.TabIndex = 5;
-            this.label3.Text = "Raspoloživi broj dana";
-            // 
-            // dtpDatum
-            // 
-            this.dtpDatum.Location = new System.Drawing.Point(157, 95);
-            this.dtpDatum.Name = "dtpDatum";
-            this.dtpDatum.Size = new System.Drawing.Size(121, 20);
-            this.dtpDatum.TabIndex = 7;
-            // 
             // frmGodisnjiEditor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -167,7 +156,6 @@
         #endregion
 
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.ComboBox comboBoxZaposleniciId;
         private System.Windows.Forms.ComboBox comboBoxZaposlenici;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.TextBox txtBrojDana;

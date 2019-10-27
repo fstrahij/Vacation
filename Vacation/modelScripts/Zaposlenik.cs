@@ -16,6 +16,7 @@ namespace Vacation.modelScripts
         public int Id { get => _id; set => _id = value; }
         public string Ime { get => _ime; set => _ime = value; }
         public string Prezime { get => _prezime; set => _prezime = value; }
+        public string ImePrezime { get => _ime + " " + _prezime; }
         public string SpolId { get => _spolId; set => _spolId = value; }
         public string Adresa { get => _adresa; set => _adresa = value; }
         public string Oib { get => _oib; set => _oib = value; }

@@ -97,7 +97,7 @@ namespace Vacation.modelScripts
 
         public string DajSljedecuGodinu(int pId)
         {
-            string sqlUpit = "SELECT MAX(GODINA) + 1 as Godina FROM ZaposlenikGodisnji WHERE Aktivan = 1 AND ZaposlenikId = " + pId;
+            string sqlUpit = "SELECT MAX(Godina) + 1 as Godina FROM ZaposlenikGodisnji WHERE Aktivan = 1 AND ZaposlenikId = " + pId;
             DataTable dt = DatabaseConnection.Instance.DohvatiPodatke(sqlUpit);
 
             string godina = "";

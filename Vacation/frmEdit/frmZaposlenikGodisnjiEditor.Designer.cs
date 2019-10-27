@@ -34,7 +34,6 @@
             this.btnSpremi = new System.Windows.Forms.Button();
             this.txtGodina = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.comboBoxZaposleniciId = new System.Windows.Forms.ComboBox();
             this.comboBoxZaposlenici = new System.Windows.Forms.ComboBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox2.SuspendLayout();
@@ -98,15 +97,6 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Godina";
             // 
-            // comboBoxZaposleniciId
-            // 
-            this.comboBoxZaposleniciId.FormattingEnabled = true;
-            this.comboBoxZaposleniciId.Location = new System.Drawing.Point(29, 58);
-            this.comboBoxZaposleniciId.Name = "comboBoxZaposleniciId";
-            this.comboBoxZaposleniciId.Size = new System.Drawing.Size(175, 21);
-            this.comboBoxZaposleniciId.TabIndex = 1;
-            this.comboBoxZaposleniciId.Visible = false;
-            // 
             // comboBoxZaposlenici
             // 
             this.comboBoxZaposlenici.FormattingEnabled = true;
@@ -118,7 +108,6 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.comboBoxZaposleniciId);
             this.groupBox1.Controls.Add(this.comboBoxZaposlenici);
             this.groupBox1.Location = new System.Drawing.Point(12, 43);
             this.groupBox1.Name = "groupBox1";
@@ -151,7 +140,6 @@
         private System.Windows.Forms.Button btnSpremi;
         private System.Windows.Forms.TextBox txtGodina;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ComboBox comboBoxZaposleniciId;
         private System.Windows.Forms.ComboBox comboBoxZaposlenici;
         private System.Windows.Forms.GroupBox groupBox1;
     }

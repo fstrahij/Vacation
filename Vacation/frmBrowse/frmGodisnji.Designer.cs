@@ -46,7 +46,6 @@
             this.OstaloDana = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Godina = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.comboBoxZaposleniciId = new System.Windows.Forms.ComboBox();
             this.comboBoxZaposlenici = new System.Windows.Forms.ComboBox();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -203,7 +202,6 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.comboBoxZaposleniciId);
             this.groupBox1.Controls.Add(this.comboBoxZaposlenici);
             this.groupBox1.Location = new System.Drawing.Point(35, 25);
             this.groupBox1.Name = "groupBox1";
@@ -211,15 +209,6 @@
             this.groupBox1.TabIndex = 15;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Odabir zaposlenika";
-            // 
-            // comboBoxZaposleniciId
-            // 
-            this.comboBoxZaposleniciId.FormattingEnabled = true;
-            this.comboBoxZaposleniciId.Location = new System.Drawing.Point(29, 58);
-            this.comboBoxZaposleniciId.Name = "comboBoxZaposleniciId";
-            this.comboBoxZaposleniciId.Size = new System.Drawing.Size(175, 21);
-            this.comboBoxZaposleniciId.TabIndex = 1;
-            this.comboBoxZaposleniciId.Visible = false;
             // 
             // comboBoxZaposlenici
             // 
@@ -257,7 +246,6 @@
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.ComboBox comboBoxZaposlenici;
-        private System.Windows.Forms.ComboBox comboBoxZaposleniciId;
         private System.Windows.Forms.DataGridViewTextBoxColumn Id;
         private System.Windows.Forms.DataGridViewTextBoxColumn ZaposlenikId;
         private System.Windows.Forms.DataGridViewTextBoxColumn ZaposlenikGodisnjiId;

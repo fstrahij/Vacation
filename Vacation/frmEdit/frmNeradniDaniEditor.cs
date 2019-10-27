@@ -30,20 +30,16 @@ namespace Vacation.frmEdit
         {
             txtNaziv.Text = Naziv;
             TipNeradnihDana tip = new TipNeradnihDana();
-            foreach (var item in tip.DajListu())
-            {
-                comboBoxTip.Items.Add(item.Naziv);
-                if (!string.IsNullOrWhiteSpace(TipId) && item.Id == int.Parse(TipId))
-                {
-                    comboBoxTip.SelectedText = item.Naziv;
-                }
-            }
+            comboBoxTip.DataSource = tip.DajListu();
+            comboBoxTip.DisplayMember = "Naziv";
+            comboBoxTip.ValueMember = "Id";
+            comboBoxTip.SelectedValue = !string.IsNullOrWhiteSpace(TipId)? int.Parse(TipId.ToString()) : 0;
         }
 
         private void SetInputs()
         {
             string nullValue = "null";
-            TipId = (comboBoxTip.SelectedIndex >= 0) ? (comboBoxTip.SelectedIndex + 1).ToString() : nullValue;
+            TipId = (comboBoxTip.SelectedIndex >= 0) ? comboBoxTip.SelectedValue.ToString() : nullValue;
             Datum = !string.IsNullOrEmpty(dtpDatum.Value.ToString()) ? dtpDatum.Value.ToString("MM-dd-yyyy") : nullValue;            
         }
 
