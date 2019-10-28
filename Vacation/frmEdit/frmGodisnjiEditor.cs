@@ -67,6 +67,11 @@ namespace Vacation.frmEdit
             IzracunajBrojDana();            
         }
 
+        private void dtpDatumDo_ValueChanged(object sender, EventArgs e)
+        {
+            IzracunajBrojDana();
+        }
+
         private bool ValidateInputs()
         {
             int brojDana = 0;
@@ -101,16 +106,7 @@ namespace Vacation.frmEdit
                     this.Close();
                 }
             }
-        }
-
-        private void dtpDatumDo_ValueChanged(object sender, EventArgs e)
-        {
-            while (IsNeradniDan(dtpDatumDo.Value.Date))
-            {
-                dtpDatumDo.Value = dtpDatumDo.Value.AddDays(1);
-            }
-            IzracunajBrojDana();
-        }
+        }        
 
         private void txtBrojDana_TextChanged(object sender, EventArgs e)
         {
@@ -169,14 +165,12 @@ namespace Vacation.frmEdit
             {
                 while (pocetniDatum.Date.CompareTo(dtpDatumDo.Value.Date) < 0 && BrojDana < raspoloziviBrojDana)
                 {
-                    if (!IsNeradniDan(pocetniDatum))
-                    {
-                        BrojDana++;
-                    }
-                    pocetniDatum = pocetniDatum.AddDays(1);
+                    BrojDana = IsNeradniDan(pocetniDatum) ? BrojDana : BrojDana + 1;                    
+                    pocetniDatum = pocetniDatum.AddDays(1);                    
                 }
-                dtpDatumDo.Value = pocetniDatum;
-            }            
+                
+            }
+            dtpDatumDo.Value = pocetniDatum.Date;
             txtBrojDana.Text = BrojDana.ToString();
         }
 
