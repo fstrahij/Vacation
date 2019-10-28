@@ -93,6 +93,7 @@ namespace Vacation
             string pattern = "dd.MM.yyyy.";
             DateTime datum, datumOd, datumDo;            
             NeradniDan dan = new NeradniDan();
+            dan.Id = 0;
             DataGridViewCheckBoxCell odabrano;
             foreach (DataGridViewRow row in dataGridView1.Rows)
             {
@@ -102,7 +103,6 @@ namespace Vacation
                     if (string.IsNullOrWhiteSpace(row.Cells[4].Value.ToString()))
                     {
                         dan.Naziv = row.Cells[3].Value.ToString();
-                        dan.Datum = Godina.ToString();
                         dan.TipId = row.Cells[2].Value.ToString();
                         dan.Spremi();
                     }

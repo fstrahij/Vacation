@@ -25,11 +25,11 @@ namespace Vacation.frmBrowse
             Godisnji godisnji = new Godisnji();
             ZaposlenikGodisnji zaposleniciGodisnji = new ZaposlenikGodisnji();
             Zaposlenik zaposlenik = new Zaposlenik();
-            int preostaloDana = int.Parse(zaposleniciGodisnji.DajListu().Find(x => x.ZaposlenikId == pZaposlenikId.ToString()).BrojDana);
+            //int preostaloDana = int.Parse(zaposleniciGodisnji.DajListu().Find(x => x.ZaposlenikId == pZaposlenikId.ToString()).BrojDana);
 
-            foreach (var lista in godisnji.DajListu(pZaposlenikId))
+            foreach (var lista in godisnji.DajListu(pZaposlenikId, 0))
             {
-                preostaloDana -= int.Parse(lista.BrojDana);
+                //preostaloDana -= int.Parse(lista.BrojDana);
                 zaposlenik = zaposleniciGodisnji.Zaposlenici.DajListu().Find(x => x.Id == pZaposlenikId);
                 dataGridView1.Rows.Add(lista.Id,
                                         pZaposlenikId,
@@ -40,7 +40,7 @@ namespace Vacation.frmBrowse
                                         lista.DatumOd,
                                         lista.DatumDo,
                                         lista.BrojDana,
-                                        preostaloDana,
+                                        //preostaloDana,
                                         zaposleniciGodisnji.DajGodinu(int.Parse(lista.ZaposlenikGodisnjiId))
                                         );
             }
@@ -74,12 +74,14 @@ namespace Vacation.frmBrowse
             comboBoxZaposlenici.DataSource = zaposlenici;
             comboBoxZaposlenici.DisplayMember = "ImePrezime";
             comboBoxZaposlenici.ValueMember = "Id";
+            comboBoxZaposlenici.SelectedValue = 0;
         }
 
         private void ZaposlenikSelected(object sender, EventArgs e)
         {
             int zaposlenikId = 0;
             int.TryParse(comboBoxZaposlenici.SelectedValue.ToString(), out zaposlenikId);
+            
             UcitajPodatke(zaposlenikId);
         }
 

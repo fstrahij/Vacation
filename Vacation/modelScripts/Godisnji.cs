@@ -67,23 +67,27 @@ namespace Vacation.modelScripts
             DatabaseConnection.Instance.IzvrsiUpit(sqlUpit);
         }
 
-        public DataTable DohvatiPodatke(int pZaposelenikId)
+        public DataTable DohvatiPodatke(int pZaposelenikId, int pGodina)
         {
             string sqlUpit = "SELECT Godisnji.Id, ZaposlenikGodisnjiId, DatumOd, DatumDo,Godisnji.BrojDana FROM Godisnji, ZaposlenikGodisnji";
             sqlUpit += " WHERE Godisnji.ZaposlenikGodisnjiId = ZaposlenikGodisnji.Id";
             sqlUpit += " AND Godisnji.Aktivan = 1 AND ZaposlenikGodisnji.Aktivan = 1";
             if (pZaposelenikId > 0)
             {
-                sqlUpit += " AND ZaposlenikGodisnji.ZaposlenikId = " + pZaposelenikId;
+                sqlUpit += " AND ZaposlenikGodisnji.ZaposlenikId = " + pZaposelenikId;                
+            }
+            if (pGodina > 0)
+            {
+                sqlUpit += " AND ZaposlenikGodisnji.Godina = " + pGodina;
             }
             
             return DatabaseConnection.Instance.DohvatiPodatke(sqlUpit);
         }
 
-        public List<Godisnji> DajListu(int pZaposelenikId)
+        public List<Godisnji> DajListu(int pZaposelenikId, int pGodina)
         {
             List<Godisnji> lista = new List<Godisnji>();
-            foreach (DataRow row in DohvatiPodatke(pZaposelenikId).Rows)
+            foreach (DataRow row in DohvatiPodatke(pZaposelenikId, pGodina).Rows)
             {
                 lista.Add(new Godisnji(row));
             }

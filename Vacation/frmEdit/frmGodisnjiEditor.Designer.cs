@@ -31,7 +31,9 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.comboBoxZaposlenici = new System.Windows.Forms.ComboBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.dtpDatum = new System.Windows.Forms.DateTimePicker();
+            this.dtpDatumDo = new System.Windows.Forms.DateTimePicker();
+            this.label4 = new System.Windows.Forms.Label();
+            this.dtpDatumOd = new System.Windows.Forms.DateTimePicker();
             this.txtRaspoloziviBrojDana = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.txtBrojDana = new System.Windows.Forms.TextBox();
@@ -59,11 +61,13 @@
             this.comboBoxZaposlenici.Name = "comboBoxZaposlenici";
             this.comboBoxZaposlenici.Size = new System.Drawing.Size(175, 21);
             this.comboBoxZaposlenici.TabIndex = 0;
-            this.comboBoxZaposlenici.SelectedIndexChanged += new System.EventHandler(this.ZaposlenikSelected);
+            this.comboBoxZaposlenici.SelectionChangeCommitted += new System.EventHandler(this.ZaposlenikSelected);
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.dtpDatum);
+            this.groupBox2.Controls.Add(this.dtpDatumDo);
+            this.groupBox2.Controls.Add(this.label4);
+            this.groupBox2.Controls.Add(this.dtpDatumOd);
             this.groupBox2.Controls.Add(this.txtRaspoloziviBrojDana);
             this.groupBox2.Controls.Add(this.label3);
             this.groupBox2.Controls.Add(this.txtBrojDana);
@@ -77,12 +81,32 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Odabir godišnjeg";
             // 
-            // dtpDatum
+            // dtpDatumDo
             // 
-            this.dtpDatum.Location = new System.Drawing.Point(157, 95);
-            this.dtpDatum.Name = "dtpDatum";
-            this.dtpDatum.Size = new System.Drawing.Size(121, 20);
-            this.dtpDatum.TabIndex = 7;
+            this.dtpDatumDo.Enabled = false;
+            this.dtpDatumDo.Location = new System.Drawing.Point(157, 135);
+            this.dtpDatumDo.Name = "dtpDatumDo";
+            this.dtpDatumDo.Size = new System.Drawing.Size(121, 20);
+            this.dtpDatumDo.TabIndex = 9;
+            this.dtpDatumDo.ValueChanged += new System.EventHandler(this.dtpDatumDo_ValueChanged);
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(101, 135);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(55, 13);
+            this.label4.TabIndex = 8;
+            this.label4.Text = "Datum Do";
+            // 
+            // dtpDatumOd
+            // 
+            this.dtpDatumOd.Enabled = false;
+            this.dtpDatumOd.Location = new System.Drawing.Point(157, 95);
+            this.dtpDatumOd.Name = "dtpDatumOd";
+            this.dtpDatumOd.Size = new System.Drawing.Size(121, 20);
+            this.dtpDatumOd.TabIndex = 7;
+            this.dtpDatumOd.ValueChanged += new System.EventHandler(this.dtpDatumOd_ValueChanged);
             // 
             // txtRaspoloziviBrojDana
             // 
@@ -103,15 +127,17 @@
             // 
             // txtBrojDana
             // 
-            this.txtBrojDana.Location = new System.Drawing.Point(157, 134);
+            this.txtBrojDana.Enabled = false;
+            this.txtBrojDana.Location = new System.Drawing.Point(157, 174);
             this.txtBrojDana.Name = "txtBrojDana";
             this.txtBrojDana.Size = new System.Drawing.Size(121, 20);
             this.txtBrojDana.TabIndex = 4;
+            this.txtBrojDana.TextChanged += new System.EventHandler(this.txtBrojDana_TextChanged);
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(101, 137);
+            this.label2.Location = new System.Drawing.Point(101, 177);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(52, 13);
             this.label2.TabIndex = 3;
@@ -119,7 +145,7 @@
             // 
             // btnSpremi
             // 
-            this.btnSpremi.Location = new System.Drawing.Point(124, 198);
+            this.btnSpremi.Location = new System.Drawing.Point(129, 236);
             this.btnSpremi.Name = "btnSpremi";
             this.btnSpremi.Size = new System.Drawing.Size(75, 23);
             this.btnSpremi.TabIndex = 2;
@@ -132,9 +158,9 @@
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(101, 95);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(38, 13);
+            this.label1.Size = new System.Drawing.Size(55, 13);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Datum";
+            this.label1.Text = "Datum Od";
             // 
             // frmGodisnjiEditor
             // 
@@ -164,6 +190,8 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtRaspoloziviBrojDana;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.DateTimePicker dtpDatum;
+        private System.Windows.Forms.DateTimePicker dtpDatumOd;
+        private System.Windows.Forms.DateTimePicker dtpDatumDo;
+        private System.Windows.Forms.Label label4;
     }
 }
