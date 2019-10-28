@@ -57,9 +57,14 @@ namespace Vacation.frmEdit
         private void dtpDatumOd_ValueChanged(object sender, EventArgs e)
         {
             PostaviGodinu();
+            while (IsNeradniDan(dtpDatumOd.Value.Date))
+            {
+                dtpDatumOd.Value = dtpDatumOd.Value.AddDays(1);
+            }
             dtpDatumDo.MinDate = dtpDatumOd.Value;
             dtpDatumDo.MaxDate = dtpDatumOd.MaxDate;
             dtpDatumDo.Value = dtpDatumOd.Value;
+            IzracunajBrojDana();            
         }
 
         private bool ValidateInputs()
@@ -100,6 +105,10 @@ namespace Vacation.frmEdit
 
         private void dtpDatumDo_ValueChanged(object sender, EventArgs e)
         {
+            while (IsNeradniDan(dtpDatumDo.Value.Date))
+            {
+                dtpDatumDo.Value = dtpDatumDo.Value.AddDays(1);
+            }
             IzracunajBrojDana();
         }
 
@@ -152,16 +161,22 @@ namespace Vacation.frmEdit
             BrojDana = 0;
             int raspoloziviBrojDana = RaspoloziviBrojDana;
             DateTime pocetniDatum = dtpDatumOd.Value;
-
-            while (pocetniDatum.Date.CompareTo(dtpDatumDo.Value.Date) < 0 && BrojDana < raspoloziviBrojDana)
-            {                
-                if (!IsNeradniDan(pocetniDatum))
-                {
-                    BrojDana++;
-                }
-                pocetniDatum = pocetniDatum.AddDays(1);
+            if (pocetniDatum.Date.CompareTo(dtpDatumDo.Value.Date) == 0 && BrojDana < raspoloziviBrojDana)
+            {
+                BrojDana = IsNeradniDan(pocetniDatum) ? 0 : 1;
             }
-            dtpDatumDo.Value = pocetniDatum;
+            else
+            {
+                while (pocetniDatum.Date.CompareTo(dtpDatumDo.Value.Date) < 0 && BrojDana < raspoloziviBrojDana)
+                {
+                    if (!IsNeradniDan(pocetniDatum))
+                    {
+                        BrojDana++;
+                    }
+                    pocetniDatum = pocetniDatum.AddDays(1);
+                }
+                dtpDatumDo.Value = pocetniDatum;
+            }            
             txtBrojDana.Text = BrojDana.ToString();
         }
 
