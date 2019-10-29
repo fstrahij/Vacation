@@ -10,22 +10,24 @@ namespace Vacation.modelScripts
     class Godisnji
     {
         private int _id;
-        private string _zaposlenikGodisnjiId, _datumOd, _datumDo, _brojDana;
+        private string _zaposlenikGodisnjiId, _brojDana;
+        private DateTime _datumOd, _datumDo;
         private List<ZaposlenikGodisnji> _zaposlenikGodisnji;
 
+        private string Format { get => "d.M.yyyy. H:mm:ss"; }
         public int Id { get => _id; set => _id = value; }
         public string ZaposlenikGodisnjiId { get => _zaposlenikGodisnjiId; set => _zaposlenikGodisnjiId = value; }
-        public string DatumOd { get => _datumOd; set => _datumOd = value; }
-        public string DatumDo { get => _datumDo; set => _datumDo = value; }
+        public DateTime DatumOd { get => _datumOd; set => _datumOd = value; }
+        public DateTime DatumDo { get => _datumDo; set => _datumDo = value; }
         public string BrojDana { get => _brojDana; set => _brojDana = value; }
         internal List<ZaposlenikGodisnji> ZaposlenikGodisnji { get => _zaposlenikGodisnji; set => _zaposlenikGodisnji = value; }
 
         private Godisnji(DataRow pRow)
         {
             Id = int.Parse(pRow["Id"].ToString());
-            ZaposlenikGodisnjiId = pRow["ZaposlenikGodisnjiId"].ToString();
-            DatumOd = pRow["DatumOd"].ToString();
-            DatumDo = pRow["DatumDo"].ToString();
+            ZaposlenikGodisnjiId = pRow["ZaposlenikGodisnjiId"].ToString();            
+            DatumOd = DateTime.ParseExact(pRow["DatumOd"].ToString(), Format, null); 
+            DatumDo = DateTime.ParseExact(pRow["DatumDo"].ToString(), Format, null); 
             BrojDana = pRow["BrojDana"].ToString();
         }
 
@@ -33,7 +35,7 @@ namespace Vacation.modelScripts
         {
         }
 
-        public Godisnji(int id, string zaposlenikGodisnjiId, string datumOd, string datumDo, string brojDana)
+        public Godisnji(int id, string zaposlenikGodisnjiId, DateTime datumOd, DateTime datumDo, string brojDana)
         {
             Id = id;
             ZaposlenikGodisnjiId = zaposlenikGodisnjiId;
@@ -48,13 +50,13 @@ namespace Vacation.modelScripts
             if (Id == 0)
             {
                 sqlUpit = "INSERT INTO Godisnji(ZaposlenikGodisnjiId, DatumOd, DatumDo, BrojDana) " +
-                            "VALUES(" + ZaposlenikGodisnjiId + ", '" + DatumOd + "', '" + DatumDo + "', " + BrojDana + ")";
+                            "VALUES(" + ZaposlenikGodisnjiId + ", '" + DatumOd.ToString("MM-dd-yyyy") + "', '" + DatumDo.Date.ToString("MM-dd-yyyy") + "', " + BrojDana + ")";
             }
             else
             {
                 sqlUpit = "UPDATE Godisnji SET ZaposlenikGodisnjiId = " + ZaposlenikGodisnjiId
-                            + ", DatumOd = '" + DatumOd
-                            + "', DatumDo = '" + DatumDo
+                            + ", DatumOd = '" + DatumOd.ToString("MM-dd-yyyy")
+                            + "', DatumDo = '" + DatumDo.ToString("MM-dd-yyyy")
                             + "', BrojDana = " + BrojDana
                             + " WHERE Id = " + Id;
             }

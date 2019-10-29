@@ -34,13 +34,13 @@
             this.btnNovi = new System.Windows.Forms.Button();
             this.btnDeaktivirajSve = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.comboBoxGodine = new System.Windows.Forms.ComboBox();
             this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TipId = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Naziv = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Datum = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Tip = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.comboBoxGodine = new System.Windows.Forms.ComboBox();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -117,7 +117,25 @@
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView1.Size = new System.Drawing.Size(696, 437);
             this.dataGridView1.TabIndex = 8;
-            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.comboBoxGodine);
+            this.groupBox1.Location = new System.Drawing.Point(12, 12);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(179, 79);
+            this.groupBox1.TabIndex = 13;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Odabir godine";
+            // 
+            // comboBoxGodine
+            // 
+            this.comboBoxGodine.FormattingEnabled = true;
+            this.comboBoxGodine.Location = new System.Drawing.Point(29, 31);
+            this.comboBoxGodine.Name = "comboBoxGodine";
+            this.comboBoxGodine.Size = new System.Drawing.Size(121, 21);
+            this.comboBoxGodine.TabIndex = 0;
+            this.comboBoxGodine.SelectedIndexChanged += new System.EventHandler(this.OdabirGodineSelected);
             // 
             // Id
             // 
@@ -138,40 +156,19 @@
             this.Naziv.HeaderText = "Naziv";
             this.Naziv.Name = "Naziv";
             this.Naziv.ReadOnly = true;
-            this.Naziv.Width = 260;
+            this.Naziv.Width = 340;
             // 
             // Datum
             // 
             this.Datum.HeaderText = "Datum";
             this.Datum.Name = "Datum";
             this.Datum.ReadOnly = true;
-            this.Datum.Width = 200;
             // 
             // Tip
             // 
             this.Tip.HeaderText = "Tip";
             this.Tip.Name = "Tip";
             this.Tip.ReadOnly = true;
-            this.Tip.Width = 150;
-            // 
-            // groupBox1
-            // 
-            this.groupBox1.Controls.Add(this.comboBoxGodine);
-            this.groupBox1.Location = new System.Drawing.Point(12, 12);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(179, 79);
-            this.groupBox1.TabIndex = 13;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Odabir godine";
-            // 
-            // comboBoxGodine
-            // 
-            this.comboBoxGodine.FormattingEnabled = true;
-            this.comboBoxGodine.Location = new System.Drawing.Point(29, 31);
-            this.comboBoxGodine.Name = "comboBoxGodine";
-            this.comboBoxGodine.Size = new System.Drawing.Size(121, 21);
-            this.comboBoxGodine.TabIndex = 0;
-            this.comboBoxGodine.SelectedIndexChanged += new System.EventHandler(this.OdabirGodineSelected);
             // 
             // NeradniDaniForm
             // 

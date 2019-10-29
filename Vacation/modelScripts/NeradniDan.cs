@@ -10,11 +10,13 @@ namespace Vacation.modelScripts
     class NeradniDan
     {
         private int _id;
-        private string _naziv, _datum, _tipId;
+        private string _naziv, _tipId;
+        private DateTime _datum;
 
+        private string Format { get => "d.M.yyyy. H:mm:ss"; }
         public int Id { get => _id; set => _id = value; }
         public string Naziv { get => _naziv; set => _naziv = value; }
-        public string Datum { get => _datum; set => _datum = value; }
+        public DateTime Datum { get => _datum; set => _datum = value; }
         public string TipId { get => _tipId; set => _tipId = value; }
 
         public NeradniDan()
@@ -25,11 +27,11 @@ namespace Vacation.modelScripts
         {
             Id = int.Parse(pRow["Id"].ToString());
             Naziv = pRow["Naziv"].ToString();
-            Datum = pRow["Datum"].ToString();
+            Datum = DateTime.ParseExact(pRow["Datum"].ToString(), Format, null);
             TipId = pRow["TipId"].ToString();
         }
 
-        public NeradniDan(int pId, string pNaziv, string pDatum, string pTemplateId)
+        public NeradniDan(int pId, string pNaziv, DateTime pDatum, string pTemplateId)
         {
             Id = pId;
             Naziv = pNaziv;
@@ -43,12 +45,12 @@ namespace Vacation.modelScripts
             if (Id == 0)
             {
                 sqlUpit = "INSERT INTO NeradniDani(Naziv, Datum, TipId) " +
-                            "VALUES('" + Naziv + "', '" + Datum + "', " + TipId + ")";
+                            "VALUES('" + Naziv + "', '" + Datum.ToString("MM-dd-yyyy") + "', " + TipId + ")";
             }
             else
             {
                 sqlUpit = "UPDATE NeradniDani SET Naziv = '" + Naziv
-                            + "', Datum = '" + Datum
+                            + "', Datum = '" + Datum.ToString("MM-dd-yyyy")
                             + "', TipId = " + TipId
                             + " WHERE Id = " + Id;
             }

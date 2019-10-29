@@ -33,7 +33,7 @@ namespace Vacation.frmBrowse
                 dataGridView1.Rows.Add(lista.Id,
                                         lista.TipId,
                                         lista.Naziv,
-                                        lista.Datum,
+                                        lista.Datum.ToString("dd.MM.yyyy."),
                                         tip.DajNazivTipa(lista.TipId)
                                         );
             }
@@ -90,11 +90,6 @@ namespace Vacation.frmBrowse
             UcitajPodatke();
         }
 
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
         private void NoviClick(object sender, EventArgs e)
         {
             using (var forma = new frmNeradniDaniEditor(this, btnNovi.Text))
@@ -104,12 +99,13 @@ namespace Vacation.frmBrowse
         }
         private void UrediClick(object sender, EventArgs e)
         {
+            string format = "dd.MM.yyyy.";
             using (var forma = new frmNeradniDaniEditor(this, btnUredi.Text))
             {
                 forma.Id = int.Parse(dataGridView1.CurrentRow.Cells[0].Value.ToString());
                 forma.TipId = dataGridView1.CurrentRow.Cells[1].Value.ToString();
                 forma.Naziv = dataGridView1.CurrentRow.Cells[2].Value.ToString();
-                forma.Datum = dataGridView1.CurrentRow.Cells[3].Value.ToString();
+                forma.Datum = DateTime.ParseExact(dataGridView1.CurrentRow.Cells[3].Value.ToString(), format, null);
                 forma.ShowDialog();
             }
         }

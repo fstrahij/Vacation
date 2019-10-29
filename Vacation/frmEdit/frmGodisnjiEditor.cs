@@ -15,22 +15,22 @@ namespace Vacation.frmEdit
 {
     public partial class frmGodisnjiEditor : Form
     {
-        private int _id, _raspoloziviBrojDana, _brojDana, _zaposlenikGodisnjiId, _godina;
-        private string _datum, _zaposlenikId;
+        private int _id, _zaposlenikId, _raspoloziviBrojDana, _brojDana, _zaposlenikGodisnjiId, _godina;
+        private string _datum;
 
         public frmGodisnjiEditor(frmGodisnji pForma, string pGbText)
         {
             InitializeComponent();
             Forma = pForma;
             groupBox2.Text = pGbText;
-            Id = BrojDana = 0;
-            ZaposlenikId = Datum = "";            
+            Id = BrojDana = ZaposlenikId = 0;
+            Datum = "";            
         }
 
         public int Id { get => _id; set => _id = value; }
         public string Datum { get => _datum; set => _datum = value; }
         public int BrojDana { get => _brojDana; set => _brojDana = value; }
-        private string ZaposlenikId { get => _zaposlenikId; set => _zaposlenikId = value; }
+        public int ZaposlenikId { get => _zaposlenikId; set => _zaposlenikId = value; }
         private int RaspoloziviBrojDana { get => _raspoloziviBrojDana; set => _raspoloziviBrojDana = value; }
         private int ZaposlenikGodisnjiId { get => _zaposlenikGodisnjiId; set => _zaposlenikGodisnjiId = value; }
         private frmGodisnji Forma { get; set; }
@@ -38,20 +38,9 @@ namespace Vacation.frmEdit
 
         private void frmGodisnjiEditor_Load(object sender, EventArgs e)
         {
-            Zaposlenik zaposlenik = new Zaposlenik();
-            ZaposlenikGodisnji zaposleniciGodisnji = new ZaposlenikGodisnji();
-            List<Zaposlenik> zaposlenici = new List<Zaposlenik>();
-            foreach (var item in zaposlenik.DajListu())
-            {
-                if (zaposleniciGodisnji.DajListu().FindIndex(x => x.ZaposlenikId == item.Id.ToString()) >= 0)
-                {
-                    zaposlenici.Add(item);
-                }
-            }
-            comboBoxZaposlenici.DataSource = zaposlenici;
-            comboBoxZaposlenici.DisplayMember = "ImePrezime";
-            comboBoxZaposlenici.ValueMember = "Id";    
-            comboBoxZaposlenici.SelectedValue = 0;        
+            IzracunajRapoloziviBrojDana();            
+            PostaviGodinu();
+            IzracunajBrojDana();
         }
 
         private void dtpDatumOd_ValueChanged(object sender, EventArgs e)
@@ -64,19 +53,22 @@ namespace Vacation.frmEdit
             dtpDatumDo.MinDate = dtpDatumOd.Value;
             dtpDatumDo.MaxDate = dtpDatumOd.MaxDate;
             dtpDatumDo.Value = dtpDatumOd.Value;
-            IzracunajBrojDana();            
+            //IzracunajBrojDana();            
         }
 
         private void dtpDatumDo_ValueChanged(object sender, EventArgs e)
         {
+            while (IsNeradniDan(dtpDatumDo.Value.Date))
+            {
+                dtpDatumDo.Value = dtpDatumDo.Value.AddDays(1);
+            }
             IzracunajBrojDana();
         }
 
         private bool ValidateInputs()
         {
             int brojDana = 0;
-            if (!string.IsNullOrWhiteSpace(ZaposlenikId)
-                && !string.IsNullOrWhiteSpace(txtBrojDana.Text)
+            if (!string.IsNullOrWhiteSpace(txtBrojDana.Text)
                 && int.TryParse(txtBrojDana.Text, out brojDana)
                 && brojDana <= RaspoloziviBrojDana
                 && brojDana > 0)
@@ -97,44 +89,41 @@ namespace Vacation.frmEdit
                 {
                     Godisnji godisnji = new Godisnji(Id,
                                             ZaposlenikGodisnjiId.ToString(),
-                                            dtpDatumOd.Value.Date.ToString("MM-dd-yyyy"),
-                                            dtpDatumDo.Value.Date.ToString("MM-dd-yyyy"),
+                                            dtpDatumOd.Value.Date,
+                                            dtpDatumDo.Value.Date,
                                             txtBrojDana.Text
                         );
                     godisnji.Spremi();
-                    Forma.UcitajPodatke(int.Parse(ZaposlenikId));
+                    Forma.UcitajPodatke();
                     this.Close();
                 }
             }
-        }        
+        }
+
+        private void textBox2_TextChanged(object sender, EventArgs e)
+        {
+
+        }
 
         private void txtBrojDana_TextChanged(object sender, EventArgs e)
         {
             int raspoloziviBrojDana = RaspoloziviBrojDana;
             raspoloziviBrojDana -= BrojDana; 
             txtRaspoloziviBrojDana.Text = raspoloziviBrojDana.ToString();
-        }
-
-        private void ZaposlenikSelected(object sender, EventArgs e)
-        {
-            ZaposlenikId = comboBoxZaposlenici.SelectedValue.ToString();
-            IzracunajRapoloziviBrojDana();
-            txtRaspoloziviBrojDana.Text = RaspoloziviBrojDana.ToString();
-            PostaviGodinu();
-            dtpDatumOd.Enabled = true;
-            dtpDatumDo.Enabled = true;
-        }        
+        }      
 
         private void IzracunajRapoloziviBrojDana()
         {
             Godisnji godisnji = new Godisnji();
-            ZaposlenikGodisnji zaposlenikGodisnji = new ZaposlenikGodisnji();
-            Godina = 0;
+            ZaposlenikGodisnji zaposlenikGodisnji = new ZaposlenikGodisnji();    
             int novaGodina = 0;
-            RaspoloziviBrojDana = 0;
+            int noviGodisnji, stariGodisnji;
+            Godina = RaspoloziviBrojDana = stariGodisnji = 0;
+            noviGodisnji = int.Parse(zaposlenikGodisnji.DajListu()[0].BrojDana);
+           
             foreach (var item in zaposlenikGodisnji.DajListu())
             {
-                if (item.ZaposlenikId == ZaposlenikId)
+                if (int.Parse(item.ZaposlenikId) == ZaposlenikId)
                 {
                     novaGodina = int.Parse(item.Godina);
                     if (Godina < novaGodina)
@@ -145,11 +134,22 @@ namespace Vacation.frmEdit
                     }
                 }
             }
-
-            foreach (var lista in godisnji.DajListu(int.Parse(ZaposlenikId), Godina))
+            DateTime postavke = new DateTime(Godina, 6, 30);
+            if (DateTime.Today.Date.CompareTo(postavke.Date) < 0)
             {
-                RaspoloziviBrojDana -= int.Parse(lista.BrojDana);
+                foreach (var lista in godisnji.DajListu(ZaposlenikId, Godina))
+                {
+                    RaspoloziviBrojDana -= int.Parse(lista.BrojDana);
+                }
+                stariGodisnji = (RaspoloziviBrojDana - noviGodisnji) > 0 ? RaspoloziviBrojDana - noviGodisnji : 0;
             }
+            else
+            {
+                RaspoloziviBrojDana = noviGodisnji;
+            }
+            txtNoviGodisnji.Text = noviGodisnji.ToString();
+            txtStariGodisnji.Text = stariGodisnji.ToString();
+            txtRaspoloziviBrojDana.Text = RaspoloziviBrojDana.ToString();
         }
 
         private void IzracunajBrojDana()
@@ -163,26 +163,22 @@ namespace Vacation.frmEdit
             }
             else
             {
-                while (pocetniDatum.Date.CompareTo(dtpDatumDo.Value.Date) < 0 && BrojDana < raspoloziviBrojDana)
+                while (pocetniDatum.Date.CompareTo(dtpDatumDo.Value.Date) <= 0 && BrojDana < raspoloziviBrojDana)
                 {
                     BrojDana = IsNeradniDan(pocetniDatum) ? BrojDana : BrojDana + 1;                    
                     pocetniDatum = pocetniDatum.AddDays(1);                    
                 }
-                
+                dtpDatumDo.Value = pocetniDatum.Date.AddDays(-1);
             }
-            dtpDatumDo.Value = pocetniDatum.Date;
             txtBrojDana.Text = BrojDana.ToString();
         }
 
         private bool IsNeradniDan(DateTime pocetniDatum)
         {
             NeradniDan dani = new NeradniDan();
-            DateTime dan = new DateTime();
-            string format = "d.M.yyyy. H:mm:ss";
-            foreach (var d in dani.DajListu(Godina))
+            foreach (var dan in dani.DajListu(Godina))
             {
-                dan = DateTime.ParseExact(d.Datum, format, null, DateTimeStyles.None);
-                if (DateTime.Compare(pocetniDatum.Date, dan.Date) == 0)
+                if (DateTime.Compare(pocetniDatum.Date, dan.Datum.Date) == 0)
                 {
                     return true;
                 }

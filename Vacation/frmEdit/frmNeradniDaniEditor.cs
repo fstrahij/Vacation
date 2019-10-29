@@ -8,8 +8,8 @@ namespace Vacation.frmEdit
     public partial class frmNeradniDaniEditor : Form
     {
         private int _id;
-        private string _naziv, _datum, _tipId;
-
+        private string _naziv, _tipId;
+        private DateTime _datum;
 
         public frmNeradniDaniEditor(NeradniDaniForm pForma, string pGbText)
         {
@@ -17,18 +17,20 @@ namespace Vacation.frmEdit
             Forma = pForma;
             groupBox1.Text = pGbText;
             Id = 0;
-            Naziv = Datum = TipId = "";
+            Naziv = TipId = "";
+            Datum = new DateTime();
         }
 
         public int Id { get => _id; set => _id = value; }
         public string TipId { get => _tipId; set => _tipId = value; }
         public string Naziv { get => _naziv; set => _naziv = value; }
-        public string Datum { get => _datum; set => _datum = value; }
+        public DateTime Datum { get => _datum; set => _datum = value; }
         private NeradniDaniForm Forma { get; set; }
 
         private void frmNeradniDaniEditor_Load(object sender, EventArgs e)
         {
             txtNaziv.Text = Naziv;
+            dtpDatum.Value = Datum;
             TipNeradnihDana tip = new TipNeradnihDana();
             comboBoxTip.DataSource = tip.DajListu();
             comboBoxTip.DisplayMember = "Naziv";
@@ -39,8 +41,7 @@ namespace Vacation.frmEdit
         private void SetInputs()
         {
             string nullValue = "null";
-            TipId = (comboBoxTip.SelectedIndex >= 0) ? comboBoxTip.SelectedValue.ToString() : nullValue;
-            Datum = !string.IsNullOrEmpty(dtpDatum.Value.ToString()) ? dtpDatum.Value.ToString("MM-dd-yyyy") : nullValue;            
+            TipId = (comboBoxTip.SelectedIndex >= 0) ? comboBoxTip.SelectedValue.ToString() : nullValue;           
         }
 
         private void SpremiClick(object sender, EventArgs e)
@@ -53,11 +54,12 @@ namespace Vacation.frmEdit
                 {
                     NeradniDan dan = new NeradniDan(Id,
                                                     txtNaziv.Text,
-                                                    Datum,
+                                                    dtpDatum.Value,
                                                     TipId
                                                     );
                     dan.Spremi();
                     Forma.UcitajGodine();
+                    Forma.UcitajPodatke();
                     this.Close();
                 }
             }

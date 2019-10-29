@@ -109,7 +109,7 @@ namespace Vacation
                     else if(DateTime.TryParseExact(row.Cells[4].Value.ToString(), pattern, null, DateTimeStyles.None, out datum))
                     {
                         dan.Naziv = row.Cells[3].Value.ToString();
-                        dan.Datum = datum.Month + "-" + datum.Day + "-" + datum.Year;
+                        dan.Datum = datum;
                         dan.TipId = row.Cells[2].Value.ToString();
                         dan.Spremi();
                     }
@@ -125,7 +125,7 @@ namespace Vacation
                         while (datumOd < datumDo)
                         {                        
                             dan.Naziv = row.Cells[3].Value.ToString();
-                            dan.Datum = datumOd.Month + "-" + datumOd.Day + "-" + datumOd.Year;
+                            dan.Datum = datumOd;
                             dan.TipId = row.Cells[2].Value.ToString();
                             dan.Spremi();
                             datumOd = datumOd.AddDays(7);

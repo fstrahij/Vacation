@@ -14,31 +14,35 @@ namespace Vacation.frmBrowse
 {
     public partial class frmGodisnji : Form
     {
+        private int _zaposlenikID;
+
+        public int ZaposlenikID { get => _zaposlenikID; set => _zaposlenikID = value; }
+
         public frmGodisnji()
         {
             InitializeComponent();
         }
 
-        public void UcitajPodatke(int pZaposlenikId)
+        public void UcitajPodatke()
         {
             dataGridView1.Rows.Clear();
             Godisnji godisnji = new Godisnji();
             ZaposlenikGodisnji zaposleniciGodisnji = new ZaposlenikGodisnji();
             Zaposlenik zaposlenik = new Zaposlenik();
             //int preostaloDana = int.Parse(zaposleniciGodisnji.DajListu().Find(x => x.ZaposlenikId == pZaposlenikId.ToString()).BrojDana);
+            zaposlenik = zaposleniciGodisnji.Zaposlenici.DajListu().Find(x => x.Id == ZaposlenikID);
 
-            foreach (var lista in godisnji.DajListu(pZaposlenikId, 0))
+            txtAdresa.Text = zaposlenik.Adresa;
+            txtOib.Text = zaposlenik.Oib;
+            txtSpol.Text = zaposlenik.DajNazivSpola(int.Parse(zaposlenik.SpolId));
+            foreach (var lista in godisnji.DajListu(ZaposlenikID, 0))
             {
-                //preostaloDana -= int.Parse(lista.BrojDana);
-                zaposlenik = zaposleniciGodisnji.Zaposlenici.DajListu().Find(x => x.Id == pZaposlenikId);
+                //preostaloDana -= int.Parse(lista.BrojDana);                
                 dataGridView1.Rows.Add(lista.Id,
-                                        pZaposlenikId,
+                                        ZaposlenikID,
                                         lista.ZaposlenikGodisnjiId,
-                                        zaposlenik.Adresa,
-                                        zaposlenik.Oib,
-                                        zaposlenik.DajNazivSpola(int.Parse(zaposlenik.SpolId)),
-                                        lista.DatumOd,
-                                        lista.DatumDo,
+                                        lista.DatumOd.ToString("dd.MM.yyyy."),
+                                        lista.DatumDo.ToString("dd.MM.yyyy."),
                                         lista.BrojDana,
                                         //preostaloDana,
                                         zaposleniciGodisnji.DajGodinu(int.Parse(lista.ZaposlenikGodisnjiId))
@@ -81,16 +85,20 @@ namespace Vacation.frmBrowse
         {
             int zaposlenikId = 0;
             int.TryParse(comboBoxZaposlenici.SelectedValue.ToString(), out zaposlenikId);
-            
-            UcitajPodatke(zaposlenikId);
+            ZaposlenikID = zaposlenikId;
+            UcitajPodatke();
         }
 
         private void NoviClick(object sender, EventArgs e)
         {
-            using (var forma = new frmGodisnjiEditor(this, btnNovi.Text))
+            if (ZaposlenikID > 0)
             {
-                forma.ShowDialog();
-            }
+                using (var forma = new frmGodisnjiEditor(this, btnNovi.Text))
+                {
+                    forma.ZaposlenikId = ZaposlenikID;
+                    forma.ShowDialog();
+                }
+            }            
         }
     }
 }
