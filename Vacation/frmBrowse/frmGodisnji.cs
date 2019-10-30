@@ -44,6 +44,8 @@ namespace Vacation.frmBrowse
                                         lista.DatumOd.ToString("dd.MM.yyyy."),
                                         lista.DatumDo.ToString("dd.MM.yyyy."),
                                         lista.BrojDana,
+                                        lista.OstaloNoviBrojDana,
+                                        lista.OstaloStariBrojDana,                                        
                                         //preostaloDana,
                                         zaposleniciGodisnji.DajGodinu(int.Parse(lista.ZaposlenikGodisnjiId))
                                         );

@@ -71,6 +71,19 @@ namespace Vacation.modelScripts
             return DatabaseConnection.Instance.DohvatiPodatke(sqlUpit);
         }
 
+        public ZaposlenikGodisnji DajPodatkePoZaposleniku(int pZaposlenikId)
+        {
+            string sqlUpit = "SELECT TOP 1 * FROM ZaposlenikGodisnji WHERE Aktivan = 1 AND ZaposlenikId = " + pZaposlenikId + " ORDER BY Godina DESC";
+
+            ZaposlenikGodisnji zaposlenikGodisnji;
+            foreach (DataRow row in DatabaseConnection.Instance.DohvatiPodatke(sqlUpit).Rows)
+            {
+                zaposlenikGodisnji = new ZaposlenikGodisnji(row);
+                return zaposlenikGodisnji;
+            }
+            return null;
+        }
+
         public List<ZaposlenikGodisnji> DajListu()
         {
             List<ZaposlenikGodisnji> lista = new List<ZaposlenikGodisnji>();

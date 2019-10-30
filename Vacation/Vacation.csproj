@@ -46,7 +46,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="customScripts\DatabaseConnection.cs" />
-    <Compile Include="customScripts\Kalkulator.cs" />
+    <Compile Include="customScripts\PomocniBrojac.cs" />
     <Compile Include="frmBrowse\frmGodisnji.cs">
       <SubType>Form</SubType>
     </Compile>

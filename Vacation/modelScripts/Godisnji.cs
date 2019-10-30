@@ -10,7 +10,7 @@ namespace Vacation.modelScripts
     class Godisnji
     {
         private int _id;
-        private string _zaposlenikGodisnjiId, _brojDana;
+        private string _zaposlenikGodisnjiId, _brojDana, _ostaloNoviBrojDana, _ostaloStariBrojDana;
         private DateTime _datumOd, _datumDo;
         private List<ZaposlenikGodisnji> _zaposlenikGodisnji;
 
@@ -21,6 +21,8 @@ namespace Vacation.modelScripts
         public DateTime DatumDo { get => _datumDo; set => _datumDo = value; }
         public string BrojDana { get => _brojDana; set => _brojDana = value; }
         internal List<ZaposlenikGodisnji> ZaposlenikGodisnji { get => _zaposlenikGodisnji; set => _zaposlenikGodisnji = value; }
+        public string OstaloNoviBrojDana { get => _ostaloNoviBrojDana; set => _ostaloNoviBrojDana = value; }
+        public string OstaloStariBrojDana { get => _ostaloStariBrojDana; set => _ostaloStariBrojDana = value; }
 
         private Godisnji(DataRow pRow)
         {
@@ -29,19 +31,23 @@ namespace Vacation.modelScripts
             DatumOd = DateTime.ParseExact(pRow["DatumOd"].ToString(), Format, null); 
             DatumDo = DateTime.ParseExact(pRow["DatumDo"].ToString(), Format, null); 
             BrojDana = pRow["BrojDana"].ToString();
+            OstaloNoviBrojDana = pRow["OstaloNoviBrojDana"].ToString();
+            OstaloStariBrojDana = pRow["OstaloStariBrojDana"].ToString();
         }
 
         public Godisnji()
         {
         }
 
-        public Godisnji(int id, string zaposlenikGodisnjiId, DateTime datumOd, DateTime datumDo, string brojDana)
+        public Godisnji(int pId, string pZaposlenikGodisnjiId, DateTime pDatumOd, DateTime pDatumDo, string pBrojDana, string pOstaloNoviBrojDana, string pOstaloStariBrojDana)
         {
-            Id = id;
-            ZaposlenikGodisnjiId = zaposlenikGodisnjiId;
-            DatumOd = datumOd;
-            DatumDo = datumDo;
-            BrojDana = brojDana;
+            Id = pId;
+            ZaposlenikGodisnjiId = pZaposlenikGodisnjiId;
+            DatumOd = pDatumOd;
+            DatumDo = pDatumDo;
+            BrojDana = pBrojDana;
+            OstaloNoviBrojDana = pOstaloNoviBrojDana;
+            OstaloStariBrojDana = pOstaloStariBrojDana;
         }
 
         public void Spremi()
@@ -49,8 +55,13 @@ namespace Vacation.modelScripts
             string sqlUpit = "";
             if (Id == 0)
             {
-                sqlUpit = "INSERT INTO Godisnji(ZaposlenikGodisnjiId, DatumOd, DatumDo, BrojDana) " +
-                            "VALUES(" + ZaposlenikGodisnjiId + ", '" + DatumOd.ToString("MM-dd-yyyy") + "', '" + DatumDo.Date.ToString("MM-dd-yyyy") + "', " + BrojDana + ")";
+                sqlUpit = "INSERT INTO Godisnji(ZaposlenikGodisnjiId, DatumOd, DatumDo, BrojDana, OstaloNoviBrojDana, OstaloStariBrojDana) " +
+                            "VALUES(" + ZaposlenikGodisnjiId + ", '" 
+                                        + DatumOd.ToString("MM-dd-yyyy") + "', '" 
+                                        + DatumDo.Date.ToString("MM-dd-yyyy") + "', "
+                                        + BrojDana + ", "
+                                        + OstaloNoviBrojDana + ", "
+                                        + OstaloStariBrojDana + ")";
             }
             else
             {
@@ -58,6 +69,8 @@ namespace Vacation.modelScripts
                             + ", DatumOd = '" + DatumOd.ToString("MM-dd-yyyy")
                             + "', DatumDo = '" + DatumDo.ToString("MM-dd-yyyy")
                             + "', BrojDana = " + BrojDana
+                            + ", OstaloNoviBrojDana = " + OstaloNoviBrojDana
+                            + ", OstaloStariBrojDana = " + OstaloStariBrojDana
                             + " WHERE Id = " + Id;
             }
             DatabaseConnection.Instance.IzvrsiUpit(sqlUpit);
@@ -71,9 +84,10 @@ namespace Vacation.modelScripts
 
         public DataTable DohvatiPodatke(int pZaposelenikId, int pGodina)
         {
-            string sqlUpit = "SELECT Godisnji.Id, ZaposlenikGodisnjiId, DatumOd, DatumDo,Godisnji.BrojDana FROM Godisnji, ZaposlenikGodisnji";
-            sqlUpit += " WHERE Godisnji.ZaposlenikGodisnjiId = ZaposlenikGodisnji.Id";
-            sqlUpit += " AND Godisnji.Aktivan = 1 AND ZaposlenikGodisnji.Aktivan = 1";
+            string sqlUpit = "SELECT Godisnji.Id, ZaposlenikGodisnjiId, DatumOd, DatumDo, Godisnji.BrojDana, OstaloNoviBrojDana, OstaloStariBrojDana " +
+                "FROM Godisnji, ZaposlenikGodisnji " +
+                "WHERE Godisnji.ZaposlenikGodisnjiId = ZaposlenikGodisnji.Id" +
+                "  AND Godisnji.Aktivan = 1 AND ZaposlenikGodisnji.Aktivan = 1";           
             if (pZaposelenikId > 0)
             {
                 sqlUpit += " AND ZaposlenikGodisnji.ZaposlenikId = " + pZaposelenikId;                
