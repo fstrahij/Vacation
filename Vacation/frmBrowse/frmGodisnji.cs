@@ -29,15 +29,13 @@ namespace Vacation.frmBrowse
             Godisnji godisnji = new Godisnji();
             ZaposlenikGodisnji zaposleniciGodisnji = new ZaposlenikGodisnji();
             Zaposlenik zaposlenik = new Zaposlenik();
-            //int preostaloDana = int.Parse(zaposleniciGodisnji.DajListu().Find(x => x.ZaposlenikId == pZaposlenikId.ToString()).BrojDana);
             zaposlenik = zaposleniciGodisnji.Zaposlenici.DajListu().Find(x => x.Id == ZaposlenikID);
 
             txtAdresa.Text = zaposlenik.Adresa;
             txtOib.Text = zaposlenik.Oib;
             txtSpol.Text = zaposlenik.DajNazivSpola(int.Parse(zaposlenik.SpolId));
             foreach (var lista in godisnji.DajListu(ZaposlenikID, 0))
-            {
-                //preostaloDana -= int.Parse(lista.BrojDana);                
+            {               
                 dataGridView1.Rows.Add(lista.Id,
                                         ZaposlenikID,
                                         lista.ZaposlenikGodisnjiId,
@@ -45,8 +43,7 @@ namespace Vacation.frmBrowse
                                         lista.DatumDo.ToString("dd.MM.yyyy."),
                                         lista.BrojDana,
                                         lista.OstaloNoviBrojDana,
-                                        lista.OstaloStariBrojDana,                                        
-                                        //preostaloDana,
+                                        lista.OstaloStariBrojDana, 
                                         zaposleniciGodisnji.DajGodinu(int.Parse(lista.ZaposlenikGodisnjiId))
                                         );
             }

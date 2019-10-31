@@ -60,10 +60,11 @@ namespace Vacation.frmBrowse
         {
             NeradniDan dan = new NeradniDan();
             comboBoxGodine.Items.Clear();
-            foreach (var item in dan.DajGodine())
+            comboBoxGodine.DataSource = dan.DajGodine();
+            /*foreach (var item in dan.DajGodine())
             {
                 comboBoxGodine.Items.Add(item);
-            }
+            }*/
         }
 
         private void HasRows()
@@ -86,8 +87,12 @@ namespace Vacation.frmBrowse
 
         private void OdabirGodineSelected(object sender, EventArgs e)
         {
-            Godina = int.Parse(comboBoxGodine.SelectedItem.ToString());
-            UcitajPodatke();
+            int godina = 0;
+            if (int.TryParse(comboBoxGodine.SelectedItem.ToString(), out godina))
+            {
+                Godina = godina;
+                UcitajPodatke();
+            }
         }
 
         private void NoviClick(object sender, EventArgs e)

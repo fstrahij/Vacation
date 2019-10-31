@@ -46,7 +46,14 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="customScripts\DatabaseConnection.cs" />
+    <Compile Include="customScripts\DatumParser.cs" />
     <Compile Include="customScripts\PomocniBrojac.cs" />
+    <Compile Include="frmBrowse\frmFirme.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmBrowse\frmFirme.Designer.cs">
+      <DependentUpon>frmFirme.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmBrowse\frmGodisnji.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -70,6 +77,12 @@
     </Compile>
     <Compile Include="frmBrowse\frmZaposlenikGodisnji.Designer.cs">
       <DependentUpon>frmZaposlenikGodisnji.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmEdit\frmFirmaEditor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmEdit\frmFirmaEditor.Designer.cs">
+      <DependentUpon>frmFirmaEditor.cs</DependentUpon>
     </Compile>
     <Compile Include="frmEdit\frmGeneratorNeradnihDana.cs">
       <SubType>Form</SubType>
@@ -113,6 +126,7 @@
     <Compile Include="GlavniMeni.Designer.cs">
       <DependentUpon>GlavniMeni.cs</DependentUpon>
     </Compile>
+    <Compile Include="modelScripts\Firma.cs" />
     <Compile Include="modelScripts\Godisnji.cs" />
     <Compile Include="modelScripts\NeradaniDanTemplate.cs" />
     <Compile Include="frmBrowse\frmNeradniDani.cs">
@@ -146,6 +160,9 @@
     <Compile Include="frmBrowse\frmTipoviNeradnihDana.Designer.cs">
       <DependentUpon>frmTipoviNeradnihDana.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="frmBrowse\frmFirme.resx">
+      <DependentUpon>frmFirme.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmBrowse\frmGodisnji.resx">
       <DependentUpon>frmGodisnji.cs</DependentUpon>
     </EmbeddedResource>
@@ -160,6 +177,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmBrowse\frmZaposlenikGodisnji.resx">
       <DependentUpon>frmZaposlenikGodisnji.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmEdit\frmFirmaEditor.resx">
+      <DependentUpon>frmFirmaEditor.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmEdit\frmGeneratorNeradnihDana.resx">
       <DependentUpon>frmGeneratorNeradnihDana.cs</DependentUpon>

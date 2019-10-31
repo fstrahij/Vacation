@@ -31,11 +31,16 @@ namespace Vacation.frmEdit
         private frmGodisnji Forma { get; set; }
 
         private void frmGodisnjiEditor_Load(object sender, EventArgs e)
+        {           
+            PomocniBrojac.IzracunajRapoloziviBrojDana(ZaposlenikId);            
+            PostaviGodinu();
+            InicijalizirajVrijednostiTextBoxova();
+        }
+
+        private void InicijalizirajVrijednostiTextBoxova()
         {
             ZaposlenikGodisnji zaposlenikGodisnji = new ZaposlenikGodisnji();
             Godisnji godisnji = new Godisnji();
-            PomocniBrojac.IzracunajRapoloziviBrojDana(ZaposlenikId);            
-            PostaviGodinu();
             Tuple<int, int> vrstaGodisnji = PomocniBrojac.IzracunajBrojDana(dtpDatumOd.Value, dtpDatumDo.Value);
             txtNoviGodisnji.Text = vrstaGodisnji.Item1.ToString();
             txtStariGodisnji.Text = vrstaGodisnji.Item2.ToString();
@@ -84,8 +89,9 @@ namespace Vacation.frmEdit
         {
             DateTime min = new DateTime(PomocniBrojac.Godina, 1, 1);
             DateTime max = new DateTime(PomocniBrojac.Godina, 12, 31);
-            dtpDatumOd.MinDate = min;
-            dtpDatumOd.MaxDate = max;
+            dtpDatumDo.MinDate = dtpDatumOd.MinDate = min;
+            dtpDatumDo.MaxDate = dtpDatumOd.MaxDate = max;
+            
         }
 
         private bool ValidateInputs()
@@ -107,7 +113,6 @@ namespace Vacation.frmEdit
                 DialogResult dr = MessageBox.Show("Jeste li sigurni?", "Provjera", MessageBoxButtons.YesNo);
                 if (dr == DialogResult.Yes)
                 {
-                    //Console.WriteLine(txtNoviGodisnji.Text + " " + txtStariGodisnji.Text);
                     Godisnji godisnji = new Godisnji(Id,
                                             PomocniBrojac.ZaposlenikGodisnjiId.ToString(),
                                             dtpDatumOd.Value.Date,

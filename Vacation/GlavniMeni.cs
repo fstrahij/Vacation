@@ -60,25 +60,23 @@ namespace Vacation
 
         private void firmeToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
-        }
-
-        private void noviToolStripMenuItem1_Click_1(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pregledToolStripMenuItem2_Click(object sender, EventArgs e)
-        {
-            frmGodisnji forma = new frmGodisnji();
+            frmFirme forma = new frmFirme();
             forma.MdiParent = this;
             forma.WindowState = FormWindowState.Maximized;
             forma.Show();
         }
 
-        private void zaposleniciGodisnjiToolStripMenuItem1_Click(object sender, EventArgs e)
+        private void zaposlenikgodišnjiToolStripMenuItem_Click(object sender, EventArgs e)
         {
             frmZaposlenikGodisnji forma = new frmZaposlenikGodisnji();
+            forma.MdiParent = this;
+            forma.WindowState = FormWindowState.Maximized;
+            forma.Show();
+        }
+
+        private void godišnjiToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmGodisnji forma = new frmGodisnji();
             forma.MdiParent = this;
             forma.WindowState = FormWindowState.Maximized;
             forma.Show();
