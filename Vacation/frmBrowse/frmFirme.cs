@@ -79,15 +79,7 @@ namespace Vacation.frmBrowse
         {
             Zaposlenik zaposlenik = new Zaposlenik();
             ZaposlenikGodisnji zaposleniciGodisnji = new ZaposlenikGodisnji();
-            List<Zaposlenik> zaposlenici = new List<Zaposlenik>();
-            foreach (var item in zaposlenik.DajListu())
-            {
-                if (zaposleniciGodisnji.DajListu().FindIndex(x => x.ZaposlenikId == item.Id.ToString()) >= 0)
-                {
-                    zaposlenici.Add(item);
-                }
-            }
-            comboBoxZaposlenici.DataSource = zaposlenici;
+            comboBoxZaposlenici.DataSource = zaposlenik.DajListu();
             comboBoxZaposlenici.DisplayMember = "ImePrezime";
             comboBoxZaposlenici.ValueMember = "Id";
         }
