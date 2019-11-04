@@ -11,14 +11,15 @@ namespace Vacation.modelScripts
     {
         private int _id;
         private string _zaposlenikId, _naziv;
-        private DateTime _datumOd, _datumDo;
+        private DateTime _datumOd;
+        private DateTime? _datumDo;
 
         private string Format { get => "d.M.yyyy. H:mm:ss"; }
         public int Id { get => _id; set => _id = value; }
         public string ZaposlenikId { get => _zaposlenikId; set => _zaposlenikId = value; }
         public string Naziv { get => _naziv; set => _naziv = value; }
         public DateTime DatumOd { get => _datumOd; set => _datumOd = value; }
-        public DateTime DatumDo { get => _datumDo; set => _datumDo = value; }
+        public DateTime? DatumDo { get => _datumDo; set => _datumDo = value; }
 
         public Firma()
         {
@@ -29,11 +30,19 @@ namespace Vacation.modelScripts
             Id = int.Parse(pRow["Id"].ToString());
             ZaposlenikId = pRow["ZaposlenikId"].ToString();
             Naziv = pRow["Naziv"].ToString();
-            DatumOd = DateTime.ParseExact(pRow["DatumOd"].ToString(), Format, null);
-            DatumDo = DateTime.ParseExact(pRow["DatumDo"].ToString(), Format, null);
+            DatumOd = DateTime.ParseExact(pRow["DatumOd"].ToString(), Format, null);      
+            DateTime datumDo;
+            if (DateTime.TryParseExact(pRow["DatumDo"].ToString(), Format, null, System.Globalization.DateTimeStyles.None, out datumDo))
+            {
+                DatumDo = datumDo;
+            }
+            else
+            {
+                DatumDo = null;
+            }   
         }
 
-        public Firma(int pId, string pZaposlenikId, string pNaziv, DateTime pDatumOd, DateTime pDatumDo)
+        public Firma(int pId, string pZaposlenikId, string pNaziv, DateTime pDatumOd, DateTime? pDatumDo)
         {
             Id = pId;
             ZaposlenikId = pZaposlenikId;
@@ -45,21 +54,39 @@ namespace Vacation.modelScripts
         public void Spremi()
         {
             string sqlUpit = "";
+            DateTime datumDo;
             if (Id == 0)
             {
-                sqlUpit = "INSERT INTO Firme(ZaposlenikId, Naziv, DatumOd, DatumDo) " +
-                            "VALUES(" + ZaposlenikId + ", '"
-                                        + Naziv + "', '"
-                                        + DatumOd.ToString("MM-dd-yyyy") + "', '"
-                                        + DatumDo.ToString("MM-dd-yyyy") + "') ";
+                if (DatumDo != null)
+                {
+                    datumDo = (DateTime)DatumDo;
+                    sqlUpit = "INSERT INTO Firme(ZaposlenikId, Naziv, DatumOd, DatumDo) " +
+                            "VALUES(" + ZaposlenikId + ", '" + Naziv + "', '" + DatumOd.ToString("MM-dd-yyyy") + "', '" + datumDo.ToString("MM-dd-yyyy") + "') ";
+                }
+                else
+                {
+                    sqlUpit = "INSERT INTO Firme(ZaposlenikId, Naziv, DatumOd) " +
+                            "VALUES(" + ZaposlenikId + ", '" + Naziv + "', '" + DatumOd.ToString("MM-dd-yyyy") + "')";
+                }                
             }
             else
             {
-                sqlUpit = "UPDATE Firme SET ZaposlenikId = " + ZaposlenikId
+                if (DatumDo != null)
+                {
+                    datumDo = (DateTime)DatumDo;
+                    sqlUpit = "UPDATE Firme SET ZaposlenikId = " + ZaposlenikId
                             + ", Naziv = '" + Naziv
                             + "', DatumOd = '" + DatumOd.ToString("MM-dd-yyyy")
-                            + "', DatumDo = '" + DatumDo.ToString("MM-dd-yyyy")
+                            + "', DatumDo = '" + datumDo.ToString("MM-dd-yyyy")
                             + "' WHERE Id = " + Id;
+                }
+                else
+                {
+                    sqlUpit = "UPDATE Firme SET ZaposlenikId = " + ZaposlenikId
+                            + ", Naziv = '" + Naziv
+                            + "', DatumOd = '" + DatumOd.ToString("MM-dd-yyyy")
+                            + "' WHERE Id = " + Id;
+                }
             }
             DatabaseConnection.Instance.IzvrsiUpit(sqlUpit);
         }

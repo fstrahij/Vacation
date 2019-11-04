@@ -104,5 +104,9 @@ namespace Vacation
             }
         }
 
+        private void btnZatvori_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

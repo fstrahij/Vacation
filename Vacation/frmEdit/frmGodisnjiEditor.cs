@@ -16,25 +16,35 @@ namespace Vacation.frmEdit
 {
     public partial class frmGodisnjiEditor : Form
     {
-        private int _id, _zaposlenikId;
+        private int _id, _zaposlenikId, _noviGodisnji, stariGodisnji;
+        private DateTime? _datumOd, _datumDo;
 
         public frmGodisnjiEditor(frmGodisnji pForma, string pGbText)
         {
             InitializeComponent();
             Forma = pForma;
             groupBox2.Text = pGbText;
-            Id = ZaposlenikId = 0; 
+            Id = ZaposlenikId = NoviGodisnji = StariGodisnji = 0;
         }
 
         public int Id { get => _id; set => _id = value; }
         public int ZaposlenikId { get => _zaposlenikId; set => _zaposlenikId = value; }
         private frmGodisnji Forma { get; set; }
+        public DateTime? DatumOd { get => _datumOd; set => _datumOd = value; }
+        public DateTime? DatumDo { get => _datumDo; set => _datumDo = value; }
+        public int NoviGodisnji { get => _noviGodisnji; set => _noviGodisnji = value; }
+        public int StariGodisnji { get => stariGodisnji; set => stariGodisnji = value; }
 
         private void frmGodisnjiEditor_Load(object sender, EventArgs e)
         {           
             PomocniBrojac.IzracunajRapoloziviBrojDana(ZaposlenikId);            
             PostaviGodinu();
             InicijalizirajVrijednostiTextBoxova();
+            if (DatumOd != null && DatumDo != null)
+            {
+                dtpDatumOd.Value = (DateTime) DatumOd;
+                dtpDatumDo.Value = (DateTime) DatumDo;
+            }
         }
 
         private void InicijalizirajVrijednostiTextBoxova()
@@ -42,8 +52,18 @@ namespace Vacation.frmEdit
             ZaposlenikGodisnji zaposlenikGodisnji = new ZaposlenikGodisnji();
             Godisnji godisnji = new Godisnji();
             Tuple<int, int> vrstaGodisnji = PomocniBrojac.IzracunajBrojDana(dtpDatumOd.Value, dtpDatumDo.Value);
-            txtNoviGodisnji.Text = vrstaGodisnji.Item1.ToString();
-            txtStariGodisnji.Text = vrstaGodisnji.Item2.ToString();
+            
+            if (NoviGodisnji > 0 && StariGodisnji  > 0)
+            {
+                txtNoviGodisnji.Text = NoviGodisnji.ToString();
+                txtStariGodisnji.Text = StariGodisnji.ToString();
+            }
+            else
+            {
+                txtNoviGodisnji.Text = vrstaGodisnji.Item1.ToString();
+                txtStariGodisnji.Text = vrstaGodisnji.Item2.ToString();
+            }
+
             txtBrojDana.Text = PomocniBrojac.BrojDana.ToString();
             txtUkupnoNovi.Text = zaposlenikGodisnji.DajPodatkePoZaposleniku(ZaposlenikId).BrojDana;
             int godina = PomocniBrojac.Godina;

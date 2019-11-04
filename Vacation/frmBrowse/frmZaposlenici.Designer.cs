@@ -41,6 +41,7 @@
             this.Adresa = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Oib = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Spol = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnZatvori = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -54,14 +55,14 @@
             this.groupBox1.Controls.Add(this.dataGridView1);
             this.groupBox1.Location = new System.Drawing.Point(29, 19);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(743, 412);
+            this.groupBox1.Size = new System.Drawing.Size(870, 412);
             this.groupBox1.TabIndex = 3;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Zaposlenici";
             // 
             // btnDeaktiviraj
             // 
-            this.btnDeaktiviraj.Location = new System.Drawing.Point(508, 25);
+            this.btnDeaktiviraj.Location = new System.Drawing.Point(636, 25);
             this.btnDeaktiviraj.Name = "btnDeaktiviraj";
             this.btnDeaktiviraj.Size = new System.Drawing.Size(77, 23);
             this.btnDeaktiviraj.TabIndex = 7;
@@ -91,7 +92,7 @@
             // 
             // btnDeaktivirajSve
             // 
-            this.btnDeaktivirajSve.Location = new System.Drawing.Point(606, 25);
+            this.btnDeaktivirajSve.Location = new System.Drawing.Point(734, 25);
             this.btnDeaktivirajSve.Name = "btnDeaktivirajSve";
             this.btnDeaktivirajSve.Size = new System.Drawing.Size(88, 23);
             this.btnDeaktivirajSve.TabIndex = 4;
@@ -116,7 +117,7 @@
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(649, 310);
+            this.dataGridView1.Size = new System.Drawing.Size(777, 310);
             this.dataGridView1.TabIndex = 0;
             // 
             // Id
@@ -164,11 +165,22 @@
             this.Spol.Name = "Spol";
             this.Spol.ReadOnly = true;
             // 
+            // btnZatvori
+            // 
+            this.btnZatvori.Location = new System.Drawing.Point(776, 437);
+            this.btnZatvori.Name = "btnZatvori";
+            this.btnZatvori.Size = new System.Drawing.Size(75, 23);
+            this.btnZatvori.TabIndex = 21;
+            this.btnZatvori.Text = "Zatvori";
+            this.btnZatvori.UseVisualStyleBackColor = true;
+            this.btnZatvori.Click += new System.EventHandler(this.btnZatvori_Click);
+            // 
             // frmZaposlenici
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(954, 530);
+            this.Controls.Add(this.btnZatvori);
             this.Controls.Add(this.groupBox1);
             this.Name = "frmZaposlenici";
             this.Text = "frmZaposlenici";
@@ -194,5 +206,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Adresa;
         private System.Windows.Forms.DataGridViewTextBoxColumn Oib;
         private System.Windows.Forms.DataGridViewTextBoxColumn Spol;
+        private System.Windows.Forms.Button btnZatvori;
     }
 }

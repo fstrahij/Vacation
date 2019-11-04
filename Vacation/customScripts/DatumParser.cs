@@ -40,12 +40,12 @@ namespace Vacation.customScripts
             DanUkupno += pDan;
             int limitDan = 30;
             int limitMjesec = 12;
-            if (DanUkupno > limitDan)
+            if (DanUkupno >= limitDan)
             {
                 MjesecUkupno++;
                 DanUkupno = DanUkupno - limitDan;
             }
-            if (MjesecUkupno > limitMjesec)
+            if (MjesecUkupno >= limitMjesec)
             {
                 GodinaUkupno++;
                 MjesecUkupno = MjesecUkupno - limitMjesec;
@@ -75,7 +75,11 @@ namespace Vacation.customScripts
             { 
                 return razlikaMjeseci;
             }
-            razlikaMjeseci = (razlikaGodina > 0 && razlikaMjeseci == 0) ? 12 : razlikaMjeseci;
+            if (razlikaGodina > 0 && razlikaMjeseci == 0)
+            {
+                Godina++;
+                razlikaMjeseci = 0;
+            }
             razlikaMjeseci = (razlikaMjeseci > 1 && razlikaDani < 0) ? razlikaMjeseci - 1 : razlikaMjeseci;
             return razlikaMjeseci;
         }
@@ -84,13 +88,15 @@ namespace Vacation.customScripts
         {
             int razlikaMjeseci = DatumDo.Month - DatumOd.Month;
             int razlikaDani = DatumDo.Day - DatumOd.Day;
-            int brojDana = 30;
             if (razlikaMjeseci == 0)
             {
                 return Math.Abs(razlikaDani);
             }
-            razlikaDani = (razlikaMjeseci > 0 && razlikaDani == 0) ? brojDana : razlikaDani;
-            razlikaDani = (razlikaMjeseci == 0 || razlikaDani < 0) ? brojDana + razlikaDani :razlikaDani;            
+            if ((razlikaMjeseci > 0 && razlikaDani == 0) || (razlikaMjeseci == 0 || razlikaDani < 0))
+            {
+                Mjesec++;
+                razlikaDani = 0;
+            }
             
             return razlikaDani;
         }

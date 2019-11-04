@@ -40,12 +40,14 @@
             this.Dan = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Mjesec = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Tip = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnZatvori = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.btnZatvori);
             this.groupBox1.Controls.Add(this.btnDeaktiviraj);
             this.groupBox1.Controls.Add(this.btnUredi);
             this.groupBox1.Controls.Add(this.btnNovi);
@@ -157,6 +159,16 @@
             this.Tip.ReadOnly = true;
             this.Tip.Width = 150;
             // 
+            // btnZatvori
+            // 
+            this.btnZatvori.Location = new System.Drawing.Point(720, 403);
+            this.btnZatvori.Name = "btnZatvori";
+            this.btnZatvori.Size = new System.Drawing.Size(75, 23);
+            this.btnZatvori.TabIndex = 21;
+            this.btnZatvori.Text = "Zatvori";
+            this.btnZatvori.UseVisualStyleBackColor = true;
+            this.btnZatvori.Click += new System.EventHandler(this.btnZatvori_Click);
+            // 
             // TemplateEditorForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -186,5 +198,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Dan;
         private System.Windows.Forms.DataGridViewTextBoxColumn Mjesec;
         private System.Windows.Forms.DataGridViewTextBoxColumn Tip;
+        private System.Windows.Forms.Button btnZatvori;
     }
 }

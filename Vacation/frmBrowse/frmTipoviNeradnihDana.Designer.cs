@@ -30,10 +30,11 @@
         {
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btnDeaktiviraj = new System.Windows.Forms.Button();
             this.btnUredi = new System.Windows.Forms.Button();
             this.btnNovi = new System.Windows.Forms.Button();
             this.btnDeaktivirajSve = new System.Windows.Forms.Button();
-            this.btnDeaktiviraj = new System.Windows.Forms.Button();
+            this.btnZatvori = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -47,11 +48,12 @@
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(403, 268);
+            this.dataGridView1.Size = new System.Drawing.Size(648, 268);
             this.dataGridView1.TabIndex = 0;
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.btnZatvori);
             this.groupBox1.Controls.Add(this.btnDeaktiviraj);
             this.groupBox1.Controls.Add(this.btnUredi);
             this.groupBox1.Controls.Add(this.btnNovi);
@@ -63,6 +65,16 @@
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Tipovi neradnih dana";
+            // 
+            // btnDeaktiviraj
+            // 
+            this.btnDeaktiviraj.Location = new System.Drawing.Point(522, 25);
+            this.btnDeaktiviraj.Name = "btnDeaktiviraj";
+            this.btnDeaktiviraj.Size = new System.Drawing.Size(77, 23);
+            this.btnDeaktiviraj.TabIndex = 7;
+            this.btnDeaktiviraj.Text = "Deaktiviraj Sve";
+            this.btnDeaktiviraj.UseVisualStyleBackColor = true;
+            this.btnDeaktiviraj.Click += new System.EventHandler(this.DeaktivirajClick);
             // 
             // btnUredi
             // 
@@ -86,7 +98,7 @@
             // 
             // btnDeaktivirajSve
             // 
-            this.btnDeaktivirajSve.Location = new System.Drawing.Point(360, 25);
+            this.btnDeaktivirajSve.Location = new System.Drawing.Point(605, 25);
             this.btnDeaktivirajSve.Name = "btnDeaktivirajSve";
             this.btnDeaktivirajSve.Size = new System.Drawing.Size(88, 23);
             this.btnDeaktivirajSve.TabIndex = 4;
@@ -94,15 +106,15 @@
             this.btnDeaktivirajSve.UseVisualStyleBackColor = true;
             this.btnDeaktivirajSve.Click += new System.EventHandler(this.DeaktivirajSveClick);
             // 
-            // btnDeaktiviraj
+            // btnZatvori
             // 
-            this.btnDeaktiviraj.Location = new System.Drawing.Point(277, 25);
-            this.btnDeaktiviraj.Name = "btnDeaktiviraj";
-            this.btnDeaktiviraj.Size = new System.Drawing.Size(77, 23);
-            this.btnDeaktiviraj.TabIndex = 7;
-            this.btnDeaktiviraj.Text = "Deaktiviraj Sve";
-            this.btnDeaktiviraj.UseVisualStyleBackColor = true;
-            this.btnDeaktiviraj.Click += new System.EventHandler(this.DeaktivirajClick);
+            this.btnZatvori.Location = new System.Drawing.Point(618, 356);
+            this.btnZatvori.Name = "btnZatvori";
+            this.btnZatvori.Size = new System.Drawing.Size(75, 23);
+            this.btnZatvori.TabIndex = 21;
+            this.btnZatvori.Text = "Zatvori";
+            this.btnZatvori.UseVisualStyleBackColor = true;
+            this.btnZatvori.Click += new System.EventHandler(this.btnZatvori_Click);
             // 
             // TipoviNeradnihDanaForm
             // 
@@ -127,5 +139,6 @@
         private System.Windows.Forms.Button btnNovi;
         private System.Windows.Forms.Button btnUredi;
         private System.Windows.Forms.Button btnDeaktiviraj;
+        private System.Windows.Forms.Button btnZatvori;
     }
 }

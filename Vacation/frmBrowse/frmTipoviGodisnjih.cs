@@ -24,11 +24,16 @@ namespace Vacation.frmBrowse
 
         public void UcitajPodatke()
         {
+            dataGridView1.Rows.Clear();
             TipNeradnihDana tip = new TipNeradnihDana();
-            BindingSource binding = new BindingSource();
-            binding.DataSource = tip.DajListu();
-            dataGridView1.DataSource = binding;
-            dataGridView1.Columns[0].Visible = dataGridView1.Columns[3].Visible = false;
+            foreach (var item in tip.DajListu())
+            {
+                dataGridView1.Rows.Add(
+                                    item.Id,
+                                    item.Naziv,
+                                    item.Boja
+                    );
+            }
             HasRows();
         }
 
@@ -42,6 +47,11 @@ namespace Vacation.frmBrowse
             {
                 btnDeaktivirajSve.Enabled = btnDeaktiviraj.Enabled = btnUredi.Enabled = false;
             }
+        }
+
+        private void btnZatvori_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
 
         /*private void NoviClick(object sender, EventArgs e)

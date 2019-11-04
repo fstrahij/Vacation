@@ -80,7 +80,12 @@ namespace Vacation.frmBrowse
                 forma.ShowDialog();
             }
         }
-        
+
+        private void btnZatvori_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
         /*
 private void NoviClick(object sender, EventArgs e)
 {

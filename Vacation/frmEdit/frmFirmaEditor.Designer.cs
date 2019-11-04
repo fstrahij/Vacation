@@ -36,7 +36,6 @@
             this.btnSpremi = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.chbDatumOd = new System.Windows.Forms.CheckBox();
             this.chbDatumDo = new System.Windows.Forms.CheckBox();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -55,13 +54,12 @@
             this.label4.AutoSize = true;
             this.label4.Location = new System.Drawing.Point(158, 131);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(55, 13);
+            this.label4.Size = new System.Drawing.Size(53, 13);
             this.label4.TabIndex = 8;
-            this.label4.Text = "Datum Do";
+            this.label4.Text = "Datum do";
             // 
             // dtpDatumOd
             // 
-            this.dtpDatumOd.Enabled = false;
             this.dtpDatumOd.Location = new System.Drawing.Point(214, 91);
             this.dtpDatumOd.Name = "dtpDatumOd";
             this.dtpDatumOd.Size = new System.Drawing.Size(121, 20);
@@ -99,14 +97,13 @@
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(158, 91);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(55, 13);
+            this.label1.Size = new System.Drawing.Size(53, 13);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Datum Od";
+            this.label1.Text = "Datum od";
             // 
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.chbDatumDo);
-            this.groupBox1.Controls.Add(this.chbDatumOd);
             this.groupBox1.Controls.Add(this.dtpDatumDo);
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.dtpDatumOd);
@@ -120,16 +117,6 @@
             this.groupBox1.TabIndex = 18;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Firma unos";
-            // 
-            // chbDatumOd
-            // 
-            this.chbDatumOd.AutoSize = true;
-            this.chbDatumOd.Location = new System.Drawing.Point(368, 93);
-            this.chbDatumOd.Name = "chbDatumOd";
-            this.chbDatumOd.Size = new System.Drawing.Size(15, 14);
-            this.chbDatumOd.TabIndex = 10;
-            this.chbDatumOd.UseVisualStyleBackColor = true;
-            this.chbDatumOd.CheckedChanged += new System.EventHandler(this.chbDatumOd_CheckedChanged);
             // 
             // chbDatumDo
             // 
@@ -166,6 +153,5 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.CheckBox chbDatumDo;
-        private System.Windows.Forms.CheckBox chbDatumOd;
     }
 }

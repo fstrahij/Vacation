@@ -27,21 +27,18 @@ namespace Vacation.frmBrowse
         public void UcitajPodatke()
         {
             dataGridView1.Rows.Clear();
-            Firma firma = new Firma();
-            Zaposlenik zaposlenik = new Zaposlenik();
-            zaposlenik = zaposlenik.DajListu().Find(x => x.Id == ZaposlenikID);            
-            txtAdresa.Text = zaposlenik.Adresa;
-            txtOib.Text = zaposlenik.Oib;
-            txtSpol.Text = zaposlenik.DajNazivSpola(int.Parse(zaposlenik.SpolId));
+            Firma firma = new Firma();            
 
             DatumParser.DanUkupno = DatumParser.MjesecUkupno = DatumParser.GodinaUkupno = 0;
+            DateTime datumDo;
             foreach (var lista in firma.DajListu(ZaposlenikID))
             {
-                DatumParser.Izracunaj(lista.DatumOd, lista.DatumDo);
+                datumDo = (lista.DatumDo != null) ? (DateTime)lista.DatumDo : DateTime.Today;
+                DatumParser.Izracunaj(lista.DatumOd, datumDo);
                 dataGridView1.Rows.Add(lista.Id,
                                         lista.Naziv,
                                         lista.DatumOd.ToString("dd.MM.yyyy."),
-                                        lista.DatumDo.ToString("dd.MM.yyyy."),
+                                        datumDo.ToString("dd.MM.yyyy."),
                                         DatumParser.Godina,
                                         DatumParser.Mjesec,
                                         DatumParser.Dan,
@@ -50,7 +47,17 @@ namespace Vacation.frmBrowse
                                         DatumParser.DanUkupno 
                                         );
             }
+            PostaviPodatkeZaposlenika();
             HasRows();
+        }
+
+        private void PostaviPodatkeZaposlenika()
+        {
+            Zaposlenik zaposlenik = new Zaposlenik();
+            zaposlenik = zaposlenik.DajListu().Find(x => x.Id == ZaposlenikID);
+            txtAdresa.Text = zaposlenik.Adresa;
+            txtOib.Text = zaposlenik.Oib;
+            txtSpol.Text = zaposlenik.DajNazivSpola(int.Parse(zaposlenik.SpolId));
         }
 
         private void HasRows()
@@ -106,7 +113,16 @@ namespace Vacation.frmBrowse
                     forma.ZaposlenikId = ZaposlenikID.ToString();
                     forma.Naziv = dataGridView1.CurrentRow.Cells[1].Value.ToString();
                     forma.DatumOd = DateTime.Parse(dataGridView1.CurrentRow.Cells[2].Value.ToString());
-                    forma.DatumDo = DateTime.Parse(dataGridView1.CurrentRow.Cells[3].Value.ToString());
+
+                    if (DateTime.Parse(dataGridView1.CurrentRow.Cells[3].Value.ToString()) < DateTime.Today)
+                    {
+                        forma.DatumDo = DateTime.Parse(dataGridView1.CurrentRow.Cells[3].Value.ToString());
+                    }
+                    else
+                    {
+                        forma.DatumDo = null;
+                    }
+                    
                     forma.ShowDialog();
                 }
             }
@@ -143,6 +159,11 @@ namespace Vacation.frmBrowse
                     UcitajPodatke();
                 }
             }
+        }
+
+        private void ZatvoriClick(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

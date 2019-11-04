@@ -60,11 +60,11 @@ namespace Vacation.frmBrowse
         {
             NeradniDan dan = new NeradniDan();
             comboBoxGodine.Items.Clear();
-            comboBoxGodine.DataSource = dan.DajGodine();
-            /*foreach (var item in dan.DajGodine())
+            //comboBoxGodine.DataSource = dan.DajGodine();
+            foreach (var item in dan.DajGodine())
             {
                 comboBoxGodine.Items.Add(item);
-            }*/
+            }
         }
 
         private void HasRows()
@@ -141,6 +141,11 @@ namespace Vacation.frmBrowse
                 UcitajGodine();
                 UcitajPodatke();
             }
+        }
+
+        private void btnZatvori_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

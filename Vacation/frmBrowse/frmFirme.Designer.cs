@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.txtSpol = new System.Windows.Forms.TextBox();
             this.txtOib = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
@@ -43,7 +43,6 @@
             this.btnNovi = new System.Windows.Forms.Button();
             this.btnDeaktivirajSve = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Naziv = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DatumOd = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -54,6 +53,8 @@
             this.ZbrojGodina = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ZbrojMjesec = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ZbrojDan = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.btnZatvori = new System.Windows.Forms.Button();
             this.groupBox3.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -208,20 +209,6 @@
             this.dataGridView1.Size = new System.Drawing.Size(873, 310);
             this.dataGridView1.TabIndex = 8;
             // 
-            // groupBox2
-            // 
-            this.groupBox2.Controls.Add(this.btnDeaktiviraj);
-            this.groupBox2.Controls.Add(this.btnUredi);
-            this.groupBox2.Controls.Add(this.btnNovi);
-            this.groupBox2.Controls.Add(this.btnDeaktivirajSve);
-            this.groupBox2.Controls.Add(this.dataGridView1);
-            this.groupBox2.Location = new System.Drawing.Point(351, 58);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(938, 416);
-            this.groupBox2.TabIndex = 17;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Firme";
-            // 
             // Id
             // 
             this.Id.HeaderText = "Id";
@@ -258,8 +245,8 @@
             // 
             // Mjesec
             // 
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.Mjesec.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.Mjesec.DefaultCellStyle = dataGridViewCellStyle1;
             this.Mjesec.HeaderText = "Mjesec";
             this.Mjesec.Name = "Mjesec";
             this.Mjesec.ReadOnly = true;
@@ -293,11 +280,36 @@
             this.ZbrojDan.ReadOnly = true;
             this.ZbrojDan.Width = 80;
             // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.btnDeaktiviraj);
+            this.groupBox2.Controls.Add(this.btnUredi);
+            this.groupBox2.Controls.Add(this.btnNovi);
+            this.groupBox2.Controls.Add(this.btnDeaktivirajSve);
+            this.groupBox2.Controls.Add(this.dataGridView1);
+            this.groupBox2.Location = new System.Drawing.Point(351, 58);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(938, 416);
+            this.groupBox2.TabIndex = 17;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Firme";
+            // 
+            // btnZatvori
+            // 
+            this.btnZatvori.Location = new System.Drawing.Point(1174, 480);
+            this.btnZatvori.Name = "btnZatvori";
+            this.btnZatvori.Size = new System.Drawing.Size(75, 23);
+            this.btnZatvori.TabIndex = 20;
+            this.btnZatvori.Text = "Zatvori";
+            this.btnZatvori.UseVisualStyleBackColor = true;
+            this.btnZatvori.Click += new System.EventHandler(this.ZatvoriClick);
+            // 
             // frmFirme
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1337, 533);
+            this.Controls.Add(this.btnZatvori);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.groupBox2);
@@ -340,5 +352,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn ZbrojGodina;
         private System.Windows.Forms.DataGridViewTextBoxColumn ZbrojMjesec;
         private System.Windows.Forms.DataGridViewTextBoxColumn ZbrojDan;
+        private System.Windows.Forms.Button btnZatvori;
     }
 }

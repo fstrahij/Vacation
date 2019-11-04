@@ -42,6 +42,7 @@
             this.Spol = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Godina = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.BrojDana = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnZatvori = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -165,11 +166,22 @@
             this.BrojDana.HeaderText = "Broj Dana Godišnjeg";
             this.BrojDana.Name = "BrojDana";
             // 
+            // btnZatvori
+            // 
+            this.btnZatvori.Location = new System.Drawing.Point(800, 437);
+            this.btnZatvori.Name = "btnZatvori";
+            this.btnZatvori.Size = new System.Drawing.Size(75, 23);
+            this.btnZatvori.TabIndex = 21;
+            this.btnZatvori.Text = "Zatvori";
+            this.btnZatvori.UseVisualStyleBackColor = true;
+            this.btnZatvori.Click += new System.EventHandler(this.btnZatvori_Click);
+            // 
             // frmZaposlenikGodisnji
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(980, 450);
+            this.ClientSize = new System.Drawing.Size(980, 519);
+            this.Controls.Add(this.btnZatvori);
             this.Controls.Add(this.groupBox1);
             this.Name = "frmZaposlenikGodisnji";
             this.Text = "frmZaposlenikGodisnji";
@@ -196,5 +208,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Spol;
         private System.Windows.Forms.DataGridViewTextBoxColumn Godina;
         private System.Windows.Forms.DataGridViewTextBoxColumn BrojDana;
+        private System.Windows.Forms.Button btnZatvori;
     }
 }

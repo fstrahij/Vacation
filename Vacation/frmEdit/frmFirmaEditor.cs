@@ -16,7 +16,7 @@ namespace Vacation.frmEdit
     {
         private int _id;
         private string _naziv, _zaposlenikId;
-        private DateTime _datumOd, _datumDo;
+        private DateTime? _datumOd, _datumDo;
 
         public frmFirmaEditor(frmFirme pForma, string pGbText)
         {
@@ -31,8 +31,8 @@ namespace Vacation.frmEdit
 
         public int Id { get => _id; set => _id = value; }
         public string Naziv { get => _naziv; set => _naziv = value; }
-        public DateTime DatumOd { get => _datumOd; set => _datumOd = value; }
-        public DateTime DatumDo { get => _datumDo; set => _datumDo = value; }
+        public DateTime? DatumOd { get => _datumOd; set => _datumOd = value; }
+        public DateTime? DatumDo { get => _datumDo; set => _datumDo = value; }
         public string ZaposlenikId { get => _zaposlenikId; set => _zaposlenikId = value; }
         private frmFirme Forma { get; set; }
 
@@ -47,11 +47,6 @@ namespace Vacation.frmEdit
             dtpDatumDo.Value = dtpDatumDo.MinDate;
         }
 
-        private void chbDatumOd_CheckedChanged(object sender, EventArgs e)
-        {
-            dtpDatumOd.Enabled = chbDatumOd.Checked;
-        }
-
         private void chbDatumDo_CheckedChanged(object sender, EventArgs e)
         {
             dtpDatumDo.Enabled = chbDatumDo.Checked;
@@ -60,8 +55,15 @@ namespace Vacation.frmEdit
         private void frmFirmaEditor_Load(object sender, EventArgs e)
         {
             txtNaziv.Text = Naziv;
-            dtpDatumOd.Value = DatumOd;
-            dtpDatumDo.Value = DatumDo;
+            if (DatumOd != null)
+            {
+                dtpDatumOd.Value = (DateTime) DatumOd;
+            }
+            if (DatumDo != null)
+            {
+                chbDatumDo.Checked = true;
+                dtpDatumDo.Value = (DateTime) DatumDo;
+            }
         }
 
         private void SpremiClick(object sender, EventArgs e)
@@ -71,7 +73,16 @@ namespace Vacation.frmEdit
                 DialogResult dr = MessageBox.Show("Jeste li sigurni?", "Provjera", MessageBoxButtons.YesNo);
                 if (dr == DialogResult.Yes)
                 {
-                    Firma firma = new Firma(Id, ZaposlenikId, txtNaziv.Text, dtpDatumOd.Value, dtpDatumDo.Value );
+                    DatumOd = dtpDatumOd.Value;
+                    if (dtpDatumDo.Enabled)
+                    {
+                        DatumDo = dtpDatumDo.Value;
+                    }
+                    else
+                    {
+                        DatumDo = null;
+                    }                    
+                    Firma firma = new Firma(Id, ZaposlenikId, txtNaziv.Text, (DateTime) DatumOd, DatumDo);
                     firma.Spremi();
                     Forma.UcitajPodatke();
                     this.Close();

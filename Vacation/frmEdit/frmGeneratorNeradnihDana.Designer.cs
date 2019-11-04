@@ -42,6 +42,7 @@
             this.btnDodajTemplate = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.txtGodina = new System.Windows.Forms.TextBox();
+            this.btnZatvori = new System.Windows.Forms.Button();
             this.groupBoxAll.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox2.SuspendLayout();
@@ -82,15 +83,16 @@
             this.Tip});
             this.dataGridView1.Location = new System.Drawing.Point(26, 36);
             this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView1.Size = new System.Drawing.Size(647, 263);
             this.dataGridView1.TabIndex = 0;
             // 
             // Odabir
             // 
-            this.Odabir.FalseValue = "";
+            this.Odabir.FalseValue = "False";
             this.Odabir.HeaderText = "";
             this.Odabir.Name = "Odabir";
-            this.Odabir.TrueValue = "";
+            this.Odabir.TrueValue = "True";
             this.Odabir.Width = 50;
             // 
             // Id
@@ -173,11 +175,22 @@
             this.txtGodina.Size = new System.Drawing.Size(124, 20);
             this.txtGodina.TabIndex = 0;
             // 
+            // btnZatvori
+            // 
+            this.btnZatvori.Location = new System.Drawing.Point(763, 47);
+            this.btnZatvori.Name = "btnZatvori";
+            this.btnZatvori.Size = new System.Drawing.Size(75, 23);
+            this.btnZatvori.TabIndex = 21;
+            this.btnZatvori.Text = "Zatvori";
+            this.btnZatvori.UseVisualStyleBackColor = true;
+            this.btnZatvori.Click += new System.EventHandler(this.btnZatvori_Click);
+            // 
             // GeneratorNeradnihDanaForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(939, 450);
+            this.Controls.Add(this.btnZatvori);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBoxAll);
             this.Name = "GeneratorNeradnihDanaForm";
@@ -208,6 +221,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Naziv;
         private System.Windows.Forms.DataGridViewTextBoxColumn Datum;
         private System.Windows.Forms.DataGridViewTextBoxColumn Tip;
+        private System.Windows.Forms.Button btnZatvori;
     }
 }
 

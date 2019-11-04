@@ -103,6 +103,7 @@ namespace Vacation
                     if (string.IsNullOrWhiteSpace(row.Cells[4].Value.ToString()))
                     {
                         dan.Naziv = row.Cells[3].Value.ToString();
+                        dan.Datum = DateTime.Parse(Godina.ToString()+"-01-01", null, DateTimeStyles.None);
                         dan.TipId = row.Cells[2].Value.ToString();
                         dan.Spremi();
                     }
@@ -133,6 +134,11 @@ namespace Vacation
                     }                  
                 }
             }
+        }
+
+        private void btnZatvori_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }
