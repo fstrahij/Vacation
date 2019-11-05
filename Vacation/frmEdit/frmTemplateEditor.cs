@@ -44,11 +44,11 @@ namespace Vacation.frmEdit
 
         private void SpremiClick(object sender, EventArgs e)
         {
+            DialogResult dr;
             if (!string.IsNullOrWhiteSpace(txtNaziv.Text))
             {
                 SetInputs();
-                DialogResult dr = MessageBox.Show("Jeste li sigurni?", "Provjera", MessageBoxButtons.YesNo);
-                //Console.WriteLine(Id + " " + Dan + " " + Mjesec + " " + TipId + " " + txtNaziv.Text);
+                dr = MessageBox.Show("Jeste li sigurni?", "Provjera", MessageBoxButtons.YesNo);
                 if (dr == DialogResult.Yes)
                 {                                        
                     NeradaniDanTemplate template = new NeradaniDanTemplate(Id,  
@@ -61,6 +61,10 @@ namespace Vacation.frmEdit
                     Forma.UcitajPodatke();
                     this.Close();
                 }
+            }
+            else
+            {
+                dr = MessageBox.Show("Neispravan unos u polje Naziv");
             }
         }
     }

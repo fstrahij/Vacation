@@ -18,7 +18,7 @@ namespace Vacation.frmEdit
             groupBox1.Text = pGbText;
             Id = 0;
             Naziv = TipId = "";
-            Datum = new DateTime();
+            Datum = DateTime.Today;
         }
 
         public int Id { get => _id; set => _id = value; }

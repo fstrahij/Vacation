@@ -130,9 +130,10 @@ namespace Vacation.frmBrowse
 
         private void DeaktivirajClick(object sender, EventArgs e)
         {
+            DialogResult dr;
             if (ZaposlenikID > 0)
             {
-                DialogResult dr = MessageBox.Show("Jeste li sigurni?", "Provjera", MessageBoxButtons.YesNo);
+                dr = MessageBox.Show("Jeste li sigurni?", "Provjera", MessageBoxButtons.YesNo);
                 if (dr == DialogResult.Yes)
                 {
                     Firma firma = new Firma();
@@ -141,13 +142,18 @@ namespace Vacation.frmBrowse
                     UcitajPodatke();
                 }
             }
+            else
+            {
+                dr = MessageBox.Show("Zaposlenik nije odabran!");
+            }
         }
 
         private void DeaktivirajSveClick(object sender, EventArgs e)
         {
+            DialogResult dr;
             if (ZaposlenikID > 0)
             {
-                DialogResult dr = MessageBox.Show("Jeste li sigurni?", "Provjera", MessageBoxButtons.YesNo);
+                dr = MessageBox.Show("Jeste li sigurni?", "Provjera", MessageBoxButtons.YesNo);
                 if (dr == DialogResult.Yes)
                 {
                     Firma firma = new Firma();
@@ -158,6 +164,10 @@ namespace Vacation.frmBrowse
                     }
                     UcitajPodatke();
                 }
+            }
+            else
+            {
+                dr = MessageBox.Show("Zaposlenik nije odabran!");
             }
         }
 

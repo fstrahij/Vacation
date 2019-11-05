@@ -42,9 +42,10 @@ namespace Vacation.frmEdit
 
         private void SpremiClick(object sender, EventArgs e)
         {
+            DialogResult dr;
             if (!string.IsNullOrWhiteSpace(txtBrojDana.Text) && !string.IsNullOrWhiteSpace(ZaposlenikId))
             {
-                DialogResult dr = MessageBox.Show("Jeste li sigurni?", "Provjera", MessageBoxButtons.YesNo);
+                dr = MessageBox.Show("Jeste li sigurni?", "Provjera", MessageBoxButtons.YesNo);
                 if (dr == DialogResult.Yes)
                 {
                     ZaposlenikGodisnji zapGod = new ZaposlenikGodisnji( Id,
@@ -56,6 +57,10 @@ namespace Vacation.frmEdit
                     Forma.UcitajPodatke();
                     this.Close();
                 }
+            }
+            else
+            {
+                dr = MessageBox.Show("Neispravan unos u polje Broj dana ili nije odabran zaposlenik!");
             }
         }
 

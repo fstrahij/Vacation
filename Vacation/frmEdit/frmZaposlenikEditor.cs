@@ -66,9 +66,10 @@ namespace Vacation.frmEdit
         
         private void SpremiClick(object sender, EventArgs e)
         {
+            DialogResult dr;
             if (IsValidInputs())
             {
-                DialogResult dr = MessageBox.Show("Jeste li sigurni?", "Provjera", MessageBoxButtons.YesNo);
+                dr = MessageBox.Show("Jeste li sigurni?", "Provjera", MessageBoxButtons.YesNo);
                 if (dr == DialogResult.Yes)
                 {
                     int spolId = comboBoxSpol.SelectedIndex >=0 ? comboBoxSpol.SelectedIndex + 1 : int.Parse(SpolId);
@@ -83,6 +84,12 @@ namespace Vacation.frmEdit
                     Forma.UcitajPodatke();
                     this.Close();
                 }
+            }
+            else
+            {
+                string poruka = "Neispravan unos u polja Ime, Prezime, Adresa ili Oib!\n" +
+                    "Oib mora imati najmanje 11 znameni brojčanih vrijednosti!";
+                dr = MessageBox.Show(poruka);
             }
         }
     }

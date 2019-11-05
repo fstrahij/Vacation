@@ -47,9 +47,10 @@ namespace Vacation
 
         private void SpremiClick(object sender, EventArgs e)
         {
+            DialogResult dr;
             if (!string.IsNullOrWhiteSpace(txtNaziv.Text))
             {
-                DialogResult dr = MessageBox.Show("Jeste li sigurni?", "Provjera", MessageBoxButtons.YesNo);
+                dr = MessageBox.Show("Jeste li sigurni?", "Provjera", MessageBoxButtons.YesNo);
                 if (dr == DialogResult.Yes)
                 {
                     TipNeradnihDana tip = new TipNeradnihDana(Id, txtNaziv.Text, txtBoja.Text);
@@ -58,6 +59,10 @@ namespace Vacation
                     this.Close();
                     
                 }
+            }
+            else
+            {
+                dr = MessageBox.Show("Neispravan unos u polje Naziv");
             }
         }
     }

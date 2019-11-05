@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.osnovnoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.postavkeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.zaposleniciToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pregledToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.firmeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -39,8 +41,6 @@
             this.tipoviToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.zaposlenikgodišnjiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.godišnjiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.osnovnoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.postavkeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -57,6 +57,21 @@
             this.menuStrip1.Size = new System.Drawing.Size(928, 24);
             this.menuStrip1.TabIndex = 2;
             this.menuStrip1.Text = "menuStrip1";
+            // 
+            // osnovnoToolStripMenuItem
+            // 
+            this.osnovnoToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.postavkeToolStripMenuItem});
+            this.osnovnoToolStripMenuItem.Name = "osnovnoToolStripMenuItem";
+            this.osnovnoToolStripMenuItem.Size = new System.Drawing.Size(67, 20);
+            this.osnovnoToolStripMenuItem.Text = "Osnovno";
+            // 
+            // postavkeToolStripMenuItem
+            // 
+            this.postavkeToolStripMenuItem.Name = "postavkeToolStripMenuItem";
+            this.postavkeToolStripMenuItem.Size = new System.Drawing.Size(121, 22);
+            this.postavkeToolStripMenuItem.Text = "Postavke";
+            this.postavkeToolStripMenuItem.Click += new System.EventHandler(this.postavkeToolStripMenuItem_Click);
             // 
             // zaposleniciToolStripMenuItem
             // 
@@ -134,21 +149,6 @@
             this.godišnjiToolStripMenuItem.Text = "Godišnji";
             this.godišnjiToolStripMenuItem.Click += new System.EventHandler(this.godišnjiToolStripMenuItem_Click);
             // 
-            // osnovnoToolStripMenuItem
-            // 
-            this.osnovnoToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.postavkeToolStripMenuItem});
-            this.osnovnoToolStripMenuItem.Name = "osnovnoToolStripMenuItem";
-            this.osnovnoToolStripMenuItem.Size = new System.Drawing.Size(67, 20);
-            this.osnovnoToolStripMenuItem.Text = "Osnovno";
-            // 
-            // postavkeToolStripMenuItem
-            // 
-            this.postavkeToolStripMenuItem.Name = "postavkeToolStripMenuItem";
-            this.postavkeToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.postavkeToolStripMenuItem.Text = "Postavke";
-            this.postavkeToolStripMenuItem.Click += new System.EventHandler(this.postavkeToolStripMenuItem_Click);
-            // 
             // GlavniMeni
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -159,6 +159,7 @@
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "GlavniMeni";
             this.Text = "GlavniMeni";
+            this.Load += new System.EventHandler(this.GlavniMeni_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);

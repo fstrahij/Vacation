@@ -72,9 +72,10 @@ namespace Vacation.frmEdit
 
         private void SpremiClick(object sender, EventArgs e)
         {
+            DialogResult dr;
             if (!string.IsNullOrWhiteSpace(txtNaziv.Text))
             {
-                DialogResult dr = MessageBox.Show("Jeste li sigurni?", "Provjera", MessageBoxButtons.YesNo);
+                dr = MessageBox.Show("Jeste li sigurni?", "Provjera", MessageBoxButtons.YesNo);
                 if (dr == DialogResult.Yes)
                 {
                     DatumOd = dtpDatumOd.Value;
@@ -91,6 +92,10 @@ namespace Vacation.frmEdit
                     Forma.UcitajPodatke();
                     this.Close();
                 }
+            }
+            else
+            {
+                dr = MessageBox.Show("Naziv nije unesen!");
             }
         }
     }

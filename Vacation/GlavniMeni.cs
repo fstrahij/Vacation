@@ -89,5 +89,10 @@ namespace Vacation
             forma.WindowState = FormWindowState.Maximized;
             forma.Show();
         }
+
+        private void GlavniMeni_Load(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Maximized;
+        }
     }
 }

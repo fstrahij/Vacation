@@ -99,7 +99,12 @@ namespace Vacation.customScripts
         private static void UmanjiZaGodisnji()
         {
             Godisnji godisnji = new Godisnji();
-            DateTime postavke = new DateTime(Godina, 6, 30);
+            Postavka postavka = new Postavka();
+            string GranicniDatum = "GranicniDatum";
+            string datum = Godina + "." + postavka.DajListu().Find(x => x.Kljuc == GranicniDatum).Vrijednost;
+            string format = "yyyy.dd.MM.";
+            DateTime postavke;
+            DateTime.TryParseExact(datum, format, null, System.Globalization.DateTimeStyles.None, out postavke); //new DateTime(Godina, 6, 30);
             int index = godisnji.DajListu(ZaposlenikId, Godina).Count;
             if (index > 0)
             {

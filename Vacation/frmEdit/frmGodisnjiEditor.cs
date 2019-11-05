@@ -34,7 +34,6 @@ namespace Vacation.frmEdit
         public DateTime? DatumDo { get => _datumDo; set => _datumDo = value; }
         public int NoviGodisnji { get => _noviGodisnji; set => _noviGodisnji = value; }
         public int StariGodisnji { get => stariGodisnji; set => stariGodisnji = value; }
-
         private void frmGodisnjiEditor_Load(object sender, EventArgs e)
         {           
             PomocniBrojac.IzracunajRapoloziviBrojDana(ZaposlenikId);            
@@ -128,9 +127,10 @@ namespace Vacation.frmEdit
 
         private void SpremiClick(object sender, EventArgs e)
         {
+            DialogResult dr;
             if (ValidateInputs())
             {
-                DialogResult dr = MessageBox.Show("Jeste li sigurni?", "Provjera", MessageBoxButtons.YesNo);
+                dr = MessageBox.Show("Jeste li sigurni?", "Provjera", MessageBoxButtons.YesNo);
                 if (dr == DialogResult.Yes)
                 {
                     Godisnji godisnji = new Godisnji(Id,
@@ -145,6 +145,10 @@ namespace Vacation.frmEdit
                     Forma.UcitajPodatke();
                     this.Close();
                 }
+            }
+            else
+            {
+                dr = MessageBox.Show("Neispravan unos u polje broj dana!");
             }
         }
     }
