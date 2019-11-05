@@ -33,6 +33,7 @@
             this.btnNovi = new System.Windows.Forms.Button();
             this.btnDeaktivirajSve = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.btnZatvori = new System.Windows.Forms.Button();
             this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ZaposlenikId = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Ime = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -42,7 +43,6 @@
             this.Spol = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Godina = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.BrojDana = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.btnZatvori = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -68,6 +68,7 @@
             this.btnDeaktiviraj.TabIndex = 7;
             this.btnDeaktiviraj.Text = "Deaktiviraj Sve";
             this.btnDeaktiviraj.UseVisualStyleBackColor = true;
+            this.btnDeaktiviraj.Click += new System.EventHandler(this.DeaktivirajClick);
             // 
             // btnNovi
             // 
@@ -87,6 +88,7 @@
             this.btnDeaktivirajSve.TabIndex = 4;
             this.btnDeaktivirajSve.Text = "Deaktiviraj Sve";
             this.btnDeaktivirajSve.UseVisualStyleBackColor = true;
+            this.btnDeaktivirajSve.Click += new System.EventHandler(this.DeaktivirajSveClick);
             // 
             // dataGridView1
             // 
@@ -109,6 +111,16 @@
             this.dataGridView1.Size = new System.Drawing.Size(801, 310);
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellEndEdit);
+            // 
+            // btnZatvori
+            // 
+            this.btnZatvori.Location = new System.Drawing.Point(800, 437);
+            this.btnZatvori.Name = "btnZatvori";
+            this.btnZatvori.Size = new System.Drawing.Size(75, 23);
+            this.btnZatvori.TabIndex = 21;
+            this.btnZatvori.Text = "Zatvori";
+            this.btnZatvori.UseVisualStyleBackColor = true;
+            this.btnZatvori.Click += new System.EventHandler(this.btnZatvori_Click);
             // 
             // Id
             // 
@@ -163,18 +175,8 @@
             // 
             // BrojDana
             // 
-            this.BrojDana.HeaderText = "Broj Dana Godišnjeg";
+            this.BrojDana.HeaderText = "Broj dana godišnjeg";
             this.BrojDana.Name = "BrojDana";
-            // 
-            // btnZatvori
-            // 
-            this.btnZatvori.Location = new System.Drawing.Point(800, 437);
-            this.btnZatvori.Name = "btnZatvori";
-            this.btnZatvori.Size = new System.Drawing.Size(75, 23);
-            this.btnZatvori.TabIndex = 21;
-            this.btnZatvori.Text = "Zatvori";
-            this.btnZatvori.UseVisualStyleBackColor = true;
-            this.btnZatvori.Click += new System.EventHandler(this.btnZatvori_Click);
             // 
             // frmZaposlenikGodisnji
             // 
@@ -199,6 +201,7 @@
         private System.Windows.Forms.Button btnNovi;
         private System.Windows.Forms.Button btnDeaktivirajSve;
         private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.Button btnZatvori;
         private System.Windows.Forms.DataGridViewTextBoxColumn Id;
         private System.Windows.Forms.DataGridViewTextBoxColumn ZaposlenikId;
         private System.Windows.Forms.DataGridViewTextBoxColumn Ime;
@@ -208,6 +211,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Spol;
         private System.Windows.Forms.DataGridViewTextBoxColumn Godina;
         private System.Windows.Forms.DataGridViewTextBoxColumn BrojDana;
-        private System.Windows.Forms.Button btnZatvori;
     }
 }

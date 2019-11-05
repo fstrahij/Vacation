@@ -64,6 +64,10 @@ namespace Vacation.frmEdit
                 chbDatumDo.Checked = true;
                 dtpDatumDo.Value = (DateTime) DatumDo;
             }
+            else
+            {
+                dtpDatumDo.Value = DateTime.Today;
+            }
         }
 
         private void SpremiClick(object sender, EventArgs e)

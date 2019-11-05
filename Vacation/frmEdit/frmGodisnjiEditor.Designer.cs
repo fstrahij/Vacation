@@ -29,6 +29,13 @@
         private void InitializeComponent()
         {
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.txtUkupnoNovi = new System.Windows.Forms.TextBox();
+            this.txtUkupnoStari = new System.Windows.Forms.TextBox();
+            this.txtNeiskoristenoNovi = new System.Windows.Forms.TextBox();
+            this.txtNeiskoristenoStari = new System.Windows.Forms.TextBox();
             this.txtNoviGodisnji = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.txtStariGodisnji = new System.Windows.Forms.TextBox();
@@ -40,13 +47,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.btnSpremi = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.txtNeiskoristenoNovi = new System.Windows.Forms.TextBox();
-            this.txtNeiskoristenoStari = new System.Windows.Forms.TextBox();
-            this.txtUkupnoNovi = new System.Windows.Forms.TextBox();
-            this.txtUkupnoStari = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -76,6 +76,65 @@
             this.groupBox2.TabIndex = 17;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Odabir godišnjeg";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(369, 65);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(72, 13);
+            this.label8.TabIndex = 20;
+            this.label8.Text = "PREOSTALO";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(253, 65);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(95, 13);
+            this.label7.TabIndex = 19;
+            this.label7.Text = "NEISKORIŠTENO";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(178, 65);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(53, 13);
+            this.label3.TabIndex = 18;
+            this.label3.Text = "UKUPNO";
+            // 
+            // txtUkupnoNovi
+            // 
+            this.txtUkupnoNovi.Enabled = false;
+            this.txtUkupnoNovi.Location = new System.Drawing.Point(181, 93);
+            this.txtUkupnoNovi.Name = "txtUkupnoNovi";
+            this.txtUkupnoNovi.Size = new System.Drawing.Size(44, 20);
+            this.txtUkupnoNovi.TabIndex = 17;
+            // 
+            // txtUkupnoStari
+            // 
+            this.txtUkupnoStari.Enabled = false;
+            this.txtUkupnoStari.Location = new System.Drawing.Point(181, 131);
+            this.txtUkupnoStari.Name = "txtUkupnoStari";
+            this.txtUkupnoStari.Size = new System.Drawing.Size(44, 20);
+            this.txtUkupnoStari.TabIndex = 16;
+            // 
+            // txtNeiskoristenoNovi
+            // 
+            this.txtNeiskoristenoNovi.Enabled = false;
+            this.txtNeiskoristenoNovi.Location = new System.Drawing.Point(276, 93);
+            this.txtNeiskoristenoNovi.Name = "txtNeiskoristenoNovi";
+            this.txtNeiskoristenoNovi.Size = new System.Drawing.Size(44, 20);
+            this.txtNeiskoristenoNovi.TabIndex = 15;
+            // 
+            // txtNeiskoristenoStari
+            // 
+            this.txtNeiskoristenoStari.Enabled = false;
+            this.txtNeiskoristenoStari.Location = new System.Drawing.Point(276, 131);
+            this.txtNeiskoristenoStari.Name = "txtNeiskoristenoStari";
+            this.txtNeiskoristenoStari.Size = new System.Drawing.Size(44, 20);
+            this.txtNeiskoristenoStari.TabIndex = 14;
             // 
             // txtNoviGodisnji
             // 
@@ -124,9 +183,9 @@
             this.label4.AutoSize = true;
             this.label4.Location = new System.Drawing.Point(264, 241);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(55, 13);
+            this.label4.Size = new System.Drawing.Size(53, 13);
             this.label4.TabIndex = 8;
-            this.label4.Text = "Datum Do";
+            this.label4.Text = "Datum do";
             // 
             // dtpDatumOd
             // 
@@ -168,68 +227,9 @@
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(264, 201);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(55, 13);
+            this.label1.Size = new System.Drawing.Size(53, 13);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Datum Od";
-            // 
-            // txtNeiskoristenoNovi
-            // 
-            this.txtNeiskoristenoNovi.Enabled = false;
-            this.txtNeiskoristenoNovi.Location = new System.Drawing.Point(276, 93);
-            this.txtNeiskoristenoNovi.Name = "txtNeiskoristenoNovi";
-            this.txtNeiskoristenoNovi.Size = new System.Drawing.Size(44, 20);
-            this.txtNeiskoristenoNovi.TabIndex = 15;
-            // 
-            // txtNeiskoristenoStari
-            // 
-            this.txtNeiskoristenoStari.Enabled = false;
-            this.txtNeiskoristenoStari.Location = new System.Drawing.Point(276, 131);
-            this.txtNeiskoristenoStari.Name = "txtNeiskoristenoStari";
-            this.txtNeiskoristenoStari.Size = new System.Drawing.Size(44, 20);
-            this.txtNeiskoristenoStari.TabIndex = 14;
-            // 
-            // txtUkupnoNovi
-            // 
-            this.txtUkupnoNovi.Enabled = false;
-            this.txtUkupnoNovi.Location = new System.Drawing.Point(181, 93);
-            this.txtUkupnoNovi.Name = "txtUkupnoNovi";
-            this.txtUkupnoNovi.Size = new System.Drawing.Size(44, 20);
-            this.txtUkupnoNovi.TabIndex = 17;
-            // 
-            // txtUkupnoStari
-            // 
-            this.txtUkupnoStari.Enabled = false;
-            this.txtUkupnoStari.Location = new System.Drawing.Point(181, 131);
-            this.txtUkupnoStari.Name = "txtUkupnoStari";
-            this.txtUkupnoStari.Size = new System.Drawing.Size(44, 20);
-            this.txtUkupnoStari.TabIndex = 16;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(178, 65);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(53, 13);
-            this.label3.TabIndex = 18;
-            this.label3.Text = "UKUPNO";
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(253, 65);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(95, 13);
-            this.label7.TabIndex = 19;
-            this.label7.Text = "NEISKORIŠTENO";
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(369, 65);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(72, 13);
-            this.label8.TabIndex = 20;
-            this.label8.Text = "PREOSTALO";
+            this.label1.Text = "Datum od";
             // 
             // frmGodisnjiEditor
             // 

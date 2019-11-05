@@ -29,6 +29,11 @@
         private void InitializeComponent()
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.txtSpol = new System.Windows.Forms.TextBox();
             this.txtOib = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
@@ -43,6 +48,8 @@
             this.btnNovi = new System.Windows.Forms.Button();
             this.btnDeaktivirajSve = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.btnZatvori = new System.Windows.Forms.Button();
             this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Naziv = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DatumOd = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -53,8 +60,6 @@
             this.ZbrojGodina = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ZbrojMjesec = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ZbrojDan = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.btnZatvori = new System.Windows.Forms.Button();
             this.groupBox3.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -209,77 +214,6 @@
             this.dataGridView1.Size = new System.Drawing.Size(873, 310);
             this.dataGridView1.TabIndex = 8;
             // 
-            // Id
-            // 
-            this.Id.HeaderText = "Id";
-            this.Id.Name = "Id";
-            this.Id.ReadOnly = true;
-            this.Id.Visible = false;
-            // 
-            // Naziv
-            // 
-            this.Naziv.HeaderText = "Naziv";
-            this.Naziv.Name = "Naziv";
-            this.Naziv.ReadOnly = true;
-            // 
-            // DatumOd
-            // 
-            this.DatumOd.HeaderText = "DatumOd";
-            this.DatumOd.Name = "DatumOd";
-            this.DatumOd.ReadOnly = true;
-            this.DatumOd.Width = 120;
-            // 
-            // DatumDo
-            // 
-            this.DatumDo.HeaderText = "DatumDo";
-            this.DatumDo.Name = "DatumDo";
-            this.DatumDo.ReadOnly = true;
-            this.DatumDo.Width = 120;
-            // 
-            // Godina
-            // 
-            this.Godina.HeaderText = "Godina";
-            this.Godina.Name = "Godina";
-            this.Godina.ReadOnly = true;
-            this.Godina.Width = 80;
-            // 
-            // Mjesec
-            // 
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.Mjesec.DefaultCellStyle = dataGridViewCellStyle1;
-            this.Mjesec.HeaderText = "Mjesec";
-            this.Mjesec.Name = "Mjesec";
-            this.Mjesec.ReadOnly = true;
-            this.Mjesec.Width = 80;
-            // 
-            // Dan
-            // 
-            this.Dan.HeaderText = "Dan";
-            this.Dan.Name = "Dan";
-            this.Dan.ReadOnly = true;
-            this.Dan.Width = 80;
-            // 
-            // ZbrojGodina
-            // 
-            this.ZbrojGodina.HeaderText = "ZbrojGodina";
-            this.ZbrojGodina.Name = "ZbrojGodina";
-            this.ZbrojGodina.ReadOnly = true;
-            this.ZbrojGodina.Width = 80;
-            // 
-            // ZbrojMjesec
-            // 
-            this.ZbrojMjesec.HeaderText = "ZbrojMjesec";
-            this.ZbrojMjesec.Name = "ZbrojMjesec";
-            this.ZbrojMjesec.ReadOnly = true;
-            this.ZbrojMjesec.Width = 80;
-            // 
-            // ZbrojDan
-            // 
-            this.ZbrojDan.HeaderText = "ZbrojDan";
-            this.ZbrojDan.Name = "ZbrojDan";
-            this.ZbrojDan.ReadOnly = true;
-            this.ZbrojDan.Width = 80;
-            // 
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.btnDeaktiviraj);
@@ -303,6 +237,87 @@
             this.btnZatvori.Text = "Zatvori";
             this.btnZatvori.UseVisualStyleBackColor = true;
             this.btnZatvori.Click += new System.EventHandler(this.ZatvoriClick);
+            // 
+            // Id
+            // 
+            this.Id.HeaderText = "Id";
+            this.Id.Name = "Id";
+            this.Id.ReadOnly = true;
+            this.Id.Visible = false;
+            // 
+            // Naziv
+            // 
+            this.Naziv.HeaderText = "Naziv";
+            this.Naziv.Name = "Naziv";
+            this.Naziv.ReadOnly = true;
+            // 
+            // DatumOd
+            // 
+            this.DatumOd.HeaderText = "Datum od";
+            this.DatumOd.Name = "DatumOd";
+            this.DatumOd.ReadOnly = true;
+            this.DatumOd.Width = 120;
+            // 
+            // DatumDo
+            // 
+            this.DatumDo.HeaderText = "Datum do";
+            this.DatumDo.Name = "DatumDo";
+            this.DatumDo.ReadOnly = true;
+            this.DatumDo.Width = 120;
+            // 
+            // Godina
+            // 
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.Godina.DefaultCellStyle = dataGridViewCellStyle1;
+            this.Godina.HeaderText = "Godina";
+            this.Godina.Name = "Godina";
+            this.Godina.ReadOnly = true;
+            this.Godina.Width = 80;
+            // 
+            // Mjesec
+            // 
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.Mjesec.DefaultCellStyle = dataGridViewCellStyle2;
+            this.Mjesec.HeaderText = "Mjesec";
+            this.Mjesec.Name = "Mjesec";
+            this.Mjesec.ReadOnly = true;
+            this.Mjesec.Width = 80;
+            // 
+            // Dan
+            // 
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.Dan.DefaultCellStyle = dataGridViewCellStyle3;
+            this.Dan.HeaderText = "Dan";
+            this.Dan.Name = "Dan";
+            this.Dan.ReadOnly = true;
+            this.Dan.Width = 80;
+            // 
+            // ZbrojGodina
+            // 
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.ZbrojGodina.DefaultCellStyle = dataGridViewCellStyle4;
+            this.ZbrojGodina.HeaderText = "Zbroj godina";
+            this.ZbrojGodina.Name = "ZbrojGodina";
+            this.ZbrojGodina.ReadOnly = true;
+            this.ZbrojGodina.Width = 80;
+            // 
+            // ZbrojMjesec
+            // 
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.ZbrojMjesec.DefaultCellStyle = dataGridViewCellStyle5;
+            this.ZbrojMjesec.HeaderText = "Zbroj mjeseci";
+            this.ZbrojMjesec.Name = "ZbrojMjesec";
+            this.ZbrojMjesec.ReadOnly = true;
+            this.ZbrojMjesec.Width = 80;
+            // 
+            // ZbrojDan
+            // 
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.ZbrojDan.DefaultCellStyle = dataGridViewCellStyle6;
+            this.ZbrojDan.HeaderText = "Zbroj dana";
+            this.ZbrojDan.Name = "ZbrojDan";
+            this.ZbrojDan.ReadOnly = true;
+            this.ZbrojDan.Width = 80;
             // 
             // frmFirme
             // 
@@ -342,6 +357,7 @@
         private System.Windows.Forms.Button btnDeaktivirajSve;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.Button btnZatvori;
         private System.Windows.Forms.DataGridViewTextBoxColumn Id;
         private System.Windows.Forms.DataGridViewTextBoxColumn Naziv;
         private System.Windows.Forms.DataGridViewTextBoxColumn DatumOd;
@@ -352,6 +368,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn ZbrojGodina;
         private System.Windows.Forms.DataGridViewTextBoxColumn ZbrojMjesec;
         private System.Windows.Forms.DataGridViewTextBoxColumn ZbrojDan;
-        private System.Windows.Forms.Button btnZatvori;
     }
 }

@@ -35,15 +35,6 @@
             this.btnNovi = new System.Windows.Forms.Button();
             this.btnDeaktivirajSve = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ZaposlenikId = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ZaposlenikGodisnjiId = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DatumOd = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DatumDo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.UkupnoDana = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.OstaloDanaNovi = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.OstaloDanaStari = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Godina = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.comboBoxZaposlenici = new System.Windows.Forms.ComboBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
@@ -54,6 +45,15 @@
             this.txtAdresa = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.btnZatvori = new System.Windows.Forms.Button();
+            this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ZaposlenikId = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ZaposlenikGodisnjiId = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DatumOd = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DatumDo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.UkupnoDana = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.OstaloDanaNovi = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.OstaloDanaStari = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Godina = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -133,67 +133,6 @@
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView1.Size = new System.Drawing.Size(673, 310);
             this.dataGridView1.TabIndex = 8;
-            // 
-            // Id
-            // 
-            this.Id.HeaderText = "Id";
-            this.Id.Name = "Id";
-            this.Id.ReadOnly = true;
-            this.Id.Visible = false;
-            // 
-            // ZaposlenikId
-            // 
-            this.ZaposlenikId.HeaderText = "ZaposlenikId";
-            this.ZaposlenikId.Name = "ZaposlenikId";
-            this.ZaposlenikId.ReadOnly = true;
-            this.ZaposlenikId.Visible = false;
-            // 
-            // ZaposlenikGodisnjiId
-            // 
-            this.ZaposlenikGodisnjiId.HeaderText = "ZaposlenikGodisnjiId";
-            this.ZaposlenikGodisnjiId.Name = "ZaposlenikGodisnjiId";
-            this.ZaposlenikGodisnjiId.ReadOnly = true;
-            this.ZaposlenikGodisnjiId.Visible = false;
-            // 
-            // DatumOd
-            // 
-            this.DatumOd.HeaderText = "DatumOd";
-            this.DatumOd.Name = "DatumOd";
-            this.DatumOd.ReadOnly = true;
-            this.DatumOd.Width = 120;
-            // 
-            // DatumDo
-            // 
-            this.DatumDo.HeaderText = "DatumDo";
-            this.DatumDo.Name = "DatumDo";
-            this.DatumDo.ReadOnly = true;
-            this.DatumDo.Width = 120;
-            // 
-            // UkupnoDana
-            // 
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.UkupnoDana.DefaultCellStyle = dataGridViewCellStyle1;
-            this.UkupnoDana.HeaderText = "Ukupno Dana";
-            this.UkupnoDana.Name = "UkupnoDana";
-            this.UkupnoDana.ReadOnly = true;
-            // 
-            // OstaloDanaNovi
-            // 
-            this.OstaloDanaNovi.HeaderText = "Ostalo Dana Novi";
-            this.OstaloDanaNovi.Name = "OstaloDanaNovi";
-            this.OstaloDanaNovi.ReadOnly = true;
-            // 
-            // OstaloDanaStari
-            // 
-            this.OstaloDanaStari.HeaderText = "Ostalo Dana Stari";
-            this.OstaloDanaStari.Name = "OstaloDanaStari";
-            this.OstaloDanaStari.ReadOnly = true;
-            // 
-            // Godina
-            // 
-            this.Godina.HeaderText = "Godina";
-            this.Godina.Name = "Godina";
-            this.Godina.ReadOnly = true;
             // 
             // groupBox1
             // 
@@ -290,6 +229,67 @@
             this.btnZatvori.UseVisualStyleBackColor = true;
             this.btnZatvori.Click += new System.EventHandler(this.btnZatvori_Click);
             // 
+            // Id
+            // 
+            this.Id.HeaderText = "Id";
+            this.Id.Name = "Id";
+            this.Id.ReadOnly = true;
+            this.Id.Visible = false;
+            // 
+            // ZaposlenikId
+            // 
+            this.ZaposlenikId.HeaderText = "ZaposlenikId";
+            this.ZaposlenikId.Name = "ZaposlenikId";
+            this.ZaposlenikId.ReadOnly = true;
+            this.ZaposlenikId.Visible = false;
+            // 
+            // ZaposlenikGodisnjiId
+            // 
+            this.ZaposlenikGodisnjiId.HeaderText = "ZaposlenikGodisnjiId";
+            this.ZaposlenikGodisnjiId.Name = "ZaposlenikGodisnjiId";
+            this.ZaposlenikGodisnjiId.ReadOnly = true;
+            this.ZaposlenikGodisnjiId.Visible = false;
+            // 
+            // DatumOd
+            // 
+            this.DatumOd.HeaderText = "Datum od";
+            this.DatumOd.Name = "DatumOd";
+            this.DatumOd.ReadOnly = true;
+            this.DatumOd.Width = 120;
+            // 
+            // DatumDo
+            // 
+            this.DatumDo.HeaderText = "Datum do";
+            this.DatumDo.Name = "DatumDo";
+            this.DatumDo.ReadOnly = true;
+            this.DatumDo.Width = 120;
+            // 
+            // UkupnoDana
+            // 
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.UkupnoDana.DefaultCellStyle = dataGridViewCellStyle1;
+            this.UkupnoDana.HeaderText = "Ukupno dana";
+            this.UkupnoDana.Name = "UkupnoDana";
+            this.UkupnoDana.ReadOnly = true;
+            // 
+            // OstaloDanaNovi
+            // 
+            this.OstaloDanaNovi.HeaderText = "Ostalo dana novi";
+            this.OstaloDanaNovi.Name = "OstaloDanaNovi";
+            this.OstaloDanaNovi.ReadOnly = true;
+            // 
+            // OstaloDanaStari
+            // 
+            this.OstaloDanaStari.HeaderText = "Ostalo dana stari";
+            this.OstaloDanaStari.Name = "OstaloDanaStari";
+            this.OstaloDanaStari.ReadOnly = true;
+            // 
+            // Godina
+            // 
+            this.Godina.HeaderText = "Godina";
+            this.Godina.Name = "Godina";
+            this.Godina.ReadOnly = true;
+            // 
             // frmGodisnji
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -328,6 +328,7 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txtAdresa;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Button btnZatvori;
         private System.Windows.Forms.DataGridViewTextBoxColumn Id;
         private System.Windows.Forms.DataGridViewTextBoxColumn ZaposlenikId;
         private System.Windows.Forms.DataGridViewTextBoxColumn ZaposlenikGodisnjiId;
@@ -337,6 +338,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn OstaloDanaNovi;
         private System.Windows.Forms.DataGridViewTextBoxColumn OstaloDanaStari;
         private System.Windows.Forms.DataGridViewTextBoxColumn Godina;
-        private System.Windows.Forms.Button btnZatvori;
     }
 }

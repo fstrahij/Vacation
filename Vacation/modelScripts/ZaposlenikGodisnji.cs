@@ -63,6 +63,8 @@ namespace Vacation.modelScripts
         {
             string sqlUpit = "UPDATE ZaposlenikGodisnji SET Aktivan = 0 WHERE Id = " + Id;
             DatabaseConnection.Instance.IzvrsiUpit(sqlUpit);
+            sqlUpit = "UPDATE Godisnji SET Aktivan = 0 WHERE ZaposlenikGodisnjiId = " + Id;
+            DatabaseConnection.Instance.IzvrsiUpit(sqlUpit);
         }
 
         public DataTable DohvatiPodatke()

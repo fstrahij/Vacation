@@ -69,18 +69,19 @@ namespace Vacation.customScripts
         private static int IzracunajMjesec()
         {
             int razlikaGodina = DatumDo.Year - DatumOd.Year;
-            int razlikaMjeseci = Math.Abs(DatumDo.Month - DatumOd.Month);            
+            int razlikaMjeseci = DatumDo.Month - DatumOd.Month;            
             int razlikaDani = DatumDo.Day - DatumOd.Day;
+            int brojMjeseci = 12;
+            razlikaMjeseci = (razlikaMjeseci < 0) ? razlikaMjeseci + brojMjeseci : razlikaMjeseci;
             if (razlikaGodina == 0 || razlikaDani == 0)
             { 
                 return razlikaMjeseci;
             }
             if (razlikaGodina > 0 && razlikaMjeseci == 0)
             {
-                Godina++;
                 razlikaMjeseci = 0;
             }
-            razlikaMjeseci = (razlikaMjeseci > 1 && razlikaDani < 0) ? razlikaMjeseci - 1 : razlikaMjeseci;
+            //razlikaMjeseci = (razlikaMjeseci > 1 && razlikaDani < 0) ? razlikaMjeseci - 1 : razlikaMjeseci;
             return razlikaMjeseci;
         }
 
@@ -88,11 +89,21 @@ namespace Vacation.customScripts
         {
             int razlikaMjeseci = DatumDo.Month - DatumOd.Month;
             int razlikaDani = DatumDo.Day - DatumOd.Day;
+            int brojDana = 30;
+            if (razlikaDani < 0)
+            {
+                razlikaDani += brojDana;
+                Mjesec--;
+            }
             if (razlikaMjeseci == 0)
             {
-                return Math.Abs(razlikaDani);
+                return razlikaDani;
             }
-            if ((razlikaMjeseci > 0 && razlikaDani == 0) || (razlikaMjeseci == 0 || razlikaDani < 0))
+            if (razlikaMjeseci > 0 && razlikaDani == 0)
+            {
+                razlikaDani = 0;
+            }
+            if (razlikaMjeseci == 0 || razlikaDani < 0)
             {
                 Mjesec++;
                 razlikaDani = 0;

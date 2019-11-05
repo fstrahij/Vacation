@@ -37,7 +37,12 @@ namespace Vacation.customScripts
         public static Tuple<int, int> IzracunajBrojDana(DateTime pDtpDatumOd, DateTime pDtpDatumDo)
         {
             BrojDana = 0;
-            DateTime postavke = new DateTime(Godina, 6, 30);
+            Postavka postavka = new Postavka();
+            string GranicniDatum = "GranicniDatum";
+            string datum = Godina + "." + postavka.DajListu().Find(x => x.Kljuc == GranicniDatum).Vrijednost;
+            string format = "yyyy.dd.MM.";
+            DateTime postavke;
+            DateTime.TryParseExact(datum, format, null, System.Globalization.DateTimeStyles.None, out postavke); //new DateTime(Godina, 6, 30);
             int stariGodisnji = StariGodisnji;
             int noviGodisnji = NoviGodisnji;
             int brojac = noviGodisnji;

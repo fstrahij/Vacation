@@ -86,41 +86,34 @@ namespace Vacation.frmBrowse
             this.Close();
         }
 
-        /*
-private void NoviClick(object sender, EventArgs e)
-{
-using (var forma = new frmZaposlenikEditor(this, btnNovi.Text))
-{
-forma.ShowDialog();
-}
-}
+      
 
 
-private void DeaktivirajClick(object sender, EventArgs e)
-{
-DialogResult dr = MessageBox.Show("Jeste li sigurni?", "Provjera", MessageBoxButtons.YesNo);
-if (dr == DialogResult.Yes)
-{
-Zaposlenik zaposlenik = new Zaposlenik();
-zaposlenik.Id = int.Parse(dataGridView1.CurrentRow.Cells[0].Value.ToString());
-zaposlenik.Deaktiviraj();
-UcitajPodatke();
-}
-}
+        private void DeaktivirajClick(object sender, EventArgs e)
+        {
+            DialogResult dr = MessageBox.Show("Jeste li sigurni?", "Provjera", MessageBoxButtons.YesNo);
+            if (dr == DialogResult.Yes)
+            {
+                ZaposlenikGodisnji zaposlenikGodisnji = new ZaposlenikGodisnji();
+                zaposlenikGodisnji.Id = int.Parse(dataGridView1.CurrentRow.Cells[0].Value.ToString());
+                zaposlenikGodisnji.Deaktiviraj();
+                UcitajPodatke();
+            }
+        }
 
-private void DeaktivirajSveClick(object sender, EventArgs e)
-{
-DialogResult dr = MessageBox.Show("Jeste li sigurni?", "Provjera", MessageBoxButtons.YesNo);
-if (dr == DialogResult.Yes)
-{
-Zaposlenik zaposlenik = new Zaposlenik();
-foreach (DataGridViewRow row in dataGridView1.Rows)
-{
-zaposlenik.Id = int.Parse(row.Cells[0].Value.ToString());
-zaposlenik.Deaktiviraj();
-}
-UcitajPodatke();
-}
-}*/
+        private void DeaktivirajSveClick(object sender, EventArgs e)
+        {
+            DialogResult dr = MessageBox.Show("Jeste li sigurni?", "Provjera", MessageBoxButtons.YesNo);
+            if (dr == DialogResult.Yes)
+            {
+                ZaposlenikGodisnji zaposlenikGodisnji = new ZaposlenikGodisnji();
+                foreach (DataGridViewRow row in dataGridView1.Rows)
+                {
+                    zaposlenikGodisnji.Id = int.Parse(row.Cells[0].Value.ToString());
+                    zaposlenikGodisnji.Deaktiviraj();
+                }
+                UcitajPodatke();
+            }
+        }
     }
 }

@@ -81,5 +81,13 @@ namespace Vacation
             forma.WindowState = FormWindowState.Maximized;
             forma.Show();
         }
+
+        private void postavkeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmPostavke forma = new frmPostavke();
+            forma.MdiParent = this;
+            forma.WindowState = FormWindowState.Maximized;
+            forma.Show();
+        }
     }
 }
