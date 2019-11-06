@@ -85,15 +85,15 @@
             // pregledToolStripMenuItem1
             // 
             this.pregledToolStripMenuItem1.Name = "pregledToolStripMenuItem1";
-            this.pregledToolStripMenuItem1.Size = new System.Drawing.Size(114, 22);
+            this.pregledToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
             this.pregledToolStripMenuItem1.Text = "Pregled";
             this.pregledToolStripMenuItem1.Click += new System.EventHandler(this.pregledToolStripMenuItem1_Click);
             // 
             // firmeToolStripMenuItem
             // 
             this.firmeToolStripMenuItem.Name = "firmeToolStripMenuItem";
-            this.firmeToolStripMenuItem.Size = new System.Drawing.Size(114, 22);
-            this.firmeToolStripMenuItem.Text = "Firme";
+            this.firmeToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.firmeToolStripMenuItem.Text = "Zaposlenja";
             this.firmeToolStripMenuItem.Click += new System.EventHandler(this.firmeToolStripMenuItem_Click);
             // 
             // neradniDaniToolStripMenuItem

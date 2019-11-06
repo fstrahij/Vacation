@@ -35,10 +35,19 @@ namespace Vacation
         }
 
         private void CheckBoxAllClick(object sender, EventArgs e)
-        {            
+        {
+            DataGridViewCheckBoxCell odabrano;
             foreach (DataGridViewRow row in dataGridView1.Rows)
             {
-                row.Cells["Odabir"].Value = checkBoxAll.Checked;
+                odabrano = (DataGridViewCheckBoxCell)row.Cells["Odabir"];
+                if (row.Cells["Odabir"].Value == odabrano.TrueValue)
+                {
+                    row.Cells["Odabir"].Value = odabrano.FalseValue;
+                }
+                else
+                {
+                    row.Cells["Odabir"].Value = odabrano.TrueValue;
+                }
             }
         }
 
@@ -140,6 +149,9 @@ namespace Vacation
                     }                  
                 }
             }
+            DialogResult dr = MessageBox.Show("Uspješno generirano!");
+            txtGodina.Text = "";
+            groupBoxAll.Hide();
         }
 
         private void btnZatvori_Click(object sender, EventArgs e)
