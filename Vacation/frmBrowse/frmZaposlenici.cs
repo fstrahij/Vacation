@@ -17,6 +17,13 @@ namespace Vacation.frmBrowse
         public frmZaposlenici()
         {
             InitializeComponent();
+            PostaviAlignHeader();
+        }
+
+        private void PostaviAlignHeader()
+        {
+           dataGridView1.Columns[5].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            
         }
 
         public void UcitajPodatke()

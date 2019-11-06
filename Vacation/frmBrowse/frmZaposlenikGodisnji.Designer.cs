@@ -28,6 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.btnDeaktiviraj = new System.Windows.Forms.Button();
             this.btnNovi = new System.Windows.Forms.Button();
@@ -53,16 +56,16 @@
             this.groupBox1.Controls.Add(this.btnNovi);
             this.groupBox1.Controls.Add(this.btnDeaktivirajSve);
             this.groupBox1.Controls.Add(this.dataGridView1);
-            this.groupBox1.Location = new System.Drawing.Point(29, 19);
+            this.groupBox1.Location = new System.Drawing.Point(20, 60);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(902, 412);
+            this.groupBox1.Size = new System.Drawing.Size(866, 436);
             this.groupBox1.TabIndex = 4;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Pregled prava broja dana zaposlenika na godišnji po godinama";
             // 
             // btnDeaktiviraj
             // 
-            this.btnDeaktiviraj.Location = new System.Drawing.Point(660, 25);
+            this.btnDeaktiviraj.Location = new System.Drawing.Point(648, 42);
             this.btnDeaktiviraj.Name = "btnDeaktiviraj";
             this.btnDeaktiviraj.Size = new System.Drawing.Size(77, 23);
             this.btnDeaktiviraj.TabIndex = 7;
@@ -72,7 +75,7 @@
             // 
             // btnNovi
             // 
-            this.btnNovi.Location = new System.Drawing.Point(45, 25);
+            this.btnNovi.Location = new System.Drawing.Point(33, 42);
             this.btnNovi.Name = "btnNovi";
             this.btnNovi.Size = new System.Drawing.Size(88, 23);
             this.btnNovi.TabIndex = 5;
@@ -82,7 +85,7 @@
             // 
             // btnDeaktivirajSve
             // 
-            this.btnDeaktivirajSve.Location = new System.Drawing.Point(758, 25);
+            this.btnDeaktivirajSve.Location = new System.Drawing.Point(746, 42);
             this.btnDeaktivirajSve.Name = "btnDeaktivirajSve";
             this.btnDeaktivirajSve.Size = new System.Drawing.Size(88, 23);
             this.btnDeaktivirajSve.TabIndex = 4;
@@ -106,7 +109,7 @@
             this.Spol,
             this.Godina,
             this.BrojDana});
-            this.dataGridView1.Location = new System.Drawing.Point(45, 73);
+            this.dataGridView1.Location = new System.Drawing.Point(33, 90);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(801, 310);
             this.dataGridView1.TabIndex = 0;
@@ -114,7 +117,7 @@
             // 
             // btnZatvori
             // 
-            this.btnZatvori.Location = new System.Drawing.Point(800, 437);
+            this.btnZatvori.Location = new System.Drawing.Point(779, 502);
             this.btnZatvori.Name = "btnZatvori";
             this.btnZatvori.Size = new System.Drawing.Size(75, 23);
             this.btnZatvori.TabIndex = 21;
@@ -157,6 +160,8 @@
             // 
             // Oib
             // 
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.Oib.DefaultCellStyle = dataGridViewCellStyle4;
             this.Oib.HeaderText = "Oib";
             this.Oib.Name = "Oib";
             this.Oib.ReadOnly = true;
@@ -169,12 +174,16 @@
             // 
             // Godina
             // 
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.Godina.DefaultCellStyle = dataGridViewCellStyle5;
             this.Godina.HeaderText = "Godina";
             this.Godina.Name = "Godina";
             this.Godina.ReadOnly = true;
             // 
             // BrojDana
             // 
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.BrojDana.DefaultCellStyle = dataGridViewCellStyle6;
             this.BrojDana.HeaderText = "Broj dana godišnjeg";
             this.BrojDana.Name = "BrojDana";
             // 
@@ -182,11 +191,11 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(980, 519);
+            this.ClientSize = new System.Drawing.Size(980, 560);
             this.Controls.Add(this.btnZatvori);
             this.Controls.Add(this.groupBox1);
             this.Name = "frmZaposlenikGodisnji";
-            this.Text = "frmZaposlenikGodisnji";
+            this.Text = "Zaposlenik - godišnji";
             this.Load += new System.EventHandler(this.frmZaposlenikGodisnji_Load);
             this.groupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();

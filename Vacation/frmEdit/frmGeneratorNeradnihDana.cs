@@ -21,6 +21,12 @@ namespace Vacation
         public GeneratorNeradnihDanaForm()
         {
             InitializeComponent();
+            PostaviAlignHeader();
+        }
+
+        private void PostaviAlignHeader()
+        {
+            dataGridView1.Columns[4].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;           
         }
 
         private void Form1_Load(object sender, EventArgs e)

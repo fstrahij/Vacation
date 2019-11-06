@@ -43,7 +43,7 @@
             // dtpDatumDo
             // 
             this.dtpDatumDo.Enabled = false;
-            this.dtpDatumDo.Location = new System.Drawing.Point(214, 131);
+            this.dtpDatumDo.Location = new System.Drawing.Point(187, 135);
             this.dtpDatumDo.Name = "dtpDatumDo";
             this.dtpDatumDo.Size = new System.Drawing.Size(121, 20);
             this.dtpDatumDo.TabIndex = 9;
@@ -52,7 +52,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(158, 131);
+            this.label4.Location = new System.Drawing.Point(131, 135);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(53, 13);
             this.label4.TabIndex = 8;
@@ -60,7 +60,7 @@
             // 
             // dtpDatumOd
             // 
-            this.dtpDatumOd.Location = new System.Drawing.Point(214, 91);
+            this.dtpDatumOd.Location = new System.Drawing.Point(187, 95);
             this.dtpDatumOd.Name = "dtpDatumOd";
             this.dtpDatumOd.Size = new System.Drawing.Size(121, 20);
             this.dtpDatumOd.TabIndex = 7;
@@ -68,7 +68,7 @@
             // 
             // txtNaziv
             // 
-            this.txtNaziv.Location = new System.Drawing.Point(214, 51);
+            this.txtNaziv.Location = new System.Drawing.Point(187, 55);
             this.txtNaziv.Name = "txtNaziv";
             this.txtNaziv.Size = new System.Drawing.Size(121, 20);
             this.txtNaziv.TabIndex = 4;
@@ -76,7 +76,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(158, 54);
+            this.label2.Location = new System.Drawing.Point(131, 58);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(59, 13);
             this.label2.TabIndex = 3;
@@ -84,7 +84,7 @@
             // 
             // btnSpremi
             // 
-            this.btnSpremi.Location = new System.Drawing.Point(214, 202);
+            this.btnSpremi.Location = new System.Drawing.Point(187, 206);
             this.btnSpremi.Name = "btnSpremi";
             this.btnSpremi.Size = new System.Drawing.Size(75, 23);
             this.btnSpremi.TabIndex = 2;
@@ -95,7 +95,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(158, 91);
+            this.label1.Location = new System.Drawing.Point(131, 95);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(53, 13);
             this.label1.TabIndex = 0;
@@ -111,9 +111,9 @@
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.btnSpremi);
             this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Location = new System.Drawing.Point(117, 70);
+            this.groupBox1.Location = new System.Drawing.Point(20, 40);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(488, 319);
+            this.groupBox1.Size = new System.Drawing.Size(488, 268);
             this.groupBox1.TabIndex = 18;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Firma unos";
@@ -121,7 +121,7 @@
             // chbDatumDo
             // 
             this.chbDatumDo.AutoSize = true;
-            this.chbDatumDo.Location = new System.Drawing.Point(368, 134);
+            this.chbDatumDo.Location = new System.Drawing.Point(341, 138);
             this.chbDatumDo.Name = "chbDatumDo";
             this.chbDatumDo.Size = new System.Drawing.Size(15, 14);
             this.chbDatumDo.TabIndex = 11;
@@ -132,10 +132,10 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(527, 336);
             this.Controls.Add(this.groupBox1);
             this.Name = "frmFirmaEditor";
-            this.Text = "frmFirmaEditor";
+            this.Text = "Firma Editor";
             this.Load += new System.EventHandler(this.frmFirmaEditor_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();

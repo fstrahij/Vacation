@@ -10,6 +10,15 @@ namespace Vacation
         public TemplateEditorForm()
         {
             InitializeComponent();
+            PostaviAlignHeader();
+        }
+
+        private void PostaviAlignHeader()
+        {
+            for (int i = 3; i <= 4; i++)
+            {
+                dataGridView1.Columns[i].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            }
         }
 
         public void UcitajPodatke()

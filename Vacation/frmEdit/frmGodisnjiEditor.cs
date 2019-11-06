@@ -50,7 +50,7 @@ namespace Vacation.frmEdit
         {
             ZaposlenikGodisnji zaposlenikGodisnji = new ZaposlenikGodisnji();
             Godisnji godisnji = new Godisnji();
-            Tuple<int, int> vrstaGodisnji = PomocniBrojac.IzracunajBrojDana(dtpDatumOd.Value, dtpDatumDo.Value);
+            Tuple<int, int> vrstaGodisnji = PomocniBrojac.IzracunajBrojDana(dtpDatumOd.Value, dtpDatumDo.Value);             
             
             if (NoviGodisnji > 0 && StariGodisnji  > 0)
             {
@@ -64,10 +64,8 @@ namespace Vacation.frmEdit
             }
 
             txtBrojDana.Text = PomocniBrojac.BrojDana.ToString();
-            txtUkupnoNovi.Text = zaposlenikGodisnji.DajPodatkePoZaposleniku(ZaposlenikId).BrojDana;
             int godina = PomocniBrojac.Godina;
             int index = godisnji.DajListu(ZaposlenikId, godina).Count;
-            txtUkupnoStari.Text = (index > 0) ? godisnji.DajListu(ZaposlenikId, godina)[0].OstaloStariBrojDana : 0.ToString();
             if (vrstaGodisnji.Item2 > 0)
             {
                 int neiskoristeniStari = vrstaGodisnji.Item2 + 1;
@@ -80,6 +78,8 @@ namespace Vacation.frmEdit
                 txtNeiskoristenoNovi.Text = neiskoristeniNovi.ToString();
                 txtNeiskoristenoStari.Text = vrstaGodisnji.Item2.ToString();
             }
+            PomocniBrojac.StariGodisnji = (StariGodisnji > 0) ? StariGodisnji : PomocniBrojac.StariGodisnji;
+            PomocniBrojac.NoviGodisnji = (NoviGodisnji > 0) ? NoviGodisnji : PomocniBrojac.NoviGodisnji;
         }
 
         private void dtpDatumOd_ValueChanged(object sender, EventArgs e)

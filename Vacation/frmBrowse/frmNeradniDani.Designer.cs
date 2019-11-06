@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.btnDeaktiviraj = new System.Windows.Forms.Button();
             this.btnUredi = new System.Windows.Forms.Button();
@@ -54,7 +55,7 @@
             this.groupBox2.Controls.Add(this.btnNovi);
             this.groupBox2.Controls.Add(this.btnDeaktivirajSve);
             this.groupBox2.Controls.Add(this.dataGridView1);
-            this.groupBox2.Location = new System.Drawing.Point(211, 12);
+            this.groupBox2.Location = new System.Drawing.Point(350, 60);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(983, 550);
             this.groupBox2.TabIndex = 1;
@@ -115,8 +116,9 @@
             this.dataGridView1.Location = new System.Drawing.Point(25, 76);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
+            this.dataGridView1.RowHeadersWidth = 25;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(920, 445);
+            this.dataGridView1.Size = new System.Drawing.Size(920, 450);
             this.dataGridView1.TabIndex = 8;
             // 
             // Id
@@ -138,10 +140,12 @@
             this.Naziv.HeaderText = "Naziv";
             this.Naziv.Name = "Naziv";
             this.Naziv.ReadOnly = true;
-            this.Naziv.Width = 340;
+            this.Naziv.Width = 440;
             // 
             // Datum
             // 
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.Datum.DefaultCellStyle = dataGridViewCellStyle1;
             this.Datum.HeaderText = "Datum";
             this.Datum.Name = "Datum";
             this.Datum.ReadOnly = true;
@@ -155,9 +159,9 @@
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.comboBoxGodine);
-            this.groupBox1.Location = new System.Drawing.Point(12, 12);
+            this.groupBox1.Location = new System.Drawing.Point(20, 60);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(179, 79);
+            this.groupBox1.Size = new System.Drawing.Size(230, 80);
             this.groupBox1.TabIndex = 13;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Odabir godine";
@@ -167,13 +171,13 @@
             this.comboBoxGodine.FormattingEnabled = true;
             this.comboBoxGodine.Location = new System.Drawing.Point(29, 31);
             this.comboBoxGodine.Name = "comboBoxGodine";
-            this.comboBoxGodine.Size = new System.Drawing.Size(121, 21);
+            this.comboBoxGodine.Size = new System.Drawing.Size(175, 21);
             this.comboBoxGodine.TabIndex = 0;
             this.comboBoxGodine.SelectedIndexChanged += new System.EventHandler(this.OdabirGodineSelected);
             // 
             // btnZatvori
             // 
-            this.btnZatvori.Location = new System.Drawing.Point(1081, 568);
+            this.btnZatvori.Location = new System.Drawing.Point(1220, 616);
             this.btnZatvori.Name = "btnZatvori";
             this.btnZatvori.Size = new System.Drawing.Size(75, 23);
             this.btnZatvori.TabIndex = 21;
@@ -185,12 +189,12 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1249, 749);
+            this.ClientSize = new System.Drawing.Size(1355, 749);
             this.Controls.Add(this.btnZatvori);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.groupBox2);
             this.Name = "NeradniDaniForm";
-            this.Text = "NeradniDaniForm";
+            this.Text = "Neradni dani";
             this.Load += new System.EventHandler(this.NeradniDaniForm_Load);
             this.groupBox2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
@@ -208,11 +212,11 @@
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.ComboBox comboBoxGodine;
+        private System.Windows.Forms.Button btnZatvori;
         private System.Windows.Forms.DataGridViewTextBoxColumn Id;
         private System.Windows.Forms.DataGridViewTextBoxColumn TipId;
         private System.Windows.Forms.DataGridViewTextBoxColumn Naziv;
         private System.Windows.Forms.DataGridViewTextBoxColumn Datum;
         private System.Windows.Forms.DataGridViewTextBoxColumn Tip;
-        private System.Windows.Forms.Button btnZatvori;
     }
 }

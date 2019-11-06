@@ -38,6 +38,7 @@ namespace Vacation.frmEdit
             comboBoxZaposlenici.DataSource = zaposlenici.DajListu();
             comboBoxZaposlenici.DisplayMember = "ImePrezime";
             comboBoxZaposlenici.ValueMember = "Id";
+            comboBoxZaposlenici.SelectedItem = null;
         }
 
         private void SpremiClick(object sender, EventArgs e)

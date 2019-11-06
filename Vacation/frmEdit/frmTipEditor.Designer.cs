@@ -29,11 +29,11 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btnOdabirBoje = new System.Windows.Forms.Button();
             this.txtBoja = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
             this.txtNaziv = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.btnOdabirBoje = new System.Windows.Forms.Button();
             this.colorDialog1 = new System.Windows.Forms.ColorDialog();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -45,12 +45,22 @@
             this.groupBox1.Controls.Add(this.button1);
             this.groupBox1.Controls.Add(this.txtNaziv);
             this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Location = new System.Drawing.Point(211, 41);
+            this.groupBox1.Location = new System.Drawing.Point(20, 40);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(301, 271);
+            this.groupBox1.Size = new System.Drawing.Size(301, 228);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "TipEditor";
+            this.groupBox1.Text = "Tip";
+            // 
+            // btnOdabirBoje
+            // 
+            this.btnOdabirBoje.Location = new System.Drawing.Point(126, 116);
+            this.btnOdabirBoje.Name = "btnOdabirBoje";
+            this.btnOdabirBoje.Size = new System.Drawing.Size(75, 23);
+            this.btnOdabirBoje.TabIndex = 5;
+            this.btnOdabirBoje.Text = "Odaberi boju";
+            this.btnOdabirBoje.UseVisualStyleBackColor = true;
+            this.btnOdabirBoje.Click += new System.EventHandler(this.btnOdabirBoje_Click);
             // 
             // txtBoja
             // 
@@ -62,7 +72,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(126, 161);
+            this.button1.Location = new System.Drawing.Point(126, 176);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 2;
@@ -86,24 +96,14 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Naziv";
             // 
-            // btnOdabirBoje
-            // 
-            this.btnOdabirBoje.Location = new System.Drawing.Point(126, 116);
-            this.btnOdabirBoje.Name = "btnOdabirBoje";
-            this.btnOdabirBoje.Size = new System.Drawing.Size(75, 23);
-            this.btnOdabirBoje.TabIndex = 5;
-            this.btnOdabirBoje.Text = "Odaberi boju";
-            this.btnOdabirBoje.UseVisualStyleBackColor = true;
-            this.btnOdabirBoje.Click += new System.EventHandler(this.btnOdabirBoje_Click);
-            // 
             // TipEditor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(344, 290);
             this.Controls.Add(this.groupBox1);
             this.Name = "TipEditor";
-            this.Text = "TipEditor";
+            this.Text = "Tip editor";
             this.Load += new System.EventHandler(this.TipEditor_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();

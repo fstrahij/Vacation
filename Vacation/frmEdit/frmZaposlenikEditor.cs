@@ -51,13 +51,9 @@ namespace Vacation.frmEdit
         
         private bool IsValidInputs()
         {
-            long oib = 0;
             if (!string.IsNullOrWhiteSpace(txtIme.Text) 
                 && !string.IsNullOrWhiteSpace(txtPrezime.Text)
-                && !string.IsNullOrWhiteSpace(txtAdresa.Text)
-                && !string.IsNullOrWhiteSpace(txtOib.Text)
-                && txtOib.Text.Length == 11
-                && long.TryParse(txtOib.Text, out oib))
+                && !string.IsNullOrWhiteSpace(txtAdresa.Text))
             {
                 return true;
             }
@@ -87,8 +83,7 @@ namespace Vacation.frmEdit
             }
             else
             {
-                string poruka = "Neispravan unos u polja Ime, Prezime, Adresa ili Oib!\n" +
-                    "Oib mora imati najmanje 11 znameni brojčanih vrijednosti!";
+                string poruka = "Neispravan unos u polje Ime, Prezime ili Adresa";
                 dr = MessageBox.Show(poruka);
             }
         }

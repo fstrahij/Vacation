@@ -57,6 +57,10 @@ namespace Vacation.modelScripts
             }
             else
             {
+                if (string.IsNullOrWhiteSpace(Oib))
+                {
+                    Oib = "NULL";
+                }
                 sqlUpit = "UPDATE Zaposlenici SET Ime = '" + Ime
                             + "', Prezime = '" + Prezime
                             + "', SpolId = " + SpolId

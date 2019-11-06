@@ -47,16 +47,16 @@
             this.groupBox2.Controls.Add(this.btnSpremi);
             this.groupBox2.Controls.Add(this.txtGodina);
             this.groupBox2.Controls.Add(this.label1);
-            this.groupBox2.Location = new System.Drawing.Point(305, 43);
+            this.groupBox2.Location = new System.Drawing.Point(274, 40);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(328, 318);
+            this.groupBox2.Size = new System.Drawing.Size(328, 217);
             this.groupBox2.TabIndex = 3;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Zaposlenik";
             // 
             // txtBrojDana
             // 
-            this.txtBrojDana.Location = new System.Drawing.Point(124, 122);
+            this.txtBrojDana.Location = new System.Drawing.Point(121, 81);
             this.txtBrojDana.Name = "txtBrojDana";
             this.txtBrojDana.Size = new System.Drawing.Size(121, 20);
             this.txtBrojDana.TabIndex = 4;
@@ -64,7 +64,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(68, 125);
+            this.label2.Location = new System.Drawing.Point(65, 84);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(52, 13);
             this.label2.TabIndex = 3;
@@ -72,7 +72,7 @@
             // 
             // btnSpremi
             // 
-            this.btnSpremi.Location = new System.Drawing.Point(124, 198);
+            this.btnSpremi.Location = new System.Drawing.Point(121, 144);
             this.btnSpremi.Name = "btnSpremi";
             this.btnSpremi.Size = new System.Drawing.Size(75, 23);
             this.btnSpremi.TabIndex = 2;
@@ -83,7 +83,7 @@
             // txtGodina
             // 
             this.txtGodina.Enabled = false;
-            this.txtGodina.Location = new System.Drawing.Point(124, 80);
+            this.txtGodina.Location = new System.Drawing.Point(121, 39);
             this.txtGodina.Name = "txtGodina";
             this.txtGodina.Size = new System.Drawing.Size(121, 20);
             this.txtGodina.TabIndex = 1;
@@ -91,7 +91,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(68, 83);
+            this.label1.Location = new System.Drawing.Point(65, 42);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(41, 13);
             this.label1.TabIndex = 0;
@@ -104,12 +104,12 @@
             this.comboBoxZaposlenici.Name = "comboBoxZaposlenici";
             this.comboBoxZaposlenici.Size = new System.Drawing.Size(175, 21);
             this.comboBoxZaposlenici.TabIndex = 0;
-            this.comboBoxZaposlenici.SelectedIndexChanged += new System.EventHandler(this.ZaposlenikSelected);
+            this.comboBoxZaposlenici.SelectionChangeCommitted += new System.EventHandler(this.ZaposlenikSelected);
             // 
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.comboBoxZaposlenici);
-            this.groupBox1.Location = new System.Drawing.Point(12, 43);
+            this.groupBox1.Location = new System.Drawing.Point(20, 40);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(229, 79);
             this.groupBox1.TabIndex = 16;
@@ -120,11 +120,11 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(632, 289);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.groupBox2);
             this.Name = "frmZaposlenikGodisnjiEditor";
-            this.Text = "frmZaposlenikGodisnjiEditor";
+            this.Text = "Zaposlenik-godisnji editor";
             this.Load += new System.EventHandler(this.frmZaposlenikGodisnjiEditor_Load);
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();

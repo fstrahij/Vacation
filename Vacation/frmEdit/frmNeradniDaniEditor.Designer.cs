@@ -48,12 +48,12 @@
             this.groupBox1.Controls.Add(this.button1);
             this.groupBox1.Controls.Add(this.txtNaziv);
             this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Location = new System.Drawing.Point(236, 66);
+            this.groupBox1.Location = new System.Drawing.Point(20, 40);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(328, 318);
+            this.groupBox1.Size = new System.Drawing.Size(328, 249);
             this.groupBox1.TabIndex = 2;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Template Editor";
+            this.groupBox1.Text = "Neradni dani";
             // 
             // dtpDatum
             // 
@@ -118,10 +118,10 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(367, 308);
             this.Controls.Add(this.groupBox1);
             this.Name = "frmNeradniDaniEditor";
-            this.Text = "frmNeradniDaniEditor";
+            this.Text = "Neradni dani editor";
             this.Load += new System.EventHandler(this.frmNeradniDaniEditor_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();

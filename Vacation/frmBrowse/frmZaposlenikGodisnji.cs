@@ -17,6 +17,19 @@ namespace Vacation.frmBrowse
         public frmZaposlenikGodisnji()
         {
             InitializeComponent();
+            PostaviAlignHeader();
+        }
+
+        private void PostaviAlignHeader()
+        {
+            for (int i = 5; i <= 8; i++)
+            {
+                if (i == 6)
+                {
+                    continue;
+                }
+                dataGridView1.Columns[i].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            }
         }
 
         public void UcitajPodatke()

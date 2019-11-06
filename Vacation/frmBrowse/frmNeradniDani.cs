@@ -21,6 +21,12 @@ namespace Vacation.frmBrowse
         public NeradniDaniForm()
         {
             InitializeComponent();
+            PostaviAlignHeader();
+        }
+
+        private void PostaviAlignHeader()
+        {
+            dataGridView1.Columns[3].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
         }
 
         public void UcitajPodatke()

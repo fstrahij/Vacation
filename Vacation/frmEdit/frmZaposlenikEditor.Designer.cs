@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.txtOib = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
             this.comboBoxSpol = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
             this.txtAdresa = new System.Windows.Forms.TextBox();
@@ -38,8 +40,6 @@
             this.button1 = new System.Windows.Forms.Button();
             this.txtIme = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.txtOib = new System.Windows.Forms.TextBox();
-            this.label5 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -56,12 +56,28 @@
             this.groupBox1.Controls.Add(this.button1);
             this.groupBox1.Controls.Add(this.txtIme);
             this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Location = new System.Drawing.Point(236, 66);
+            this.groupBox1.Location = new System.Drawing.Point(20, 40);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(328, 318);
             this.groupBox1.TabIndex = 2;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Zaposlenik";
+            // 
+            // txtOib
+            // 
+            this.txtOib.Location = new System.Drawing.Point(124, 167);
+            this.txtOib.Name = "txtOib";
+            this.txtOib.Size = new System.Drawing.Size(121, 20);
+            this.txtOib.TabIndex = 10;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(68, 170);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(25, 13);
+            this.label5.TabIndex = 9;
+            this.label5.Text = "OIB";
             // 
             // comboBoxSpol
             // 
@@ -138,30 +154,14 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Ime";
             // 
-            // txtOib
-            // 
-            this.txtOib.Location = new System.Drawing.Point(124, 167);
-            this.txtOib.Name = "txtOib";
-            this.txtOib.Size = new System.Drawing.Size(121, 20);
-            this.txtOib.TabIndex = 10;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(68, 170);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(25, 13);
-            this.label5.TabIndex = 9;
-            this.label5.Text = "OIB";
-            // 
             // frmZaposlenikEditor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(371, 377);
             this.Controls.Add(this.groupBox1);
             this.Name = "frmZaposlenikEditor";
-            this.Text = "frmZaposlenikEditor";
+            this.Text = "Zaposlenik editor";
             this.Load += new System.EventHandler(this.frmZaposlenikEditor_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();

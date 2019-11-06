@@ -28,13 +28,27 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle17 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle18 = new System.Windows.Forms.DataGridViewCellStyle();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.btnDeaktiviraj = new System.Windows.Forms.Button();
             this.btnUredi = new System.Windows.Forms.Button();
             this.btnNovi = new System.Windows.Forms.Button();
             this.btnDeaktivirajSve = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ZaposlenikId = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ZaposlenikGodisnjiId = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DatumOd = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DatumDo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.UkupnoDana = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.OstaloDanaNovi = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.OstaloDanaStari = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Godina = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.comboBoxZaposlenici = new System.Windows.Forms.ComboBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
@@ -45,15 +59,6 @@
             this.txtAdresa = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.btnZatvori = new System.Windows.Forms.Button();
-            this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ZaposlenikId = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ZaposlenikGodisnjiId = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DatumOd = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DatumDo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.UkupnoDana = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.OstaloDanaNovi = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.OstaloDanaStari = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Godina = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -67,9 +72,9 @@
             this.groupBox2.Controls.Add(this.btnNovi);
             this.groupBox2.Controls.Add(this.btnDeaktivirajSve);
             this.groupBox2.Controls.Add(this.dataGridView1);
-            this.groupBox2.Location = new System.Drawing.Point(366, 25);
+            this.groupBox2.Location = new System.Drawing.Point(350, 60);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(716, 416);
+            this.groupBox2.Size = new System.Drawing.Size(716, 405);
             this.groupBox2.TabIndex = 14;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Godišnji";
@@ -82,6 +87,7 @@
             this.btnDeaktiviraj.TabIndex = 12;
             this.btnDeaktiviraj.Text = "Deaktiviraj Sve";
             this.btnDeaktiviraj.UseVisualStyleBackColor = true;
+            this.btnDeaktiviraj.Click += new System.EventHandler(this.DeaktivirajClick);
             // 
             // btnUredi
             // 
@@ -111,6 +117,7 @@
             this.btnDeaktivirajSve.TabIndex = 9;
             this.btnDeaktivirajSve.Text = "Deaktiviraj Sve";
             this.btnDeaktivirajSve.UseVisualStyleBackColor = true;
+            this.btnDeaktivirajSve.Click += new System.EventHandler(this.DeaktivirajSveClick);
             // 
             // dataGridView1
             // 
@@ -127,19 +134,92 @@
             this.OstaloDanaNovi,
             this.OstaloDanaStari,
             this.Godina});
+            this.dataGridView1.Enabled = false;
             this.dataGridView1.Location = new System.Drawing.Point(25, 76);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
+            this.dataGridView1.RowHeadersWidth = 25;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView1.Size = new System.Drawing.Size(673, 310);
             this.dataGridView1.TabIndex = 8;
             // 
+            // Id
+            // 
+            this.Id.HeaderText = "Id";
+            this.Id.Name = "Id";
+            this.Id.ReadOnly = true;
+            this.Id.Visible = false;
+            // 
+            // ZaposlenikId
+            // 
+            this.ZaposlenikId.HeaderText = "ZaposlenikId";
+            this.ZaposlenikId.Name = "ZaposlenikId";
+            this.ZaposlenikId.ReadOnly = true;
+            this.ZaposlenikId.Visible = false;
+            // 
+            // ZaposlenikGodisnjiId
+            // 
+            this.ZaposlenikGodisnjiId.HeaderText = "ZaposlenikGodisnjiId";
+            this.ZaposlenikGodisnjiId.Name = "ZaposlenikGodisnjiId";
+            this.ZaposlenikGodisnjiId.ReadOnly = true;
+            this.ZaposlenikGodisnjiId.Visible = false;
+            // 
+            // DatumOd
+            // 
+            dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.DatumOd.DefaultCellStyle = dataGridViewCellStyle13;
+            this.DatumOd.HeaderText = "Datum od";
+            this.DatumOd.Name = "DatumOd";
+            this.DatumOd.ReadOnly = true;
+            this.DatumOd.Width = 120;
+            // 
+            // DatumDo
+            // 
+            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.DatumDo.DefaultCellStyle = dataGridViewCellStyle14;
+            this.DatumDo.HeaderText = "Datum do";
+            this.DatumDo.Name = "DatumDo";
+            this.DatumDo.ReadOnly = true;
+            this.DatumDo.Width = 120;
+            // 
+            // UkupnoDana
+            // 
+            dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.UkupnoDana.DefaultCellStyle = dataGridViewCellStyle15;
+            this.UkupnoDana.HeaderText = "Ukupno dana";
+            this.UkupnoDana.Name = "UkupnoDana";
+            this.UkupnoDana.ReadOnly = true;
+            // 
+            // OstaloDanaNovi
+            // 
+            dataGridViewCellStyle16.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.OstaloDanaNovi.DefaultCellStyle = dataGridViewCellStyle16;
+            this.OstaloDanaNovi.HeaderText = "Ostalo dana novi";
+            this.OstaloDanaNovi.Name = "OstaloDanaNovi";
+            this.OstaloDanaNovi.ReadOnly = true;
+            // 
+            // OstaloDanaStari
+            // 
+            dataGridViewCellStyle17.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.OstaloDanaStari.DefaultCellStyle = dataGridViewCellStyle17;
+            this.OstaloDanaStari.HeaderText = "Ostalo dana stari";
+            this.OstaloDanaStari.Name = "OstaloDanaStari";
+            this.OstaloDanaStari.ReadOnly = true;
+            // 
+            // Godina
+            // 
+            dataGridViewCellStyle18.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.Godina.DefaultCellStyle = dataGridViewCellStyle18;
+            this.Godina.HeaderText = "Godina";
+            this.Godina.Name = "Godina";
+            this.Godina.ReadOnly = true;
+            // 
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.comboBoxZaposlenici);
-            this.groupBox1.Location = new System.Drawing.Point(35, 25);
+            this.groupBox1.Location = new System.Drawing.Point(20, 60);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(229, 79);
+            this.groupBox1.Size = new System.Drawing.Size(230, 80);
             this.groupBox1.TabIndex = 15;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Odabir zaposlenika";
@@ -161,9 +241,9 @@
             this.groupBox3.Controls.Add(this.label3);
             this.groupBox3.Controls.Add(this.txtAdresa);
             this.groupBox3.Controls.Add(this.label4);
-            this.groupBox3.Location = new System.Drawing.Point(35, 133);
+            this.groupBox3.Location = new System.Drawing.Point(20, 170);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(312, 181);
+            this.groupBox3.Size = new System.Drawing.Size(310, 180);
             this.groupBox3.TabIndex = 16;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Podaci o zaposleniku";
@@ -221,74 +301,13 @@
             // 
             // btnZatvori
             // 
-            this.btnZatvori.Location = new System.Drawing.Point(989, 447);
+            this.btnZatvori.Location = new System.Drawing.Point(973, 471);
             this.btnZatvori.Name = "btnZatvori";
             this.btnZatvori.Size = new System.Drawing.Size(75, 23);
             this.btnZatvori.TabIndex = 21;
             this.btnZatvori.Text = "Zatvori";
             this.btnZatvori.UseVisualStyleBackColor = true;
             this.btnZatvori.Click += new System.EventHandler(this.btnZatvori_Click);
-            // 
-            // Id
-            // 
-            this.Id.HeaderText = "Id";
-            this.Id.Name = "Id";
-            this.Id.ReadOnly = true;
-            this.Id.Visible = false;
-            // 
-            // ZaposlenikId
-            // 
-            this.ZaposlenikId.HeaderText = "ZaposlenikId";
-            this.ZaposlenikId.Name = "ZaposlenikId";
-            this.ZaposlenikId.ReadOnly = true;
-            this.ZaposlenikId.Visible = false;
-            // 
-            // ZaposlenikGodisnjiId
-            // 
-            this.ZaposlenikGodisnjiId.HeaderText = "ZaposlenikGodisnjiId";
-            this.ZaposlenikGodisnjiId.Name = "ZaposlenikGodisnjiId";
-            this.ZaposlenikGodisnjiId.ReadOnly = true;
-            this.ZaposlenikGodisnjiId.Visible = false;
-            // 
-            // DatumOd
-            // 
-            this.DatumOd.HeaderText = "Datum od";
-            this.DatumOd.Name = "DatumOd";
-            this.DatumOd.ReadOnly = true;
-            this.DatumOd.Width = 120;
-            // 
-            // DatumDo
-            // 
-            this.DatumDo.HeaderText = "Datum do";
-            this.DatumDo.Name = "DatumDo";
-            this.DatumDo.ReadOnly = true;
-            this.DatumDo.Width = 120;
-            // 
-            // UkupnoDana
-            // 
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.UkupnoDana.DefaultCellStyle = dataGridViewCellStyle1;
-            this.UkupnoDana.HeaderText = "Ukupno dana";
-            this.UkupnoDana.Name = "UkupnoDana";
-            this.UkupnoDana.ReadOnly = true;
-            // 
-            // OstaloDanaNovi
-            // 
-            this.OstaloDanaNovi.HeaderText = "Ostalo dana novi";
-            this.OstaloDanaNovi.Name = "OstaloDanaNovi";
-            this.OstaloDanaNovi.ReadOnly = true;
-            // 
-            // OstaloDanaStari
-            // 
-            this.OstaloDanaStari.HeaderText = "Ostalo dana stari";
-            this.OstaloDanaStari.Name = "OstaloDanaStari";
-            this.OstaloDanaStari.ReadOnly = true;
-            // 
-            // Godina
-            // 
-            this.Godina.HeaderText = "Godina";
-            this.Godina.Name = "Godina";
-            this.Godina.ReadOnly = true;
             // 
             // frmGodisnji
             // 
@@ -300,7 +319,7 @@
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Name = "frmGodisnji";
-            this.Text = "frmGodisnji";
+            this.Text = "Godišnji";
             this.Load += new System.EventHandler(this.frmGodisnji_Load);
             this.groupBox2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();

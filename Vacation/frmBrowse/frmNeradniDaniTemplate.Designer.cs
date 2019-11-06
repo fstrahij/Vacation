@@ -28,6 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.btnDeaktiviraj = new System.Windows.Forms.Button();
             this.btnUredi = new System.Windows.Forms.Button();
@@ -47,22 +49,21 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.btnZatvori);
             this.groupBox1.Controls.Add(this.btnDeaktiviraj);
             this.groupBox1.Controls.Add(this.btnUredi);
             this.groupBox1.Controls.Add(this.btnNovi);
             this.groupBox1.Controls.Add(this.btnDeaktivirajSve);
             this.groupBox1.Controls.Add(this.dataGridView1);
-            this.groupBox1.Location = new System.Drawing.Point(29, 19);
+            this.groupBox1.Location = new System.Drawing.Point(20, 60);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(840, 475);
+            this.groupBox1.Size = new System.Drawing.Size(924, 484);
             this.groupBox1.TabIndex = 2;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Neradni dani template";
             // 
             // btnDeaktiviraj
             // 
-            this.btnDeaktiviraj.Location = new System.Drawing.Point(609, 25);
+            this.btnDeaktiviraj.Location = new System.Drawing.Point(712, 25);
             this.btnDeaktiviraj.Name = "btnDeaktiviraj";
             this.btnDeaktiviraj.Size = new System.Drawing.Size(77, 23);
             this.btnDeaktiviraj.TabIndex = 7;
@@ -92,7 +93,7 @@
             // 
             // btnDeaktivirajSve
             // 
-            this.btnDeaktivirajSve.Location = new System.Drawing.Point(707, 25);
+            this.btnDeaktivirajSve.Location = new System.Drawing.Point(810, 25);
             this.btnDeaktivirajSve.Name = "btnDeaktivirajSve";
             this.btnDeaktivirajSve.Size = new System.Drawing.Size(88, 23);
             this.btnDeaktivirajSve.TabIndex = 4;
@@ -115,8 +116,9 @@
             this.dataGridView1.Location = new System.Drawing.Point(45, 73);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
+            this.dataGridView1.RowHeadersWidth = 25;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(750, 310);
+            this.dataGridView1.Size = new System.Drawing.Size(853, 390);
             this.dataGridView1.TabIndex = 0;
             // 
             // Id
@@ -138,16 +140,20 @@
             this.Naziv.HeaderText = "Naziv";
             this.Naziv.Name = "Naziv";
             this.Naziv.ReadOnly = true;
-            this.Naziv.Width = 340;
+            this.Naziv.Width = 440;
             // 
             // Dan
             // 
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.Dan.DefaultCellStyle = dataGridViewCellStyle1;
             this.Dan.HeaderText = "Dan";
             this.Dan.Name = "Dan";
             this.Dan.ReadOnly = true;
             // 
             // Mjesec
             // 
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.Mjesec.DefaultCellStyle = dataGridViewCellStyle2;
             this.Mjesec.HeaderText = "Mjesec";
             this.Mjesec.Name = "Mjesec";
             this.Mjesec.ReadOnly = true;
@@ -157,11 +163,10 @@
             this.Tip.HeaderText = "Tip";
             this.Tip.Name = "Tip";
             this.Tip.ReadOnly = true;
-            this.Tip.Width = 150;
             // 
             // btnZatvori
             // 
-            this.btnZatvori.Location = new System.Drawing.Point(720, 403);
+            this.btnZatvori.Location = new System.Drawing.Point(843, 550);
             this.btnZatvori.Name = "btnZatvori";
             this.btnZatvori.Size = new System.Drawing.Size(75, 23);
             this.btnZatvori.TabIndex = 21;
@@ -173,10 +178,11 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(881, 537);
+            this.ClientSize = new System.Drawing.Size(981, 585);
+            this.Controls.Add(this.btnZatvori);
             this.Controls.Add(this.groupBox1);
             this.Name = "TemplateEditorForm";
-            this.Text = "TemplateEditorForm";
+            this.Text = "Predlošci";
             this.Load += new System.EventHandler(this.TemplateEditorForm_Load);
             this.groupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
@@ -192,12 +198,12 @@
         private System.Windows.Forms.Button btnNovi;
         private System.Windows.Forms.Button btnDeaktivirajSve;
         private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.Button btnZatvori;
         private System.Windows.Forms.DataGridViewTextBoxColumn Id;
         private System.Windows.Forms.DataGridViewTextBoxColumn TipId;
         private System.Windows.Forms.DataGridViewTextBoxColumn Naziv;
         private System.Windows.Forms.DataGridViewTextBoxColumn Dan;
         private System.Windows.Forms.DataGridViewTextBoxColumn Mjesec;
         private System.Windows.Forms.DataGridViewTextBoxColumn Tip;
-        private System.Windows.Forms.Button btnZatvori;
     }
 }

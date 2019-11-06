@@ -129,7 +129,7 @@ namespace Vacation.modelScripts
 
         public string IzracunajBrojaDana(int pId)
         {
-            string sqlUpit = "SELECT dbo.IzracunajBrojDana(" + pId + ") as BrojDana";
+            string sqlUpit = "SELECT dbo.RaspoloziviBrojDanaUGodini(" + pId + ") as BrojDana";
             DataTable dt = DatabaseConnection.Instance.DohvatiPodatke(sqlUpit);
 
             string godina = "";

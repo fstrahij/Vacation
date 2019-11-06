@@ -17,8 +17,8 @@ namespace Vacation.customScripts
         public static int RaspoloziviBrojDana { get => _raspoloziviBrojDana; private set => _raspoloziviBrojDana = value; }
         public static int Godina { get => _godina; private set => _godina = value; }
         public static int ZaposlenikGodisnjiId { get => _zaposlenikGodisnjiId; private set => _zaposlenikGodisnjiId = value; }
-        public static int StariGodisnji { get => _stariGodisnji; private set => _stariGodisnji = value; }
-        public static int NoviGodisnji { get => _noviGodisnji; private set => _noviGodisnji = value; }
+        public static int StariGodisnji { get => _stariGodisnji; set => _stariGodisnji = value; }
+        public static int NoviGodisnji { get => _noviGodisnji; set => _noviGodisnji = value; }
         public static DateTime DtpDatumDo { get => _dtpDatumDo; private set => _dtpDatumDo = value; }
 
 
@@ -37,12 +37,7 @@ namespace Vacation.customScripts
         public static Tuple<int, int> IzracunajBrojDana(DateTime pDtpDatumOd, DateTime pDtpDatumDo)
         {
             BrojDana = 0;
-            Postavka postavka = new Postavka();
-            string GranicniDatum = "GranicniDatum";
-            string datum = Godina + "." + postavka.DajListu().Find(x => x.Kljuc == GranicniDatum).Vrijednost;
-            string format = "yyyy.dd.MM.";
-            DateTime postavke;
-            DateTime.TryParseExact(datum, format, null, System.Globalization.DateTimeStyles.None, out postavke); //new DateTime(Godina, 6, 30);
+            DateTime postavke = DajGranicniDatum();  //new DateTime(Godina, 6, 30);
             int stariGodisnji = StariGodisnji;
             int noviGodisnji = NoviGodisnji;
             int brojac = noviGodisnji;
@@ -76,7 +71,7 @@ namespace Vacation.customScripts
                 }
             }
             return false;
-        }
+        }        
 
         private static void PostaviPodatke(ZaposlenikGodisnji zaposlenikGodisnji)
         {
@@ -98,13 +93,8 @@ namespace Vacation.customScripts
 
         private static void UmanjiZaGodisnji()
         {
-            Godisnji godisnji = new Godisnji();
-            Postavka postavka = new Postavka();
-            string GranicniDatum = "GranicniDatum";
-            string datum = Godina + "." + postavka.DajListu().Find(x => x.Kljuc == GranicniDatum).Vrijednost;
-            string format = "yyyy.dd.MM.";
-            DateTime postavke;
-            DateTime.TryParseExact(datum, format, null, System.Globalization.DateTimeStyles.None, out postavke); //new DateTime(Godina, 6, 30);
+            Godisnji godisnji = new Godisnji();            
+            DateTime postavke = DajGranicniDatum();
             int index = godisnji.DajListu(ZaposlenikId, Godina).Count;
             if (index > 0)
             {
@@ -121,6 +111,17 @@ namespace Vacation.customScripts
             {
                 RaspoloziviBrojDana = NoviGodisnji;
             }
+        }
+
+        private static DateTime DajGranicniDatum()
+        {
+            Postavka postavka = new Postavka();
+            string GranicniDatum = "GranicniDatum";
+            string datum = Godina + "." + postavka.DajListu().Find(x => x.Kljuc == GranicniDatum).Vrijednost;
+            string format = "yyyy.dd.MM.";
+            DateTime postavke;
+            DateTime.TryParseExact(datum, format, null, System.Globalization.DateTimeStyles.None, out postavke);
+            return postavke;
         }
 
     }

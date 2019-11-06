@@ -34,6 +34,8 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             this.txtSpol = new System.Windows.Forms.TextBox();
             this.txtOib = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
@@ -48,8 +50,6 @@
             this.btnNovi = new System.Windows.Forms.Button();
             this.btnDeaktivirajSve = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.btnZatvori = new System.Windows.Forms.Button();
             this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Naziv = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DatumOd = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -60,6 +60,8 @@
             this.ZbrojGodina = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ZbrojMjesec = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ZbrojDan = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.btnZatvori = new System.Windows.Forms.Button();
             this.groupBox3.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -117,9 +119,9 @@
             this.groupBox3.Controls.Add(this.label3);
             this.groupBox3.Controls.Add(this.txtAdresa);
             this.groupBox3.Controls.Add(this.label4);
-            this.groupBox3.Location = new System.Drawing.Point(20, 166);
+            this.groupBox3.Location = new System.Drawing.Point(20, 170);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(312, 181);
+            this.groupBox3.Size = new System.Drawing.Size(310, 180);
             this.groupBox3.TabIndex = 19;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Podaci o zaposleniku";
@@ -139,14 +141,14 @@
             this.comboBoxZaposlenici.Name = "comboBoxZaposlenici";
             this.comboBoxZaposlenici.Size = new System.Drawing.Size(175, 21);
             this.comboBoxZaposlenici.TabIndex = 0;
-            this.comboBoxZaposlenici.SelectedIndexChanged += new System.EventHandler(this.ZaposlenikSelected);
+            this.comboBoxZaposlenici.SelectionChangeCommitted += new System.EventHandler(this.ZaposlenikSelected);
             // 
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.comboBoxZaposlenici);
-            this.groupBox1.Location = new System.Drawing.Point(20, 58);
+            this.groupBox1.Location = new System.Drawing.Point(20, 60);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(229, 79);
+            this.groupBox1.Size = new System.Drawing.Size(230, 80);
             this.groupBox1.TabIndex = 18;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Odabir zaposlenika";
@@ -210,33 +212,10 @@
             this.dataGridView1.Location = new System.Drawing.Point(25, 76);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
+            this.dataGridView1.RowHeadersWidth = 25;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView1.Size = new System.Drawing.Size(873, 310);
             this.dataGridView1.TabIndex = 8;
-            // 
-            // groupBox2
-            // 
-            this.groupBox2.Controls.Add(this.btnDeaktiviraj);
-            this.groupBox2.Controls.Add(this.btnUredi);
-            this.groupBox2.Controls.Add(this.btnNovi);
-            this.groupBox2.Controls.Add(this.btnDeaktivirajSve);
-            this.groupBox2.Controls.Add(this.dataGridView1);
-            this.groupBox2.Location = new System.Drawing.Point(351, 58);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(938, 416);
-            this.groupBox2.TabIndex = 17;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Firme";
-            // 
-            // btnZatvori
-            // 
-            this.btnZatvori.Location = new System.Drawing.Point(1174, 480);
-            this.btnZatvori.Name = "btnZatvori";
-            this.btnZatvori.Size = new System.Drawing.Size(75, 23);
-            this.btnZatvori.TabIndex = 20;
-            this.btnZatvori.Text = "Zatvori";
-            this.btnZatvori.UseVisualStyleBackColor = true;
-            this.btnZatvori.Click += new System.EventHandler(this.ZatvoriClick);
             // 
             // Id
             // 
@@ -253,6 +232,8 @@
             // 
             // DatumOd
             // 
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.DatumOd.DefaultCellStyle = dataGridViewCellStyle1;
             this.DatumOd.HeaderText = "Datum od";
             this.DatumOd.Name = "DatumOd";
             this.DatumOd.ReadOnly = true;
@@ -260,6 +241,8 @@
             // 
             // DatumDo
             // 
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.DatumDo.DefaultCellStyle = dataGridViewCellStyle2;
             this.DatumDo.HeaderText = "Datum do";
             this.DatumDo.Name = "DatumDo";
             this.DatumDo.ReadOnly = true;
@@ -267,8 +250,8 @@
             // 
             // Godina
             // 
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.Godina.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.Godina.DefaultCellStyle = dataGridViewCellStyle3;
             this.Godina.HeaderText = "Godina";
             this.Godina.Name = "Godina";
             this.Godina.ReadOnly = true;
@@ -276,8 +259,8 @@
             // 
             // Mjesec
             // 
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.Mjesec.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.Mjesec.DefaultCellStyle = dataGridViewCellStyle4;
             this.Mjesec.HeaderText = "Mjesec";
             this.Mjesec.Name = "Mjesec";
             this.Mjesec.ReadOnly = true;
@@ -285,8 +268,8 @@
             // 
             // Dan
             // 
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.Dan.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.Dan.DefaultCellStyle = dataGridViewCellStyle5;
             this.Dan.HeaderText = "Dan";
             this.Dan.Name = "Dan";
             this.Dan.ReadOnly = true;
@@ -294,8 +277,8 @@
             // 
             // ZbrojGodina
             // 
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.ZbrojGodina.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.ZbrojGodina.DefaultCellStyle = dataGridViewCellStyle6;
             this.ZbrojGodina.HeaderText = "Zbroj godina";
             this.ZbrojGodina.Name = "ZbrojGodina";
             this.ZbrojGodina.ReadOnly = true;
@@ -303,8 +286,8 @@
             // 
             // ZbrojMjesec
             // 
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.ZbrojMjesec.DefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.ZbrojMjesec.DefaultCellStyle = dataGridViewCellStyle7;
             this.ZbrojMjesec.HeaderText = "Zbroj mjeseci";
             this.ZbrojMjesec.Name = "ZbrojMjesec";
             this.ZbrojMjesec.ReadOnly = true;
@@ -312,12 +295,36 @@
             // 
             // ZbrojDan
             // 
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.ZbrojDan.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.ZbrojDan.DefaultCellStyle = dataGridViewCellStyle8;
             this.ZbrojDan.HeaderText = "Zbroj dana";
             this.ZbrojDan.Name = "ZbrojDan";
             this.ZbrojDan.ReadOnly = true;
             this.ZbrojDan.Width = 80;
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.btnDeaktiviraj);
+            this.groupBox2.Controls.Add(this.btnUredi);
+            this.groupBox2.Controls.Add(this.btnNovi);
+            this.groupBox2.Controls.Add(this.btnDeaktivirajSve);
+            this.groupBox2.Controls.Add(this.dataGridView1);
+            this.groupBox2.Location = new System.Drawing.Point(350, 60);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(938, 416);
+            this.groupBox2.TabIndex = 17;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Firme";
+            // 
+            // btnZatvori
+            // 
+            this.btnZatvori.Location = new System.Drawing.Point(1174, 480);
+            this.btnZatvori.Name = "btnZatvori";
+            this.btnZatvori.Size = new System.Drawing.Size(75, 23);
+            this.btnZatvori.TabIndex = 20;
+            this.btnZatvori.Text = "Zatvori";
+            this.btnZatvori.UseVisualStyleBackColor = true;
+            this.btnZatvori.Click += new System.EventHandler(this.ZatvoriClick);
             // 
             // frmFirme
             // 

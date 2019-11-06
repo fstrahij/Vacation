@@ -52,12 +52,12 @@
             this.groupBox1.Controls.Add(this.button1);
             this.groupBox1.Controls.Add(this.txtNaziv);
             this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Location = new System.Drawing.Point(244, 90);
+            this.groupBox1.Location = new System.Drawing.Point(20, 40);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(328, 318);
+            this.groupBox1.Size = new System.Drawing.Size(328, 295);
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Template Editor";
+            this.groupBox1.Text = "Predložak";
             // 
             // comboBoxTip
             // 
@@ -138,10 +138,10 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(373, 361);
             this.Controls.Add(this.groupBox1);
             this.Name = "frmTemplateEditor";
-            this.Text = "frmTemplateEditor";
+            this.Text = "Predložak editor";
             this.Load += new System.EventHandler(this.frmTemplateEditor_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();

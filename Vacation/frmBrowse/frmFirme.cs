@@ -22,6 +22,15 @@ namespace Vacation.frmBrowse
         public frmFirme()
         {
             InitializeComponent();
+            PostaviAlignHeader();
+        }
+
+        private void PostaviAlignHeader()
+        {
+            for (int i = 2; i <= 9; i++)
+            {
+                dataGridView1.Columns[i].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            }
         }
 
         public void UcitajPodatke()
@@ -89,6 +98,7 @@ namespace Vacation.frmBrowse
             comboBoxZaposlenici.DataSource = zaposlenik.DajListu();
             comboBoxZaposlenici.DisplayMember = "ImePrezime";
             comboBoxZaposlenici.ValueMember = "Id";
+            comboBoxZaposlenici.SelectedItem = null;
         }
 
         private void NoviClick(object sender, EventArgs e)
@@ -100,6 +110,10 @@ namespace Vacation.frmBrowse
                     forma.ZaposlenikId = ZaposlenikID.ToString();
                     forma.ShowDialog();
                 }
+            }
+            else
+            {
+                DialogResult dr = MessageBox.Show("Nije odabran zaposlenik!");
             }
         }
 
@@ -126,6 +140,10 @@ namespace Vacation.frmBrowse
                     forma.ShowDialog();
                 }
             }
+            else
+            {
+                DialogResult dr = MessageBox.Show("Nije odabran zaposlenik!");
+            }
         }
 
         private void DeaktivirajClick(object sender, EventArgs e)
@@ -144,7 +162,7 @@ namespace Vacation.frmBrowse
             }
             else
             {
-                dr = MessageBox.Show("Zaposlenik nije odabran!");
+                dr = MessageBox.Show("Nije odabran zaposlenik!");
             }
         }
 
@@ -167,7 +185,7 @@ namespace Vacation.frmBrowse
             }
             else
             {
-                dr = MessageBox.Show("Zaposlenik nije odabran!");
+                dr = MessageBox.Show("Nije odabran zaposlenik!");
             }
         }
 
