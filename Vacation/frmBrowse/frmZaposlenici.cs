@@ -14,12 +14,22 @@ namespace Vacation.frmBrowse
 {
     public partial class frmZaposlenici : Form
     {
-        public frmZaposlenici()
+        private static frmZaposlenici _instance = null;
+        private frmZaposlenici()
         {
             InitializeComponent();
-            PostaviAlignHeader();
         }
-
+        public static frmZaposlenici Instance
+        {
+            get
+            {
+                if (_instance == null)
+                {
+                    _instance = new frmZaposlenici();
+                }
+                return _instance;
+            }
+        }
         private void PostaviAlignHeader()
         {
            dataGridView1.Columns[5].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
@@ -58,6 +68,7 @@ namespace Vacation.frmBrowse
 
         private void frmZaposlenici_Load(object sender, EventArgs e)
         {
+            PostaviAlignHeader();
             UcitajPodatke();
         }
 
@@ -112,6 +123,12 @@ namespace Vacation.frmBrowse
         private void btnZatvori_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void frmZaposlenici_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            _instance = null;
+            GlavniMeni.Instance.PostaviListuOtvorenihProzora();
         }
     }
 }

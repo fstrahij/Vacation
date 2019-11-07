@@ -12,9 +12,21 @@ namespace Vacation.frmBrowse
 {
     public partial class frmTipoviGodisnjih : Form
     {
-        public frmTipoviGodisnjih()
+        private static frmTipoviGodisnjih _instance = null;
+        private frmTipoviGodisnjih()
         {
             InitializeComponent();
+        }
+        public static frmTipoviGodisnjih Instance
+        {
+            get
+            {
+                if (_instance == null)
+                {
+                    _instance = new frmTipoviGodisnjih();
+                }
+                return _instance;
+            }
         }
 
         private void frmTipoviGodisnjih_Load(object sender, EventArgs e)
@@ -51,6 +63,7 @@ namespace Vacation.frmBrowse
 
         private void btnZatvori_Click(object sender, EventArgs e)
         {
+            _instance = null;
             this.Close();
         }
 

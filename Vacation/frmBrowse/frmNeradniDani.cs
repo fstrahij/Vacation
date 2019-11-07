@@ -14,14 +14,26 @@ namespace Vacation.frmBrowse
 {
     public partial class NeradniDaniForm : Form
     {
+        private static NeradniDaniForm _instance = null;
         private int _godina;
 
         private int Godina { get => _godina; set => _godina = value; }
 
-        public NeradniDaniForm()
+        private NeradniDaniForm()
         {
             InitializeComponent();
-            PostaviAlignHeader();
+        }
+
+        public static NeradniDaniForm Instance
+        {
+            get
+            {
+                if (_instance == null)
+                {
+                    _instance = new NeradniDaniForm();
+                }
+                return _instance;
+            }
         }
 
         private void PostaviAlignHeader()
@@ -87,6 +99,7 @@ namespace Vacation.frmBrowse
 
         private void NeradniDaniForm_Load(object sender, EventArgs e)
         {
+            PostaviAlignHeader();
             UcitajGodine();
             HasRows();
         }
@@ -152,6 +165,12 @@ namespace Vacation.frmBrowse
         private void btnZatvori_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void NeradniDaniForm_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            _instance = null;
+            GlavniMeni.Instance.PostaviListuOtvorenihProzora();
         }
     }
 }

@@ -14,9 +14,22 @@ namespace Vacation.frmBrowse
 {
     public partial class frmPostavke : Form
     {
-        public frmPostavke()
+        private static frmPostavke _instance = null;
+        private frmPostavke()
         {
             InitializeComponent();
+        }
+
+        public static frmPostavke Instance
+        {
+            get
+            {
+                if (_instance == null)
+                {
+                    _instance = new frmPostavke();
+                }
+                return _instance;
+            }
         }
 
         public void UcitajPodatke()
@@ -80,6 +93,12 @@ namespace Vacation.frmBrowse
         private void btnZatvori_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void frmPostavke_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            _instance = null;
+            GlavniMeni.Instance.PostaviListuOtvorenihProzora();
         }
     }
 }

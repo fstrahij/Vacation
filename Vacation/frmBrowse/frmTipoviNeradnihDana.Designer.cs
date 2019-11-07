@@ -125,6 +125,7 @@
             this.Controls.Add(this.groupBox1);
             this.Name = "TipoviNeradnihDanaForm";
             this.Text = "Tipovi neradnih dana";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.TipoviNeradnihDanaForm_FormClosed);
             this.Load += new System.EventHandler(this.TipoviNeradnihDanaForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.groupBox1.ResumeLayout(false);

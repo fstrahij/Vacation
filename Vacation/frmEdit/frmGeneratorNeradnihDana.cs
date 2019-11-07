@@ -14,16 +14,25 @@ namespace Vacation
 {
     public partial class GeneratorNeradnihDanaForm : Form
     {
+        private static GeneratorNeradnihDanaForm _instance = null;
         private int _godina;
-
         public int Godina { get => _godina; set => _godina = value; }
 
-        public GeneratorNeradnihDanaForm()
+        private GeneratorNeradnihDanaForm()
         {
             InitializeComponent();
-            PostaviAlignHeader();
         }
-
+        public static GeneratorNeradnihDanaForm Instance
+        {
+            get
+            {
+                if (_instance == null)
+                {
+                    _instance = new GeneratorNeradnihDanaForm();
+                }
+                return _instance;
+            }
+        }
         private void PostaviAlignHeader()
         {
             dataGridView1.Columns[4].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;           
@@ -31,6 +40,7 @@ namespace Vacation
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            PostaviAlignHeader();
             groupBoxAll.Hide();            
         }
 
@@ -157,6 +167,12 @@ namespace Vacation
         private void btnZatvori_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void GeneratorNeradnihDanaForm_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            _instance = null;
+            GlavniMeni.Instance.PostaviListuOtvorenihProzora();
         }
     }
 }

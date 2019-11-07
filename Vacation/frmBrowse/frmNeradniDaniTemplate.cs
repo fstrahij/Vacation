@@ -7,10 +7,22 @@ namespace Vacation
 {
     public partial class TemplateEditorForm : Form
     {
-        public TemplateEditorForm()
+        private static TemplateEditorForm _instance = null;
+        private TemplateEditorForm()
         {
             InitializeComponent();
-            PostaviAlignHeader();
+        }
+
+        public static TemplateEditorForm Instance
+        {
+            get
+            {
+                if (_instance == null)
+                {
+                    _instance = new TemplateEditorForm();
+                }
+                return _instance;
+            }
         }
 
         private void PostaviAlignHeader()
@@ -70,6 +82,7 @@ namespace Vacation
 
         private void TemplateEditorForm_Load(object sender, EventArgs e)
         {
+            PostaviAlignHeader();
             UcitajPodatke();            
         }
 
@@ -126,6 +139,12 @@ namespace Vacation
         private void btnZatvori_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void TemplateEditorForm_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            _instance = null;
+            GlavniMeni.Instance.PostaviListuOtvorenihProzora();
         }
     }
 }

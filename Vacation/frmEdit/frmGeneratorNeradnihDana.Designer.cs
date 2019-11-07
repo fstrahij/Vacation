@@ -32,18 +32,18 @@
             this.groupBoxAll = new System.Windows.Forms.GroupBox();
             this.checkBoxAll = new System.Windows.Forms.CheckBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.btnGeneriraj = new System.Windows.Forms.Button();
-            this.btnDodajTemplate = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
-            this.txtGodina = new System.Windows.Forms.TextBox();
-            this.btnZatvori = new System.Windows.Forms.Button();
             this.Odabir = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TipId = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Naziv = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Datum = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Tip = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.btnGeneriraj = new System.Windows.Forms.Button();
+            this.btnDodajTemplate = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.txtGodina = new System.Windows.Forms.TextBox();
+            this.btnZatvori = new System.Windows.Forms.Button();
             this.groupBoxAll.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox2.SuspendLayout();
@@ -87,6 +87,47 @@
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView1.Size = new System.Drawing.Size(814, 390);
             this.dataGridView1.TabIndex = 0;
+            // 
+            // Odabir
+            // 
+            this.Odabir.FalseValue = "False";
+            this.Odabir.HeaderText = "";
+            this.Odabir.Name = "Odabir";
+            this.Odabir.TrueValue = "True";
+            this.Odabir.Width = 50;
+            // 
+            // Id
+            // 
+            this.Id.HeaderText = "Id";
+            this.Id.Name = "Id";
+            this.Id.Visible = false;
+            // 
+            // TipId
+            // 
+            this.TipId.HeaderText = "TipId";
+            this.TipId.Name = "TipId";
+            this.TipId.Visible = false;
+            // 
+            // Naziv
+            // 
+            this.Naziv.HeaderText = "Naziv";
+            this.Naziv.Name = "Naziv";
+            this.Naziv.ReadOnly = true;
+            this.Naziv.Width = 440;
+            // 
+            // Datum
+            // 
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.Datum.DefaultCellStyle = dataGridViewCellStyle1;
+            this.Datum.HeaderText = "Datum";
+            this.Datum.Name = "Datum";
+            this.Datum.ReadOnly = true;
+            // 
+            // Tip
+            // 
+            this.Tip.HeaderText = "Tip";
+            this.Tip.Name = "Tip";
+            this.Tip.ReadOnly = true;
             // 
             // groupBox2
             // 
@@ -147,47 +188,6 @@
             this.btnZatvori.UseVisualStyleBackColor = true;
             this.btnZatvori.Click += new System.EventHandler(this.btnZatvori_Click);
             // 
-            // Odabir
-            // 
-            this.Odabir.FalseValue = "False";
-            this.Odabir.HeaderText = "";
-            this.Odabir.Name = "Odabir";
-            this.Odabir.TrueValue = "True";
-            this.Odabir.Width = 50;
-            // 
-            // Id
-            // 
-            this.Id.HeaderText = "Id";
-            this.Id.Name = "Id";
-            this.Id.Visible = false;
-            // 
-            // TipId
-            // 
-            this.TipId.HeaderText = "TipId";
-            this.TipId.Name = "TipId";
-            this.TipId.Visible = false;
-            // 
-            // Naziv
-            // 
-            this.Naziv.HeaderText = "Naziv";
-            this.Naziv.Name = "Naziv";
-            this.Naziv.ReadOnly = true;
-            this.Naziv.Width = 440;
-            // 
-            // Datum
-            // 
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.Datum.DefaultCellStyle = dataGridViewCellStyle1;
-            this.Datum.HeaderText = "Datum";
-            this.Datum.Name = "Datum";
-            this.Datum.ReadOnly = true;
-            // 
-            // Tip
-            // 
-            this.Tip.HeaderText = "Tip";
-            this.Tip.Name = "Tip";
-            this.Tip.ReadOnly = true;
-            // 
             // GeneratorNeradnihDanaForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -198,6 +198,7 @@
             this.Controls.Add(this.groupBoxAll);
             this.Name = "GeneratorNeradnihDanaForm";
             this.Text = "Generator neradnih dana";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.GeneratorNeradnihDanaForm_FormClosed);
             this.Load += new System.EventHandler(this.Form1_Load);
             this.groupBoxAll.ResumeLayout(false);
             this.groupBoxAll.PerformLayout();

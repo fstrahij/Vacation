@@ -14,12 +14,22 @@ namespace Vacation.frmBrowse
 {
     public partial class frmZaposlenikGodisnji : Form
     {
-        public frmZaposlenikGodisnji()
+        private static frmZaposlenikGodisnji _instance = null;
+        private frmZaposlenikGodisnji()
         {
             InitializeComponent();
-            PostaviAlignHeader();
         }
-
+        public static frmZaposlenikGodisnji Instance
+        {
+            get
+            {
+                if (_instance == null)
+                {
+                    _instance = new frmZaposlenikGodisnji();
+                }
+                return _instance;
+            }
+        }
         private void PostaviAlignHeader()
         {
             for (int i = 5; i <= 8; i++)
@@ -69,6 +79,7 @@ namespace Vacation.frmBrowse
         
         private void frmZaposlenikGodisnji_Load(object sender, EventArgs e)
         {
+            PostaviAlignHeader();
             UcitajPodatke();
         }
 
@@ -98,10 +109,6 @@ namespace Vacation.frmBrowse
         {
             this.Close();
         }
-
-      
-
-
         private void DeaktivirajClick(object sender, EventArgs e)
         {
             DialogResult dr = MessageBox.Show("Jeste li sigurni?", "Provjera", MessageBoxButtons.YesNo);
@@ -127,6 +134,12 @@ namespace Vacation.frmBrowse
                 }
                 UcitajPodatke();
             }
+        }
+
+        private void frmZaposlenikGodisnji_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            _instance = null;
+            GlavniMeni.Instance.PostaviListuOtvorenihProzora();
         }
     }
 }

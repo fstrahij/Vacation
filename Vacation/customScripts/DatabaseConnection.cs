@@ -12,7 +12,7 @@ namespace Vacation
     class DatabaseConnection
     {
         private static DatabaseConnection _instance;
-        private string ConnectionString = "Data Source=RBT-TECH\\SQLEXPRESS;Initial Catalog=Rbt.Vacation;Integrated Security=True";
+        private string ConnectionString = "Data Source=RBT-VOSTRO6\\SQLEXPRESS;Initial Catalog=Rbt.Vacation;Integrated Security=True";
 
         public static DatabaseConnection Instance
         {

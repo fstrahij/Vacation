@@ -155,7 +155,7 @@
             // 
             // btnDeaktiviraj
             // 
-            this.btnDeaktiviraj.Location = new System.Drawing.Point(727, 29);
+            this.btnDeaktiviraj.Location = new System.Drawing.Point(660, 29);
             this.btnDeaktiviraj.Name = "btnDeaktiviraj";
             this.btnDeaktiviraj.Size = new System.Drawing.Size(77, 23);
             this.btnDeaktiviraj.TabIndex = 12;
@@ -185,7 +185,7 @@
             // 
             // btnDeaktivirajSve
             // 
-            this.btnDeaktivirajSve.Location = new System.Drawing.Point(810, 29);
+            this.btnDeaktivirajSve.Location = new System.Drawing.Point(743, 29);
             this.btnDeaktivirajSve.Name = "btnDeaktivirajSve";
             this.btnDeaktivirajSve.Size = new System.Drawing.Size(88, 23);
             this.btnDeaktivirajSve.TabIndex = 9;
@@ -214,7 +214,7 @@
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersWidth = 25;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(873, 310);
+            this.dataGridView1.Size = new System.Drawing.Size(806, 310);
             this.dataGridView1.TabIndex = 8;
             // 
             // Id
@@ -237,7 +237,6 @@
             this.DatumOd.HeaderText = "Datum od";
             this.DatumOd.Name = "DatumOd";
             this.DatumOd.ReadOnly = true;
-            this.DatumOd.Width = 120;
             // 
             // DatumDo
             // 
@@ -246,7 +245,6 @@
             this.DatumDo.HeaderText = "Datum do";
             this.DatumDo.Name = "DatumDo";
             this.DatumDo.ReadOnly = true;
-            this.DatumDo.Width = 120;
             // 
             // Godina
             // 
@@ -311,14 +309,14 @@
             this.groupBox2.Controls.Add(this.dataGridView1);
             this.groupBox2.Location = new System.Drawing.Point(350, 60);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(938, 416);
+            this.groupBox2.Size = new System.Drawing.Size(857, 416);
             this.groupBox2.TabIndex = 17;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Firme";
             // 
             // btnZatvori
             // 
-            this.btnZatvori.Location = new System.Drawing.Point(1174, 480);
+            this.btnZatvori.Location = new System.Drawing.Point(1106, 482);
             this.btnZatvori.Name = "btnZatvori";
             this.btnZatvori.Size = new System.Drawing.Size(75, 23);
             this.btnZatvori.TabIndex = 20;
@@ -336,7 +334,8 @@
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.groupBox2);
             this.Name = "frmFirme";
-            this.Text = "Firme";
+            this.Text = "Zaposlenja";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.frmFirme_FormClosed);
             this.Load += new System.EventHandler(this.frmFirme_Load);
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();

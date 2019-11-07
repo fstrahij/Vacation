@@ -34,6 +34,7 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -47,7 +48,9 @@
   <ItemGroup>
     <Compile Include="customScripts\DatabaseConnection.cs" />
     <Compile Include="customScripts\DatumParser.cs" />
+    <Compile Include="customScripts\GodisnjaStatistika.cs" />
     <Compile Include="customScripts\PomocniBrojac.cs" />
+    <Compile Include="customScripts\Upit.cs" />
     <Compile Include="frmBrowse\frmFirme.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -83,6 +86,12 @@
     </Compile>
     <Compile Include="frmBrowse\frmZaposlenikGodisnji.Designer.cs">
       <DependentUpon>frmZaposlenikGodisnji.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmBrowse\frmGodisnjiStatistika.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmBrowse\frmGodisnjiStatistika.Designer.cs">
+      <DependentUpon>frmGodisnjiStatistika.cs</DependentUpon>
     </Compile>
     <Compile Include="frmEdit\frmFirmaEditor.cs">
       <SubType>Form</SubType>
@@ -187,6 +196,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmBrowse\frmZaposlenikGodisnji.resx">
       <DependentUpon>frmZaposlenikGodisnji.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmBrowse\frmGodisnjiStatistika.resx">
+      <DependentUpon>frmGodisnjiStatistika.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmEdit\frmFirmaEditor.resx">
       <DependentUpon>frmFirmaEditor.cs</DependentUpon>

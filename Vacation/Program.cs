@@ -17,7 +17,7 @@ namespace Vacation
         {            
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new GlavniMeni());            
+            Application.Run(GlavniMeni.Instance);            
         }
     }
 }

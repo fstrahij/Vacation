@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.btnDeaktiviraj = new System.Windows.Forms.Button();
             this.btnUredi = new System.Windows.Forms.Button();
@@ -57,14 +57,14 @@
             this.groupBox2.Controls.Add(this.dataGridView1);
             this.groupBox2.Location = new System.Drawing.Point(350, 60);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(983, 550);
+            this.groupBox2.Size = new System.Drawing.Size(777, 550);
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Neradni dani";
             // 
             // btnDeaktiviraj
             // 
-            this.btnDeaktiviraj.Location = new System.Drawing.Point(774, 31);
+            this.btnDeaktiviraj.Location = new System.Drawing.Point(581, 31);
             this.btnDeaktiviraj.Name = "btnDeaktiviraj";
             this.btnDeaktiviraj.Size = new System.Drawing.Size(77, 23);
             this.btnDeaktiviraj.TabIndex = 12;
@@ -94,7 +94,7 @@
             // 
             // btnDeaktivirajSve
             // 
-            this.btnDeaktivirajSve.Location = new System.Drawing.Point(857, 31);
+            this.btnDeaktivirajSve.Location = new System.Drawing.Point(664, 31);
             this.btnDeaktivirajSve.Name = "btnDeaktivirajSve";
             this.btnDeaktivirajSve.Size = new System.Drawing.Size(88, 23);
             this.btnDeaktivirajSve.TabIndex = 9;
@@ -118,7 +118,7 @@
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersWidth = 25;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(920, 450);
+            this.dataGridView1.Size = new System.Drawing.Size(727, 450);
             this.dataGridView1.TabIndex = 8;
             // 
             // Id
@@ -144,8 +144,8 @@
             // 
             // Datum
             // 
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.Datum.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.Datum.DefaultCellStyle = dataGridViewCellStyle2;
             this.Datum.HeaderText = "Datum";
             this.Datum.Name = "Datum";
             this.Datum.ReadOnly = true;
@@ -177,7 +177,7 @@
             // 
             // btnZatvori
             // 
-            this.btnZatvori.Location = new System.Drawing.Point(1220, 616);
+            this.btnZatvori.Location = new System.Drawing.Point(1027, 616);
             this.btnZatvori.Name = "btnZatvori";
             this.btnZatvori.Size = new System.Drawing.Size(75, 23);
             this.btnZatvori.TabIndex = 21;
@@ -195,6 +195,7 @@
             this.Controls.Add(this.groupBox2);
             this.Name = "NeradniDaniForm";
             this.Text = "Neradni dani";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.NeradniDaniForm_FormClosed);
             this.Load += new System.EventHandler(this.NeradniDaniForm_Load);
             this.groupBox2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();

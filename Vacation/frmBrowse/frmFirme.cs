@@ -15,14 +15,25 @@ namespace Vacation.frmBrowse
 {
     public partial class frmFirme : Form
     {
+        private static frmFirme _instance = null;
         private int _zaposlenikID;
 
         public int ZaposlenikID { get => _zaposlenikID; set => _zaposlenikID = value; }
 
-        public frmFirme()
+        private frmFirme()
         {
             InitializeComponent();
-            PostaviAlignHeader();
+        }
+        public static frmFirme Instance
+        {
+            get
+            {
+                if (_instance == null)
+                {
+                    _instance = new frmFirme();
+                }
+                return _instance;
+            }
         }
 
         private void PostaviAlignHeader()
@@ -93,6 +104,7 @@ namespace Vacation.frmBrowse
 
         private void frmFirme_Load(object sender, EventArgs e)
         {
+            PostaviAlignHeader();
             Zaposlenik zaposlenik = new Zaposlenik();
             ZaposlenikGodisnji zaposleniciGodisnji = new ZaposlenikGodisnji();
             comboBoxZaposlenici.DataSource = zaposlenik.DajListu();
@@ -192,6 +204,12 @@ namespace Vacation.frmBrowse
         private void ZatvoriClick(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void frmFirme_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            _instance = null;
+            GlavniMeni.Instance.PostaviListuOtvorenihProzora();
         }
     }
 }

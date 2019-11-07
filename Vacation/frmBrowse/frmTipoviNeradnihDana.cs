@@ -12,9 +12,22 @@ namespace Vacation
 {
     public partial class TipoviNeradnihDanaForm : Form
     {
-        public TipoviNeradnihDanaForm()
+        private static TipoviNeradnihDanaForm _instance = null;
+        private TipoviNeradnihDanaForm()
         {
             InitializeComponent();
+        }
+
+        public static TipoviNeradnihDanaForm Instance
+        {
+            get
+            {
+                if (_instance == null)
+                {
+                    _instance = new TipoviNeradnihDanaForm();
+                }
+                return _instance;
+            }
         }
 
         public void UcitajPodatke()
@@ -107,6 +120,12 @@ namespace Vacation
         private void btnZatvori_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void TipoviNeradnihDanaForm_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            _instance = null;
+            GlavniMeni.Instance.PostaviListuOtvorenihProzora();
         }
     }
 }

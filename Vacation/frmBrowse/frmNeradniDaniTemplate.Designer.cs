@@ -183,6 +183,7 @@
             this.Controls.Add(this.groupBox1);
             this.Name = "TemplateEditorForm";
             this.Text = "Predlošci";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.TemplateEditorForm_FormClosed);
             this.Load += new System.EventHandler(this.TemplateEditorForm_Load);
             this.groupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();

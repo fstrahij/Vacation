@@ -28,12 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle17 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle18 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.btnDeaktiviraj = new System.Windows.Forms.Button();
             this.btnUredi = new System.Windows.Forms.Button();
@@ -166,8 +166,8 @@
             // 
             // DatumOd
             // 
-            dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.DatumOd.DefaultCellStyle = dataGridViewCellStyle13;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.DatumOd.DefaultCellStyle = dataGridViewCellStyle1;
             this.DatumOd.HeaderText = "Datum od";
             this.DatumOd.Name = "DatumOd";
             this.DatumOd.ReadOnly = true;
@@ -175,8 +175,8 @@
             // 
             // DatumDo
             // 
-            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.DatumDo.DefaultCellStyle = dataGridViewCellStyle14;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.DatumDo.DefaultCellStyle = dataGridViewCellStyle2;
             this.DatumDo.HeaderText = "Datum do";
             this.DatumDo.Name = "DatumDo";
             this.DatumDo.ReadOnly = true;
@@ -184,32 +184,32 @@
             // 
             // UkupnoDana
             // 
-            dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.UkupnoDana.DefaultCellStyle = dataGridViewCellStyle15;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.UkupnoDana.DefaultCellStyle = dataGridViewCellStyle3;
             this.UkupnoDana.HeaderText = "Ukupno dana";
             this.UkupnoDana.Name = "UkupnoDana";
             this.UkupnoDana.ReadOnly = true;
             // 
             // OstaloDanaNovi
             // 
-            dataGridViewCellStyle16.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.OstaloDanaNovi.DefaultCellStyle = dataGridViewCellStyle16;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.OstaloDanaNovi.DefaultCellStyle = dataGridViewCellStyle4;
             this.OstaloDanaNovi.HeaderText = "Ostalo dana novi";
             this.OstaloDanaNovi.Name = "OstaloDanaNovi";
             this.OstaloDanaNovi.ReadOnly = true;
             // 
             // OstaloDanaStari
             // 
-            dataGridViewCellStyle17.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.OstaloDanaStari.DefaultCellStyle = dataGridViewCellStyle17;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.OstaloDanaStari.DefaultCellStyle = dataGridViewCellStyle5;
             this.OstaloDanaStari.HeaderText = "Ostalo dana stari";
             this.OstaloDanaStari.Name = "OstaloDanaStari";
             this.OstaloDanaStari.ReadOnly = true;
             // 
             // Godina
             // 
-            dataGridViewCellStyle18.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.Godina.DefaultCellStyle = dataGridViewCellStyle18;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.Godina.DefaultCellStyle = dataGridViewCellStyle6;
             this.Godina.HeaderText = "Godina";
             this.Godina.Name = "Godina";
             this.Godina.ReadOnly = true;
@@ -320,6 +320,7 @@
             this.Controls.Add(this.groupBox1);
             this.Name = "frmGodisnji";
             this.Text = "Godišnji";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.frmGodisnji_FormClosed);
             this.Load += new System.EventHandler(this.frmGodisnji_Load);
             this.groupBox2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
