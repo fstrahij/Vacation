@@ -10,6 +10,8 @@ namespace Vacation.customScripts
     class GodisnjaStatistika
     {
         private int _sijecanj, _veljaca, _ozujak, _travanj, _svibanj, _lipanj, _srpanj, _kolovoz, _rujan, _listopad, _studeni, _prosinac;
+        private Dictionary<string, int> _mjeseci;
+
         public int Sijecanj { get => _sijecanj; private set => _sijecanj = value; }
         public int Veljaca { get => _veljaca; private set => _veljaca = value; }
         public int Ozujak { get => _ozujak; private set => _ozujak = value; }
@@ -22,6 +24,8 @@ namespace Vacation.customScripts
         public int Listopad { get => _listopad; private set => _listopad = value; }
         public int Studeni { get => _studeni; private set => _studeni = value; }
         public int Prosinac { get => _prosinac; private set => _prosinac = value; }
+        public Dictionary<string, int> Mjeseci { get => _mjeseci; set => _mjeseci = value; }
+
         public GodisnjaStatistika() 
         {
             Sijecanj = Veljaca = Ozujak = Travanj = Svibanj = Lipanj = Srpanj = Kolovoz = Listopad = Studeni = Prosinac = 0;
@@ -46,6 +50,36 @@ namespace Vacation.customScripts
                     break;
             }
         }
+
+        private void PostaviMjesece()
+        {
+            Mjeseci = new Dictionary<string, int>();
+            if (Sijecanj > 0)
+                Mjeseci.Add("Siječanj", Sijecanj);
+            if (Veljaca > 0)
+                Mjeseci.Add("Siječanj", Veljaca);
+            if (Ozujak > 0)
+                Mjeseci.Add("Ozujak", Ozujak);
+            if (Travanj > 0)
+                Mjeseci.Add("Travanj", Travanj);
+            if (Svibanj > 0)
+                Mjeseci.Add("Svibanj", Svibanj);
+            if (Lipanj > 0)
+                Mjeseci.Add("Lipanj", Lipanj);
+            if (Srpanj > 0)
+                Mjeseci.Add("Srpanj", Srpanj);
+            if (Kolovoz > 0)
+                Mjeseci.Add("Kolovoz", Kolovoz);
+            if (Rujan > 0)
+                Mjeseci.Add("Rujan", Rujan);
+            if (Listopad > 0)
+                Mjeseci.Add("Listopad", Listopad);
+            if (Studeni > 0)
+                Mjeseci.Add("Studeni", Studeni);
+            if (Prosinac > 0)
+                Mjeseci.Add("Prosinac", Prosinac);
+        }
+
         public void IzracunajDane(DateTime pDatumOd, DateTime pDatumDo) 
         {
             int dan = 31;
@@ -60,7 +94,7 @@ namespace Vacation.customScripts
                 }                
                 pDatumOd = pDatumOd.AddDays(1);
             }
-            Console.WriteLine(Lipanj);
+            PostaviMjesece();
         }
 
     }

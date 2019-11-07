@@ -34,18 +34,6 @@ namespace Vacation.frmBrowse
 
         private void GodisnjiStatistika_Load(object sender, EventArgs e)
         {
-            chartGodisnji.Series.Add("Sijecanj");
-            chartGodisnji.Series.Add("Veljaca");
-            chartGodisnji.Series.Add("Ozujak");
-            chartGodisnji.Series.Add("Travanj");
-            chartGodisnji.Series.Add("Svibanj");
-            chartGodisnji.Series.Add("Lipanj");
-            chartGodisnji.Series.Add("Srpanj");
-            chartGodisnji.Series.Add("Kolovoz");
-            chartGodisnji.Series.Add("Rujan");
-            chartGodisnji.Series.Add("Listopad");
-            chartGodisnji.Series.Add("Studeni");
-            chartGodisnji.Series.Add("Prosinac");
             IzracunajGodisnje();
         }
 
@@ -59,19 +47,10 @@ namespace Vacation.frmBrowse
                 DatumDo = DateTime.ParseExact(row["DatumDo"].ToString(), "d.M.yyyy. H:mm:ss", null);
                 gs.IzracunajDane(DatumOd, DatumDo);
             }
-
-            chartGodisnji.Series["Sijecanj"].Points.AddY(gs.Sijecanj);
-            chartGodisnji.Series["Veljaca"].Points.AddY(gs.Veljaca);
-            chartGodisnji.Series["Ozujak"].Points.AddY(gs.Ozujak);
-            chartGodisnji.Series["Travanj"].Points.AddY(gs.Travanj);
-            chartGodisnji.Series["Svibanj"].Points.AddY(gs.Svibanj);
-            chartGodisnji.Series["Lipanj"].Points.AddY(gs.Lipanj);
-            chartGodisnji.Series["Srpanj"].Points.AddY(gs.Srpanj);
-            chartGodisnji.Series["Kolovoz"].Points.AddY(gs.Kolovoz);
-            chartGodisnji.Series["Rujan"].Points.AddY(gs.Rujan);
-            chartGodisnji.Series["Listopad"].Points.AddY(gs.Listopad);
-            chartGodisnji.Series["Studeni"].Points.AddY(gs.Studeni);
-            chartGodisnji.Series["Prosinac"].Points.AddY(gs.Prosinac);
+            foreach (var item in gs.Mjeseci)
+            {
+                chartGodisnji.Series["Mjesec"].Points.AddXY(item.Key, item.Value);
+            }
         }
     }
 }
