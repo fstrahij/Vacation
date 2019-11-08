@@ -152,5 +152,14 @@ namespace Vacation
             forma.Show();
             PostaviListuOtvorenihProzora();
         }
+
+        private void kalendarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmKalendar forma = frmKalendar.Instance;
+            forma.MdiParent = this;
+            forma.WindowState = FormWindowState.Maximized;
+            forma.Show();
+            PostaviListuOtvorenihProzora();
+        }
     }
 }
