@@ -63,6 +63,12 @@
     <Compile Include="frmBrowse\frmGodisnji.Designer.cs">
       <DependentUpon>frmGodisnji.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmBrowse\frmKalendar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmBrowse\frmKalendar.Designer.cs">
+      <DependentUpon>frmKalendar.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmBrowse\frmPostavke.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -181,6 +187,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmBrowse\frmGodisnji.resx">
       <DependentUpon>frmGodisnji.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmBrowse\frmKalendar.resx">
+      <DependentUpon>frmKalendar.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmBrowse\frmNeradniDaniTemplate.resx">
       <DependentUpon>frmNeradniDaniTemplate.cs</DependentUpon>

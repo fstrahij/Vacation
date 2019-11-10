@@ -43,6 +43,7 @@
             this.godišnjiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.prozorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.statistikaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.kalendarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -55,7 +56,8 @@
             this.zaposlenikgodišnjiToolStripMenuItem,
             this.godišnjiToolStripMenuItem,
             this.prozorToolStripMenuItem,
-            this.statistikaToolStripMenuItem});
+            this.statistikaToolStripMenuItem,
+            this.kalendarToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(928, 25);
@@ -74,7 +76,7 @@
             // postavkeToolStripMenuItem
             // 
             this.postavkeToolStripMenuItem.Name = "postavkeToolStripMenuItem";
-            this.postavkeToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.postavkeToolStripMenuItem.Size = new System.Drawing.Size(127, 22);
             this.postavkeToolStripMenuItem.Text = "Postavke";
             this.postavkeToolStripMenuItem.Click += new System.EventHandler(this.postavkeToolStripMenuItem_Click);
             // 
@@ -91,14 +93,14 @@
             // pregledToolStripMenuItem1
             // 
             this.pregledToolStripMenuItem1.Name = "pregledToolStripMenuItem1";
-            this.pregledToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.pregledToolStripMenuItem1.Size = new System.Drawing.Size(139, 22);
             this.pregledToolStripMenuItem1.Text = "Pregled";
             this.pregledToolStripMenuItem1.Click += new System.EventHandler(this.pregledToolStripMenuItem1_Click);
             // 
             // firmeToolStripMenuItem
             // 
             this.firmeToolStripMenuItem.Name = "firmeToolStripMenuItem";
-            this.firmeToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.firmeToolStripMenuItem.Size = new System.Drawing.Size(139, 22);
             this.firmeToolStripMenuItem.Text = "Zaposlenja";
             this.firmeToolStripMenuItem.Click += new System.EventHandler(this.firmeToolStripMenuItem_Click);
             // 
@@ -117,28 +119,28 @@
             // noviToolStripMenuItem
             // 
             this.noviToolStripMenuItem.Name = "noviToolStripMenuItem";
-            this.noviToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.noviToolStripMenuItem.Size = new System.Drawing.Size(129, 22);
             this.noviToolStripMenuItem.Text = "Novi";
             this.noviToolStripMenuItem.Click += new System.EventHandler(this.noviToolStripMenuItem_Click);
             // 
             // pregledToolStripMenuItem
             // 
             this.pregledToolStripMenuItem.Name = "pregledToolStripMenuItem";
-            this.pregledToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.pregledToolStripMenuItem.Size = new System.Drawing.Size(129, 22);
             this.pregledToolStripMenuItem.Text = "Pregled";
             this.pregledToolStripMenuItem.Click += new System.EventHandler(this.pregledToolStripMenuItem_Click);
             // 
             // templejtiToolStripMenuItem
             // 
             this.templejtiToolStripMenuItem.Name = "templejtiToolStripMenuItem";
-            this.templejtiToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.templejtiToolStripMenuItem.Size = new System.Drawing.Size(129, 22);
             this.templejtiToolStripMenuItem.Text = "Predlošci";
             this.templejtiToolStripMenuItem.Click += new System.EventHandler(this.templejtiToolStripMenuItem_Click);
             // 
             // tipoviToolStripMenuItem
             // 
             this.tipoviToolStripMenuItem.Name = "tipoviToolStripMenuItem";
-            this.tipoviToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.tipoviToolStripMenuItem.Size = new System.Drawing.Size(129, 22);
             this.tipoviToolStripMenuItem.Text = "Tipovi";
             this.tipoviToolStripMenuItem.Click += new System.EventHandler(this.tipoviToolStripMenuItem_Click);
             // 
@@ -167,10 +169,19 @@
             // 
             // statistikaToolStripMenuItem
             // 
+            this.statistikaToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.statistikaToolStripMenuItem.Name = "statistikaToolStripMenuItem";
-            this.statistikaToolStripMenuItem.Size = new System.Drawing.Size(66, 21);
+            this.statistikaToolStripMenuItem.Size = new System.Drawing.Size(71, 21);
             this.statistikaToolStripMenuItem.Text = "Statistika";
             this.statistikaToolStripMenuItem.Click += new System.EventHandler(this.statistikaToolStripMenuItem_Click);
+            // 
+            // kalendarToolStripMenuItem
+            // 
+            this.kalendarToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.kalendarToolStripMenuItem.Name = "kalendarToolStripMenuItem";
+            this.kalendarToolStripMenuItem.Size = new System.Drawing.Size(72, 21);
+            this.kalendarToolStripMenuItem.Text = "Kalendar";
+            this.kalendarToolStripMenuItem.Click += new System.EventHandler(this.kalendarToolStripMenuItem_Click);
             // 
             // GlavniMeni
             // 
@@ -206,5 +217,6 @@
         private System.Windows.Forms.ToolStripMenuItem postavkeToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem prozorToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem statistikaToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem kalendarToolStripMenuItem;
     }
 }
