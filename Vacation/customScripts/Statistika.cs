@@ -7,9 +7,10 @@ using System.Threading.Tasks;
 
 namespace Vacation.customScripts
 {
-    class GodisnjaStatistika
+    class Statistika
     {
         private int _sijecanj, _veljaca, _ozujak, _travanj, _svibanj, _lipanj, _srpanj, _kolovoz, _rujan, _listopad, _studeni, _prosinac;
+        private int _godina;
         private Dictionary<string, int> _mjeseci;
 
         public int Sijecanj { get => _sijecanj; private set => _sijecanj = value; }
@@ -25,8 +26,9 @@ namespace Vacation.customScripts
         public int Studeni { get => _studeni; private set => _studeni = value; }
         public int Prosinac { get => _prosinac; private set => _prosinac = value; }
         public Dictionary<string, int> Mjeseci { get => _mjeseci; set => _mjeseci = value; }
+        public int Godina { get => _godina; set => _godina = value; }
 
-        public GodisnjaStatistika() 
+        public Statistika() 
         {
             Sijecanj = Veljaca = Ozujak = Travanj = Svibanj = Lipanj = Srpanj = Kolovoz = Listopad = Studeni = Prosinac = 0;
         }
@@ -84,7 +86,7 @@ namespace Vacation.customScripts
         {
             int dan = 31;
             int mjesec = 12;
-            int godina = 2019;
+            int godina = Godina;
             DateTime granicniDatum = new DateTime(godina, mjesec, dan);
             while (DateTime.Compare(pDatumOd, pDatumDo) <= 0 && DateTime.Compare(pDatumOd, granicniDatum) <= 0)
             {

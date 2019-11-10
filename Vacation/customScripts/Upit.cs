@@ -16,7 +16,7 @@ namespace Vacation.customScripts
         public static List<int> DajGodineGodisnjeg() 
         {
             List<int> lista = new List<int>();
-            SqlUpit = "SELECT YEAR(DatumOd) as godina FROM Godisnji WHERE Aktivan = 1 INTERSECT" + 
+            SqlUpit = "SELECT YEAR(DatumOd) as godina FROM Godisnji WHERE Aktivan = 1 INTERSECT " + 
                     "SELECT YEAR(DatumDo) as godina FROM Godisnji WHERE Aktivan = 1 GROUP BY YEAR(DatumOd),YEAR(DatumDo)  ORDER BY godina ";
             foreach (DataRow row in DatabaseConnection.Instance.DohvatiPodatke(SqlUpit).Rows)
             {
@@ -29,7 +29,7 @@ namespace Vacation.customScripts
         {
             List<Godisnji> lista = new List<Godisnji>();
             Godisnji godisnji = new Godisnji();
-            SqlUpit = "SELECT * FROM Godisnji WHERE Aktivan = 1";
+            SqlUpit = "SELECT DatumOd, DatumDo FROM Godisnji WHERE Aktivan = 1";
             /*foreach (DataRow row in DatabaseConnection.Instance.DohvatiPodatke(SqlUpit).Rows)
             {
                 godisnji.Id = int.Parse(row["Id"].ToString());

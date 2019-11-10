@@ -146,7 +146,7 @@ namespace Vacation
 
         private void statistikaToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            frmGodisnjiStatistika forma = frmGodisnjiStatistika.Instance;
+            frmStatistika forma = frmStatistika.Instance;
             forma.MdiParent = this;
             forma.WindowState = FormWindowState.Maximized;
             forma.Show();
