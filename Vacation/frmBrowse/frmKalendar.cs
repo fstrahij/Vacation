@@ -70,6 +70,11 @@ namespace Vacation.frmBrowse
         }
         private void PostaviKalendarDane() 
         {
+            /*
+             * dok je datumOd <= datumDo
+             *     daj koordinate u kalendaru na koje su upisuje dan
+             *     postavi dan na koordinate
+            */
             /*string dan;
             DateTime datumOd = new DateTime(2019, 1, 1);
             DateTime datumDo = new DateTime(2019, 12, 31);

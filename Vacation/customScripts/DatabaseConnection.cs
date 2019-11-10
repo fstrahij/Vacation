@@ -12,7 +12,7 @@ namespace Vacation
     class DatabaseConnection
     {
         private static DatabaseConnection _instance;
-        private string ConnectionString = "Data Source=127.0.0.1;user id=sa;password=newpassword;Initial Catalog=Vacation;";
+        private string ConnectionString = "Data Source=RBT-VOSTRO6\\SQLEXPRESS;Initial Catalog=Rbt.Vacation;Integrated Security=True";
 
         public static DatabaseConnection Instance
         {
