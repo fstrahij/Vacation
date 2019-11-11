@@ -43,5 +43,28 @@ namespace Vacation.customScripts
             }*/
             return DatabaseConnection.Instance.DohvatiPodatke(SqlUpit);
         }
+
+        public static DataTable DajGodisnjiPoZaposlenikuIGodini(int pZaposlenikId, int pGodina)
+        {
+            List<Godisnji> lista = new List<Godisnji>();
+            Godisnji godisnji = new Godisnji();
+            SqlUpit = "SELECT DatumOd, DatumDo FROM Godisnji, ZaposlenikGodisnji " +
+                "WHERE ZaposlenikGodisnji.Id = Godisnji.ZaposlenikGodisnjiId " +
+                "AND ZaposlenikGodisnji.Aktivan = 1 AND Godisnji.Aktivan = 1 " +
+                "AND ZaposlenikGodisnji.ZaposlenikId = " + pZaposlenikId + " AND YEAR(DatumOd) = " + pGodina;            
+            return DatabaseConnection.Instance.DohvatiPodatke(SqlUpit);
+        }
+
+        public static List<int> DajGodineGodisnjegZaposlenika(int pZaposlenikId)
+        {
+            List<int> lista = new List<int>();
+            SqlUpit = "SELECT YEAR(DatumOd) as godina FROM Godisnji, ZaposlenikGodisnji WHERE ZaposlenikGodisnji.Id = Godisnji.ZaposlenikGodisnjiId " +
+                "AND ZaposlenikGodisnji.Aktivan = 1 AND Godisnji.Aktivan = 1 AND ZaposlenikGodisnji.ZaposlenikId = " + pZaposlenikId + " GROUP BY YEAR(DatumOd)";
+            foreach (DataRow row in DatabaseConnection.Instance.DohvatiPodatke(SqlUpit).Rows)
+            {
+                lista.Add(int.Parse(row["godina"].ToString()));
+            }
+            return lista;
+        }
     }
 }

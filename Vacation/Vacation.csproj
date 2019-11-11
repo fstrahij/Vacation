@@ -48,6 +48,7 @@
   <ItemGroup>
     <Compile Include="customScripts\DatabaseConnection.cs" />
     <Compile Include="customScripts\DatumParser.cs" />
+    <Compile Include="customScripts\Kalendar.cs" />
     <Compile Include="customScripts\Statistika.cs" />
     <Compile Include="customScripts\PomocniBrojac.cs" />
     <Compile Include="customScripts\Upit.cs" />
