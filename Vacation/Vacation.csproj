@@ -142,6 +142,12 @@
     <Compile Include="frmEdit\frmTemplateEditor.Designer.cs">
       <DependentUpon>frmTemplateEditor.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmEdit\frmZaposlenikDodaciEditor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmEdit\frmZaposlenikDodaciEditor.Designer.cs">
+      <DependentUpon>frmZaposlenikDodaciEditor.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmEdit\frmZaposlenikEditor.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -243,6 +249,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmEdit\frmTemplateEditor.resx">
       <DependentUpon>frmTemplateEditor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmEdit\frmZaposlenikDodaciEditor.resx">
+      <DependentUpon>frmZaposlenikDodaciEditor.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmEdit\frmZaposlenikEditor.resx">
       <DependentUpon>frmZaposlenikEditor.cs</DependentUpon>

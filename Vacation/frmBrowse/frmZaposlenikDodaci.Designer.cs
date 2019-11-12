@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.btnZatvori = new System.Windows.Forms.Button();
             this.txtSpol = new System.Windows.Forms.TextBox();
             this.txtOib = new System.Windows.Forms.TextBox();
@@ -41,7 +41,6 @@
             this.comboBoxZaposlenici = new System.Windows.Forms.ComboBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.btnDeaktiviraj = new System.Windows.Forms.Button();
-            this.btnUredi = new System.Windows.Forms.Button();
             this.btnNovi = new System.Windows.Forms.Button();
             this.btnDeaktivirajSve = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
@@ -162,15 +161,6 @@
             this.btnDeaktiviraj.Text = "Deaktiviraj Sve";
             this.btnDeaktiviraj.UseVisualStyleBackColor = true;
             // 
-            // btnUredi
-            // 
-            this.btnUredi.Location = new System.Drawing.Point(125, 31);
-            this.btnUredi.Name = "btnUredi";
-            this.btnUredi.Size = new System.Drawing.Size(88, 23);
-            this.btnUredi.TabIndex = 11;
-            this.btnUredi.Text = "Uredi";
-            this.btnUredi.UseVisualStyleBackColor = true;
-            // 
             // btnNovi
             // 
             this.btnNovi.Location = new System.Drawing.Point(31, 31);
@@ -179,6 +169,7 @@
             this.btnNovi.TabIndex = 10;
             this.btnNovi.Text = "Novi";
             this.btnNovi.UseVisualStyleBackColor = true;
+            this.btnNovi.Click += new System.EventHandler(this.NoviClick);
             // 
             // btnDeaktivirajSve
             // 
@@ -193,7 +184,6 @@
             // 
             this.groupBox2.Controls.Add(this.dataGridView1);
             this.groupBox2.Controls.Add(this.btnDeaktiviraj);
-            this.groupBox2.Controls.Add(this.btnUredi);
             this.groupBox2.Controls.Add(this.btnNovi);
             this.groupBox2.Controls.Add(this.btnDeaktivirajSve);
             this.groupBox2.Location = new System.Drawing.Point(349, 60);
@@ -253,16 +243,16 @@
             // 
             // BrojDana
             // 
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.BrojDana.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.BrojDana.DefaultCellStyle = dataGridViewCellStyle5;
             this.BrojDana.HeaderText = "Broj dana";
             this.BrojDana.Name = "BrojDana";
             this.BrojDana.ReadOnly = true;
             // 
             // GodinaPrava
             // 
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.GodinaPrava.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.GodinaPrava.DefaultCellStyle = dataGridViewCellStyle6;
             this.GodinaPrava.HeaderText = "Godina prava";
             this.GodinaPrava.Name = "GodinaPrava";
             this.GodinaPrava.ReadOnly = true;
@@ -302,7 +292,6 @@
         private System.Windows.Forms.ComboBox comboBoxZaposlenici;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Button btnDeaktiviraj;
-        private System.Windows.Forms.Button btnUredi;
         private System.Windows.Forms.Button btnNovi;
         private System.Windows.Forms.Button btnDeaktivirajSve;
         private System.Windows.Forms.GroupBox groupBox2;

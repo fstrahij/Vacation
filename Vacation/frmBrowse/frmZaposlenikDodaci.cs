@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Vacation.customScripts;
+using Vacation.frmEdit;
 using Vacation.modelScripts;
 
 namespace Vacation.frmBrowse
@@ -66,11 +67,11 @@ namespace Vacation.frmBrowse
         {
             if (dataGridView1.Rows.Count > 0)
             {
-                btnDeaktivirajSve.Enabled = btnDeaktiviraj.Enabled = btnUredi.Enabled = true;
+                btnDeaktivirajSve.Enabled = btnDeaktiviraj.Enabled = true;
             }
             else
             {
-                btnDeaktivirajSve.Enabled = btnDeaktiviraj.Enabled = btnUredi.Enabled = false;
+                btnDeaktivirajSve.Enabled = btnDeaktiviraj.Enabled = false;
             }
         }
 
@@ -96,7 +97,64 @@ namespace Vacation.frmBrowse
             ZaposlenikID = zaposlenikId;
             UcitajPodatke();
         }
+        private void NoviClick(object sender, EventArgs e)
+        {
+            if (ZaposlenikID > 0)
+            {
+                using (var forma = new frmZaposlenikDodaciEditor(this, btnNovi.Text))
+                {
+                    forma.ZaposlenikId = ZaposlenikID;
+                    forma.ShowDialog();
+                }
+            }
+            else
+            {
+                DialogResult dr = MessageBox.Show("Nije odabran zaposlenik!");
+            }
+        }
+        
+        /*
+        private void DeaktivirajClick(object sender, EventArgs e)
+        {
+            if (ZaposlenikID > 0)
+            {
+                DialogResult dr = MessageBox.Show("Jeste li sigurni?", "Provjera", MessageBoxButtons.YesNo);
+                if (dr == DialogResult.Yes)
+                {
+                    Godisnji godisnji = new Godisnji();
+                    int posljedniRed = dataGridView1.Rows.Count - 1;
+                    godisnji.Id = int.Parse(dataGridView1.Rows[posljedniRed].Cells[0].Value.ToString());
+                    godisnji.Deaktiviraj();
+                    UcitajPodatke();
+                }
+            }
+            else
+            {
+                DialogResult dr = MessageBox.Show("Nije odabran zaposlenik!");
+            }
+        }
 
+        private void DeaktivirajSveClick(object sender, EventArgs e)
+        {
+            if (ZaposlenikID > 0)
+            {
+                DialogResult dr = MessageBox.Show("Jeste li sigurni?", "Provjera", MessageBoxButtons.YesNo);
+                if (dr == DialogResult.Yes)
+                {
+                    Godisnji godisnji = new Godisnji();
+                    foreach (DataGridViewRow row in dataGridView1.Rows)
+                    {
+                        godisnji.Id = int.Parse(row.Cells[0].Value.ToString());
+                        godisnji.Deaktiviraj();
+                    }
+                    UcitajPodatke();
+                }
+            }
+            else
+            {
+                DialogResult dr = MessageBox.Show("Nije odabran zaposlenik!");
+            }
+        }*/
         private void btnZatvori_Click(object sender, EventArgs e)
         {
             this.Close();

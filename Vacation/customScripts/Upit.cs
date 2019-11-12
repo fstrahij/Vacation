@@ -75,5 +75,15 @@ namespace Vacation.customScripts
                 "WHERE ZaposlenikDodaci.DodatakId = Dodaci.Id AND Aktivan = 1 AND ZaposlenikId = " + pZaposlenikId;
             return DatabaseConnection.Instance.DohvatiPodatke(SqlUpit);
         }
+
+        public static void SpremiZaposlenikDodatak(int pZaposlenikId, int pDodatakId)
+        {
+            List<Godisnji> lista = new List<Godisnji>();
+            Godisnji godisnji = new Godisnji();
+            SqlUpit = "INSERT INTO ZaposlenikDodaci(ZaposlenikId, DodatakId) " +
+                            "VALUES(" + pZaposlenikId + ", "
+                                        + pDodatakId + ")";
+            DatabaseConnection.Instance.DohvatiPodatke(SqlUpit);
+        }
     }
 }
