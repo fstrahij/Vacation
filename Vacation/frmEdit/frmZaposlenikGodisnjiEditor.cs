@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Vacation.customScripts;
 using Vacation.frmBrowse;
 using Vacation.modelScripts;
 
@@ -73,8 +74,47 @@ namespace Vacation.frmEdit
             if (int.TryParse(ZaposlenikId, out id))
             {
                 txtGodina.Text = zapGod.DajSljedecuGodinu(id);
-                txtBrojDana.Text = zapGod.IzracunajBrojaDana(id);
+                txtBrojDana.Text = PravoNaBrojDana().ToString();
             }
+        }
+
+        private void DajStaz()
+        {
+            Firma firma = new Firma();
+
+            DatumParser.DanUkupno = DatumParser.MjesecUkupno = DatumParser.GodinaUkupno = 0;
+            DateTime datumDo;
+
+            foreach (var lista in firma.DajListu(int.Parse(ZaposlenikId)))
+            {
+                datumDo = (lista.DatumDo != null) ? (DateTime)lista.DatumDo : DateTime.Today;
+                DatumParser.Izracunaj(lista.DatumOd, datumDo);
+            }
+        }
+
+        private int PravoNaBrojDana() 
+        {
+            Postavka postavka = new Postavka();
+            Dodatak dodatak = new Dodatak();
+            string kljuc = "Godisnji";
+            int vrijednost = int.Parse(postavka.DajListu().Find(x => x.Kljuc == kljuc).Vrijednost);
+            int brojDana = 0;
+            int godinaPrava = 0;
+            DajStaz();
+            foreach (DataRow row in Upit.DajDodatkeZaposlenika(int.Parse(ZaposlenikId)).Rows)
+            {
+                brojDana = int.Parse(row["BrojDana"].ToString());
+                godinaPrava = int.Parse(row["GodinaPrava"].ToString());
+                if (godinaPrava == 0)
+                {
+                    vrijednost += brojDana;
+                }
+                else if(DatumParser.GodinaUkupno >= godinaPrava)
+                {                    
+                    vrijednost += brojDana;
+                }
+            }
+            return vrijednost;
         }
     }
 }

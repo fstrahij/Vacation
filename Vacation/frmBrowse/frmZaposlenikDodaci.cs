@@ -81,10 +81,7 @@ namespace Vacation.frmBrowse
             List<Zaposlenik> zaposlenici = new List<Zaposlenik>();
             foreach (var item in zaposlenik.DajListu())
             {
-                if (zaposleniciGodisnji.DajListu().FindIndex(x => x.ZaposlenikId == item.Id.ToString()) >= 0)
-                {
-                    zaposlenici.Add(item);
-                }
+                zaposlenici.Add(item);
             }
             comboBoxZaposlenici.DataSource = zaposlenici;
             comboBoxZaposlenici.DisplayMember = "ImePrezime";

@@ -53,16 +53,30 @@ namespace Vacation.frmBrowse
 
         private bool IsValidInput()
         {
+            string kljuc = "GranicniDatum";
             string vrijednost = dataGridView1.CurrentRow.Cells[2].Value.ToString();
-            string regex = "^([0-9]{2}).([0-9]{2}).$";
-            Match match = Regex.Match(vrijednost, regex);
-            if (!string.IsNullOrWhiteSpace(vrijednost) 
-                && match.Success
-                && int.Parse(match.Groups[1].ToString()) <= 31
-                && int.Parse(match.Groups[2].ToString()) <= 12)
-            {
-                return true;
+            if (dataGridView1.CurrentRow.Cells[2].Value.ToString() == kljuc)
+            {                
+                string regex = "^([0-9]{2}).([0-9]{2}).$";
+                Match match = Regex.Match(vrijednost, regex);
+                if (!string.IsNullOrWhiteSpace(vrijednost)
+                    && match.Success
+                    && int.Parse(match.Groups[1].ToString()) <= 31
+                    && int.Parse(match.Groups[2].ToString()) <= 12)
+                {
+                    return true;
+                }
             }
+            else
+            {
+                int vrij = 0;
+                if (!string.IsNullOrWhiteSpace(vrijednost)
+                    && int.TryParse(vrijednost, out vrij)
+                    && vrij > 0)
+                {
+                    return true;
+                }
+            }            
             return false;
         }
 
@@ -84,9 +98,23 @@ namespace Vacation.frmBrowse
                 UcitajPodatke();
             }
             else
-            {
-                dr = MessageBox.Show("Neispravan unos vrijednosti. Mora biti u formatu dd.MM. \n d = dan, M = Mjesec");
+            {                
+                string kljuc = dataGridView1.CurrentRow.Cells[0].Value.ToString();
+                string poruka = DajPoruku(kljuc);
+                dr = MessageBox.Show(poruka);
                 UcitajPodatke();
+            }
+        }
+
+        private string DajPoruku(string kljuc) 
+        {
+            switch (kljuc)
+            {
+                case "GranicniDatum":
+                    return "Neispravan unos vrijednosti Graničnog datuma. Mora biti u formatu dd.MM. \n d = dan, M = Mjesec";
+                case "Godisnji": 
+                    return "Neispravan unos vrijednosti Godišnjeg.";
+                default: return "Neispravan unos";
             }
         }
 
