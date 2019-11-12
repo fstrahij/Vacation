@@ -39,7 +39,7 @@ namespace Vacation
             PostaviListuOtvorenihProzora();
         }
 
-        private void pregledToolStripMenuItem_Click(object sender, EventArgs e)
+        private void pregledNeradnihDana_Click(object sender, EventArgs e)
         {
             NeradniDaniForm forma = NeradniDaniForm.Instance;
             forma.MdiParent = this;
@@ -66,7 +66,7 @@ namespace Vacation
             PostaviListuOtvorenihProzora();
         }
 
-        private void pregledToolStripMenuItem1_Click(object sender, EventArgs e)
+        private void pregledZaposlenika_Click(object sender, EventArgs e)
         {
             frmZaposlenici forma = frmZaposlenici.Instance;
             forma.MdiParent = this;
@@ -83,25 +83,6 @@ namespace Vacation
             forma.Show();
             PostaviListuOtvorenihProzora();
         }
-
-        private void zaposlenikgodišnjiToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            frmZaposlenikGodisnji forma = frmZaposlenikGodisnji.Instance;
-            forma.MdiParent = this;
-            forma.WindowState = FormWindowState.Maximized;
-            forma.Show();
-            PostaviListuOtvorenihProzora();
-        }
-
-        private void godišnjiToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            frmGodisnji forma = frmGodisnji.Instance;
-            forma.MdiParent = this;
-            forma.WindowState = FormWindowState.Maximized;
-            forma.Show();
-            PostaviListuOtvorenihProzora();
-        }
-
         private void postavkeToolStripMenuItem_Click(object sender, EventArgs e)
         {
             frmPostavke forma = frmPostavke.Instance;
@@ -152,10 +133,45 @@ namespace Vacation
             forma.Show();
             PostaviListuOtvorenihProzora();
         }
+        private void pregledToolStripMenuItem2_Click(object sender, EventArgs e)
+        {
+            frmGodisnji forma = frmGodisnji.Instance;
+            forma.MdiParent = this;
+            forma.WindowState = FormWindowState.Maximized;
+            forma.Show();
+            PostaviListuOtvorenihProzora();
+        }
 
-        private void kalendarToolStripMenuItem_Click(object sender, EventArgs e)
+        private void zaposlenikgodišnjiToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            frmZaposlenikGodisnji forma = frmZaposlenikGodisnji.Instance;
+            forma.MdiParent = this;
+            forma.WindowState = FormWindowState.Maximized;
+            forma.Show();
+            PostaviListuOtvorenihProzora();
+        }
+
+        private void kalendarToolStripMenuItem1_Click(object sender, EventArgs e)
         {
             frmKalendar forma = frmKalendar.Instance;
+            forma.MdiParent = this;
+            forma.WindowState = FormWindowState.Maximized;
+            forma.Show();
+            PostaviListuOtvorenihProzora();
+        }
+
+        private void dodaciToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmDodaci forma = frmDodaci.Instance;
+            forma.MdiParent = this;
+            forma.WindowState = FormWindowState.Maximized;
+            forma.Show();
+            PostaviListuOtvorenihProzora();
+        }
+
+        private void zaposlenikdodaciToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmZaposlenikDodaci forma = frmZaposlenikDodaci.Instance;
             forma.MdiParent = this;
             forma.WindowState = FormWindowState.Maximized;
             forma.Show();

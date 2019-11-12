@@ -66,5 +66,14 @@ namespace Vacation.customScripts
             }
             return lista;
         }
+
+        public static DataTable DajDodatkeZaposlenika(int pZaposlenikId)
+        {
+            List<Godisnji> lista = new List<Godisnji>();
+            Godisnji godisnji = new Godisnji();
+            SqlUpit = "SELECT ZaposlenikDodaci.Id, DodatakId, Naziv, BrojDana, GodinaPrava FROM Dodaci, ZaposlenikDodaci " +
+                "WHERE ZaposlenikDodaci.DodatakId = Dodaci.Id AND Aktivan = 1 AND ZaposlenikId = " + pZaposlenikId;
+            return DatabaseConnection.Instance.DohvatiPodatke(SqlUpit);
+        }
     }
 }
