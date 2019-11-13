@@ -48,6 +48,7 @@
             this.groupBox1.Controls.Add(this.comboBoxDodatak);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.button1);
+            this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.groupBox1.Location = new System.Drawing.Point(20, 40);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(328, 295);
@@ -58,9 +59,9 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(47, 155);
+            this.label1.Location = new System.Drawing.Point(17, 155);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(71, 13);
+            this.label1.Size = new System.Drawing.Size(90, 16);
             this.label1.TabIndex = 12;
             this.label1.Text = "Godina prava";
             // 
@@ -69,7 +70,7 @@
             this.txtGodinaPrava.Enabled = false;
             this.txtGodinaPrava.Location = new System.Drawing.Point(124, 152);
             this.txtGodinaPrava.Name = "txtGodinaPrava";
-            this.txtGodinaPrava.Size = new System.Drawing.Size(121, 20);
+            this.txtGodinaPrava.Size = new System.Drawing.Size(121, 22);
             this.txtGodinaPrava.TabIndex = 11;
             // 
             // txtBrojDana
@@ -77,15 +78,15 @@
             this.txtBrojDana.Enabled = false;
             this.txtBrojDana.Location = new System.Drawing.Point(124, 110);
             this.txtBrojDana.Name = "txtBrojDana";
-            this.txtBrojDana.Size = new System.Drawing.Size(121, 20);
+            this.txtBrojDana.Size = new System.Drawing.Size(121, 22);
             this.txtBrojDana.TabIndex = 10;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(66, 113);
+            this.label2.Location = new System.Drawing.Point(41, 113);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(52, 13);
+            this.label2.Size = new System.Drawing.Size(66, 16);
             this.label2.TabIndex = 9;
             this.label2.Text = "Broj dana";
             // 
@@ -94,16 +95,16 @@
             this.comboBoxDodatak.FormattingEnabled = true;
             this.comboBoxDodatak.Location = new System.Drawing.Point(124, 69);
             this.comboBoxDodatak.Name = "comboBoxDodatak";
-            this.comboBoxDodatak.Size = new System.Drawing.Size(121, 21);
+            this.comboBoxDodatak.Size = new System.Drawing.Size(121, 24);
             this.comboBoxDodatak.TabIndex = 8;
             this.comboBoxDodatak.SelectionChangeCommitted += new System.EventHandler(this.comboBoxDodatak_SelectedIndexChanged);
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(68, 69);
+            this.label3.Location = new System.Drawing.Point(47, 72);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(48, 13);
+            this.label3.Size = new System.Drawing.Size(60, 16);
             this.label3.TabIndex = 7;
             this.label3.Text = "Dodatak";
             // 

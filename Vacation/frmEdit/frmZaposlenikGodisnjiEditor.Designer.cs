@@ -47,6 +47,7 @@
             this.groupBox2.Controls.Add(this.btnSpremi);
             this.groupBox2.Controls.Add(this.txtGodina);
             this.groupBox2.Controls.Add(this.label1);
+            this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.groupBox2.Location = new System.Drawing.Point(274, 40);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(328, 217);
@@ -58,15 +59,15 @@
             // 
             this.txtBrojDana.Location = new System.Drawing.Point(121, 81);
             this.txtBrojDana.Name = "txtBrojDana";
-            this.txtBrojDana.Size = new System.Drawing.Size(121, 20);
+            this.txtBrojDana.Size = new System.Drawing.Size(121, 22);
             this.txtBrojDana.TabIndex = 4;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(65, 84);
+            this.label2.Location = new System.Drawing.Point(49, 84);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(52, 13);
+            this.label2.Size = new System.Drawing.Size(66, 16);
             this.label2.TabIndex = 3;
             this.label2.Text = "Broj dana";
             // 
@@ -85,7 +86,7 @@
             this.txtGodina.Enabled = false;
             this.txtGodina.Location = new System.Drawing.Point(121, 39);
             this.txtGodina.Name = "txtGodina";
-            this.txtGodina.Size = new System.Drawing.Size(121, 20);
+            this.txtGodina.Size = new System.Drawing.Size(121, 22);
             this.txtGodina.TabIndex = 1;
             // 
             // label1
@@ -93,7 +94,7 @@
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(65, 42);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(41, 13);
+            this.label1.Size = new System.Drawing.Size(52, 16);
             this.label1.TabIndex = 0;
             this.label1.Text = "Godina";
             // 
@@ -102,13 +103,14 @@
             this.comboBoxZaposlenici.FormattingEnabled = true;
             this.comboBoxZaposlenici.Location = new System.Drawing.Point(29, 31);
             this.comboBoxZaposlenici.Name = "comboBoxZaposlenici";
-            this.comboBoxZaposlenici.Size = new System.Drawing.Size(175, 21);
+            this.comboBoxZaposlenici.Size = new System.Drawing.Size(175, 24);
             this.comboBoxZaposlenici.TabIndex = 0;
             this.comboBoxZaposlenici.SelectionChangeCommitted += new System.EventHandler(this.ZaposlenikSelected);
             // 
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.comboBoxZaposlenici);
+            this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.groupBox1.Location = new System.Drawing.Point(20, 40);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(229, 79);

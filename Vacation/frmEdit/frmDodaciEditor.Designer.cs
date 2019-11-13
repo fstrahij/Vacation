@@ -48,6 +48,7 @@
             this.groupBox1.Controls.Add(this.button1);
             this.groupBox1.Controls.Add(this.txtNaziv);
             this.groupBox1.Controls.Add(this.label1);
+            this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.groupBox1.Location = new System.Drawing.Point(20, 40);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(328, 256);
@@ -58,9 +59,9 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(47, 129);
+            this.label3.Location = new System.Drawing.Point(28, 129);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(71, 13);
+            this.label3.Size = new System.Drawing.Size(90, 16);
             this.label3.TabIndex = 7;
             this.label3.Text = "Godina prava";
             // 
@@ -68,22 +69,22 @@
             // 
             this.txtGodinaPrava.Location = new System.Drawing.Point(124, 126);
             this.txtGodinaPrava.Name = "txtGodinaPrava";
-            this.txtGodinaPrava.Size = new System.Drawing.Size(121, 20);
+            this.txtGodinaPrava.Size = new System.Drawing.Size(121, 22);
             this.txtGodinaPrava.TabIndex = 6;
             // 
             // txtBrojDana
             // 
             this.txtBrojDana.Location = new System.Drawing.Point(124, 84);
             this.txtBrojDana.Name = "txtBrojDana";
-            this.txtBrojDana.Size = new System.Drawing.Size(121, 20);
+            this.txtBrojDana.Size = new System.Drawing.Size(121, 22);
             this.txtBrojDana.TabIndex = 4;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(66, 87);
+            this.label2.Location = new System.Drawing.Point(52, 87);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(52, 13);
+            this.label2.Size = new System.Drawing.Size(66, 16);
             this.label2.TabIndex = 3;
             this.label2.Text = "Broj dana";
             // 
@@ -101,15 +102,15 @@
             // 
             this.txtNaziv.Location = new System.Drawing.Point(124, 42);
             this.txtNaziv.Name = "txtNaziv";
-            this.txtNaziv.Size = new System.Drawing.Size(121, 20);
+            this.txtNaziv.Size = new System.Drawing.Size(121, 22);
             this.txtNaziv.TabIndex = 1;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(84, 45);
+            this.label1.Location = new System.Drawing.Point(76, 45);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(34, 13);
+            this.label1.Size = new System.Drawing.Size(42, 16);
             this.label1.TabIndex = 0;
             this.label1.Text = "Naziv";
             // 

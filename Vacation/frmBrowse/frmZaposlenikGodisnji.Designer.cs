@@ -31,10 +31,8 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmZaposlenikGodisnji));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.btnDeaktiviraj = new System.Windows.Forms.Button();
-            this.btnNovi = new System.Windows.Forms.Button();
-            this.btnDeaktivirajSve = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ZaposlenikId = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -45,53 +43,28 @@
             this.Spol = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Godina = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.BrojDana = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.btnZatvori = new System.Windows.Forms.Button();
+            this.toolStrip1 = new System.Windows.Forms.ToolStrip();
+            this.btnNovi = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.btnDeaktiviraj = new System.Windows.Forms.ToolStripButton();
+            this.btnDeaktivirajSve = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
+            this.btnZatvori = new System.Windows.Forms.ToolStripButton();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.btnDeaktiviraj);
-            this.groupBox1.Controls.Add(this.btnNovi);
-            this.groupBox1.Controls.Add(this.btnDeaktivirajSve);
             this.groupBox1.Controls.Add(this.dataGridView1);
-            this.groupBox1.Location = new System.Drawing.Point(20, 60);
+            this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.groupBox1.Location = new System.Drawing.Point(20, 80);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(866, 436);
             this.groupBox1.TabIndex = 4;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Pregled prava broja dana zaposlenika na godišnji po godinama";
-            // 
-            // btnDeaktiviraj
-            // 
-            this.btnDeaktiviraj.Location = new System.Drawing.Point(648, 42);
-            this.btnDeaktiviraj.Name = "btnDeaktiviraj";
-            this.btnDeaktiviraj.Size = new System.Drawing.Size(77, 23);
-            this.btnDeaktiviraj.TabIndex = 7;
-            this.btnDeaktiviraj.Text = "Deaktiviraj Sve";
-            this.btnDeaktiviraj.UseVisualStyleBackColor = true;
-            this.btnDeaktiviraj.Click += new System.EventHandler(this.DeaktivirajClick);
-            // 
-            // btnNovi
-            // 
-            this.btnNovi.Location = new System.Drawing.Point(33, 42);
-            this.btnNovi.Name = "btnNovi";
-            this.btnNovi.Size = new System.Drawing.Size(88, 23);
-            this.btnNovi.TabIndex = 5;
-            this.btnNovi.Text = "Novi";
-            this.btnNovi.UseVisualStyleBackColor = true;
-            this.btnNovi.Click += new System.EventHandler(this.NoviClick);
-            // 
-            // btnDeaktivirajSve
-            // 
-            this.btnDeaktivirajSve.Location = new System.Drawing.Point(746, 42);
-            this.btnDeaktivirajSve.Name = "btnDeaktivirajSve";
-            this.btnDeaktivirajSve.Size = new System.Drawing.Size(88, 23);
-            this.btnDeaktivirajSve.TabIndex = 4;
-            this.btnDeaktivirajSve.Text = "Deaktiviraj Sve";
-            this.btnDeaktivirajSve.UseVisualStyleBackColor = true;
-            this.btnDeaktivirajSve.Click += new System.EventHandler(this.DeaktivirajSveClick);
             // 
             // dataGridView1
             // 
@@ -109,9 +82,9 @@
             this.Spol,
             this.Godina,
             this.BrojDana});
-            this.dataGridView1.Location = new System.Drawing.Point(33, 90);
+            this.dataGridView1.Location = new System.Drawing.Point(33, 43);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(801, 310);
+            this.dataGridView1.Size = new System.Drawing.Size(801, 357);
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellEndEdit);
             // 
@@ -177,14 +150,75 @@
             this.BrojDana.HeaderText = "Broj dana godišnjeg";
             this.BrojDana.Name = "BrojDana";
             // 
+            // toolStrip1
+            // 
+            this.toolStrip1.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.toolStrip1.ImageScalingSize = new System.Drawing.Size(35, 35);
+            this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.btnNovi,
+            this.toolStripSeparator1,
+            this.btnDeaktiviraj,
+            this.btnDeaktivirajSve,
+            this.toolStripSeparator2,
+            this.btnZatvori});
+            this.toolStrip1.Location = new System.Drawing.Point(0, 0);
+            this.toolStrip1.Name = "toolStrip1";
+            this.toolStrip1.Size = new System.Drawing.Size(980, 42);
+            this.toolStrip1.TabIndex = 23;
+            this.toolStrip1.Text = "toolStrip1";
+            // 
+            // btnNovi
+            // 
+            this.btnNovi.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.btnNovi.Image = ((System.Drawing.Image)(resources.GetObject("btnNovi.Image")));
+            this.btnNovi.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnNovi.Margin = new System.Windows.Forms.Padding(6, 1, 0, 2);
+            this.btnNovi.Name = "btnNovi";
+            this.btnNovi.Size = new System.Drawing.Size(39, 39);
+            this.btnNovi.Text = "Novi";
+            this.btnNovi.Click += new System.EventHandler(this.NoviClick);
+            // 
+            // toolStripSeparator1
+            // 
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 42);
+            // 
+            // btnDeaktiviraj
+            // 
+            this.btnDeaktiviraj.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.btnDeaktiviraj.Image = ((System.Drawing.Image)(resources.GetObject("btnDeaktiviraj.Image")));
+            this.btnDeaktiviraj.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnDeaktiviraj.Margin = new System.Windows.Forms.Padding(10, 1, 10, 2);
+            this.btnDeaktiviraj.Name = "btnDeaktiviraj";
+            this.btnDeaktiviraj.Size = new System.Drawing.Size(39, 39);
+            this.btnDeaktiviraj.Text = "Obriši";
+            this.btnDeaktiviraj.Click += new System.EventHandler(this.DeaktivirajClick);
+            // 
+            // btnDeaktivirajSve
+            // 
+            this.btnDeaktivirajSve.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.btnDeaktivirajSve.Image = ((System.Drawing.Image)(resources.GetObject("btnDeaktivirajSve.Image")));
+            this.btnDeaktivirajSve.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnDeaktivirajSve.Margin = new System.Windows.Forms.Padding(0, 1, 10, 2);
+            this.btnDeaktivirajSve.Name = "btnDeaktivirajSve";
+            this.btnDeaktivirajSve.Size = new System.Drawing.Size(39, 39);
+            this.btnDeaktivirajSve.Text = "Obriši sve";
+            this.btnDeaktivirajSve.Click += new System.EventHandler(this.DeaktivirajSveClick);
+            // 
+            // toolStripSeparator2
+            // 
+            this.toolStripSeparator2.Name = "toolStripSeparator2";
+            this.toolStripSeparator2.Size = new System.Drawing.Size(6, 42);
+            // 
             // btnZatvori
             // 
-            this.btnZatvori.Location = new System.Drawing.Point(779, 502);
+            this.btnZatvori.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.btnZatvori.Image = ((System.Drawing.Image)(resources.GetObject("btnZatvori.Image")));
+            this.btnZatvori.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnZatvori.Margin = new System.Windows.Forms.Padding(40, 1, 0, 2);
             this.btnZatvori.Name = "btnZatvori";
-            this.btnZatvori.Size = new System.Drawing.Size(75, 23);
-            this.btnZatvori.TabIndex = 21;
+            this.btnZatvori.Size = new System.Drawing.Size(39, 39);
             this.btnZatvori.Text = "Zatvori";
-            this.btnZatvori.UseVisualStyleBackColor = true;
             this.btnZatvori.Click += new System.EventHandler(this.btnZatvori_Click);
             // 
             // frmZaposlenikGodisnji
@@ -192,7 +226,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(980, 560);
-            this.Controls.Add(this.btnZatvori);
+            this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.groupBox1);
             this.Name = "frmZaposlenikGodisnji";
             this.Text = "Zaposlenik - godišnji";
@@ -200,18 +234,17 @@
             this.Load += new System.EventHandler(this.frmZaposlenikGodisnji_Load);
             this.groupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.toolStrip1.ResumeLayout(false);
+            this.toolStrip1.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
 
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Button btnDeaktiviraj;
-        private System.Windows.Forms.Button btnNovi;
-        private System.Windows.Forms.Button btnDeaktivirajSve;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.Button btnZatvori;
         private System.Windows.Forms.DataGridViewTextBoxColumn Id;
         private System.Windows.Forms.DataGridViewTextBoxColumn ZaposlenikId;
         private System.Windows.Forms.DataGridViewTextBoxColumn Ime;
@@ -221,5 +254,12 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Spol;
         private System.Windows.Forms.DataGridViewTextBoxColumn Godina;
         private System.Windows.Forms.DataGridViewTextBoxColumn BrojDana;
+        private System.Windows.Forms.ToolStrip toolStrip1;
+        private System.Windows.Forms.ToolStripButton btnNovi;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
+        private System.Windows.Forms.ToolStripButton btnDeaktiviraj;
+        private System.Windows.Forms.ToolStripButton btnDeaktivirajSve;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
+        private System.Windows.Forms.ToolStripButton btnZatvori;
     }
 }

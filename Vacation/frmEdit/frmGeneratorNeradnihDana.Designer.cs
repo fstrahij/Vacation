@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(GeneratorNeradnihDanaForm));
             this.groupBoxAll = new System.Windows.Forms.GroupBox();
             this.checkBoxAll = new System.Windows.Forms.CheckBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
@@ -43,17 +44,20 @@
             this.btnDodajTemplate = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.txtGodina = new System.Windows.Forms.TextBox();
-            this.btnZatvori = new System.Windows.Forms.Button();
+            this.toolStrip1 = new System.Windows.Forms.ToolStrip();
+            this.btnZatvori = new System.Windows.Forms.ToolStripButton();
             this.groupBoxAll.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox2.SuspendLayout();
+            this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBoxAll
             // 
             this.groupBoxAll.Controls.Add(this.checkBoxAll);
             this.groupBoxAll.Controls.Add(this.dataGridView1);
-            this.groupBoxAll.Location = new System.Drawing.Point(20, 140);
+            this.groupBoxAll.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.groupBoxAll.Location = new System.Drawing.Point(20, 180);
             this.groupBoxAll.Name = "groupBoxAll";
             this.groupBoxAll.Size = new System.Drawing.Size(869, 450);
             this.groupBoxAll.TabIndex = 0;
@@ -135,7 +139,8 @@
             this.groupBox2.Controls.Add(this.btnDodajTemplate);
             this.groupBox2.Controls.Add(this.label1);
             this.groupBox2.Controls.Add(this.txtGodina);
-            this.groupBox2.Location = new System.Drawing.Point(20, 40);
+            this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.groupBox2.Location = new System.Drawing.Point(20, 80);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(869, 80);
             this.groupBox2.TabIndex = 1;
@@ -165,9 +170,9 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(104, 35);
+            this.label1.Location = new System.Drawing.Point(93, 32);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(44, 13);
+            this.label1.Size = new System.Drawing.Size(55, 16);
             this.label1.TabIndex = 1;
             this.label1.Text = "Godina:";
             // 
@@ -175,17 +180,30 @@
             // 
             this.txtGodina.Location = new System.Drawing.Point(154, 32);
             this.txtGodina.Name = "txtGodina";
-            this.txtGodina.Size = new System.Drawing.Size(124, 20);
+            this.txtGodina.Size = new System.Drawing.Size(124, 22);
             this.txtGodina.TabIndex = 0;
+            // 
+            // toolStrip1
+            // 
+            this.toolStrip1.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.toolStrip1.ImageScalingSize = new System.Drawing.Size(35, 35);
+            this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.btnZatvori});
+            this.toolStrip1.Location = new System.Drawing.Point(0, 0);
+            this.toolStrip1.Name = "toolStrip1";
+            this.toolStrip1.Size = new System.Drawing.Size(939, 42);
+            this.toolStrip1.TabIndex = 23;
+            this.toolStrip1.Text = "toolStrip1";
             // 
             // btnZatvori
             // 
-            this.btnZatvori.Location = new System.Drawing.Point(785, 596);
+            this.btnZatvori.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.btnZatvori.Image = ((System.Drawing.Image)(resources.GetObject("btnZatvori.Image")));
+            this.btnZatvori.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnZatvori.Margin = new System.Windows.Forms.Padding(10, 1, 0, 2);
             this.btnZatvori.Name = "btnZatvori";
-            this.btnZatvori.Size = new System.Drawing.Size(75, 23);
-            this.btnZatvori.TabIndex = 21;
+            this.btnZatvori.Size = new System.Drawing.Size(39, 39);
             this.btnZatvori.Text = "Zatvori";
-            this.btnZatvori.UseVisualStyleBackColor = true;
             this.btnZatvori.Click += new System.EventHandler(this.btnZatvori_Click);
             // 
             // GeneratorNeradnihDanaForm
@@ -193,7 +211,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(939, 684);
-            this.Controls.Add(this.btnZatvori);
+            this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBoxAll);
             this.Name = "GeneratorNeradnihDanaForm";
@@ -205,7 +223,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
+            this.toolStrip1.ResumeLayout(false);
+            this.toolStrip1.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -219,13 +240,14 @@
         private System.Windows.Forms.Button btnGeneriraj;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.CheckBox checkBoxAll;
-        private System.Windows.Forms.Button btnZatvori;
         private System.Windows.Forms.DataGridViewCheckBoxColumn Odabir;
         private System.Windows.Forms.DataGridViewTextBoxColumn Id;
         private System.Windows.Forms.DataGridViewTextBoxColumn TipId;
         private System.Windows.Forms.DataGridViewTextBoxColumn Naziv;
         private System.Windows.Forms.DataGridViewTextBoxColumn Datum;
         private System.Windows.Forms.DataGridViewTextBoxColumn Tip;
+        private System.Windows.Forms.ToolStrip toolStrip1;
+        private System.Windows.Forms.ToolStripButton btnZatvori;
     }
 }
 

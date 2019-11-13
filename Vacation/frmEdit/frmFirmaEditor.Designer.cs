@@ -45,16 +45,16 @@
             this.dtpDatumDo.Enabled = false;
             this.dtpDatumDo.Location = new System.Drawing.Point(187, 135);
             this.dtpDatumDo.Name = "dtpDatumDo";
-            this.dtpDatumDo.Size = new System.Drawing.Size(121, 20);
+            this.dtpDatumDo.Size = new System.Drawing.Size(136, 22);
             this.dtpDatumDo.TabIndex = 9;
             this.dtpDatumDo.ValueChanged += new System.EventHandler(this.dtpDatumDo_ValueChanged);
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(131, 135);
+            this.label4.Location = new System.Drawing.Point(115, 135);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(53, 13);
+            this.label4.Size = new System.Drawing.Size(66, 16);
             this.label4.TabIndex = 8;
             this.label4.Text = "Datum do";
             // 
@@ -62,7 +62,7 @@
             // 
             this.dtpDatumOd.Location = new System.Drawing.Point(187, 95);
             this.dtpDatumOd.Name = "dtpDatumOd";
-            this.dtpDatumOd.Size = new System.Drawing.Size(121, 20);
+            this.dtpDatumOd.Size = new System.Drawing.Size(136, 22);
             this.dtpDatumOd.TabIndex = 7;
             this.dtpDatumOd.ValueChanged += new System.EventHandler(this.dtpDatumOd_ValueChanged);
             // 
@@ -70,15 +70,15 @@
             // 
             this.txtNaziv.Location = new System.Drawing.Point(187, 55);
             this.txtNaziv.Name = "txtNaziv";
-            this.txtNaziv.Size = new System.Drawing.Size(121, 20);
+            this.txtNaziv.Size = new System.Drawing.Size(136, 22);
             this.txtNaziv.TabIndex = 4;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(131, 58);
+            this.label2.Location = new System.Drawing.Point(107, 58);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(59, 13);
+            this.label2.Size = new System.Drawing.Size(74, 16);
             this.label2.TabIndex = 3;
             this.label2.Text = "Naziv firme";
             // 
@@ -95,9 +95,9 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(131, 95);
+            this.label1.Location = new System.Drawing.Point(115, 95);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(53, 13);
+            this.label1.Size = new System.Drawing.Size(66, 16);
             this.label1.TabIndex = 0;
             this.label1.Text = "Datum od";
             // 
@@ -111,6 +111,7 @@
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.btnSpremi);
             this.groupBox1.Controls.Add(this.label1);
+            this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.groupBox1.Location = new System.Drawing.Point(20, 40);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(488, 268);
