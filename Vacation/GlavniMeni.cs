@@ -135,11 +135,7 @@ namespace Vacation
 
         private void zaposlenikgodišnjiToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            frmZaposlenikGodisnji forma = frmZaposlenikGodisnji.Instance;
-            forma.MdiParent = this;
-            forma.WindowState = FormWindowState.Maximized;
-            forma.Show();
-            PostaviListuOtvorenihProzora();
+            
         }
 
         private void kalendarToolStripMenuItem1_Click(object sender, EventArgs e)
@@ -161,6 +157,20 @@ namespace Vacation
         }
 
         private void zaposlenikdodaciToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void zaposlenikgodišnjiToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmZaposlenikGodisnji forma = frmZaposlenikGodisnji.Instance;
+            forma.MdiParent = this;
+            forma.WindowState = FormWindowState.Maximized;
+            forma.Show();
+            PostaviListuOtvorenihProzora();
+        }
+
+        private void zaposlenikdodaciToolStripMenuItem1_Click(object sender, EventArgs e)
         {
             frmZaposlenikDodaci forma = frmZaposlenikDodaci.Instance;
             forma.MdiParent = this;

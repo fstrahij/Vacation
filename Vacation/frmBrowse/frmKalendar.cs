@@ -80,9 +80,8 @@ namespace Vacation.frmBrowse
                         if ((j % 8) != 0)
                         {
                             mjesec = ((j - 1) % 8 == 0) ? mjesec + 1 : mjesec; 
-                            dan = ((MjeseciGodine)(mjesec)).ToString();
+                            dan = mjesec.ToString() + ".";
                             dgvKalendar.Rows[i].Cells[j - 1].Value = dan;
-                            //
                         }                      
                     }
                 }

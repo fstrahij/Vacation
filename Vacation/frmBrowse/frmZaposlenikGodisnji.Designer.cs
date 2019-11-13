@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmZaposlenikGodisnji));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
@@ -84,6 +84,7 @@
             this.BrojDana});
             this.dataGridView1.Location = new System.Drawing.Point(33, 43);
             this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.RowHeadersWidth = 20;
             this.dataGridView1.Size = new System.Drawing.Size(801, 357);
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellEndEdit);
@@ -123,8 +124,8 @@
             // 
             // Oib
             // 
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.Oib.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.Oib.DefaultCellStyle = dataGridViewCellStyle4;
             this.Oib.HeaderText = "Oib";
             this.Oib.Name = "Oib";
             this.Oib.ReadOnly = true;
@@ -137,16 +138,16 @@
             // 
             // Godina
             // 
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.Godina.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.Godina.DefaultCellStyle = dataGridViewCellStyle5;
             this.Godina.HeaderText = "Godina";
             this.Godina.Name = "Godina";
             this.Godina.ReadOnly = true;
             // 
             // BrojDana
             // 
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.BrojDana.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.BrojDana.DefaultCellStyle = dataGridViewCellStyle6;
             this.BrojDana.HeaderText = "Broj dana godišnjeg";
             this.BrojDana.Name = "BrojDana";
             // 
@@ -229,7 +230,7 @@
             this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.groupBox1);
             this.Name = "frmZaposlenikGodisnji";
-            this.Text = "Zaposlenik - godišnji";
+            this.Text = "Zaposlenik-godišnji";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.frmZaposlenikGodisnji_FormClosed);
             this.Load += new System.EventHandler(this.frmZaposlenikGodisnji_Load);
             this.groupBox1.ResumeLayout(false);
