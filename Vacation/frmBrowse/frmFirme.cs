@@ -75,6 +75,8 @@ namespace Vacation.frmBrowse
         {
             Zaposlenik zaposlenik = new Zaposlenik();
             zaposlenik = zaposlenik.DajListu().Find(x => x.Id == ZaposlenikID);
+            txtIme.Text = zaposlenik.Ime;
+            txtPrezime.Text = zaposlenik.Prezime;
             txtAdresa.Text = zaposlenik.Adresa;
             txtOib.Text = zaposlenik.Oib;
             txtSpol.Text = zaposlenik.DajNazivSpola(int.Parse(zaposlenik.SpolId));
@@ -90,27 +92,12 @@ namespace Vacation.frmBrowse
             {
                 btnDeaktivirajSve.Enabled = btnDeaktiviraj.Enabled = btnUredi.Enabled = false;
             }
-        }
-
-        private void ZaposlenikSelected(object sender, EventArgs e)
-        {
-            int zaposlenikId = 0;
-            if (int.TryParse(comboBoxZaposlenici.SelectedValue.ToString(), out zaposlenikId))
-            {
-                ZaposlenikID = zaposlenikId;
-                UcitajPodatke();
-            }            
-        }        
+        }                
 
         private void frmFirme_Load(object sender, EventArgs e)
         {
             PostaviAlignHeader();
-            Zaposlenik zaposlenik = new Zaposlenik();
-            ZaposlenikGodisnji zaposleniciGodisnji = new ZaposlenikGodisnji();
-            comboBoxZaposlenici.DataSource = zaposlenik.DajListu();
-            comboBoxZaposlenici.DisplayMember = "ImePrezime";
-            comboBoxZaposlenici.ValueMember = "Id";
-            comboBoxZaposlenici.SelectedItem = null;
+            UcitajPodatke();
         }
 
         private void NoviClick(object sender, EventArgs e)

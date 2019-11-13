@@ -74,15 +74,6 @@ namespace Vacation
             forma.Show();
             PostaviListuOtvorenihProzora();
         }
-
-        private void firmeToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            frmFirme forma = frmFirme.Instance;
-            forma.MdiParent = this;
-            forma.WindowState = FormWindowState.Maximized;
-            forma.Show();
-            PostaviListuOtvorenihProzora();
-        }
         private void postavkeToolStripMenuItem_Click(object sender, EventArgs e)
         {
             frmPostavke forma = frmPostavke.Instance;

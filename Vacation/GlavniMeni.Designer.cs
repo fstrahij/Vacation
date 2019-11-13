@@ -33,7 +33,6 @@
             this.postavkeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.zaposleniciToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pregledToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.firmeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.neradniDaniToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.noviToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pregledToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -44,9 +43,9 @@
             this.zaposlenikgodišnjiToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.kalendarToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.statistikaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.prozorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.dodaciToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.zaposlenikdodaciToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.prozorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -86,8 +85,7 @@
             // zaposleniciToolStripMenuItem
             // 
             this.zaposleniciToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.pregledToolStripMenuItem1,
-            this.firmeToolStripMenuItem});
+            this.pregledToolStripMenuItem1});
             this.zaposleniciToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.zaposleniciToolStripMenuItem.Name = "zaposleniciToolStripMenuItem";
             this.zaposleniciToolStripMenuItem.Size = new System.Drawing.Size(85, 21);
@@ -96,16 +94,9 @@
             // pregledToolStripMenuItem1
             // 
             this.pregledToolStripMenuItem1.Name = "pregledToolStripMenuItem1";
-            this.pregledToolStripMenuItem1.Size = new System.Drawing.Size(139, 22);
+            this.pregledToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
             this.pregledToolStripMenuItem1.Text = "Pregled";
             this.pregledToolStripMenuItem1.Click += new System.EventHandler(this.pregledZaposlenika_Click);
-            // 
-            // firmeToolStripMenuItem
-            // 
-            this.firmeToolStripMenuItem.Name = "firmeToolStripMenuItem";
-            this.firmeToolStripMenuItem.Size = new System.Drawing.Size(139, 22);
-            this.firmeToolStripMenuItem.Text = "Zaposlenja";
-            this.firmeToolStripMenuItem.Click += new System.EventHandler(this.firmeToolStripMenuItem_Click);
             // 
             // neradniDaniToolStripMenuItem
             // 
@@ -187,13 +178,6 @@
             this.statistikaToolStripMenuItem.Text = "Statistika";
             this.statistikaToolStripMenuItem.Click += new System.EventHandler(this.statistikaToolStripMenuItem_Click);
             // 
-            // prozorToolStripMenuItem
-            // 
-            this.prozorToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.prozorToolStripMenuItem.Name = "prozorToolStripMenuItem";
-            this.prozorToolStripMenuItem.Size = new System.Drawing.Size(59, 21);
-            this.prozorToolStripMenuItem.Text = "Prozor";
-            // 
             // dodaciToolStripMenuItem
             // 
             this.dodaciToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
@@ -209,6 +193,13 @@
             this.zaposlenikdodaciToolStripMenuItem.Size = new System.Drawing.Size(127, 21);
             this.zaposlenikdodaciToolStripMenuItem.Text = "Zaposlenik-dodaci";
             this.zaposlenikdodaciToolStripMenuItem.Click += new System.EventHandler(this.zaposlenikdodaciToolStripMenuItem_Click);
+            // 
+            // prozorToolStripMenuItem
+            // 
+            this.prozorToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.prozorToolStripMenuItem.Name = "prozorToolStripMenuItem";
+            this.prozorToolStripMenuItem.Size = new System.Drawing.Size(59, 21);
+            this.prozorToolStripMenuItem.Text = "Prozor";
             // 
             // GlavniMeni
             // 
@@ -238,7 +229,6 @@
         private System.Windows.Forms.ToolStripMenuItem templejtiToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem tipoviToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem pregledToolStripMenuItem1;
-        private System.Windows.Forms.ToolStripMenuItem firmeToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem osnovnoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem postavkeToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem prozorToolStripMenuItem;

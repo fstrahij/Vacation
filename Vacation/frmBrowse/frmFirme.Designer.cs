@@ -44,8 +44,6 @@
             this.label4 = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.txtAdresa = new System.Windows.Forms.TextBox();
-            this.comboBoxZaposlenici = new System.Windows.Forms.ComboBox();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Naziv = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -66,8 +64,11 @@
             this.btnDeaktivirajSve = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.btnZatvori = new System.Windows.Forms.ToolStripButton();
+            this.txtPrezime = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.txtIme = new System.Windows.Forms.TextBox();
             this.groupBox3.SuspendLayout();
-            this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox2.SuspendLayout();
             this.toolStrip1.SuspendLayout();
@@ -76,7 +77,7 @@
             // txtSpol
             // 
             this.txtSpol.Enabled = false;
-            this.txtSpol.Location = new System.Drawing.Point(82, 123);
+            this.txtSpol.Location = new System.Drawing.Point(78, 206);
             this.txtSpol.Name = "txtSpol";
             this.txtSpol.Size = new System.Drawing.Size(206, 22);
             this.txtSpol.TabIndex = 17;
@@ -84,7 +85,7 @@
             // txtOib
             // 
             this.txtOib.Enabled = false;
-            this.txtOib.Location = new System.Drawing.Point(82, 81);
+            this.txtOib.Location = new System.Drawing.Point(78, 164);
             this.txtOib.Name = "txtOib";
             this.txtOib.Size = new System.Drawing.Size(206, 22);
             this.txtOib.TabIndex = 16;
@@ -92,7 +93,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(26, 84);
+            this.label5.Location = new System.Drawing.Point(22, 167);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(30, 16);
             this.label5.TabIndex = 15;
@@ -101,7 +102,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(26, 47);
+            this.label3.Location = new System.Drawing.Point(6, 129);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(52, 16);
             this.label3.TabIndex = 13;
@@ -110,7 +111,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(26, 123);
+            this.label4.Location = new System.Drawing.Point(22, 206);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(36, 16);
             this.label4.TabIndex = 11;
@@ -118,6 +119,10 @@
             // 
             // groupBox3
             // 
+            this.groupBox3.Controls.Add(this.txtPrezime);
+            this.groupBox3.Controls.Add(this.label1);
+            this.groupBox3.Controls.Add(this.label2);
+            this.groupBox3.Controls.Add(this.txtIme);
             this.groupBox3.Controls.Add(this.txtSpol);
             this.groupBox3.Controls.Add(this.txtOib);
             this.groupBox3.Controls.Add(this.label5);
@@ -125,9 +130,9 @@
             this.groupBox3.Controls.Add(this.txtAdresa);
             this.groupBox3.Controls.Add(this.label4);
             this.groupBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.groupBox3.Location = new System.Drawing.Point(20, 190);
+            this.groupBox3.Location = new System.Drawing.Point(20, 80);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(310, 180);
+            this.groupBox3.Size = new System.Drawing.Size(310, 290);
             this.groupBox3.TabIndex = 19;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Podaci o zaposleniku";
@@ -135,30 +140,10 @@
             // txtAdresa
             // 
             this.txtAdresa.Enabled = false;
-            this.txtAdresa.Location = new System.Drawing.Point(82, 40);
+            this.txtAdresa.Location = new System.Drawing.Point(78, 123);
             this.txtAdresa.Name = "txtAdresa";
             this.txtAdresa.Size = new System.Drawing.Size(206, 22);
             this.txtAdresa.TabIndex = 12;
-            // 
-            // comboBoxZaposlenici
-            // 
-            this.comboBoxZaposlenici.FormattingEnabled = true;
-            this.comboBoxZaposlenici.Location = new System.Drawing.Point(29, 31);
-            this.comboBoxZaposlenici.Name = "comboBoxZaposlenici";
-            this.comboBoxZaposlenici.Size = new System.Drawing.Size(175, 24);
-            this.comboBoxZaposlenici.TabIndex = 0;
-            this.comboBoxZaposlenici.SelectionChangeCommitted += new System.EventHandler(this.ZaposlenikSelected);
-            // 
-            // groupBox1
-            // 
-            this.groupBox1.Controls.Add(this.comboBoxZaposlenici);
-            this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.groupBox1.Location = new System.Drawing.Point(20, 80);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(230, 80);
-            this.groupBox1.TabIndex = 18;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Odabir zaposlenika";
             // 
             // dataGridView1
             // 
@@ -276,7 +261,7 @@
             this.groupBox2.Size = new System.Drawing.Size(857, 416);
             this.groupBox2.TabIndex = 17;
             this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Firme";
+            this.groupBox2.Text = "Zaposlenja";
             // 
             // toolStrip1
             // 
@@ -361,6 +346,40 @@
             this.btnZatvori.Text = "Zatvori";
             this.btnZatvori.Click += new System.EventHandler(this.ZatvoriClick);
             // 
+            // txtPrezime
+            // 
+            this.txtPrezime.Enabled = false;
+            this.txtPrezime.Location = new System.Drawing.Point(78, 83);
+            this.txtPrezime.Name = "txtPrezime";
+            this.txtPrezime.Size = new System.Drawing.Size(206, 22);
+            this.txtPrezime.TabIndex = 21;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(1, 89);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(57, 16);
+            this.label1.TabIndex = 20;
+            this.label1.Text = "Prezime";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(22, 48);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(30, 16);
+            this.label2.TabIndex = 19;
+            this.label2.Text = "Ime";
+            // 
+            // txtIme
+            // 
+            this.txtIme.Enabled = false;
+            this.txtIme.Location = new System.Drawing.Point(78, 42);
+            this.txtIme.Name = "txtIme";
+            this.txtIme.Size = new System.Drawing.Size(206, 22);
+            this.txtIme.TabIndex = 18;
+            // 
             // frmFirme
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -368,7 +387,6 @@
             this.ClientSize = new System.Drawing.Size(1337, 533);
             this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.groupBox3);
-            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.groupBox2);
             this.Name = "frmFirme";
             this.Text = "Zaposlenja";
@@ -376,7 +394,6 @@
             this.Load += new System.EventHandler(this.frmFirme_Load);
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
-            this.groupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.toolStrip1.ResumeLayout(false);
@@ -395,8 +412,6 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.TextBox txtAdresa;
-        private System.Windows.Forms.ComboBox comboBoxZaposlenici;
-        private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.DataGridViewTextBoxColumn Id;
@@ -417,5 +432,9 @@
         private System.Windows.Forms.ToolStripButton btnDeaktivirajSve;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
         private System.Windows.Forms.ToolStripButton btnZatvori;
+        private System.Windows.Forms.TextBox txtPrezime;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TextBox txtIme;
     }
 }

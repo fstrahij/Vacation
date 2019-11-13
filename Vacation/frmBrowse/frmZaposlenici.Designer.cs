@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmZaposlenici));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
@@ -47,6 +47,7 @@
             this.btnDeaktivirajSve = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.btnZatvori = new System.Windows.Forms.ToolStripButton();
+            this.btnZaposlenja = new System.Windows.Forms.ToolStripButton();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.toolStrip1.SuspendLayout();
@@ -119,8 +120,8 @@
             // 
             // Oib
             // 
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.Oib.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.Oib.DefaultCellStyle = dataGridViewCellStyle2;
             this.Oib.HeaderText = "Oib";
             this.Oib.Name = "Oib";
             this.Oib.ReadOnly = true;
@@ -141,6 +142,7 @@
             this.toolStripSeparator1,
             this.btnDeaktiviraj,
             this.btnDeaktivirajSve,
+            this.btnZaposlenja,
             this.toolStripSeparator2,
             this.btnZatvori});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
@@ -214,6 +216,17 @@
             this.btnZatvori.Text = "Zatvori";
             this.btnZatvori.Click += new System.EventHandler(this.btnZatvori_Click);
             // 
+            // btnZaposlenja
+            // 
+            this.btnZaposlenja.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.btnZaposlenja.Image = ((System.Drawing.Image)(resources.GetObject("btnZaposlenja.Image")));
+            this.btnZaposlenja.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnZaposlenja.Margin = new System.Windows.Forms.Padding(0, 1, 10, 2);
+            this.btnZaposlenja.Name = "btnZaposlenja";
+            this.btnZaposlenja.Size = new System.Drawing.Size(39, 39);
+            this.btnZaposlenja.Text = "Zaposlenja";
+            this.btnZaposlenja.Click += new System.EventHandler(this.ZaposlenjaClick);
+            // 
             // frmZaposlenici
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -253,5 +266,6 @@
         private System.Windows.Forms.ToolStripButton btnDeaktivirajSve;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
         private System.Windows.Forms.ToolStripButton btnZatvori;
+        private System.Windows.Forms.ToolStripButton btnZaposlenja;
     }
 }

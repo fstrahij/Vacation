@@ -58,11 +58,11 @@ namespace Vacation.frmBrowse
         {
             if (dataGridView1.Rows.Count > 0)
             {
-                btnDeaktivirajSve.Enabled = btnDeaktiviraj.Enabled = btnUredi.Enabled = true;
+                btnZaposlenja.Enabled = btnDeaktivirajSve.Enabled = btnDeaktiviraj.Enabled = btnUredi.Enabled = true;
             }
             else
             {
-                btnDeaktivirajSve.Enabled = btnDeaktiviraj.Enabled = btnUredi.Enabled = false;
+                btnZaposlenja.Enabled = btnDeaktivirajSve.Enabled = btnDeaktiviraj.Enabled = btnUredi.Enabled = false;
             }
         }
 
@@ -128,6 +128,16 @@ namespace Vacation.frmBrowse
         private void frmZaposlenici_FormClosed(object sender, FormClosedEventArgs e)
         {
             _instance = null;
+            GlavniMeni.Instance.PostaviListuOtvorenihProzora();
+        }
+
+        private void ZaposlenjaClick(object sender, EventArgs e)
+        {
+            frmFirme forma = frmFirme.Instance;
+            forma.ZaposlenikID = int.Parse(dataGridView1.CurrentRow.Cells[0].Value.ToString());
+            forma.MdiParent = GlavniMeni.Instance;
+            forma.WindowState = FormWindowState.Maximized;
+            forma.Show();
             GlavniMeni.Instance.PostaviListuOtvorenihProzora();
         }
     }
