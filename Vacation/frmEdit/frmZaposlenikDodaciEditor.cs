@@ -65,7 +65,7 @@ namespace Vacation.frmEdit
                 if (dr == DialogResult.Yes)
                 {
 
-                    Upit.SpremiZaposlenikDodatak(ZaposlenikId, DodatakId);
+                    Upit.SpremiZaposlenikDodaci(ZaposlenikId, DodatakId);
                     Forma.UcitajPodatke();
                     this.Close();
                 }

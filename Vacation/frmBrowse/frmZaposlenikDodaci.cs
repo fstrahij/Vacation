@@ -112,8 +112,6 @@ namespace Vacation.frmBrowse
                 DialogResult dr = MessageBox.Show("Nije odabran zaposlenik!");
             }
         }
-        
-        /*
         private void DeaktivirajClick(object sender, EventArgs e)
         {
             if (ZaposlenikID > 0)
@@ -121,10 +119,8 @@ namespace Vacation.frmBrowse
                 DialogResult dr = MessageBox.Show("Jeste li sigurni?", "Provjera", MessageBoxButtons.YesNo);
                 if (dr == DialogResult.Yes)
                 {
-                    Godisnji godisnji = new Godisnji();
-                    int posljedniRed = dataGridView1.Rows.Count - 1;
-                    godisnji.Id = int.Parse(dataGridView1.Rows[posljedniRed].Cells[0].Value.ToString());
-                    godisnji.Deaktiviraj();
+                    int id = int.Parse(dataGridView1.CurrentRow.Cells[0].Value.ToString());
+                    Upit.DeaktivirajZaposlenikDodaci(id);
                     UcitajPodatke();
                 }
             }
@@ -141,11 +137,11 @@ namespace Vacation.frmBrowse
                 DialogResult dr = MessageBox.Show("Jeste li sigurni?", "Provjera", MessageBoxButtons.YesNo);
                 if (dr == DialogResult.Yes)
                 {
-                    Godisnji godisnji = new Godisnji();
+                    int id = 0;
                     foreach (DataGridViewRow row in dataGridView1.Rows)
                     {
-                        godisnji.Id = int.Parse(row.Cells[0].Value.ToString());
-                        godisnji.Deaktiviraj();
+                        id = int.Parse(row.Cells[0].Value.ToString());
+                        Upit.DeaktivirajZaposlenikDodaci(id);
                     }
                     UcitajPodatke();
                 }
@@ -154,7 +150,7 @@ namespace Vacation.frmBrowse
             {
                 DialogResult dr = MessageBox.Show("Nije odabran zaposlenik!");
             }
-        }*/
+        }
         private void btnZatvori_Click(object sender, EventArgs e)
         {
             this.Close();

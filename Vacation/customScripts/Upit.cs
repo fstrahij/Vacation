@@ -72,18 +72,24 @@ namespace Vacation.customScripts
             List<Godisnji> lista = new List<Godisnji>();
             Godisnji godisnji = new Godisnji();
             SqlUpit = "SELECT ZaposlenikDodaci.Id, DodatakId, Naziv, BrojDana, GodinaPrava FROM Dodaci, ZaposlenikDodaci " +
-                "WHERE ZaposlenikDodaci.DodatakId = Dodaci.Id AND Aktivan = 1 AND ZaposlenikId = " + pZaposlenikId;
+                "WHERE ZaposlenikDodaci.DodatakId = Dodaci.Id AND ZaposlenikDodaci.Aktivan = 1 AND Dodaci.Aktivan = 1 AND ZaposlenikId = " + pZaposlenikId;
             return DatabaseConnection.Instance.DohvatiPodatke(SqlUpit);
         }
 
-        public static void SpremiZaposlenikDodatak(int pZaposlenikId, int pDodatakId)
+        public static void SpremiZaposlenikDodaci(int pZaposlenikId, int pDodatakId)
         {
             List<Godisnji> lista = new List<Godisnji>();
             Godisnji godisnji = new Godisnji();
             SqlUpit = "INSERT INTO ZaposlenikDodaci(ZaposlenikId, DodatakId) " +
                             "VALUES(" + pZaposlenikId + ", "
                                         + pDodatakId + ")";
-            DatabaseConnection.Instance.DohvatiPodatke(SqlUpit);
+            DatabaseConnection.Instance.IzvrsiUpit(SqlUpit);
+        }
+
+        public static void DeaktivirajZaposlenikDodaci(int pId)
+        {
+            string sqlUpit = "UPDATE ZaposlenikDodaci SET Aktivan = 0 WHERE Id = " + pId;
+            DatabaseConnection.Instance.IzvrsiUpit(sqlUpit);
         }
     }
 }

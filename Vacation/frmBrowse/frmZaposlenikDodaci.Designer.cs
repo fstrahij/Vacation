@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.btnZatvori = new System.Windows.Forms.Button();
             this.txtSpol = new System.Windows.Forms.TextBox();
             this.txtOib = new System.Windows.Forms.TextBox();
@@ -160,6 +160,7 @@
             this.btnDeaktiviraj.TabIndex = 12;
             this.btnDeaktiviraj.Text = "Deaktiviraj Sve";
             this.btnDeaktiviraj.UseVisualStyleBackColor = true;
+            this.btnDeaktiviraj.Click += new System.EventHandler(this.DeaktivirajClick);
             // 
             // btnNovi
             // 
@@ -179,6 +180,7 @@
             this.btnDeaktivirajSve.TabIndex = 9;
             this.btnDeaktivirajSve.Text = "Deaktiviraj Sve";
             this.btnDeaktivirajSve.UseVisualStyleBackColor = true;
+            this.btnDeaktivirajSve.Click += new System.EventHandler(this.DeaktivirajSveClick);
             // 
             // groupBox2
             // 
@@ -243,16 +245,16 @@
             // 
             // BrojDana
             // 
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.BrojDana.DefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.BrojDana.DefaultCellStyle = dataGridViewCellStyle1;
             this.BrojDana.HeaderText = "Broj dana";
             this.BrojDana.Name = "BrojDana";
             this.BrojDana.ReadOnly = true;
             // 
             // GodinaPrava
             // 
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.GodinaPrava.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.GodinaPrava.DefaultCellStyle = dataGridViewCellStyle2;
             this.GodinaPrava.HeaderText = "Godina prava";
             this.GodinaPrava.Name = "GodinaPrava";
             this.GodinaPrava.ReadOnly = true;
