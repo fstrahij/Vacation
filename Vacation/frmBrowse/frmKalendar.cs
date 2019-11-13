@@ -236,7 +236,7 @@ namespace Vacation.frmBrowse
             {
                 if (IsTheSameCellValue(e.ColumnIndex, e.RowIndex))
                 {
-                    e.AdvancedBorderStyle.Left = DataGridViewAdvancedCellBorderStyle.None;
+                    e.AdvancedBorderStyle.Left = DataGridViewAdvancedCellBorderStyle.None;                    
                 }
             }
         }
@@ -246,6 +246,31 @@ namespace Vacation.frmBrowse
             if (e.RowIndex == 0 || e.RowIndex == 8 || e.RowIndex == 16)
             {
                 if (IsTheSameCellValue(e.ColumnIndex, e.RowIndex))
+                {
+                    int r = e.RowIndex;
+                    int c = e.ColumnIndex + 1;
+                    int brojac = 3;
+                    bool srednji = false;
+                    
+                    dgvKalendar.Rows[r].Cells[c].Style.BackColor = e.CellStyle.BackColor = Color.Gainsboro;
+                    e.CellStyle.Font = new Font(e.CellStyle.Font, FontStyle.Bold);
+                    dgvKalendar.Rows[r].Cells[e.ColumnIndex + 1].Style.Font = new Font(e.CellStyle.Font, FontStyle.Bold);
+                    while (brojac <= 27)
+                    {
+                        if (e.ColumnIndex == brojac)
+                        {
+                            srednji = true;
+                            break;
+                        }
+                        brojac += 8;
+                    }
+                    if (!srednji)
+                    {
+                        e.Value = "";
+                        e.FormattingApplied = true;
+                    }
+                }
+                else if (e.ColumnIndex == 6 || e.ColumnIndex == 14 || e.ColumnIndex == 22 || e.ColumnIndex == 30)
                 {
                     e.Value = "";
                     e.FormattingApplied = true;

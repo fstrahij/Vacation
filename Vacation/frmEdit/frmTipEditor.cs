@@ -33,7 +33,11 @@ namespace Vacation
         private void TipEditor_Load(object sender, EventArgs e)
         {
             txtNaziv.Text = Naziv;
-            txtBoja.Text = Boja;                     
+            txtBoja.Text = Boja;
+            if (!string.IsNullOrWhiteSpace(Boja))
+            {
+                btnOdabirBoje.BackColor = ColorTranslator.FromHtml(Boja);
+            }
         }
 
         private void btnOdabirBoje_Click(object sender, EventArgs e)
@@ -43,6 +47,7 @@ namespace Vacation
             boja = boja.Substring(2, 6);
             boja = "#" + boja;
             txtBoja.Text = boja;
+            btnOdabirBoje.BackColor = ColorTranslator.FromHtml(boja);
         }
 
         private void SpremiClick(object sender, EventArgs e)

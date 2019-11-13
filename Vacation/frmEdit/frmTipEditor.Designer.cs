@@ -35,11 +35,13 @@
             this.txtNaziv = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.colorDialog1 = new System.Windows.Forms.ColorDialog();
+            this.label2 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.btnOdabirBoje);
             this.groupBox1.Controls.Add(this.txtBoja);
             this.groupBox1.Controls.Add(this.button1);
@@ -97,6 +99,15 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Naziv";
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(70, 119);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(36, 16);
+            this.label2.TabIndex = 6;
+            this.label2.Text = "Boja";
+            // 
             // TipEditor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -121,5 +132,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnOdabirBoje;
         private System.Windows.Forms.ColorDialog colorDialog1;
+        private System.Windows.Forms.Label label2;
     }
 }

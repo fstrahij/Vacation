@@ -115,15 +115,6 @@ namespace Vacation
         {
             this.WindowState = FormWindowState.Maximized;
         }
-
-        private void statistikaToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            frmStatistika forma = frmStatistika.Instance;
-            forma.MdiParent = this;
-            forma.WindowState = FormWindowState.Maximized;
-            forma.Show();
-            PostaviListuOtvorenihProzora();
-        }
         private void pregledToolStripMenuItem2_Click(object sender, EventArgs e)
         {
             frmGodisnji forma = frmGodisnji.Instance;
@@ -147,20 +138,6 @@ namespace Vacation
             PostaviListuOtvorenihProzora();
         }
 
-        private void dodaciToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            frmDodaci forma = frmDodaci.Instance;
-            forma.MdiParent = this;
-            forma.WindowState = FormWindowState.Maximized;
-            forma.Show();
-            PostaviListuOtvorenihProzora();
-        }
-
-        private void zaposlenikdodaciToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            
-        }
-
         private void zaposlenikgodišnjiToolStripMenuItem_Click(object sender, EventArgs e)
         {
             frmZaposlenikGodisnji forma = frmZaposlenikGodisnji.Instance;
@@ -173,6 +150,24 @@ namespace Vacation
         private void zaposlenikdodaciToolStripMenuItem1_Click(object sender, EventArgs e)
         {
             frmZaposlenikDodaci forma = frmZaposlenikDodaci.Instance;
+            forma.MdiParent = this;
+            forma.WindowState = FormWindowState.Maximized;
+            forma.Show();
+            PostaviListuOtvorenihProzora();
+        }
+
+        private void statistikaToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            frmStatistika forma = frmStatistika.Instance;
+            forma.MdiParent = this;
+            forma.WindowState = FormWindowState.Maximized;
+            forma.Show();
+            PostaviListuOtvorenihProzora();
+        }
+
+        private void dodaciToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            frmDodaci forma = frmDodaci.Instance;
             forma.MdiParent = this;
             forma.WindowState = FormWindowState.Maximized;
             forma.Show();
