@@ -94,7 +94,7 @@ namespace Vacation
                     item = new ToolStripMenuItem();
                     item.Text = form.Text;
                     item.Name = prozorToolStripMenuItem.Name;
-                    item.Click += new EventHandler(item_Click);
+                    item.Click += new EventHandler(Item_Click);
                     prozorToolStripMenuItem.DropDownItems.Add(item);
                 }
             }
@@ -106,7 +106,7 @@ namespace Vacation
             prozorToolStripMenuItem.DropDownItems.Add(item);                      
         }
 
-        private void item_Click(object sender, EventArgs e)
+        private void Item_Click(object sender, EventArgs e)
         {
             ToolStripMenuItem item = sender as ToolStripMenuItem;
             foreach (Form form in Application.OpenForms)
