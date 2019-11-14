@@ -98,6 +98,7 @@ namespace Vacation
                     prozorToolStripMenuItem.DropDownItems.Add(item);
                 }
             }
+            prozorToolStripMenuItem.DropDownItems.Add(new ToolStripSeparator());
             item = new ToolStripMenuItem();
             item.Text = "Zatvori sve";
             item.Name = prozorToolStripMenuItem.Name;
