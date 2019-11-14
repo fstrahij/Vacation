@@ -33,6 +33,9 @@
             this.postavkeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.zaposleniciToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pregledToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.dodaciToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.zaposlenikdodaciToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.zaposlenikgodišnjiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.neradniDaniToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.noviToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pregledToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -41,11 +44,8 @@
             this.godišnjiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pregledToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.kalendarToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.prozorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.zaposlenikgodišnjiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.zaposlenikdodaciToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.dodaciToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.statistikaToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.prozorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -97,6 +97,27 @@
             this.pregledToolStripMenuItem1.Size = new System.Drawing.Size(189, 22);
             this.pregledToolStripMenuItem1.Text = "Pregled";
             this.pregledToolStripMenuItem1.Click += new System.EventHandler(this.pregledZaposlenika_Click);
+            // 
+            // dodaciToolStripMenuItem1
+            // 
+            this.dodaciToolStripMenuItem1.Name = "dodaciToolStripMenuItem1";
+            this.dodaciToolStripMenuItem1.Size = new System.Drawing.Size(189, 22);
+            this.dodaciToolStripMenuItem1.Text = "Dodaci";
+            this.dodaciToolStripMenuItem1.Click += new System.EventHandler(this.dodaciToolStripMenuItem1_Click);
+            // 
+            // zaposlenikdodaciToolStripMenuItem1
+            // 
+            this.zaposlenikdodaciToolStripMenuItem1.Name = "zaposlenikdodaciToolStripMenuItem1";
+            this.zaposlenikdodaciToolStripMenuItem1.Size = new System.Drawing.Size(189, 22);
+            this.zaposlenikdodaciToolStripMenuItem1.Text = "Zaposlenik-dodaci";
+            this.zaposlenikdodaciToolStripMenuItem1.Click += new System.EventHandler(this.zaposlenikdodaciToolStripMenuItem1_Click);
+            // 
+            // zaposlenikgodišnjiToolStripMenuItem
+            // 
+            this.zaposlenikgodišnjiToolStripMenuItem.Name = "zaposlenikgodišnjiToolStripMenuItem";
+            this.zaposlenikgodišnjiToolStripMenuItem.Size = new System.Drawing.Size(189, 22);
+            this.zaposlenikgodišnjiToolStripMenuItem.Text = "Zaposlenik-godišnji";
+            this.zaposlenikgodišnjiToolStripMenuItem.Click += new System.EventHandler(this.zaposlenikgodišnjiToolStripMenuItem_Click);
             // 
             // neradniDaniToolStripMenuItem
             // 
@@ -152,16 +173,23 @@
             // pregledToolStripMenuItem2
             // 
             this.pregledToolStripMenuItem2.Name = "pregledToolStripMenuItem2";
-            this.pregledToolStripMenuItem2.Size = new System.Drawing.Size(189, 22);
+            this.pregledToolStripMenuItem2.Size = new System.Drawing.Size(128, 22);
             this.pregledToolStripMenuItem2.Text = "Pregled";
             this.pregledToolStripMenuItem2.Click += new System.EventHandler(this.pregledToolStripMenuItem2_Click);
             // 
             // kalendarToolStripMenuItem1
             // 
             this.kalendarToolStripMenuItem1.Name = "kalendarToolStripMenuItem1";
-            this.kalendarToolStripMenuItem1.Size = new System.Drawing.Size(189, 22);
+            this.kalendarToolStripMenuItem1.Size = new System.Drawing.Size(128, 22);
             this.kalendarToolStripMenuItem1.Text = "Kalendar";
             this.kalendarToolStripMenuItem1.Click += new System.EventHandler(this.kalendarToolStripMenuItem1_Click);
+            // 
+            // statistikaToolStripMenuItem1
+            // 
+            this.statistikaToolStripMenuItem1.Name = "statistikaToolStripMenuItem1";
+            this.statistikaToolStripMenuItem1.Size = new System.Drawing.Size(128, 22);
+            this.statistikaToolStripMenuItem1.Text = "Statistika";
+            this.statistikaToolStripMenuItem1.Click += new System.EventHandler(this.statistikaToolStripMenuItem1_Click);
             // 
             // prozorToolStripMenuItem
             // 
@@ -169,34 +197,6 @@
             this.prozorToolStripMenuItem.Name = "prozorToolStripMenuItem";
             this.prozorToolStripMenuItem.Size = new System.Drawing.Size(59, 21);
             this.prozorToolStripMenuItem.Text = "Prozor";
-            // 
-            // zaposlenikgodišnjiToolStripMenuItem
-            // 
-            this.zaposlenikgodišnjiToolStripMenuItem.Name = "zaposlenikgodišnjiToolStripMenuItem";
-            this.zaposlenikgodišnjiToolStripMenuItem.Size = new System.Drawing.Size(189, 22);
-            this.zaposlenikgodišnjiToolStripMenuItem.Text = "Zaposlenik-godišnji";
-            this.zaposlenikgodišnjiToolStripMenuItem.Click += new System.EventHandler(this.zaposlenikgodišnjiToolStripMenuItem_Click);
-            // 
-            // zaposlenikdodaciToolStripMenuItem1
-            // 
-            this.zaposlenikdodaciToolStripMenuItem1.Name = "zaposlenikdodaciToolStripMenuItem1";
-            this.zaposlenikdodaciToolStripMenuItem1.Size = new System.Drawing.Size(189, 22);
-            this.zaposlenikdodaciToolStripMenuItem1.Text = "Zaposlenik-dodaci";
-            this.zaposlenikdodaciToolStripMenuItem1.Click += new System.EventHandler(this.zaposlenikdodaciToolStripMenuItem1_Click);
-            // 
-            // dodaciToolStripMenuItem1
-            // 
-            this.dodaciToolStripMenuItem1.Name = "dodaciToolStripMenuItem1";
-            this.dodaciToolStripMenuItem1.Size = new System.Drawing.Size(189, 22);
-            this.dodaciToolStripMenuItem1.Text = "Dodaci";
-            this.dodaciToolStripMenuItem1.Click += new System.EventHandler(this.dodaciToolStripMenuItem1_Click);
-            // 
-            // statistikaToolStripMenuItem1
-            // 
-            this.statistikaToolStripMenuItem1.Name = "statistikaToolStripMenuItem1";
-            this.statistikaToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
-            this.statistikaToolStripMenuItem1.Text = "Statistika";
-            this.statistikaToolStripMenuItem1.Click += new System.EventHandler(this.statistikaToolStripMenuItem1_Click);
             // 
             // GlavniMeni
             // 

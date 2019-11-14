@@ -86,17 +86,23 @@ namespace Vacation
         public void PostaviListuOtvorenihProzora()
         {
             prozorToolStripMenuItem.DropDownItems.Clear();
+            ToolStripMenuItem item;
             foreach (Form form in Application.OpenForms)
             {
                 if (form.IsMdiChild)
                 {                    
-                    ToolStripMenuItem item = new ToolStripMenuItem();
+                    item = new ToolStripMenuItem();
                     item.Text = form.Text;
                     item.Name = prozorToolStripMenuItem.Name;
                     item.Click += new EventHandler(item_Click);
                     prozorToolStripMenuItem.DropDownItems.Add(item);
                 }
             }
+            item = new ToolStripMenuItem();
+            item.Text = "ZATVORI SVE";
+            item.Name = prozorToolStripMenuItem.Name;
+            item.Click += new EventHandler(ZatvoriSve_Click);
+            prozorToolStripMenuItem.DropDownItems.Add(item);                      
         }
 
         private void item_Click(object sender, EventArgs e)
@@ -109,6 +115,15 @@ namespace Vacation
                     form.BringToFront();
                 }
             }
+        }
+        private void ZatvoriSve_Click(object sender, EventArgs e)
+        {
+            ToolStripMenuItem item = sender as ToolStripMenuItem;
+            foreach (Form form in this.MdiChildren)
+            {
+                form.Close();
+            }
+            prozorToolStripMenuItem.DropDownItems.Clear();
         }
 
         private void GlavniMeni_Load(object sender, EventArgs e)
