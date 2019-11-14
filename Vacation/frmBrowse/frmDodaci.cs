@@ -30,10 +30,16 @@ namespace Vacation.frmBrowse
                 return _instance;
             }
         }
+        private void PostaviAlignHeader()
+        {
+            dataGridView1.Columns[2].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridView1.Columns[3].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+        }
 
         private void frmTipoviGodisnjih_Load(object sender, EventArgs e)
         {
             UcitajPodatke();
+            PostaviAlignHeader();
         }
 
         public void UcitajPodatke()

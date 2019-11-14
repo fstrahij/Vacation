@@ -34,6 +34,12 @@ namespace Vacation.frmBrowse
             }
         }
 
+        private void PostaviAlignHeader()
+        {
+            dataGridView1.Columns[4].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridView1.Columns[5].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+        }
+
         public void UcitajPodatke()
         {
             dataGridView1.Rows.Clear();
@@ -88,6 +94,7 @@ namespace Vacation.frmBrowse
             comboBoxZaposlenici.DisplayMember = "ImePrezime";
             comboBoxZaposlenici.ValueMember = "Id";
             comboBoxZaposlenici.SelectedValue = 0;
+            PostaviAlignHeader();
         }
 
         private void ZaposlenikSelected(object sender, EventArgs e)
