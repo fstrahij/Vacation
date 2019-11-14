@@ -87,6 +87,7 @@ namespace Vacation
         {
             prozorToolStripMenuItem.DropDownItems.Clear();
             ToolStripMenuItem item;
+            int brojac = 0;
             foreach (Form form in Application.OpenForms)
             {
                 if (form.IsMdiChild)
@@ -96,14 +97,18 @@ namespace Vacation
                     item.Name = prozorToolStripMenuItem.Name;
                     item.Click += new EventHandler(Item_Click);
                     prozorToolStripMenuItem.DropDownItems.Add(item);
+                    brojac++;
                 }
             }
-            prozorToolStripMenuItem.DropDownItems.Add(new ToolStripSeparator());
-            item = new ToolStripMenuItem();
-            item.Text = "Zatvori sve";
-            item.Name = prozorToolStripMenuItem.Name;
-            item.Click += new EventHandler(ZatvoriSve_Click);
-            prozorToolStripMenuItem.DropDownItems.Add(item);                      
+            if (brojac > 0)
+            {
+                prozorToolStripMenuItem.DropDownItems.Add(new ToolStripSeparator());
+                item = new ToolStripMenuItem();
+                item.Text = "Zatvori sve";
+                item.Name = prozorToolStripMenuItem.Name;
+                item.Click += new EventHandler(ZatvoriSve_Click);
+                prozorToolStripMenuItem.DropDownItems.Add(item);
+            }                                  
         }
 
         private void Item_Click(object sender, EventArgs e)
