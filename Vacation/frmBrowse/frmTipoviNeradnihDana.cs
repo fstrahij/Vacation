@@ -33,10 +33,11 @@ namespace Vacation
         public void UcitajPodatke()
         {
             TipNeradnihDana tip = new TipNeradnihDana();
-            BindingSource binding = new BindingSource();
-            binding.DataSource = tip.DajListu();
-            dataGridView1.DataSource = binding;
-            dataGridView1.Columns[0].Visible = dataGridView1.Columns[3].Visible = false;
+            dataGridView1.Rows.Clear();
+            foreach (var item in tip.DajListu())
+            {
+                dataGridView1.Rows.Add(item.Id, item.Naziv, item.Boja);
+            }
             HasRows();
             PostaviBoju();
         }

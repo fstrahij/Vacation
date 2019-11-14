@@ -34,11 +34,14 @@
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.btnNovi = new System.Windows.Forms.ToolStripButton();
             this.btnUredi = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.btnDeaktiviraj = new System.Windows.Forms.ToolStripButton();
             this.btnDeaktivirajSve = new System.Windows.Forms.ToolStripButton();
-            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.btnZatvori = new System.Windows.Forms.ToolStripButton();
+            this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Naziv = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Boja = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.toolStrip1.SuspendLayout();
@@ -49,6 +52,10 @@
             this.dataGridView1.AllowUserToAddRows = false;
             this.dataGridView1.AllowUserToDeleteRows = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Id,
+            this.Naziv,
+            this.Boja});
             this.dataGridView1.Location = new System.Drawing.Point(23, 34);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
@@ -108,6 +115,11 @@
             this.btnUredi.Text = "Uredi";
             this.btnUredi.Click += new System.EventHandler(this.UrediClick);
             // 
+            // toolStripSeparator1
+            // 
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 42);
+            // 
             // btnDeaktiviraj
             // 
             this.btnDeaktiviraj.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
@@ -130,11 +142,6 @@
             this.btnDeaktivirajSve.Text = "Obriši sve";
             this.btnDeaktivirajSve.Click += new System.EventHandler(this.DeaktivirajSveClick);
             // 
-            // toolStripSeparator1
-            // 
-            this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 42);
-            // 
             // toolStripSeparator2
             // 
             this.toolStripSeparator2.Name = "toolStripSeparator2";
@@ -150,6 +157,25 @@
             this.btnZatvori.Size = new System.Drawing.Size(39, 39);
             this.btnZatvori.Text = "Zatvori";
             this.btnZatvori.Click += new System.EventHandler(this.btnZatvori_Click);
+            // 
+            // Id
+            // 
+            this.Id.HeaderText = "Id";
+            this.Id.Name = "Id";
+            this.Id.ReadOnly = true;
+            this.Id.Visible = false;
+            // 
+            // Naziv
+            // 
+            this.Naziv.HeaderText = "Naziv";
+            this.Naziv.Name = "Naziv";
+            this.Naziv.ReadOnly = true;
+            // 
+            // Boja
+            // 
+            this.Boja.HeaderText = "Boja";
+            this.Boja.Name = "Boja";
+            this.Boja.ReadOnly = true;
             // 
             // TipoviNeradnihDanaForm
             // 
@@ -183,5 +209,8 @@
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
         private System.Windows.Forms.ToolStripButton btnZatvori;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Id;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Naziv;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Boja;
     }
 }
