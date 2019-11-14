@@ -207,11 +207,13 @@ namespace Vacation.frmBrowse
         }
 
         private void SelectionChange(object sender, EventArgs e)
-        {            
+        {
+            dgvKalendar.Rows.Clear();
             int zaposlenikId = 0;
             int.TryParse(comboBoxZaposlenici.SelectedValue.ToString(), out zaposlenikId);
             ZaposlenikId = zaposlenikId;
             comboBoxGodine.Items.Clear();
+            comboBoxGodine.Text = null;
             foreach (var item in Upit.DajGodineGodisnjegZaposlenika(zaposlenikId))
             {
                 comboBoxGodine.Items.Add(item);
