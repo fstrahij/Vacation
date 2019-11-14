@@ -66,10 +66,6 @@ namespace Vacation.frmBrowse
         {
             string dan;
             int mjesec = 0;
-            foreach (DataGridViewColumn column in dgvKalendar.Columns)
-            {
-                column.Width = 28;
-            }
             for (int i = 0; i < 23; i++)
             {
                 dgvKalendar.Rows.Add();
