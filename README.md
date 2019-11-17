@@ -1,1 +1,3 @@
 # Vacation
+
+Winforms desktop aplikacija za evidenciju godišnjih odmora zaposlenika neke firme. Ima mogućnosti generiranja neradnih dana u određenoj godini prema definiranom predlošku(npr. sve subote u godine, blagdani, ...), definiranja dodataka(npr. po stažu) kod definiranja broja dana godišnjeg nekog zaposlenika. Moguće je odrediti neki granični datum do kojeg određeni zaposlenik može iskoristiti "stari" godišnji iz prošle godine. Tu je i mogućnost prikaza u kalendaru, koji je implementiran pomoću datagridviewa, godišnjih zaposlenika po danu u mjesecu u odabranoj godini. Prikaz statističkih podataka(u grafikonu) ukupnosti svih godišnjih u odabranoj godini po mjesecima je također implementirana.
