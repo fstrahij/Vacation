@@ -183,7 +183,7 @@ namespace Vacation.frmBrowse
         {
             if (ZaposlenikID > 0)
             {
-                DialogResult dr = MessageBox.Show("Jeste li sigurni?", "Provjera", MessageBoxButtons.YesNo);
+                DialogResult dr = MessageBox.Show("Jeste li sigurni da želite obrisati SVE?", "Provjera", MessageBoxButtons.YesNo);
                 if (dr == DialogResult.Yes)
                 {
                     Godisnji godisnji = new Godisnji();

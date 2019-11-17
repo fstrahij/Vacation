@@ -63,18 +63,20 @@ namespace Vacation.frmEdit
         private void SpremiClick(object sender, EventArgs e)
         {
             DialogResult dr;
+            string oib = "";
             if (IsValidInputs())
             {
                 dr = MessageBox.Show("Jeste li sigurni?", "Provjera", MessageBoxButtons.YesNo);
                 if (dr == DialogResult.Yes)
                 {
                     int spolId = comboBoxSpol.SelectedIndex >=0 ? comboBoxSpol.SelectedIndex + 1 : int.Parse(SpolId);
+                    oib = (!string.IsNullOrWhiteSpace(txtOib.Text)) ? txtOib.Text : "NULL";
                     Zaposlenik zaposlenik = new Zaposlenik(Id,
                                                             txtIme.Text,
                                                             txtPrezime.Text,
                                                             spolId.ToString(),
                                                             txtAdresa.Text,
-                                                            txtOib.Text
+                                                            oib
                                                             );
                     zaposlenik.Spremi();
                     Forma.UcitajPodatke();

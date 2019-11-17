@@ -170,7 +170,7 @@ namespace Vacation.frmBrowse
             DialogResult dr;
             if (ZaposlenikID > 0)
             {
-                dr = MessageBox.Show("Jeste li sigurni?", "Provjera", MessageBoxButtons.YesNo);
+                dr = MessageBox.Show("Jeste li sigurni da želite obrisati SVE?", "Provjera", MessageBoxButtons.YesNo);
                 if (dr == DialogResult.Yes)
                 {
                     Firma firma = new Firma();

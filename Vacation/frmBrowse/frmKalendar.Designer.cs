@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmKalendar));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
@@ -61,17 +60,8 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle30 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle31 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle32 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmKalendar));
             this.dgvKalendar = new System.Windows.Forms.DataGridView();
-            this.gbGodina = new System.Windows.Forms.GroupBox();
-            this.comboBoxZaposlenici = new System.Windows.Forms.ComboBox();
-            this.comboBoxGodine = new System.Windows.Forms.ComboBox();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.dgvBoja = new System.Windows.Forms.DataGridView();
-            this.Naziv = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Boja = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
-            this.toolStrip1 = new System.Windows.Forms.ToolStrip();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -103,6 +93,18 @@
             this.Column29 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column30 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column31 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.gbGodina = new System.Windows.Forms.GroupBox();
+            this.comboBoxZaposlenici = new System.Windows.Forms.ComboBox();
+            this.comboBoxGodine = new System.Windows.Forms.ComboBox();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.dgvBoja = new System.Windows.Forms.DataGridView();
+            this.Naziv = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Boja = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
+            this.toolStrip1 = new System.Windows.Forms.ToolStrip();
+            this.btnZaposlenici = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvKalendar)).BeginInit();
             this.gbGodina.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -157,107 +159,6 @@
             this.dgvKalendar.TabIndex = 0;
             this.dgvKalendar.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dgvKalendar_CellFormatting);
             this.dgvKalendar.CellPainting += new System.Windows.Forms.DataGridViewCellPaintingEventHandler(this.dgvKalendar_CellPainting);
-            // 
-            // gbGodina
-            // 
-            this.gbGodina.Controls.Add(this.comboBoxZaposlenici);
-            this.gbGodina.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.gbGodina.Location = new System.Drawing.Point(20, 80);
-            this.gbGodina.Name = "gbGodina";
-            this.gbGodina.Size = new System.Drawing.Size(230, 80);
-            this.gbGodina.TabIndex = 17;
-            this.gbGodina.TabStop = false;
-            this.gbGodina.Text = "Odabir zaposlenika";
-            // 
-            // comboBoxZaposlenici
-            // 
-            this.comboBoxZaposlenici.FormattingEnabled = true;
-            this.comboBoxZaposlenici.Location = new System.Drawing.Point(29, 31);
-            this.comboBoxZaposlenici.Name = "comboBoxZaposlenici";
-            this.comboBoxZaposlenici.Size = new System.Drawing.Size(175, 24);
-            this.comboBoxZaposlenici.TabIndex = 0;
-            this.comboBoxZaposlenici.SelectionChangeCommitted += new System.EventHandler(this.SelectionChange);
-            // 
-            // comboBoxGodine
-            // 
-            this.comboBoxGodine.FormattingEnabled = true;
-            this.comboBoxGodine.Location = new System.Drawing.Point(29, 31);
-            this.comboBoxGodine.Name = "comboBoxGodine";
-            this.comboBoxGodine.Size = new System.Drawing.Size(175, 24);
-            this.comboBoxGodine.TabIndex = 0;
-            this.comboBoxGodine.SelectionChangeCommitted += new System.EventHandler(this.comboBoxGodine_SelectionChangeCommitted);
-            // 
-            // groupBox1
-            // 
-            this.groupBox1.Controls.Add(this.comboBoxGodine);
-            this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.groupBox1.Location = new System.Drawing.Point(20, 190);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(230, 80);
-            this.groupBox1.TabIndex = 18;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Odabir godine";
-            // 
-            // dgvBoja
-            // 
-            this.dgvBoja.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvBoja.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Naziv,
-            this.Boja});
-            this.dgvBoja.Enabled = false;
-            this.dgvBoja.Location = new System.Drawing.Point(20, 34);
-            this.dgvBoja.Name = "dgvBoja";
-            this.dgvBoja.RowHeadersWidth = 4;
-            this.dgvBoja.Size = new System.Drawing.Size(194, 116);
-            this.dgvBoja.TabIndex = 23;
-            // 
-            // Naziv
-            // 
-            this.Naziv.HeaderText = "Naziv";
-            this.Naziv.Name = "Naziv";
-            this.Naziv.ReadOnly = true;
-            this.Naziv.Width = 120;
-            // 
-            // Boja
-            // 
-            this.Boja.HeaderText = "Boja";
-            this.Boja.Name = "Boja";
-            this.Boja.ReadOnly = true;
-            this.Boja.Width = 60;
-            // 
-            // toolStripButton1
-            // 
-            this.toolStripButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton1.Image")));
-            this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton1.Margin = new System.Windows.Forms.Padding(10, 1, 0, 2);
-            this.toolStripButton1.Name = "toolStripButton1";
-            this.toolStripButton1.Size = new System.Drawing.Size(39, 39);
-            this.toolStripButton1.Text = "Zatvori";
-            this.toolStripButton1.Click += new System.EventHandler(this.btnZatvori_Click);
-            // 
-            // toolStrip1
-            // 
-            this.toolStrip1.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.toolStrip1.ImageScalingSize = new System.Drawing.Size(35, 35);
-            this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripButton1});
-            this.toolStrip1.Location = new System.Drawing.Point(0, 0);
-            this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(1196, 42);
-            this.toolStrip1.TabIndex = 24;
-            this.toolStrip1.Text = "toolStrip1";
-            // 
-            // groupBox2
-            // 
-            this.groupBox2.Controls.Add(this.dgvBoja);
-            this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.groupBox2.Location = new System.Drawing.Point(20, 447);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(230, 169);
-            this.groupBox2.TabIndex = 19;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Legenda";
             // 
             // Column1
             // 
@@ -538,6 +439,126 @@
             this.Column31.ReadOnly = true;
             this.Column31.Width = 28;
             // 
+            // gbGodina
+            // 
+            this.gbGodina.Controls.Add(this.comboBoxZaposlenici);
+            this.gbGodina.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.gbGodina.Location = new System.Drawing.Point(20, 80);
+            this.gbGodina.Name = "gbGodina";
+            this.gbGodina.Size = new System.Drawing.Size(230, 80);
+            this.gbGodina.TabIndex = 17;
+            this.gbGodina.TabStop = false;
+            this.gbGodina.Text = "Odabir zaposlenika";
+            // 
+            // comboBoxZaposlenici
+            // 
+            this.comboBoxZaposlenici.FormattingEnabled = true;
+            this.comboBoxZaposlenici.Location = new System.Drawing.Point(29, 31);
+            this.comboBoxZaposlenici.Name = "comboBoxZaposlenici";
+            this.comboBoxZaposlenici.Size = new System.Drawing.Size(175, 24);
+            this.comboBoxZaposlenici.TabIndex = 0;
+            this.comboBoxZaposlenici.SelectionChangeCommitted += new System.EventHandler(this.ZaposlenikSelectionChange);
+            // 
+            // comboBoxGodine
+            // 
+            this.comboBoxGodine.FormattingEnabled = true;
+            this.comboBoxGodine.Location = new System.Drawing.Point(29, 31);
+            this.comboBoxGodine.Name = "comboBoxGodine";
+            this.comboBoxGodine.Size = new System.Drawing.Size(175, 24);
+            this.comboBoxGodine.TabIndex = 0;
+            this.comboBoxGodine.SelectionChangeCommitted += new System.EventHandler(this.comboBoxGodine_SelectionChangeCommitted);
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.comboBoxGodine);
+            this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.groupBox1.Location = new System.Drawing.Point(20, 190);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(230, 80);
+            this.groupBox1.TabIndex = 18;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Odabir godine";
+            // 
+            // dgvBoja
+            // 
+            this.dgvBoja.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvBoja.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Naziv,
+            this.Boja});
+            this.dgvBoja.Enabled = false;
+            this.dgvBoja.Location = new System.Drawing.Point(20, 34);
+            this.dgvBoja.Name = "dgvBoja";
+            this.dgvBoja.RowHeadersWidth = 4;
+            this.dgvBoja.Size = new System.Drawing.Size(194, 116);
+            this.dgvBoja.TabIndex = 23;
+            // 
+            // Naziv
+            // 
+            this.Naziv.HeaderText = "Naziv";
+            this.Naziv.Name = "Naziv";
+            this.Naziv.ReadOnly = true;
+            this.Naziv.Width = 120;
+            // 
+            // Boja
+            // 
+            this.Boja.HeaderText = "Boja";
+            this.Boja.Name = "Boja";
+            this.Boja.ReadOnly = true;
+            this.Boja.Width = 60;
+            // 
+            // toolStripButton1
+            // 
+            this.toolStripButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton1.Image")));
+            this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton1.Margin = new System.Windows.Forms.Padding(40, 1, 0, 2);
+            this.toolStripButton1.Name = "toolStripButton1";
+            this.toolStripButton1.Size = new System.Drawing.Size(39, 39);
+            this.toolStripButton1.Text = "Zatvori";
+            this.toolStripButton1.Click += new System.EventHandler(this.btnZatvori_Click);
+            // 
+            // toolStrip1
+            // 
+            this.toolStrip1.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.toolStrip1.ImageScalingSize = new System.Drawing.Size(35, 35);
+            this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.btnZaposlenici,
+            this.toolStripSeparator1,
+            this.toolStripButton1});
+            this.toolStrip1.Location = new System.Drawing.Point(0, 0);
+            this.toolStrip1.Name = "toolStrip1";
+            this.toolStrip1.Size = new System.Drawing.Size(1196, 42);
+            this.toolStrip1.TabIndex = 24;
+            this.toolStrip1.Text = "toolStrip1";
+            // 
+            // btnZaposlenici
+            // 
+            this.btnZaposlenici.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.btnZaposlenici.Enabled = false;
+            this.btnZaposlenici.Image = ((System.Drawing.Image)(resources.GetObject("btnZaposlenici.Image")));
+            this.btnZaposlenici.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnZaposlenici.Margin = new System.Windows.Forms.Padding(6, 1, 10, 2);
+            this.btnZaposlenici.Name = "btnZaposlenici";
+            this.btnZaposlenici.Size = new System.Drawing.Size(39, 39);
+            this.btnZaposlenici.Text = "Zaposlenici";
+            this.btnZaposlenici.Click += new System.EventHandler(this.btnZaposlenici_Click);
+            // 
+            // toolStripSeparator1
+            // 
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 42);
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.dgvBoja);
+            this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.groupBox2.Location = new System.Drawing.Point(20, 447);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(230, 169);
+            this.groupBox2.TabIndex = 19;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Legenda";
+            // 
             // frmKalendar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -608,5 +629,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column29;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column30;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column31;
+        private System.Windows.Forms.ToolStripButton btnZaposlenici;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
     }
 }

@@ -128,5 +128,49 @@ namespace Vacation.customScripts
             Travanj();
             PocetniY = 18;
         }
+
+        public int DajMjesec(int row, int column)
+        {
+            int mjesec = 0;
+            int shift = 0;
+            if (row > 1 && row < 8)
+            {
+                mjesec = IzracunajMjesec(shift, column);
+            }
+            else if (row > 9 && row < 16)
+            {
+                shift += 4;
+                mjesec = IzracunajMjesec(shift, column);
+            }
+            else if (row > 17 && row < 24)
+            {
+                shift += 8;
+                mjesec = IzracunajMjesec(shift, column);
+            }
+            return mjesec;
+        }
+
+        private int IzracunajMjesec(int shift, int column)
+        {
+            int mjesec = 0;
+            if (column < 7)
+            {
+                mjesec = 1 + shift;
+            }
+            else if (column > 7 && column < 15)
+            {
+                mjesec = 2 + shift;
+            }
+            else if (column > 15 && column < 23)
+            {
+                mjesec = 3 + shift;
+            }
+            else if (column > 23 && column < 31)
+            {
+                mjesec = 4 + shift;
+            }
+            return mjesec;
+        }
+
     }
 }

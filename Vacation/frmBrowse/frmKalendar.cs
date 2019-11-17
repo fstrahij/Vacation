@@ -18,6 +18,8 @@ namespace Vacation.frmBrowse
         private int _godina, _zaposlenikId;
         private string _boja;
         private List<DateTime> _godisnji;
+        private Kalendar _kalendar;
+
         private frmKalendar()
         {
             InitializeComponent();
@@ -38,6 +40,7 @@ namespace Vacation.frmBrowse
         public string BojaPozadine { get => _boja; set => _boja = value; }
         public int Godina { get => _godina; set => _godina = value; }
         public int ZaposlenikId { get => _zaposlenikId; set => _zaposlenikId = value; }
+        internal Kalendar Kalendar { get => _kalendar; set => _kalendar = value; }
 
         private void frmKalendar_Load(object sender, EventArgs e)
         {
@@ -51,6 +54,7 @@ namespace Vacation.frmBrowse
                     zaposlenici.Add(item);
                 }
             }
+            zaposlenici.Add(new Zaposlenik(-1, "SVI", "", "", "", ""));
             comboBoxZaposlenici.DataSource = zaposlenici;
             comboBoxZaposlenici.DisplayMember = "ImePrezime";
             comboBoxZaposlenici.ValueMember = "Id";
@@ -102,10 +106,10 @@ namespace Vacation.frmBrowse
             int row, column, dan;
             TipNeradnihDana tip = new TipNeradnihDana();
             string boja = "5";
-            Kalendar kalendar = new Kalendar();
+            Kalendar = new Kalendar();
             while (DateTime.Compare(datumOd, datumDo) <= 0)
             {
-                Tuple<int, int> koordinate = kalendar.DajPocetneKoordinate(datumOd);
+                Tuple<int, int> koordinate = Kalendar.DajPocetneKoordinate(datumOd);
                 row = koordinate.Item1;
                 column = koordinate.Item2;                
                 if (column != 0)
@@ -202,14 +206,15 @@ namespace Vacation.frmBrowse
             Nedjelja = 7
         }
 
-        private void SelectionChange(object sender, EventArgs e)
+        private void ZaposlenikSelectionChange(object sender, EventArgs e)
         {
             dgvKalendar.Rows.Clear();
             int zaposlenikId = 0;
             int.TryParse(comboBoxZaposlenici.SelectedValue.ToString(), out zaposlenikId);
             ZaposlenikId = zaposlenikId;
             comboBoxGodine.Items.Clear();
-            comboBoxGodine.Text = null;
+            comboBoxGodine.Text = null;            
+            
             foreach (var item in Upit.DajGodineGodisnjegZaposlenika(zaposlenikId))
             {
                 comboBoxGodine.Items.Add(item);
@@ -295,6 +300,19 @@ namespace Vacation.frmBrowse
             return false;
         }
 
+        private void btnZaposlenici_Click(object sender, EventArgs e)
+        {
+            int mjesec = 0;
+            string datum = "";
+            
+            foreach (DataGridViewCell cell in dgvKalendar.SelectedCells)
+            {
+                mjesec = Kalendar.DajMjesec(cell.RowIndex, cell.ColumnIndex);
+                datum = cell.Value.ToString() + "." + mjesec + "." + Godina;
+                Console.WriteLine(datum);
+            }
+        }
+
         private void comboBoxGodine_SelectionChangeCommitted(object sender, EventArgs e)
         {
             Godisnji = new List<DateTime>();
@@ -302,7 +320,8 @@ namespace Vacation.frmBrowse
             DateTime datumDo;
             string format = "d.M.yyyy. H:mm:ss";
             Godina = int.Parse(comboBoxGodine.SelectedItem.ToString());
-            
+            btnZaposlenici.Enabled = (ZaposlenikId == -1) ? true : false;
+
             foreach (DataRow row in Upit.DajGodisnjiPoZaposlenikuIGodini(ZaposlenikId, Godina).Rows)
             {
                 datumOd = DateTime.ParseExact(row["DatumOd"].ToString(), format, null);

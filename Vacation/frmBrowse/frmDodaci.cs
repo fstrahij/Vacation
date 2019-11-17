@@ -115,7 +115,7 @@ namespace Vacation.frmBrowse
 
         private void DeaktivirajSveClick(object sender, EventArgs e)
         {
-            DialogResult dr = MessageBox.Show("Jeste li sigurni?", "Provjera", MessageBoxButtons.YesNo);
+            DialogResult dr = MessageBox.Show("Jeste li sigurni da želite obrisati SVE?", "Provjera", MessageBoxButtons.YesNo);
             if (dr == DialogResult.Yes)
             {
                 Dodatak dodatak = new Dodatak();
