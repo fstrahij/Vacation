@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Vacation.customScripts;
+using Vacation.frmEdit;
 using Vacation.modelScripts;
 
 namespace Vacation.frmBrowse
@@ -303,13 +304,41 @@ namespace Vacation.frmBrowse
         private void btnZaposlenici_Click(object sender, EventArgs e)
         {
             int mjesec = 0;
+            int dan = 0;
             string datum = "";
-            
+            List<string> datumi = new List<string>();
             foreach (DataGridViewCell cell in dgvKalendar.SelectedCells)
             {
-                mjesec = Kalendar.DajMjesec(cell.RowIndex, cell.ColumnIndex);
-                datum = cell.Value.ToString() + "." + mjesec + "." + Godina;
-                Console.WriteLine(datum);
+                if (cell.Value != null && int.TryParse(cell.Value.ToString(), out dan))
+                {
+                    mjesec = Kalendar.DajMjesec(cell.RowIndex, cell.ColumnIndex);
+                    datum = Godina + "-" + mjesec + "-" + cell.Value.ToString();
+                    datumi.Add(datum);
+                }                
+            }
+            if (datumi.Count > 0)
+            {
+                PrikaziFormuZaposlenika(datumi);
+            }
+        }
+        private void PrikaziFormuZaposlenika(List<string> datumi)
+        {
+            List<Zaposlenik> zaposlenici = new List<Zaposlenik>();
+            foreach (DataRow item in Upit.DajZaposlenike(Godina, datumi).Rows)
+            {
+                zaposlenici.Add(new Zaposlenik(int.Parse(item["Id"].ToString()),
+                                                item["Ime"].ToString(),
+                                                item["Prezime"].ToString(),
+                                                item["SpolId"].ToString(),
+                                                item["Adresa"].ToString(),
+                                                item["Oib"].ToString()
+                                        ));
+            }
+            string text = "Zaposlenici koji su koristili godišnji na odabrane datume";
+            using (var forma = new frmPrikazZaposlenika(this, text))
+            {
+                forma.Zaposlenici = zaposlenici;
+                forma.ShowDialog();
             }
         }
 

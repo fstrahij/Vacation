@@ -25,30 +25,33 @@ namespace Vacation.customScripts
             return lista;
         }
 
-        public static DataTable DajGodisnji() 
+        public static DataTable DajZaposlenike(int pGodina, List<string> pDatumi)
         {
-            List<Godisnji> lista = new List<Godisnji>();
-            Godisnji godisnji = new Godisnji();
-            SqlUpit = "SELECT DatumOd, DatumDo FROM Godisnji WHERE Aktivan = 1";
-            /*foreach (DataRow row in DatabaseConnection.Instance.DohvatiPodatke(SqlUpit).Rows)
+            if (pDatumi.Count < 1)
             {
-                godisnji.Id = int.Parse(row["Id"].ToString());
-                godisnji.ZaposlenikGodisnjiId = row["ZaposlenikGodisnjiId"].ToString();
-                godisnji.DatumOd = DateTime.ParseExact(row["DatumOd"].ToString(), Format, null);
-                godisnji.DatumDo = DateTime.ParseExact(row["DatumDo"].ToString(), Format, null);
-                godisnji.BrojDana = row["BrojDana"].ToString();
-                godisnji.OstaloNoviBrojDana = row["OstaloNoviBrojDana"].ToString();
-                godisnji.OstaloStariBrojDana = row["OstaloStariBrojDana"].ToString();
-                lista.Add(godisnji);
-            }*/
+                return null;
+            }
+            string datumi = "";
+            foreach (var datum in pDatumi)
+            {
+                datumi += " AND Godisnji.DatumOd <= '" + datum + "' AND Godisnji.DatumDo >= '" + datum + "'";
+            }
+            SqlUpit = "SELECT Zaposlenici.Id, Ime, Prezime, SpolId, Adresa, Oib FROM Zaposlenici, ZaposlenikGodisnji, Godisnji" +
+                " WHERE Zaposlenici.Id = ZaposlenikGodisnji.ZaposlenikId AND ZaposlenikGodisnji.Id = Godisnji.ZaposlenikGodisnjiId" +
+                " AND Zaposlenici.Aktivan = 1 AND ZaposlenikGodisnji.Aktivan = 1 AND Godisnji.Aktivan = 1" +
+                " AND YEAR(DatumOd) = " + pGodina + datumi;
+            Console.WriteLine(SqlUpit);
+            return DatabaseConnection.Instance.DohvatiPodatke(SqlUpit);
+        }
+
+        public static DataTable DajSveGodisnje() 
+        {
+            SqlUpit = "SELECT DatumOd, DatumDo FROM Godisnji WHERE Aktivan = 1";
             return DatabaseConnection.Instance.DohvatiPodatke(SqlUpit);
         }
 
         public static DataTable DajGodisnjiPoZaposlenikuIGodini(int pZaposlenikId, int pGodina)
-        {
-            List<Godisnji> lista = new List<Godisnji>();
-            Godisnji godisnji = new Godisnji();
-            
+        {            
             SqlUpit = "SELECT DatumOd, DatumDo FROM Godisnji, ZaposlenikGodisnji " +
             "WHERE ZaposlenikGodisnji.Id = Godisnji.ZaposlenikGodisnjiId " +
             "AND ZaposlenikGodisnji.Aktivan = 1 AND Godisnji.Aktivan = 1 " +

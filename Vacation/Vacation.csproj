@@ -154,6 +154,12 @@
     <Compile Include="frmEdit\frmNeradniDaniEditor.Designer.cs">
       <DependentUpon>frmNeradniDaniEditor.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmEdit\frmPrikazZaposlenika.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmEdit\frmPrikazZaposlenika.Designer.cs">
+      <DependentUpon>frmPrikazZaposlenika.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmEdit\frmTemplateEditor.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -264,6 +270,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmEdit\frmNeradniDaniEditor.resx">
       <DependentUpon>frmNeradniDaniEditor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmEdit\frmPrikazZaposlenika.resx">
+      <DependentUpon>frmPrikazZaposlenika.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmEdit\frmTemplateEditor.resx">
       <DependentUpon>frmTemplateEditor.cs</DependentUpon>

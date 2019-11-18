@@ -52,7 +52,7 @@ namespace Vacation.frmBrowse
             Statistika statistika = new Statistika();
             DateTime DatumOd, DatumDo;
             statistika.Godina = Godina;
-            foreach (DataRow row in Upit.DajGodisnji().Rows)
+            foreach (DataRow row in Upit.DajSveGodisnje().Rows)
             {
                 DatumOd = DateTime.ParseExact(row["DatumOd"].ToString(), "d.M.yyyy. H:mm:ss", null);
                 DatumDo = DateTime.ParseExact(row["DatumDo"].ToString(), "d.M.yyyy. H:mm:ss", null);
