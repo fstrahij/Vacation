@@ -61,6 +61,22 @@
         "PrivateKeyFile" = "8:"
         "TimeStampServer" = "8:"
         "InstallerBootstrapper" = "3:2"
+            "BootstrapperCfg:{63ACBE69-63AA-4F98-B2B6-99F9E24495F2}"
+            {
+            "Enabled" = "11:TRUE"
+            "PromptEnabled" = "11:TRUE"
+            "PrerequisitesLocation" = "2:1"
+            "Url" = "8:"
+            "ComponentsUrl" = "8:"
+                "Items"
+                {
+                    "{EDC2488A-8267-493A-A98E-7D9C3B36CDF3}:.NETFramework,Version=v4.6.1"
+                    {
+                    "Name" = "8:Microsoft .NET Framework 4.6.1 (x86 and x64)"
+                    "ProductCode" = "8:.NETFramework,Version=v4.6.1"
+                    }
+                }
+            }
         }
         "Release"
         {
@@ -285,15 +301,15 @@
         {
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:Vacation"
-        "ProductCode" = "8:{483AC5CE-9224-4535-9302-2C8E64CBE02E}"
-        "PackageCode" = "8:{09751CB7-936D-4B99-B990-6CA6C9B117A6}"
+        "ProductCode" = "8:{5BC3ED51-7D51-4003-AE8E-F706D9336B9F}"
+        "PackageCode" = "8:{92E022D0-EC70-431F-B9D8-7EFC3F113A45}"
         "UpgradeCode" = "8:{E9BF389B-A225-42EB-8DF9-C5D2F12C4BC9}"
         "AspNetVersion" = "8:2.0.50727.0"
         "RestartWWWService" = "11:FALSE"
         "RemovePreviousVersions" = "11:FALSE"
         "DetectNewerInstalledVersion" = "11:TRUE"
         "InstallAllUsers" = "11:FALSE"
-        "ProductVersion" = "8:1.0.0"
+        "ProductVersion" = "8:1.1.0"
         "Manufacturer" = "8:fsCompany"
         "ARPHELPTELEPHONE" = "8:"
         "ARPHELPLINK" = "8:"
