@@ -310,10 +310,14 @@ namespace Vacation.frmBrowse
             List<Tuple<string, Zaposlenik>> lista = new List<Tuple<string, Zaposlenik>>();
             Zaposlenik zaposlenik;
             DateTime datum = new DateTime();
-            Tuple<string, Zaposlenik> zaposlenikDatum;
+            TipNeradnihDana tip = new TipNeradnihDana();
+            string boja = "5";
             foreach (DataGridViewCell cell in dgvKalendar.SelectedCells)
             {
-                if (cell.Value != null && int.TryParse(cell.Value.ToString(), out dan))
+
+                if (cell.Style.BackColor == ColorTranslator.FromHtml(tip.DajBojuTipa(boja))
+                    && cell.Value != null 
+                    && int.TryParse(cell.Value.ToString(), out dan))
                 {
                     mjesec = Kalendar.DajMjesec(cell.RowIndex, cell.ColumnIndex);
                     datumString = Godina + "-" + mjesec + "-" + cell.Value.ToString();
