@@ -25,22 +25,13 @@ namespace Vacation.customScripts
             return lista;
         }
 
-        public static DataTable DajZaposlenike(int pGodina, List<string> pDatumi)
+        public static DataTable DajZaposlenike(int pGodina, string pDatum)
         {
-            if (pDatumi.Count < 1)
-            {
-                return null;
-            }
-            string datumi = "";
-            foreach (var datum in pDatumi)
-            {
-                datumi += " AND Godisnji.DatumOd <= '" + datum + "' AND Godisnji.DatumDo >= '" + datum + "'";
-            }
             SqlUpit = "SELECT Zaposlenici.Id, Ime, Prezime, SpolId, Adresa, Oib FROM Zaposlenici, ZaposlenikGodisnji, Godisnji" +
                 " WHERE Zaposlenici.Id = ZaposlenikGodisnji.ZaposlenikId AND ZaposlenikGodisnji.Id = Godisnji.ZaposlenikGodisnjiId" +
                 " AND Zaposlenici.Aktivan = 1 AND ZaposlenikGodisnji.Aktivan = 1 AND Godisnji.Aktivan = 1" +
-                " AND YEAR(DatumOd) = " + pGodina + datumi;
-            Console.WriteLine(SqlUpit);
+                " AND YEAR(DatumOd) = " + pGodina + " AND Godisnji.DatumOd <= '" + pDatum + "' AND Godisnji.DatumDo >= '" + pDatum + "'";
+            
             return DatabaseConnection.Instance.DohvatiPodatke(SqlUpit);
         }
 

@@ -14,39 +14,80 @@ namespace Vacation.frmEdit
 {
     public partial class frmPrikazZaposlenika : Form
     {
-        private List<Zaposlenik> _zaposlenici;
+        private List<Tuple<string, Zaposlenik>> _lista;
 
         private frmKalendar Forma { get; set; }
-        internal List<Zaposlenik> Zaposlenici { get => _zaposlenici; set => _zaposlenici = value; }
+        internal List<Tuple<string, Zaposlenik>> Lista { get => _lista; set => _lista = value; }
 
         public frmPrikazZaposlenika(frmKalendar pForma, string pGbText)
         {
             InitializeComponent();
             groupBox1.Text = pGbText;
-            Zaposlenici = new List<Zaposlenik>();
+            Lista = new List<Tuple<string, Zaposlenik>>();
+        }
+
+        private Color PostaviBoju(Color boja)
+        {
+            if (boja == Color.White)
+            {
+                return Color.Gainsboro;
+            }
+            else
+            {
+                return Color.White;
+            }
         }
 
         private void UcitajPodatke()
         {
             Zaposlenik zaposlenik = new Zaposlenik();
-            for (int i = 0; i < Zaposlenici.Count; i++)
+            string datum = (Lista[0].Item1 != null) ? Lista[0].Item1 : "";
+            Color boja = Color.White;
+            for (int i = 0; i < Lista.Count; i++)
             {
-                dataGridView1.Rows.Add(Zaposlenici[i].Ime,
-                                        Zaposlenici[i].Prezime,
-                                        zaposlenik.DajNazivSpola(int.Parse(Zaposlenici[i].SpolId)),
-                                        Zaposlenici[i].Adresa,
-                                        Zaposlenici[i].Oib
+                dataGridView1.Rows.Add(Lista[i].Item1,
+                                        Lista[i].Item2.Ime,
+                                        Lista[i].Item2.Prezime,
+                                        zaposlenik.DajNazivSpola(int.Parse(Lista[i].Item2.SpolId)),
+                                        Lista[i].Item2.Adresa,
+                                        Lista[i].Item2.Oib
                                         );
-                if ((i + 1) % 2 != 0)
+                if (datum != Lista[i].Item1)
                 {
-                    dataGridView1.Rows[i].DefaultCellStyle.BackColor = Color.Gainsboro;
+                    datum = Lista[i].Item1;
+                    boja = PostaviBoju(boja);
                 }
+                dataGridView1.Rows[i].DefaultCellStyle.BackColor = boja;
             }
         }
 
         private void frmPrikazZaposlenika_Load(object sender, EventArgs e)
         {
             UcitajPodatke();
+        }
+
+        private void btnPretrazi_Click(object sender, EventArgs e)
+        {
+            dataGridView1.Rows.Clear();
+            UcitajPodatke();
+            if (!string.IsNullOrWhiteSpace(txtPretrazi.Text))
+            {
+                bool pronadjen;
+                foreach (DataGridViewRow row in dataGridView1.Rows)
+                {
+                    pronadjen = false;
+                    for (int i = 0; i < row.Cells.Count; i++)
+                    {
+                        if (row.Cells[i].Value.ToString() == txtPretrazi.Text)
+                        {
+                            pronadjen = true;
+                            break;
+                        }
+                    }
+                    row.Visible = pronadjen;
+                }
+            }
+            
         }
     }
 }

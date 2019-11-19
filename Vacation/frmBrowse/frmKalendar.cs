@@ -305,39 +305,44 @@ namespace Vacation.frmBrowse
         {
             int mjesec = 0;
             int dan = 0;
-            string datum = "";
-            List<string> datumi = new List<string>();
+            string format = "yyyy-M-d";
+            string datumString = "";
+            List<Tuple<string, Zaposlenik>> lista = new List<Tuple<string, Zaposlenik>>();
+            Zaposlenik zaposlenik;
+            DateTime datum = new DateTime();
+            Tuple<string, Zaposlenik> zaposlenikDatum;
             foreach (DataGridViewCell cell in dgvKalendar.SelectedCells)
             {
                 if (cell.Value != null && int.TryParse(cell.Value.ToString(), out dan))
                 {
                     mjesec = Kalendar.DajMjesec(cell.RowIndex, cell.ColumnIndex);
-                    datum = Godina + "-" + mjesec + "-" + cell.Value.ToString();
-                    datumi.Add(datum);
-                }                
-            }
-            if (datumi.Count > 0)
-            {
-                PrikaziFormuZaposlenika(datumi);
-            }
-        }
-        private void PrikaziFormuZaposlenika(List<string> datumi)
-        {
-            List<Zaposlenik> zaposlenici = new List<Zaposlenik>();
-            foreach (DataRow item in Upit.DajZaposlenike(Godina, datumi).Rows)
-            {
-                zaposlenici.Add(new Zaposlenik(int.Parse(item["Id"].ToString()),
+                    datumString = Godina + "-" + mjesec + "-" + cell.Value.ToString();
+                    datum = DateTime.ParseExact(datumString, format, null);
+                    foreach (DataRow item in Upit.DajZaposlenike(Godina, datumString).Rows)
+                    {
+                        zaposlenik = new Zaposlenik(int.Parse(item["Id"].ToString()),
                                                 item["Ime"].ToString(),
                                                 item["Prezime"].ToString(),
                                                 item["SpolId"].ToString(),
                                                 item["Adresa"].ToString(),
                                                 item["Oib"].ToString()
-                                        ));
+                            );
+                        lista.Add(Tuple.Create(datum.ToString("dd.MM.yyyy."), zaposlenik));
+                    }
+                }                
             }
+            if (lista.Count > 0)
+            {
+                PrikaziFormuZaposlenika(lista);
+            }
+        }
+
+        private void PrikaziFormuZaposlenika(List<Tuple<string, Zaposlenik>> lista)
+        {
             string text = "Zaposlenici koji su koristili godišnji na odabrane datume";
             using (var forma = new frmPrikazZaposlenika(this, text))
             {
-                forma.Zaposlenici = zaposlenici;
+                forma.Lista = lista;
                 forma.ShowDialog();
             }
         }
