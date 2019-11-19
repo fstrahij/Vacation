@@ -12,18 +12,29 @@ using Vacation.modelScripts;
 
 namespace Vacation.frmEdit
 {
-    public partial class frmPrikazZaposlenika : Form
+    public partial class frmIzvjestaj : Form
     {
+        private static frmIzvjestaj _instance = null;
         private List<Tuple<string, Zaposlenik>> _lista;
 
-        private frmKalendar Forma { get; set; }
         internal List<Tuple<string, Zaposlenik>> Lista { get => _lista; set => _lista = value; }
 
-        public frmPrikazZaposlenika(frmKalendar pForma, string pGbText)
+        private frmIzvjestaj()
         {
             InitializeComponent();
-            groupBox1.Text = pGbText;
             Lista = new List<Tuple<string, Zaposlenik>>();
+        }
+
+        public static frmIzvjestaj Instance
+        {
+            get
+            {
+                if (_instance == null)
+                {
+                    _instance = new frmIzvjestaj();
+                }
+                return _instance;
+            }
         }
 
         private Color PostaviBoju(Color boja)
@@ -66,11 +77,18 @@ namespace Vacation.frmEdit
             UcitajPodatke();
         }
 
-        private void btnPretrazi_Click(object sender, EventArgs e)
+        private string TrimString(string text)
         {
-            dataGridView1.Rows.Clear();
-            UcitajPodatke();
-            if (!string.IsNullOrWhiteSpace(txtPretrazi.Text))
+            char[] charsToTrim = { ' ' };
+            text = text.TrimEnd(charsToTrim);
+            return text = text.TrimStart(charsToTrim);
+        }
+
+        private void Pretrazi()
+        {
+            PostaviSveVidljivo();
+            string trazeniText = TrimString(txtPretrazi.Text);
+            if (!string.IsNullOrWhiteSpace(trazeniText))
             {
                 bool pronadjen;
                 foreach (DataGridViewRow row in dataGridView1.Rows)
@@ -78,7 +96,7 @@ namespace Vacation.frmEdit
                     pronadjen = false;
                     for (int i = 0; i < row.Cells.Count; i++)
                     {
-                        if (row.Cells[i].Value.ToString() == txtPretrazi.Text)
+                        if (row.Cells[i].Value.ToString() == trazeniText)
                         {
                             pronadjen = true;
                             break;
@@ -87,7 +105,39 @@ namespace Vacation.frmEdit
                     row.Visible = pronadjen;
                 }
             }
-            
+        }
+
+        private void btnPretrazi_Click(object sender, EventArgs e)
+        {
+            Pretrazi();      
+        }
+
+        private void PostaviSveVidljivo()
+        {
+            foreach (DataGridViewRow row in dataGridView1.Rows)
+            {
+                row.Visible = true;
+            }
+        }
+
+        private void toolStripButton1_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void frmPrikazZaposlenika_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            _instance = null;
+            GlavniMeni.Instance.PostaviListuOtvorenihProzora();
+        }
+
+        private void txtPretrazi_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                Pretrazi();
+                e.Handled = e.SuppressKeyPress = true;
+            }
         }
     }
 }

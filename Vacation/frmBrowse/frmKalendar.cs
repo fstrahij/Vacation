@@ -343,12 +343,12 @@ namespace Vacation.frmBrowse
 
         private void PrikaziFormuZaposlenika(List<Tuple<string, Zaposlenik>> lista)
         {
-            string text = "Zaposlenici koji su koristili godišnji na odabrane datume";
-            using (var forma = new frmPrikazZaposlenika(this, text))
-            {
-                forma.Lista = lista;
-                forma.ShowDialog();
-            }
+            frmIzvjestaj forma = frmIzvjestaj.Instance;
+            forma.Lista = lista;
+            forma.MdiParent = GlavniMeni.Instance;
+            forma.WindowState = FormWindowState.Maximized;
+            forma.Show();
+            GlavniMeni.Instance.PostaviListuOtvorenihProzora();
         }
 
         private void comboBoxGodine_SelectionChangeCommitted(object sender, EventArgs e)

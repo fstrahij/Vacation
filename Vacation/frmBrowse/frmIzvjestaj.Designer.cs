@@ -1,6 +1,6 @@
 ﻿namespace Vacation.frmEdit
 {
-    partial class frmPrikazZaposlenika
+    partial class frmIzvjestaj
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmIzvjestaj));
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.Datum = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Ime = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -37,11 +38,14 @@
             this.Adresa = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Oib = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.txtPretrazi = new System.Windows.Forms.TextBox();
-            this.btnPretrazi = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
+            this.toolStrip1 = new System.Windows.Forms.ToolStrip();
+            this.btnPretrazi = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
+            this.txtPretrazi = new System.Windows.Forms.ToolStripTextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox1.SuspendLayout();
+            this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // dataGridView1
@@ -67,8 +71,8 @@
             // 
             // Datum
             // 
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.Datum.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.Datum.DefaultCellStyle = dataGridViewCellStyle7;
             this.Datum.HeaderText = "Datum";
             this.Datum.Name = "Datum";
             this.Datum.ReadOnly = true;
@@ -115,33 +119,57 @@
             this.groupBox1.Size = new System.Drawing.Size(948, 550);
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "groupBox1";
+            this.groupBox1.Text = "Zaposlenici koji su koristili godišnji na odabrane datume";
             // 
-            // txtPretrazi
+            // toolStrip1
             // 
-            this.txtPretrazi.Location = new System.Drawing.Point(340, 40);
-            this.txtPretrazi.Name = "txtPretrazi";
-            this.txtPretrazi.Size = new System.Drawing.Size(226, 20);
-            this.txtPretrazi.TabIndex = 2;
+            this.toolStrip1.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.toolStrip1.ImageScalingSize = new System.Drawing.Size(35, 35);
+            this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.txtPretrazi,
+            this.btnPretrazi,
+            this.toolStripSeparator1,
+            this.toolStripButton1});
+            this.toolStrip1.Location = new System.Drawing.Point(0, 0);
+            this.toolStrip1.Name = "toolStrip1";
+            this.toolStrip1.Size = new System.Drawing.Size(1016, 42);
+            this.toolStrip1.TabIndex = 25;
+            this.toolStrip1.Text = "toolStrip1";
             // 
             // btnPretrazi
             // 
-            this.btnPretrazi.Location = new System.Drawing.Point(580, 40);
+            this.btnPretrazi.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.btnPretrazi.Image = ((System.Drawing.Image)(resources.GetObject("btnPretrazi.Image")));
+            this.btnPretrazi.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnPretrazi.Margin = new System.Windows.Forms.Padding(6, 1, 10, 2);
             this.btnPretrazi.Name = "btnPretrazi";
-            this.btnPretrazi.Size = new System.Drawing.Size(75, 20);
-            this.btnPretrazi.TabIndex = 3;
-            this.btnPretrazi.Text = "Pretrazi";
-            this.btnPretrazi.UseVisualStyleBackColor = true;
+            this.btnPretrazi.Size = new System.Drawing.Size(39, 39);
+            this.btnPretrazi.Text = "Pretraži";
             this.btnPretrazi.Click += new System.EventHandler(this.btnPretrazi_Click);
             // 
-            // label1
+            // toolStripSeparator1
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(17, 43);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(315, 13);
-            this.label1.TabIndex = 4;
-            this.label1.Text = "Pretraživanje po datumu, imenu, prezimenu, spolu, adresi ili oibu:  ";
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 42);
+            // 
+            // toolStripButton1
+            // 
+            this.toolStripButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton1.Image")));
+            this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton1.Margin = new System.Windows.Forms.Padding(40, 1, 0, 2);
+            this.toolStripButton1.Name = "toolStripButton1";
+            this.toolStripButton1.Size = new System.Drawing.Size(39, 39);
+            this.toolStripButton1.Text = "Zatvori";
+            this.toolStripButton1.Click += new System.EventHandler(this.toolStripButton1_Click);
+            // 
+            // txtPretrazi
+            // 
+            this.txtPretrazi.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.txtPretrazi.Margin = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.txtPretrazi.Name = "txtPretrazi";
+            this.txtPretrazi.Size = new System.Drawing.Size(170, 42);
+            this.txtPretrazi.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtPretrazi_KeyDown);
             // 
             // frmPrikazZaposlenika
             // 
@@ -150,15 +178,16 @@
             this.AutoSize = true;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.ClientSize = new System.Drawing.Size(1016, 666);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.btnPretrazi);
-            this.Controls.Add(this.txtPretrazi);
+            this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.groupBox1);
             this.Name = "frmPrikazZaposlenika";
-            this.Text = "frmPrikazZaposlenika";
+            this.Text = "Izvještaj";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.frmPrikazZaposlenika_FormClosed);
             this.Load += new System.EventHandler(this.frmPrikazZaposlenika_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.groupBox1.ResumeLayout(false);
+            this.toolStrip1.ResumeLayout(false);
+            this.toolStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -174,8 +203,10 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Spol;
         private System.Windows.Forms.DataGridViewTextBoxColumn Adresa;
         private System.Windows.Forms.DataGridViewTextBoxColumn Oib;
-        private System.Windows.Forms.TextBox txtPretrazi;
-        private System.Windows.Forms.Button btnPretrazi;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ToolStrip toolStrip1;
+        private System.Windows.Forms.ToolStripTextBox txtPretrazi;
+        private System.Windows.Forms.ToolStripButton btnPretrazi;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
+        private System.Windows.Forms.ToolStripButton toolStripButton1;
     }
 }
