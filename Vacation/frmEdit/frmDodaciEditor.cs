@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Vacation.customScripts;
 using Vacation.frmBrowse;
 using Vacation.modelScripts;
 
@@ -58,10 +59,13 @@ namespace Vacation.frmEdit
                 dr = MessageBox.Show("Jeste li sigurni?", "Provjera", MessageBoxButtons.YesNo);
                 if (dr == DialogResult.Yes)
                 {
+                    string naziv = Trimmer.TrimString(txtNaziv.Text);
+                    string brojDana = Trimmer.TrimString(txtBrojDana.Text);
+                    string godinaPrava = Trimmer.TrimString(txtGodinaPrava.Text);
                     Dodatak dodatak = new Dodatak(Id,
-                                                txtNaziv.Text,
-                                                txtBrojDana.Text,
-                                                txtGodinaPrava.Text
+                                                naziv,
+                                                brojDana,
+                                                godinaPrava
                                                 );
                     dodatak.Spremi();
                     Forma.UcitajPodatke();

@@ -69,6 +69,7 @@
     <Compile Include="customScripts\Kalendar.cs" />
     <Compile Include="customScripts\Statistika.cs" />
     <Compile Include="customScripts\PomocniBrojac.cs" />
+    <Compile Include="customScripts\Trimmer.cs" />
     <Compile Include="customScripts\Upit.cs" />
     <Compile Include="frmBrowse\frmZaposlenikDodaci.cs">
       <SubType>Form</SubType>

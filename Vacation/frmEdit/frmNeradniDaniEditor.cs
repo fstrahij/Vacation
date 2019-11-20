@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Windows.Forms;
+using Vacation.customScripts;
 using Vacation.frmBrowse;
 using Vacation.modelScripts;
 
@@ -52,8 +53,9 @@ namespace Vacation.frmEdit
                 DialogResult dr = MessageBox.Show("Jeste li sigurni?", "Provjera", MessageBoxButtons.YesNo);
                 if (dr == DialogResult.Yes)
                 {
+                    string naziv = Trimmer.TrimString(txtNaziv.Text);
                     NeradniDan dan = new NeradniDan(Id,
-                                                    txtNaziv.Text,
+                                                    naziv,
                                                     dtpDatum.Value,
                                                     TipId
                                                     );

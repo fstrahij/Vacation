@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Vacation.customScripts;
 using Vacation.frmBrowse;
 using Vacation.modelScripts;
 
@@ -78,6 +79,7 @@ namespace Vacation.frmEdit
                 dr = MessageBox.Show("Jeste li sigurni?", "Provjera", MessageBoxButtons.YesNo);
                 if (dr == DialogResult.Yes)
                 {
+                    string naziv = Trimmer.TrimString(txtNaziv.Text);
                     DatumOd = dtpDatumOd.Value;
                     if (dtpDatumDo.Enabled)
                     {
@@ -87,7 +89,7 @@ namespace Vacation.frmEdit
                     {
                         DatumDo = null;
                     }                    
-                    Firma firma = new Firma(Id, ZaposlenikId, txtNaziv.Text, (DateTime) DatumOd, DatumDo);
+                    Firma firma = new Firma(Id, ZaposlenikId, naziv, (DateTime) DatumOd, DatumDo);
                     firma.Spremi();
                     Forma.UcitajPodatke();
                     this.Close();

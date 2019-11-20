@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Vacation.customScripts;
 using Vacation.frmBrowse;
 using Vacation.modelScripts;
 
@@ -63,19 +64,22 @@ namespace Vacation.frmEdit
         private void SpremiClick(object sender, EventArgs e)
         {
             DialogResult dr;
-            string oib = "";
             if (IsValidInputs())
             {
                 dr = MessageBox.Show("Jeste li sigurni?", "Provjera", MessageBoxButtons.YesNo);
                 if (dr == DialogResult.Yes)
                 {
                     int spolId = comboBoxSpol.SelectedIndex >=0 ? comboBoxSpol.SelectedIndex + 1 : int.Parse(SpolId);
-                    oib = (!string.IsNullOrWhiteSpace(txtOib.Text)) ? txtOib.Text : "NULL";
+                    string oib = (!string.IsNullOrWhiteSpace(txtOib.Text)) ? txtOib.Text : "NULL";
+                    string ime = Trimmer.TrimString(txtIme.Text);
+                    string prezime = Trimmer.TrimString(txtPrezime.Text);
+                    string adresa = Trimmer.TrimString(txtAdresa.Text);
+                    oib = Trimmer.TrimString(oib);
                     Zaposlenik zaposlenik = new Zaposlenik(Id,
-                                                            txtIme.Text,
-                                                            txtPrezime.Text,
+                                                            ime,
+                                                            prezime,
                                                             spolId.ToString(),
-                                                            txtAdresa.Text,
+                                                            adresa,
                                                             oib
                                                             );
                     zaposlenik.Spremi();

@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Vacation.customScripts;
 
 namespace Vacation
 {
@@ -58,7 +59,8 @@ namespace Vacation
                 dr = MessageBox.Show("Jeste li sigurni?", "Provjera", MessageBoxButtons.YesNo);
                 if (dr == DialogResult.Yes)
                 {
-                    TipNeradnihDana tip = new TipNeradnihDana(Id, txtNaziv.Text, txtBoja.Text);
+                    string naziv = Trimmer.TrimString(txtNaziv.Text);
+                    TipNeradnihDana tip = new TipNeradnihDana(Id, naziv, txtBoja.Text);
                     tip.Spremi();
                     Forma.UcitajPodatke();
                     this.Close();

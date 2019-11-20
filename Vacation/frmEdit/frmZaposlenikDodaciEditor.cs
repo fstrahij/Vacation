@@ -64,7 +64,6 @@ namespace Vacation.frmEdit
                 dr = MessageBox.Show("Jeste li sigurni?", "Provjera", MessageBoxButtons.YesNo);
                 if (dr == DialogResult.Yes)
                 {
-
                     Upit.SpremiZaposlenikDodaci(ZaposlenikId, DodatakId);
                     Forma.UcitajPodatke();
                     this.Close();

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Windows.Forms;
+using Vacation.customScripts;
 
 namespace Vacation.frmEdit
 {
@@ -50,12 +51,15 @@ namespace Vacation.frmEdit
                 SetInputs();
                 dr = MessageBox.Show("Jeste li sigurni?", "Provjera", MessageBoxButtons.YesNo);
                 if (dr == DialogResult.Yes)
-                {                                        
+                {
+                    string naziv = Trimmer.TrimString(txtNaziv.Text);
+                    Dan = Trimmer.TrimString(Dan);
+                    Mjesec = Trimmer.TrimString(Mjesec);
                     NeradaniDanTemplate template = new NeradaniDanTemplate(Id,  
                                                                             Dan,
                                                                             Mjesec,
                                                                             TipId,
-                                                                            txtNaziv.Text
+                                                                            naziv
                                                                             );
                     template.Spremi();
                     Forma.UcitajPodatke();

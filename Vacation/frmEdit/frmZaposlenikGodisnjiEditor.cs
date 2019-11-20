@@ -50,10 +50,11 @@ namespace Vacation.frmEdit
                 dr = MessageBox.Show("Jeste li sigurni?", "Provjera", MessageBoxButtons.YesNo);
                 if (dr == DialogResult.Yes)
                 {
+                    string brojDana = Trimmer.TrimString(txtBrojDana.Text);
                     ZaposlenikGodisnji zapGod = new ZaposlenikGodisnji( Id,
                                             ZaposlenikId,
                                             txtGodina.Text,
-                                            txtBrojDana.Text
+                                            brojDana
                         );
                     zapGod.Spremi();
                     Forma.UcitajPodatke();

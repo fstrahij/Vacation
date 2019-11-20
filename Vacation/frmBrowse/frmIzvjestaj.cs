@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Vacation.customScripts;
 using Vacation.frmBrowse;
 using Vacation.modelScripts;
 
@@ -77,17 +78,10 @@ namespace Vacation.frmEdit
             UcitajPodatke();
         }
 
-        private string TrimString(string text)
-        {
-            char[] charsToTrim = { ' ' };
-            text = text.TrimEnd(charsToTrim);
-            return text = text.TrimStart(charsToTrim);
-        }
-
         private void Pretrazi()
         {
             PostaviSveVidljivo();
-            string trazeniText = TrimString(txtPretrazi.Text);
+            string trazeniText = Trimmer.TrimString(txtPretrazi.Text);
             if (!string.IsNullOrWhiteSpace(trazeniText))
             {
                 bool pronadjen;
