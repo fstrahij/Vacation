@@ -38,6 +38,12 @@ namespace Vacation.frmEdit
             }
         }
 
+        private void PostaviAlignHeader()
+        {
+            dataGridView1.Columns[0].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridView1.Columns[4].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+        }
+
         private Color PostaviBoju(Color boja)
         {
             if (boja == Color.White)
@@ -60,9 +66,9 @@ namespace Vacation.frmEdit
                 dataGridView1.Rows.Add(Lista[i].Item1,
                                         Lista[i].Item2.Ime,
                                         Lista[i].Item2.Prezime,
-                                        zaposlenik.DajNazivSpola(int.Parse(Lista[i].Item2.SpolId)),
                                         Lista[i].Item2.Adresa,
-                                        Lista[i].Item2.Oib
+                                        Lista[i].Item2.Oib,
+                                        zaposlenik.DajNazivSpola(int.Parse(Lista[i].Item2.SpolId))
                                         );
                 if (datum != Lista[i].Item1)
                 {
@@ -75,6 +81,7 @@ namespace Vacation.frmEdit
 
         private void frmPrikazZaposlenika_Load(object sender, EventArgs e)
         {
+            PostaviAlignHeader();
             UcitajPodatke();
         }
 
