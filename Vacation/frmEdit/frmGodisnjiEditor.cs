@@ -36,7 +36,7 @@ namespace Vacation.frmEdit
         public int StariGodisnji { get => stariGodisnji; set => stariGodisnji = value; }
         private void frmGodisnjiEditor_Load(object sender, EventArgs e)
         {           
-            PomocniBrojac.IzracunajRapoloziviBrojDana(ZaposlenikId);            
+            GodisnjiPomocniBrojac.IzracunajRapoloziviBrojDana(ZaposlenikId);            
             PostaviGodinu();
             InicijalizirajVrijednostiTextBoxova();
             if (DatumOd != null && DatumDo != null)
@@ -50,7 +50,7 @@ namespace Vacation.frmEdit
         {
             ZaposlenikGodisnji zaposlenikGodisnji = new ZaposlenikGodisnji();
             Godisnji godisnji = new Godisnji();
-            Tuple<int, int> vrstaGodisnji = PomocniBrojac.IzracunajBrojDana(dtpDatumOd.Value, dtpDatumDo.Value);             
+            Tuple<int, int> vrstaGodisnji = GodisnjiPomocniBrojac.IzracunajBrojDana(dtpDatumOd.Value, dtpDatumDo.Value);             
             
             if (NoviGodisnji > 0 && StariGodisnji  > 0)
             {
@@ -63,8 +63,8 @@ namespace Vacation.frmEdit
                 txtStariGodisnji.Text = vrstaGodisnji.Item2.ToString();
             }
 
-            txtBrojDana.Text = PomocniBrojac.BrojDana.ToString();
-            int godina = PomocniBrojac.Godina;
+            txtBrojDana.Text = GodisnjiPomocniBrojac.BrojDana.ToString();
+            int godina = GodisnjiPomocniBrojac.Godina;
             int index = godisnji.DajListu(ZaposlenikId, godina).Count;
             if (vrstaGodisnji.Item2 > 0)
             {
@@ -78,13 +78,13 @@ namespace Vacation.frmEdit
                 txtNeiskoristenoNovi.Text = neiskoristeniNovi.ToString();
                 txtNeiskoristenoStari.Text = vrstaGodisnji.Item2.ToString();
             }
-            PomocniBrojac.StariGodisnji = (StariGodisnji > 0) ? StariGodisnji : PomocniBrojac.StariGodisnji;
-            PomocniBrojac.NoviGodisnji = (NoviGodisnji > 0) ? NoviGodisnji : PomocniBrojac.NoviGodisnji;
+            GodisnjiPomocniBrojac.StariGodisnji = (StariGodisnji > 0) ? StariGodisnji : GodisnjiPomocniBrojac.StariGodisnji;
+            GodisnjiPomocniBrojac.NoviGodisnji = (NoviGodisnji > 0) ? NoviGodisnji : GodisnjiPomocniBrojac.NoviGodisnji;
         }
 
         private void dtpDatumOd_ValueChanged(object sender, EventArgs e)
         {
-            while (PomocniBrojac.IsNeradniDan(dtpDatumOd.Value.Date))
+            while (GodisnjiPomocniBrojac.IsNeradniDan(dtpDatumOd.Value.Date))
             {
                 dtpDatumOd.Value = dtpDatumOd.Value.AddDays(1);
             }
@@ -93,21 +93,21 @@ namespace Vacation.frmEdit
 
         private void dtpDatumDo_ValueChanged(object sender, EventArgs e)
         {
-            while (PomocniBrojac.IsNeradniDan(dtpDatumDo.Value.Date))
+            while (GodisnjiPomocniBrojac.IsNeradniDan(dtpDatumDo.Value.Date))
             {
                 dtpDatumDo.Value = dtpDatumDo.Value.AddDays(1);
             }
-            Tuple<int, int> godisnji = PomocniBrojac.IzracunajBrojDana(dtpDatumOd.Value, dtpDatumDo.Value);
-            dtpDatumDo.Value = PomocniBrojac.DtpDatumDo;
+            Tuple<int, int> godisnji = GodisnjiPomocniBrojac.IzracunajBrojDana(dtpDatumOd.Value, dtpDatumDo.Value);
+            dtpDatumDo.Value = GodisnjiPomocniBrojac.DtpDatumDo;
             txtNoviGodisnji.Text = godisnji.Item1.ToString();
             txtStariGodisnji.Text = godisnji.Item2.ToString();
-            txtBrojDana.Text = PomocniBrojac.BrojDana.ToString();
+            txtBrojDana.Text = GodisnjiPomocniBrojac.BrojDana.ToString();
         }        
 
         private void PostaviGodinu()
         {
-            DateTime min = new DateTime(PomocniBrojac.Godina, 1, 1);
-            DateTime max = new DateTime(PomocniBrojac.Godina, 12, 31);
+            DateTime min = new DateTime(GodisnjiPomocniBrojac.Godina, 1, 1);
+            DateTime max = new DateTime(GodisnjiPomocniBrojac.Godina, 12, 31);
             dtpDatumDo.MinDate = dtpDatumOd.MinDate = min;
             dtpDatumDo.MaxDate = dtpDatumOd.MaxDate = max;
             
@@ -134,7 +134,7 @@ namespace Vacation.frmEdit
                 if (dr == DialogResult.Yes)
                 {
                     Godisnji godisnji = new Godisnji(Id,
-                                            PomocniBrojac.ZaposlenikGodisnjiId.ToString(),
+                                            GodisnjiPomocniBrojac.ZaposlenikGodisnjiId.ToString(),
                                             dtpDatumOd.Value.Date,
                                             dtpDatumDo.Value.Date,
                                             txtBrojDana.Text,

@@ -47,6 +47,8 @@
             this.kalendarToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.statistikaToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.prozorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.bolovanjaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.pregledToolStripMenuItem3 = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -57,6 +59,7 @@
             this.zaposleniciToolStripMenuItem,
             this.neradniDaniToolStripMenuItem,
             this.godišnjiToolStripMenuItem,
+            this.bolovanjaToolStripMenuItem,
             this.prozorToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
@@ -199,6 +202,22 @@
             this.prozorToolStripMenuItem.Size = new System.Drawing.Size(59, 21);
             this.prozorToolStripMenuItem.Text = "Prozor";
             // 
+            // bolovanjaToolStripMenuItem
+            // 
+            this.bolovanjaToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.pregledToolStripMenuItem3});
+            this.bolovanjaToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.bolovanjaToolStripMenuItem.Name = "bolovanjaToolStripMenuItem";
+            this.bolovanjaToolStripMenuItem.Size = new System.Drawing.Size(76, 21);
+            this.bolovanjaToolStripMenuItem.Text = "Bolovanja";
+            // 
+            // pregledToolStripMenuItem3
+            // 
+            this.pregledToolStripMenuItem3.Name = "pregledToolStripMenuItem3";
+            this.pregledToolStripMenuItem3.Size = new System.Drawing.Size(180, 22);
+            this.pregledToolStripMenuItem3.Text = "Pregled";
+            this.pregledToolStripMenuItem3.Click += new System.EventHandler(this.BolovanjaPregled_Click);
+            // 
             // GlavniMeni
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -237,5 +256,7 @@
         private System.Windows.Forms.ToolStripMenuItem zaposlenikdodaciToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem dodaciToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem statistikaToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem bolovanjaToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem pregledToolStripMenuItem3;
     }
 }

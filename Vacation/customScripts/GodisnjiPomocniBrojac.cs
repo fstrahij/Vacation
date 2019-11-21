@@ -7,7 +7,7 @@ using Vacation.modelScripts;
 
 namespace Vacation.customScripts
 {
-    class PomocniBrojac
+    class GodisnjiPomocniBrojac
     {
         private static int _brojDana, _raspoloziviBrojDana, _godina, _zaposlenikGodisnjiId, _stariGodisnji, _noviGodisnji;
         private static DateTime _dtpDatumDo;

@@ -194,5 +194,14 @@ namespace Vacation
             forma.Show();
             PostaviListuOtvorenihProzora();
         }
+
+        private void BolovanjaPregled_Click(object sender, EventArgs e)
+        {
+            frmBolovanja forma = frmBolovanja.Instance;
+            forma.MdiParent = this;
+            forma.WindowState = FormWindowState.Maximized;
+            forma.Show();
+            PostaviListuOtvorenihProzora();
+        }
     }
 }

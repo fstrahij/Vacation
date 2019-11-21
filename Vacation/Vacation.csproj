@@ -64,13 +64,20 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="customScripts\BolovanjaPomocniBrojac.cs" />
     <Compile Include="customScripts\DatabaseConnection.cs" />
     <Compile Include="customScripts\DatumParser.cs" />
     <Compile Include="customScripts\Kalendar.cs" />
     <Compile Include="customScripts\Statistika.cs" />
-    <Compile Include="customScripts\PomocniBrojac.cs" />
+    <Compile Include="customScripts\GodisnjiPomocniBrojac.cs" />
     <Compile Include="customScripts\Trimmer.cs" />
     <Compile Include="customScripts\Upit.cs" />
+    <Compile Include="frmBrowse\frmBolovanja.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmBrowse\frmBolovanja.Designer.cs">
+      <DependentUpon>frmBolovanja.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmBrowse\frmZaposlenikDodaci.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -124,6 +131,12 @@
     </Compile>
     <Compile Include="frmBrowse\frmStatistika.Designer.cs">
       <DependentUpon>frmStatistika.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmEdit\frmBolovanjaEditor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmEdit\frmBolovanjaEditor.Designer.cs">
+      <DependentUpon>frmBolovanjaEditor.cs</DependentUpon>
     </Compile>
     <Compile Include="frmEdit\frmDodaciEditor.cs">
       <SubType>Form</SubType>
@@ -191,6 +204,7 @@
     <Compile Include="GlavniMeni.Designer.cs">
       <DependentUpon>GlavniMeni.cs</DependentUpon>
     </Compile>
+    <Compile Include="modelScripts\Bolovanje.cs" />
     <Compile Include="modelScripts\Dodatak.cs" />
     <Compile Include="modelScripts\Firma.cs" />
     <Compile Include="modelScripts\Godisnji.cs" />
@@ -227,6 +241,9 @@
     <Compile Include="frmBrowse\frmTipoviNeradnihDana.Designer.cs">
       <DependentUpon>frmTipoviNeradnihDana.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="frmBrowse\frmBolovanja.resx">
+      <DependentUpon>frmBolovanja.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmBrowse\frmZaposlenikDodaci.resx">
       <DependentUpon>frmZaposlenikDodaci.cs</DependentUpon>
     </EmbeddedResource>
@@ -256,6 +273,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmBrowse\frmStatistika.resx">
       <DependentUpon>frmStatistika.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmEdit\frmBolovanjaEditor.resx">
+      <DependentUpon>frmBolovanjaEditor.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmEdit\frmDodaciEditor.resx">
       <DependentUpon>frmDodaciEditor.cs</DependentUpon>

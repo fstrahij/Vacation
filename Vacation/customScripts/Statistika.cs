@@ -90,7 +90,7 @@ namespace Vacation.customScripts
             DateTime granicniDatum = new DateTime(godina, mjesec, dan);
             while (DateTime.Compare(pDatumOd, pDatumDo) <= 0 && DateTime.Compare(pDatumOd, granicniDatum) <= 0)
             {
-                if (!PomocniBrojac.IsNeradniDan(pDatumOd))
+                if (!GodisnjiPomocniBrojac.IsNeradniDan(pDatumOd))
                 {
                     DodajMjesec(pDatumOd.Month);
                 }                
