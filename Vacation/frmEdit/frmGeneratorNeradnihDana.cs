@@ -35,7 +35,7 @@ namespace Vacation
         }
         private void PostaviAlignHeader()
         {
-            dataGridView1.Columns[4].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;           
+            dataGridView1.Columns[4].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;            
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -47,18 +47,23 @@ namespace Vacation
         private void CheckBoxAllClick(object sender, EventArgs e)
         {
             DataGridViewCheckBoxCell odabrano;
-            foreach (DataGridViewRow row in dataGridView1.Rows)
+            if (checkBoxAll.Checked)
             {
-                odabrano = (DataGridViewCheckBoxCell)row.Cells["Odabir"];
-                if (row.Cells["Odabir"].Value == odabrano.TrueValue)
+                foreach (DataGridViewRow row in dataGridView1.Rows)
                 {
-                    row.Cells["Odabir"].Value = odabrano.FalseValue;
-                }
-                else
-                {
+                    odabrano = (DataGridViewCheckBoxCell)row.Cells["Odabir"];
                     row.Cells["Odabir"].Value = odabrano.TrueValue;
                 }
             }
+            else
+            {
+                foreach (DataGridViewRow row in dataGridView1.Rows)
+                {
+                    odabrano = (DataGridViewCheckBoxCell)row.Cells["Odabir"];
+                    row.Cells["Odabir"].Value = odabrano.FalseValue;
+                }
+            }
+            
         }
 
         private void DodajTemplateClick(object sender, EventArgs e)
