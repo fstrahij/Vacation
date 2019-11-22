@@ -74,13 +74,16 @@ namespace Vacation.frmBrowse
             txtAdresa.Text = zaposlenik.Adresa;
             txtOib.Text = zaposlenik.Oib;
             txtSpol.Text = zaposlenik.DajNazivSpola(int.Parse(zaposlenik.SpolId));
+            int ukupanBrojDana = 0;
             foreach (var lista in bolovanje.DajListu(ZaposlenikID, 0))
             {
+                ukupanBrojDana += int.Parse(lista.BrojDana);
                 dataGridView1.Rows.Add(lista.Id,
                                         lista.DatumOd.ToString("dd.MM.yyyy."),
                                         lista.DatumDo.ToString("dd.MM.yyyy."),
                                         lista.BrojDana,
-                                        lista.Opis
+                                        lista.Opis,
+                                        ukupanBrojDana
                                         );
             }
             if (dataGridView1.Rows.Count > 0)
@@ -94,8 +97,12 @@ namespace Vacation.frmBrowse
 
         private void PostaviAlignHeader()
         {
-            for (int i = 1; i <= 3; i++)
+            for (int i = 1; i <= 5; i++)
             {
+                if (i == 4)
+                {
+                    continue;
+                }
                 dataGridView1.Columns[i].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
             }
         }

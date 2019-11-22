@@ -29,9 +29,10 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmBolovanja));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.btnZatvori = new System.Windows.Forms.ToolStripButton();
             this.btnDeaktivirajSve = new System.Windows.Forms.ToolStripButton();
             this.btnDeaktiviraj = new System.Windows.Forms.ToolStripButton();
@@ -56,6 +57,7 @@
             this.DatumDo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.BrojDana = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Opis = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.UkupnoBrojDana = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.toolStrip1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -137,7 +139,7 @@
             this.btnZatvori});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(1022, 42);
+            this.toolStrip1.Size = new System.Drawing.Size(1101, 42);
             this.toolStrip1.TabIndex = 27;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -152,7 +154,7 @@
             this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.groupBox2.Location = new System.Drawing.Point(350, 80);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(640, 405);
+            this.groupBox2.Size = new System.Drawing.Size(723, 405);
             this.groupBox2.TabIndex = 24;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Bolovanja";
@@ -167,14 +169,14 @@
             this.DatumOd,
             this.DatumDo,
             this.BrojDana,
-            this.Opis});
-            this.dataGridView1.Enabled = false;
+            this.Opis,
+            this.UkupnoBrojDana});
             this.dataGridView1.Location = new System.Drawing.Point(25, 31);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersWidth = 25;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(583, 355);
+            this.dataGridView1.Size = new System.Drawing.Size(669, 355);
             this.dataGridView1.TabIndex = 8;
             // 
             // txtSpol
@@ -273,8 +275,8 @@
             // 
             // DatumOd
             // 
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.DatumOd.DefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.DatumOd.DefaultCellStyle = dataGridViewCellStyle1;
             this.DatumOd.HeaderText = "Datum od";
             this.DatumOd.Name = "DatumOd";
             this.DatumOd.ReadOnly = true;
@@ -282,8 +284,8 @@
             // 
             // DatumDo
             // 
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.DatumDo.DefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.DatumDo.DefaultCellStyle = dataGridViewCellStyle2;
             this.DatumDo.HeaderText = "Datum do";
             this.DatumDo.Name = "DatumDo";
             this.DatumDo.ReadOnly = true;
@@ -291,8 +293,8 @@
             // 
             // BrojDana
             // 
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.BrojDana.DefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.BrojDana.DefaultCellStyle = dataGridViewCellStyle3;
             this.BrojDana.HeaderText = "Broj Dana";
             this.BrojDana.Name = "BrojDana";
             this.BrojDana.ReadOnly = true;
@@ -305,17 +307,25 @@
             this.Opis.ReadOnly = true;
             this.Opis.Width = 200;
             // 
+            // UkupnoBrojDana
+            // 
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.UkupnoBrojDana.DefaultCellStyle = dataGridViewCellStyle4;
+            this.UkupnoBrojDana.HeaderText = "Ukupno broj dana";
+            this.UkupnoBrojDana.Name = "UkupnoBrojDana";
+            this.UkupnoBrojDana.ReadOnly = true;
+            // 
             // frmBolovanja
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1022, 624);
+            this.ClientSize = new System.Drawing.Size(1101, 624);
             this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox1);
             this.Name = "frmBolovanja";
-            this.Text = "frmBolovanja";
+            this.Text = "Bolovanja";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.frmBolovanja_FormClosed);
             this.Load += new System.EventHandler(this.frmBolovanja_Load);
             this.toolStrip1.ResumeLayout(false);
@@ -356,5 +366,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn DatumDo;
         private System.Windows.Forms.DataGridViewTextBoxColumn BrojDana;
         private System.Windows.Forms.DataGridViewTextBoxColumn Opis;
+        private System.Windows.Forms.DataGridViewTextBoxColumn UkupnoBrojDana;
     }
 }
