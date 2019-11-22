@@ -32,8 +32,7 @@ namespace Vacation.frmBrowse
         }
         private void PostaviAlignHeader()
         {
-           dataGridView1.Columns[5].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            
+            dataGridView1.Columns[5].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
         }
 
         public void UcitajPodatke()
@@ -139,6 +138,11 @@ namespace Vacation.frmBrowse
             forma.WindowState = FormWindowState.Maximized;
             forma.Show();
             GlavniMeni.Instance.PostaviListuOtvorenihProzora();
+        }
+
+        private void dataGridView1_CellPainting(object sender, DataGridViewCellPaintingEventArgs e)
+        {
+            e.AdvancedBorderStyle.Left = e.AdvancedBorderStyle.Right = DataGridViewAdvancedCellBorderStyle.None;
         }
     }
 }
