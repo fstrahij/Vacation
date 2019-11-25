@@ -46,9 +46,9 @@
             this.pregledToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.kalendarToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.statistikaToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.prozorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.bolovanjaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pregledToolStripMenuItem3 = new System.Windows.Forms.ToolStripMenuItem();
+            this.prozorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -195,13 +195,6 @@
             this.statistikaToolStripMenuItem1.Text = "Statistika";
             this.statistikaToolStripMenuItem1.Click += new System.EventHandler(this.statistikaToolStripMenuItem1_Click);
             // 
-            // prozorToolStripMenuItem
-            // 
-            this.prozorToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.prozorToolStripMenuItem.Name = "prozorToolStripMenuItem";
-            this.prozorToolStripMenuItem.Size = new System.Drawing.Size(59, 21);
-            this.prozorToolStripMenuItem.Text = "Prozor";
-            // 
             // bolovanjaToolStripMenuItem
             // 
             this.bolovanjaToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -214,9 +207,16 @@
             // pregledToolStripMenuItem3
             // 
             this.pregledToolStripMenuItem3.Name = "pregledToolStripMenuItem3";
-            this.pregledToolStripMenuItem3.Size = new System.Drawing.Size(180, 22);
+            this.pregledToolStripMenuItem3.Size = new System.Drawing.Size(121, 22);
             this.pregledToolStripMenuItem3.Text = "Pregled";
             this.pregledToolStripMenuItem3.Click += new System.EventHandler(this.BolovanjaPregled_Click);
+            // 
+            // prozorToolStripMenuItem
+            // 
+            this.prozorToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.prozorToolStripMenuItem.Name = "prozorToolStripMenuItem";
+            this.prozorToolStripMenuItem.Size = new System.Drawing.Size(59, 21);
+            this.prozorToolStripMenuItem.Text = "Prozor";
             // 
             // GlavniMeni
             // 

@@ -49,12 +49,14 @@
             this.Adresa = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Oib = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Spol = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.toolStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // toolStrip1
             // 
+            this.toolStrip1.AutoSize = false;
             this.toolStrip1.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.toolStrip1.ImageScalingSize = new System.Drawing.Size(35, 35);
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -68,8 +70,7 @@
             this.btnZatvori});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Padding = new System.Windows.Forms.Padding(0, 0, 1, 5);
-            this.toolStrip1.Size = new System.Drawing.Size(799, 47);
+            this.toolStrip1.Size = new System.Drawing.Size(799, 50);
             this.toolStrip1.TabIndex = 23;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -80,7 +81,7 @@
             this.btnNovi.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnNovi.Margin = new System.Windows.Forms.Padding(6, 1, 0, 2);
             this.btnNovi.Name = "btnNovi";
-            this.btnNovi.Size = new System.Drawing.Size(39, 39);
+            this.btnNovi.Size = new System.Drawing.Size(39, 47);
             this.btnNovi.Text = "Novi";
             this.btnNovi.Click += new System.EventHandler(this.NoviClick);
             // 
@@ -91,7 +92,7 @@
             this.btnUredi.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnUredi.Margin = new System.Windows.Forms.Padding(10, 1, 10, 2);
             this.btnUredi.Name = "btnUredi";
-            this.btnUredi.Size = new System.Drawing.Size(39, 39);
+            this.btnUredi.Size = new System.Drawing.Size(39, 47);
             this.btnUredi.Text = "Uredi";
             this.btnUredi.Click += new System.EventHandler(this.UrediClick);
             // 
@@ -102,14 +103,14 @@
             this.btnZaposlenja.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnZaposlenja.Margin = new System.Windows.Forms.Padding(0, 1, 10, 2);
             this.btnZaposlenja.Name = "btnZaposlenja";
-            this.btnZaposlenja.Size = new System.Drawing.Size(39, 39);
+            this.btnZaposlenja.Size = new System.Drawing.Size(39, 47);
             this.btnZaposlenja.Text = "Zaposlenja";
             this.btnZaposlenja.Click += new System.EventHandler(this.ZaposlenjaClick);
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 42);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 50);
             // 
             // btnDeaktiviraj
             // 
@@ -118,7 +119,7 @@
             this.btnDeaktiviraj.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnDeaktiviraj.Margin = new System.Windows.Forms.Padding(10, 1, 10, 2);
             this.btnDeaktiviraj.Name = "btnDeaktiviraj";
-            this.btnDeaktiviraj.Size = new System.Drawing.Size(39, 39);
+            this.btnDeaktiviraj.Size = new System.Drawing.Size(39, 47);
             this.btnDeaktiviraj.Text = "Obriši";
             this.btnDeaktiviraj.Click += new System.EventHandler(this.DeaktivirajClick);
             // 
@@ -129,14 +130,14 @@
             this.btnDeaktivirajSve.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnDeaktivirajSve.Margin = new System.Windows.Forms.Padding(0, 1, 10, 2);
             this.btnDeaktivirajSve.Name = "btnDeaktivirajSve";
-            this.btnDeaktivirajSve.Size = new System.Drawing.Size(39, 39);
+            this.btnDeaktivirajSve.Size = new System.Drawing.Size(39, 47);
             this.btnDeaktivirajSve.Text = "Obriši sve";
             this.btnDeaktivirajSve.Click += new System.EventHandler(this.DeaktivirajSveClick);
             // 
             // toolStripSeparator2
             // 
             this.toolStripSeparator2.Name = "toolStripSeparator2";
-            this.toolStripSeparator2.Size = new System.Drawing.Size(6, 42);
+            this.toolStripSeparator2.Size = new System.Drawing.Size(6, 50);
             // 
             // btnZatvori
             // 
@@ -145,7 +146,7 @@
             this.btnZatvori.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnZatvori.Margin = new System.Windows.Forms.Padding(40, 1, 0, 2);
             this.btnZatvori.Name = "btnZatvori";
-            this.btnZatvori.Size = new System.Drawing.Size(39, 39);
+            this.btnZatvori.Size = new System.Drawing.Size(39, 47);
             this.btnZatvori.Text = "Zatvori";
             this.btnZatvori.Click += new System.EventHandler(this.btnZatvori_Click);
             // 
@@ -164,11 +165,11 @@
             this.dataGridView1.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.Green;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
             dataGridViewCellStyle2.Padding = new System.Windows.Forms.Padding(5, 10, 0, 10);
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.MenuHighlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -182,14 +183,14 @@
             this.Spol});
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
             dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Window;
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle3;
             this.dataGridView1.EnableHeadersVisualStyles = false;
-            this.dataGridView1.Location = new System.Drawing.Point(16, 128);
+            this.dataGridView1.Location = new System.Drawing.Point(0, 106);
             this.dataGridView1.MultiSelect = false;
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
@@ -203,7 +204,7 @@
             this.dataGridView1.RowTemplate.Height = 35;
             this.dataGridView1.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(760, 327);
+            this.dataGridView1.Size = new System.Drawing.Size(799, 367);
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.CellPainting += new System.Windows.Forms.DataGridViewCellPaintingEventHandler(this.dataGridView1_CellPainting);
             // 
@@ -241,7 +242,7 @@
             // 
             // Oib
             // 
-            this.Oib.HeaderText = "Oib";
+            this.Oib.HeaderText = "OIB";
             this.Oib.Name = "Oib";
             this.Oib.ReadOnly = true;
             // 
@@ -251,6 +252,18 @@
             this.Spol.Name = "Spol";
             this.Spol.ReadOnly = true;
             // 
+            // groupBox1
+            // 
+            this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.groupBox1.Location = new System.Drawing.Point(0, 69);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(799, 44);
+            this.groupBox1.TabIndex = 24;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Zaposlenici";
+            // 
             // frmZaposlenici
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -258,6 +271,7 @@
             this.BackColor = System.Drawing.Color.LightYellow;
             this.ClientSize = new System.Drawing.Size(799, 467);
             this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.toolStrip1);
             this.Name = "frmZaposlenici";
             this.Text = "Zaposlenici";
@@ -267,7 +281,6 @@
             this.toolStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -289,5 +302,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Adresa;
         private System.Windows.Forms.DataGridViewTextBoxColumn Oib;
         private System.Windows.Forms.DataGridViewTextBoxColumn Spol;
+        private System.Windows.Forms.GroupBox groupBox1;
     }
 }
