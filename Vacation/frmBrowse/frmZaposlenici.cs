@@ -137,7 +137,10 @@ namespace Vacation.frmBrowse
 
         private void dataGridView1_CellPainting(object sender, DataGridViewCellPaintingEventArgs e)
         {
-            e.AdvancedBorderStyle.Left = e.AdvancedBorderStyle.Right = DataGridViewAdvancedCellBorderStyle.None;
+            if (e.RowIndex >= 0)
+            {
+                e.AdvancedBorderStyle.Left = e.AdvancedBorderStyle.Right = DataGridViewAdvancedCellBorderStyle.None;
+            }
         }
     }
 }
