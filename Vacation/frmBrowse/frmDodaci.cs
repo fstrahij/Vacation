@@ -127,5 +127,13 @@ namespace Vacation.frmBrowse
                 UcitajPodatke();
             }
         }
+
+        private void dataGridView1_CellPainting(object sender, DataGridViewCellPaintingEventArgs e)
+        {
+            if (e.RowIndex >= 0)
+            {
+                e.AdvancedBorderStyle.Left = e.AdvancedBorderStyle.Right = DataGridViewAdvancedCellBorderStyle.None;
+            }
+        }
     }
 }
