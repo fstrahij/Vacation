@@ -31,6 +31,11 @@ namespace Vacation.frmBrowse
             }
         }
 
+        private void PostaviAlignHeader()
+        {
+            dataGridView1.Columns[5].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+        }
+
         public void UcitajPodatke()
         {
             dataGridView1.Rows.Clear();
@@ -63,6 +68,7 @@ namespace Vacation.frmBrowse
 
         private void frmZaposlenici_Load(object sender, EventArgs e)
         {
+            PostaviAlignHeader();
             UcitajPodatke();
         }
 
