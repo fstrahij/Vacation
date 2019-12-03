@@ -41,10 +41,10 @@
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.btnNovi = new System.Windows.Forms.ToolStripButton();
             this.btnUredi = new System.Windows.Forms.ToolStripButton();
-            this.btnDeaktiviraj = new System.Windows.Forms.ToolStripButton();
-            this.btnDeaktivirajSve = new System.Windows.Forms.ToolStripButton();
-            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.btnZatvori = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
+            this.btnDeaktivirajSve = new System.Windows.Forms.ToolStripButton();
+            this.btnDeaktiviraj = new System.Windows.Forms.ToolStripButton();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.toolStrip1.SuspendLayout();
@@ -68,6 +68,7 @@
             // 
             this.dataGridView1.AllowUserToAddRows = false;
             this.dataGridView1.AllowUserToDeleteRows = false;
+            this.dataGridView1.AllowUserToResizeRows = false;
             this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
@@ -178,17 +179,23 @@
             this.btnUredi.Text = "Uredi";
             this.btnUredi.Click += new System.EventHandler(this.UrediClick);
             // 
-            // btnDeaktiviraj
+            // btnZatvori
             // 
-            this.btnDeaktiviraj.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
-            this.btnDeaktiviraj.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.btnDeaktiviraj.Image = ((System.Drawing.Image)(resources.GetObject("btnDeaktiviraj.Image")));
-            this.btnDeaktiviraj.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnDeaktiviraj.Margin = new System.Windows.Forms.Padding(0, 1, 15, 2);
-            this.btnDeaktiviraj.Name = "btnDeaktiviraj";
-            this.btnDeaktiviraj.Size = new System.Drawing.Size(39, 47);
-            this.btnDeaktiviraj.Text = "Obriši";
-            this.btnDeaktiviraj.Click += new System.EventHandler(this.DeaktivirajClick);
+            this.btnZatvori.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+            this.btnZatvori.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.btnZatvori.Image = ((System.Drawing.Image)(resources.GetObject("btnZatvori.Image")));
+            this.btnZatvori.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnZatvori.Name = "btnZatvori";
+            this.btnZatvori.Size = new System.Drawing.Size(39, 47);
+            this.btnZatvori.Text = "Zatvori";
+            this.btnZatvori.Click += new System.EventHandler(this.btnZatvori_Click);
+            // 
+            // toolStripSeparator2
+            // 
+            this.toolStripSeparator2.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+            this.toolStripSeparator2.Margin = new System.Windows.Forms.Padding(40, 0, 40, 0);
+            this.toolStripSeparator2.Name = "toolStripSeparator2";
+            this.toolStripSeparator2.Size = new System.Drawing.Size(6, 50);
             // 
             // btnDeaktivirajSve
             // 
@@ -201,23 +208,17 @@
             this.btnDeaktivirajSve.Text = "Obriši sve";
             this.btnDeaktivirajSve.Click += new System.EventHandler(this.DeaktivirajSveClick);
             // 
-            // toolStripSeparator2
+            // btnDeaktiviraj
             // 
-            this.toolStripSeparator2.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
-            this.toolStripSeparator2.Margin = new System.Windows.Forms.Padding(40, 0, 40, 0);
-            this.toolStripSeparator2.Name = "toolStripSeparator2";
-            this.toolStripSeparator2.Size = new System.Drawing.Size(6, 50);
-            // 
-            // btnZatvori
-            // 
-            this.btnZatvori.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
-            this.btnZatvori.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.btnZatvori.Image = ((System.Drawing.Image)(resources.GetObject("btnZatvori.Image")));
-            this.btnZatvori.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnZatvori.Name = "btnZatvori";
-            this.btnZatvori.Size = new System.Drawing.Size(39, 47);
-            this.btnZatvori.Text = "Zatvori";
-            this.btnZatvori.Click += new System.EventHandler(this.btnZatvori_Click);
+            this.btnDeaktiviraj.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+            this.btnDeaktiviraj.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.btnDeaktiviraj.Image = ((System.Drawing.Image)(resources.GetObject("btnDeaktiviraj.Image")));
+            this.btnDeaktiviraj.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnDeaktiviraj.Margin = new System.Windows.Forms.Padding(0, 1, 15, 2);
+            this.btnDeaktiviraj.Name = "btnDeaktiviraj";
+            this.btnDeaktiviraj.Size = new System.Drawing.Size(39, 47);
+            this.btnDeaktiviraj.Text = "Obriši";
+            this.btnDeaktiviraj.Click += new System.EventHandler(this.DeaktivirajClick);
             // 
             // frmDodaci
             // 
